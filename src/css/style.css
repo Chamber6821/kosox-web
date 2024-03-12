@@ -1,0 +1,3122 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  background-color: #000617;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+input {
+  padding-right: 20px !important;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+a {
+  text-decoration: none;
+}
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 36px;
+  gap: 270px;
+  padding-bottom: 36px;
+}
+.navbar_logo .logo {
+  width: 120px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+.navbar_logo a {
+  cursor: pointer;
+}
+.navbar_logo .logo strong {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  text-decoration: none;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.navbar_menu a {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  text-decoration: none;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.navbar_icon img {
+  width: 30px;
+}
+.navbar_top {
+  width: 100%;
+  padding-top: 36px;
+  padding-bottom: 36px;
+
+  background: #212529;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar_top_menu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 75px;
+}
+.navbar_top_menu_li {
+  list-style: none;
+}
+.navbar_top_menu_li a {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  text-decoration: none;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.navbar_down {
+  width: 100%;
+  background-color: #000;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  justify-content: center;
+}
+.navbar_down_inp {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar_down_inp img {
+  position: absolute;
+  right: 30px;
+  cursor: pointer;
+}
+.navbar_down a {
+  display: flex;
+  height: 55px;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #f00;
+  border: none;
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.navbar_down input {
+  display: flex;
+  width: 700px;
+  height: 55px;
+  align-items: center;
+
+  padding-left: 30px;
+  border-radius: 10px;
+  background: #fff;
+  color: #575757;
+  font-family: "Scada", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+.navbar_down input::placeholder {
+  color: #575757;
+  font-family: "Scada", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+input:focus {
+  outline: none;
+}
+.navbar_phone {
+  display: none;
+}
+.content {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (max-width: 991px) {
+  /*  */
+
+  .navbar_phone {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #212529;
+  }
+  .navbar_down_inp {
+    width: 100%;
+  }
+  .navbar {
+    display: none;
+  }
+  .navbar_top {
+    display: none;
+  }
+  .navbar_phone_logo .logo strong {
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    text-decoration: none;
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .navbar_phone_logo .logo {
+    width: 120px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fff;
+    border-radius: 10px;
+  }
+  .navbar_phone_right_menu {
+    width: 400px;
+    height: 100vh;
+    z-index: 999989;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+    position: fixed;
+    right: -500px;
+    transition: 0.8s;
+    top: 0px;
+    background-color: #000;
+    border-radius: 0px 0px 0px 30px;
+  }
+  .navbar_phone_right_menu i {
+    color: #fff;
+    position: absolute;
+    cursor: pointer;
+    top: 20px;
+    font-size: 25px;
+    right: 20px;
+  }
+  .navbar_top_menu {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .navbar_icon {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+    padding: 20px;
+  }
+  .navbar_phone_right_menu_mail {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 20px;
+  }
+  .navbar_phone_right_menu_mail a {
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 19px;
+    text-decoration: underline;
+    font-weight: 400;
+  }
+  .navbar_phone_menu i {
+    color: #fff;
+    cursor: pointer;
+    font-size: 25px;
+  }
+  .navbar_down {
+    flex-direction: column;
+  }
+  .navbar_down button {
+    display: flex;
+    height: 65px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #f00;
+    border: none;
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .navbar_down input {
+    display: flex;
+    width: 100%;
+    padding-right: 70px;
+    height: 65px;
+    align-items: center;
+    padding-left: 30px;
+    border-radius: 10px;
+    background: #fff;
+    color: #575757;
+    font-family: "Scada", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .navbar_down {
+    width: 100%;
+    background-color: #000;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+  }
+  .navbar_down a {
+    width: 100%;
+  }
+}
+@media (max-width: 450px) {
+  .navbar_phone_right_menu {
+    width: 100%;
+    height: 100vh;
+    z-index: 999989;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+    position: fixed;
+    right: -500px;
+    transition: 0.8s;
+    top: 0px;
+    background-color: #000;
+    border-radius: 0px 0px 0px 30px;
+  }
+  .main_left a {
+    font-size: 15px !important;
+    width: 220px !important;
+    height: 45px !important;
+  }
+}
+.main {
+  position: relative;
+  width: 100%;
+  display: flex;
+  min-height: 611px;
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+}
+.main_left {
+  width: 70%;
+  max-width: 1090px;
+  position: relative;
+  z-index: 99;
+  display: flex;
+  align-items: start;
+  justify-content: left;
+  flex-direction: column;
+  gap: 63px;
+}
+.main_right {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+h1 {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 65px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 75px; /* 115.385% */
+}
+h6 {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 65px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 75px; /* 115.385% */
+}
+h3 {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.main_left a {
+  width: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  border-radius: 10px;
+  background: #2e2f8c;
+  border: none;
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.main img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+@media (max-width: 991px) {
+  .main_left {
+    width: 90%;
+    /* max-width: 1090px; */
+    position: relative;
+    z-index: 99;
+    display: flex;
+    align-items: start;
+    justify-content: left;
+    flex-direction: column;
+    gap: 63px;
+  }
+}
+@media (max-width: 650px) {
+  h1 {
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 10vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 11.538vw;
+  }
+  h6 {
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 10vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 11.538vw;
+  }
+  h3 {
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 4.615vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .main_left button {
+    width: 43.077vw;
+    height: 9.231vw;
+    border-radius: 10px;
+    background: #2e2f8c;
+    border: none;
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 3.077vw;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .main_left {
+    width: 90%;
+    /* max-width: 1090px; */
+    position: relative;
+    z-index: 99;
+    display: flex;
+    align-items: start;
+    justify-content: left;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .main {
+    position: relative;
+    width: 100%;
+    display: flex;
+    min-height: 351px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+  }
+}
+.contact_form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 706px;
+  background: #000;
+}
+.contact_form_flex {
+  width: 1000px;
+  height: 536px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 37px;
+  border-radius: 35px;
+  background: #212529;
+}
+h2 {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.contact_form_flex input {
+  width: 650px;
+  height: 60px;
+  padding-left: 30px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background: #484848;
+}
+.contact_form_flex input::placeholder {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.contact_form_flex button {
+  width: 300px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #2e2f8c;
+  border: none;
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+@media (max-width: 991px) {
+  .contact_form_flex {
+    width: 90%;
+  }
+  .contact_form_flex input {
+    width: 80%;
+    height: 60px;
+    padding-left: 30px;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background: #484848;
+  }
+}
+@media (max-width: 550px) {
+  h2 {
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 7.273vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .contact_form_flex button {
+    width: 80%;
+    height: 60px;
+    border-radius: 10px;
+    background: #2e2f8c;
+    border: none;
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .produce_page_description_text2 ul {
+    gap: 70px !important;
+  }
+  .contact_form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 606px;
+    background: #000;
+  }
+  .contact_form_flex {
+    height: 470px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+    border-radius: 35px;
+    background: #212529;
+  }
+}
+.kotalog_podshipnikov {
+  width: 100%;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.kotalog_podshipnikov_cards {
+  width: 100%;
+  display: flex;
+  margin-top: 70px;
+  align-items: center;
+  justify-content: center;
+  gap: 42px;
+  flex-wrap: wrap;
+}
+.kotalog_podshipnikov_card {
+  width: 400px;
+  height: 550px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 25px;
+  padding-top: 35px;
+  background: #212529;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+  flex-direction: column;
+}
+
+h4 {
+  color: #fff;
+  text-align: center;
+  font-family: "Scada", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.kotalog_podshipnikov button {
+  width: 300px;
+  height: 70px;
+  border-radius: 13px;
+  background: #f00;
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 19px;
+  border: none;
+  font-style: normal;
+  cursor: pointer;
+  margin-top: 71px;
+  font-weight: 700;
+  line-height: normal;
+}
+.kotalog_podshipnikov_card button {
+  width: 150px;
+  height: 50px;
+  margin: 0px;
+  border-radius: 10px;
+  background: #2e2f8c;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-family: "Scada", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+@media (max-width: 550px) {
+  .kotalog_podshipnikov_card {
+    width: 90%;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .kotalog_podshipnikov_card h3 {
+    font-size: 25px;
+  }
+}
+.promishlenost {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  padding-top: 70px;
+  padding-bottom: 140px;
+  flex-direction: column;
+}
+.promishlenost_title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.promishlenost_acc {
+  margin-top: 35px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.accordion {
+  width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+}
+.accordion-item {
+  width: 100%;
+}
+.accordion-collapse {
+  background-color: #484848;
+  width: 90%;
+  margin: 0px auto;
+}
+.accordion-body {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.about_company {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.about_company_card {
+  width: 600px;
+  height: 600px;
+  padding-left: 75px;
+  padding-right: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 35px;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 35px;
+  backdrop-filter: blur(5px);
+}
+.about_company_card a {
+  width: 240px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #f00;
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  border: none;
+  font-weight: 700;
+  line-height: normal;
+}
+@media (max-width: 650px) {
+  .about_company_card {
+    width: 90%;
+    height: 92.308vw;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 35px;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 35px;
+    backdrop-filter: blur(5px);
+  }
+  .about_company_card button {
+    width: 36.923vw;
+    height: 8.615vw;
+    border-radius: 9px;
+    background: #f00;
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 3.385vw;
+    font-style: normal;
+    border: none;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
+.primushestva_company {
+  padding-top: 70px;
+  background: #000;
+  padding-bottom: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.primushestva_company_cards {
+  max-width: 1440px;
+  display: flex;
+  margin-top: 70px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 38px;
+}
+.primushestva_company_cards_card {
+  width: 400px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 15px;
+}
+.primushestva_company_cards_card h4 {
+  text-align: left;
+}
+.primushestva_company_cards_card_img {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+@media (max-width: 450px) {
+  .primushestva_company_cards {
+    max-width: auto;
+    width: 100%;
+    display: flex;
+    margin-top: 70px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 38px;
+  }
+}
+.how_weare_working {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background-color: #000;
+}
+.how_weare_working_cards {
+  max-width: 1440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 70px;
+}
+.how_weare_working_cards_card {
+  width: 250px;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: center;
+}
+.how_weare_working_cards_card span {
+  color: #2e2f8c;
+  font-family: "Scada", sans-serif;
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.how_weare_working a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  margin-top: 70px;
+  height: 70px;
+  border-radius: 13px;
+  background: #f00;
+  color: #fff;
+  border: none;
+  font-family: "Scada", sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.reviews {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 70px;
+  padding-bottom: 140px;
+}
+.reviews_swiper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+  position: relative;
+}
+swiper-container {
+  max-width: 1440px;
+  width: 100%;
+  height: 100%;
+}
+
+swiper-slide {
+  width: 300px;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  padding-top: 37px;
+  padding-left: 25px;
+  flex-direction: column;
+  height: 386px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  backdrop-filter: blur(9px);
+  background: #2125293f;
+  position: relative;
+  z-index: -1;
+}
+swiper-slide h3 {
+  margin-top: 15px;
+}
+swiper-slide h4 {
+  width: 250px;
+  text-align: left;
+  margin-top: 40px;
+}
+.swiper-slide-active {
+  background-color: #212529;
+}
+.map {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 900px;
+}
+.map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* Footer */
+.allFooter {
+  background: #212529;
+}
+.allFooter_div {
+  display: flex;
+  max-width: 1440px;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 80%;
+  margin: auto;
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+.allFooter_div_title {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 30px;
+}
+.allFooter_div_ahref {
+  text-decoration: none;
+  border-bottom: 0;
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.allFooter_div_block_four_p {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.allFooter_div_block_four {
+  width: 450px;
+  max-width: 100%;
+}
+.allFooter_div_block_one {
+  display: block;
+}
+.allFooter_div_block_two {
+  display: block;
+}
+.allFooter_div_block_three {
+  display: block;
+}
+.allFooter_div_ahref_div {
+  margin-top: 20px;
+}
+.allFooter_address {
+  border-top: 2px solid #1434cb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 20px;
+
+  padding-bottom: 20px;
+  padding-left: 4%;
+  margin: 0 auto;
+  padding-right: 4%;
+  gap: 20px 60px;
+}
+.allFooter_address_h1 {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.allFooter_address_div {
+  display: block;
+  text-align: center;
+}
+.allFooter_address_div_p {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 5px;
+}
+.allFooter_address_img_div {
+  width: 300px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.contact {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.contact a {
+  text-decoration: none;
+  color: #e8ece9;
+}
+.contact .nomer {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 20px;
+  align-items: center !important;
+  justify-content: space-around;
+  width: 60%;
+  margin: 0px;
+}
+.ikcons a {
+  text-decoration: none;
+}
+
+@media (max-width: 1015px) {
+  .contact_big_div_one {
+    width: 100%;
+  }
+  .contact_big_div_two {
+    width: 100%;
+  }
+  .allFooter_address {
+    justify-content: center;
+  }
+  .allFooter_address_h1 {
+    width: 100%;
+    text-align: center;
+  }
+  .allFooter_address_div {
+    width: 100%;
+  }
+  .allFooter_address_img_div {
+    width: 90%;
+  }
+}
+@media (max-width: 700px) {
+  .contact_big_div_one_title {
+    font-size: 40px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  .contact_big_div_one_desc {
+    font-size: 25px;
+  }
+  .contact_big_div_one_contact_block_p {
+    font-size: 25px;
+    margin-top: 10px;
+  }
+  .contact_big_div_one_contact {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .contact_big_div {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .contact_big_div_two_h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  .contact_big_div_two_p {
+    width: 100%;
+  }
+  .contact_map_iframe {
+    height: 90vw;
+  }
+}
+
+.header_main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 233px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.header_main_bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.header_main_flex {
+  padding-left: 180px;
+  width: 1440px;
+  position: relative;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.section_page {
+  background-color: #000;
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.section_page_elemnts {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contact Page */
+
+.contact_page {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  gap: 167px;
+  background-color: #000;
+}
+.contact_page_about {
+  width: 600px;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact_page_about h3 {
+  width: 90% !important;
+}
+.contact_page_post {
+  width: 344px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.contact_page_about_phone {
+  width: 90%;
+  max-width: 500px;
+  margin-top: 40px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: left;
+}
+.contact_page_about h3 {
+  margin-top: 35px;
+}
+.contact_page_about_phone h3 {
+  margin-top: 0px;
+}
+
+.contact_page_post h6 {
+  color: #fff;
+
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.contact_page_post input {
+  width: 350px;
+  height: 60px;
+  padding-left: 20px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #212529;
+  border: none;
+  margin-bottom: 15px;
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.contact_page_post input::placeholder {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.contact_page_post button {
+  width: 250px;
+  height: 50px;
+  border-radius: 7px;
+  background: #2e2f8c;
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 19px;
+  border: none;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.text_inp {
+  width: 350px;
+  height: 150px;
+  padding-top: 20px;
+  padding-left: 20px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #212529;
+  border: none;
+  margin-bottom: 15px;
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.text_inp::placeholder {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+textarea:focus {
+  outline: none;
+}
+.contact_page_post h5 {
+  color: #fff;
+  text-align: center;
+  font-family: "Scada", sans-serif;
+  font-size: 13px;
+  margin-top: 35px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* kotalog */
+
+.kotalog {
+  width: 100%;
+  flex-wrap: wrap;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.kotalog_flex {
+  max-width: 1440px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  justify-content: center;
+}
+.kotalog_card {
+  width: 400px;
+  height: 271px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 35px;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-left: 50px;
+  text-align: center;
+  padding-right: 50px;
+}
+.kotalog_card h3 {
+  position: relative;
+  z-index: 998;
+}
+.kotalog_card a {
+  width: 130px !important;
+  height: 35px !important;
+  position: relative;
+  z-index: 998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  border-radius: 7px;
+  background: #2e2f8c;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-family: "Scada", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.kotalog_card_bg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 60;
+  width: 100%;
+  height: 300px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 550px) {
+  .kotalog_card {
+    width: 95%;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .kotalog_card h3 {
+    font-size: 25px;
+  }
+}
+
+/* Производители */
+
+.manufacturers {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #000;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.manufacturers_speak {
+  max-width: 1440px;
+  width: 100%;
+  display: flex;
+  align-items: left;
+  padding-left: 70px;
+  justify-content: center;
+  flex-direction: column;
+}
+.manufacturers_speak a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 70px;
+  border-radius: 13px;
+  background: #2e2f8c;
+  border: none;
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 50px;
+}
+.our_brends {
+  margin-top: 100px;
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.our_brends_cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 70px;
+  align-items: center;
+  gap: 90px;
+  justify-content: center;
+}
+.our_brends_card {
+  display: flex;
+  width: 250px;
+  background: #fff;
+  position: relative;
+  height: 120px;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+.our_brends_card_hover {
+  transition: 0.5s;
+  width: 100%;
+  gap: 20px;
+  position: absolute;
+  padding-bottom: 15px;
+  padding-top: 43px;
+  top: 200px;
+  left: 0px;
+  height: 100%;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.75);
+  justify-content: center;
+}
+.our_brends_card:hover .our_brends_card_hover {
+  top: 0px;
+}
+.our_brends_card_hover h5 {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.our_brends_card_hover a {
+  width: 100px;
+  height: 33px;
+  border-radius: 5px;
+  background: #f00;
+  color: #fff;
+  text-align: center;
+  padding: 10px 13px 9.333px 18px;
+  font-family: "Scada", sans-serif;
+  font-size: 12px;
+  border: none;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+@media (max-width: 550px) {
+  .header_main_flex {
+    padding-left: 20px;
+  }
+  .our_brends_cards {
+    gap: 20px;
+  }
+  .manufacturers {
+    padding-bottom: 0px;
+  }
+  .our_brends {
+    margin-top: 50px;
+  }
+  .manufacturers_speak {
+    padding-left: 20px;
+  }
+}
+.shopandpay {
+  width: 100%;
+  background-color: #000;
+  gap: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.shopandpay_content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  justify-content: center;
+}
+.shopandpay_content_flex {
+  width: 90%;
+  margin-top: 50px;
+  position: relative;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 1280px;
+}
+.shopandpay h2 {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.shopandpay_content_flex p {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 28px;
+  position: relative;
+  z-index: 9889;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.shopandpay_content_flex ul {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.shopandpay_content_flex ul li {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  list-style: none;
+  position: relative;
+  z-index: 9889;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.shopandpay_content_center {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 999;
+}
+
+/* filter kotalog */
+
+.filterkotalog {
+  width: 100%;
+  display: flex;
+  height: 1605px;
+  align-items: start;
+  justify-content: center;
+  background-color: #000;
+}
+.filterkotalog_flex {
+  max-width: 1540px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.filterkotalog_filter {
+  width: 450px;
+  height: 100%;
+  padding-left: 35px;
+  flex-direction: column;
+  padding-right: 35px;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  background: #000617;
+  justify-content: start;
+}
+.filterkotalog_cards {
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 50px 80px;
+  align-items: start;
+  padding-top: 100px;
+  justify-content: center;
+}
+.filterkotalog_filter_title {
+  width: 100%;
+  display: flex;
+  margin-bottom: 50px;
+  align-items: center;
+  justify-content: space-between;
+}
+.filterkotalog_filter_title h2 {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.filterkotalog_card {
+  width: 350px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.filterkotalog_card_img {
+  border-radius: 35px 35px 0px 0px;
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 250px;
+  position: relative;
+  display: flex;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+}
+.filterkotalog_card_title {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  padding: 48px 25px;
+  justify-content: center;
+  gap: 69px;
+  border-radius: 0px 0px 35px 35px;
+  background: #212529;
+}
+.filterkotalog_card_title h2 {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 19px !important;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.filterkotalog_card_img_bg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/Rectangle\ 93.png");
+}
+.filterkotalog_cards_nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  flex-direction: column;
+}
+.filterkotalog_cards_nav_flex {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.filterkotalog_cards_nav_flex p {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  cursor: pointer;
+  font-weight: 700;
+  line-height: normal;
+}
+.activa_nav {
+  width: 45px;
+  height: 45px;
+  border-radius: 25px;
+  background: #f00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.filterkotalog_cards_nav_flex img {
+  transform: rotate(90deg);
+}
+.filterkotalog_cards_nav_btn a {
+  width: 170px !important;
+  height: 40px !important;
+  border-radius: 10px;
+  background: #2e2f8c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+@media (max-width: 1200px) {
+}
+
+/* brendabout */
+
+.brendabout {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+}
+.brendabout_main_flex {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  flex-direction: column;
+}
+.brendabout h1 {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.brendabout_title {
+  margin-top: 38px;
+  margin-bottom: 70px;
+  max-width: 1280px;
+  width: 90%;
+  position: relative;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.brendabout_title p {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.brendabout_cards {
+  max-width: 1440px;
+  width: 100%;
+  display: flex;
+  margin-top: 50px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 23px;
+}
+.brendabout_card {
+  width: 300px;
+  height: 400px;
+  flex-shrink: 0;
+  position: relative;
+  border-radius: 35px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: start;
+  padding-left: 25px;
+  justify-content: center;
+  gap: 69px;
+  flex-direction: column;
+}
+.brendabout_card_bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 35px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.brendabout_card h2 {
+  position: relative;
+}
+.brendabout_card img {
+  position: relative;
+}
+.brendabout_btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 100px;
+  justify-content: center;
+}
+.brendabout_btn a {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  border-radius: 13px;
+  background: #2e2f8c;
+  border: none;
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.dropdown-menu2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* product */
+
+.product_page {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 100px;
+  background-color: #000;
+  padding-bottom: 100px;
+}
+.product_page_about {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media(max-width:1300px){
+  .brendabout_cards {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.product_page_about_img {
+  width: 450px;
+  height: 450px;
+  position: relative;
+  border-radius: 35px 0px 0px 35px;
+  background-color: #fff;
+}
+.product_page_about_img_bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.product_page_about_title {
+  display: flex;
+  padding-top: 76px;
+  padding-bottom: 76px;
+  padding-left: 85px;
+  padding-right: 145px;
+  max-width: 830px;
+  width: 90%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 35px;
+  border-radius: 0px 35px 35px 0px;
+  background: #212529;
+}
+.product_page_about_title h1 {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.product_page_about_title_fenom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 25px;
+}
+.product_page_about_title_fenom img {
+  width: 111px;
+}
+.product_page_about_title_fenom h3 {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.product_page_about_title a {
+  width: 200px;
+  height: 53px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #2e2f8c;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-family: "Scada", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+@media (max-width: 991px) {
+  .product_page_about {
+    flex-direction: column;
+  }
+  .product_page_about_img {
+    width: 90%;
+    border-radius: 35px 35px 0px 0px;
+  }
+  .product_page_about_title {
+    border-radius: 0px 0px 35px 35px;
+  }
+  .product_page_about_title {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+@media (max-width: 550px) {
+  .product_page_about_title_fenom {
+    flex-direction: column;
+    align-items: start;
+  }
+  .product_page_about_title_fenom h3 {
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .product_page_about_title h2 {
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .product_page_about_title {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+.product_page_description {
+  width: 100%;
+  display: flex;
+  background-color: #000;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 103px;
+  padding-bottom: 100px;
+}
+.product_page_description_menu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 196px;
+}
+.product_page_description_menu_title {
+  max-width: 400px;
+  gap: 30px;
+  cursor: pointer;
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 35px;
+  border-bottom: 3px solid #d9d9d9;
+}
+.product_page_description_menu_title2 {
+  max-width: 400px;
+  gap: 30px;
+  cursor: pointer;
+  width: 45%;
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 35px;
+  border-bottom: 3px solid #d9d9d9;
+}
+.produce_page_description_text {
+  max-width: 1280px;
+  flex-direction: column;
+  width: 95%;
+  display: flex;
+  margin-top: 50px;
+  align-items: start;
+  justify-content: center;
+}
+.produce_page_description_text p {
+  color: #fff;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  font-family: "Scada", sans-serif;
+}
+.produce_page_description_text a {
+  width: 300px;
+  height: 70px;
+  margin-top: 50px;
+  border-radius: 13px;
+  background: #2e2f8c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  border: none;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.produce_page_description_text2 a {
+  width: 300px;
+  height: 70px;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  background: #2e2f8c;
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  border: none;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.produce_page_description_text2 {
+  width: 95%;
+  margin-top: 50px;
+  display: none;
+  max-width: 1280px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.produce_page_description_text2 ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 200px;
+}
+
+.produce_page_description_text2 ul li {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.produce_page_description_text2 ul li span {
+  color: #fff;
+  font-family: "Scada", sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.dropdown-menu2 {
+  background-color: #00000000 !important;
+}
+.dropdown-menu2 li {
+  width: 250px;
+  height: 62px;
+  gap: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #fff;
+}
+.dropdown-menu2 li label {
+  color: #fff;
+  text-align: center;
+  font-family: "Scada", sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/*  */
+
+.checkbox-wrapper {
+  --borderColor: #fff;
+  --chekboxColor: #ff0000;
+  --borderWidth: 0.1em;
+  --borderWidth2: 1px;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  vertical-align: middle;
+  background: transparent;
+  font-size: 35px;
+  display: inline-block;
+  border: var(--borderWidth2) solid var(--borderColor);
+  width: 23px;
+  aspect-ratio: 1;
+  position: relative;
+}
+
+.checkbox-wrapper input[type="checkbox"]:before,
+.checkbox-wrapper input[type="checkbox"]:after {
+  content: "";
+  position: absolute;
+  background: var(--chekboxColor);
+  width: calc(var(--borderWidth) * 3);
+  height: var(--borderWidth);
+  top: 50%;
+  left: 10%;
+  transform-origin: left center;
+}
+
+.checkbox-wrapper input[type="checkbox"]:before {
+  transform: rotate(45deg)
+    translate(calc(var(--borderWidth) / -2), calc(var(--borderWidth) / -2))
+    scaleX(0);
+  transition: transform 200ms ease-in 200ms;
+}
+
+.checkbox-wrapper input[type="checkbox"]:after {
+  width: calc(var(--borderWidth) * 5);
+  transform: rotate(-45deg) translateY(calc(var(--borderWidth) * 2)) scaleX(0);
+  transform-origin: left center;
+  transition: transform 200ms ease-in;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked:before {
+  transform: rotate(45deg)
+    translate(calc(var(--borderWidth) / -2), calc(var(--borderWidth) / -2))
+    scaleX(1);
+  transition: transform 200ms ease-in;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked:after {
+  width: calc(var(--borderWidth) * 5);
+  transform: rotate(-45deg) translateY(calc(var(--borderWidth) * 2)) scaleX(1);
+  transition: transform 200ms ease-out 200ms;
+}
+
+.checkbox-wrapper input[type="checkbox"]:focus {
+  outline: calc(var(--borderWidth) / 2) dotted rgba(0, 0, 0, 0.25);
+}
+
+.dropdown,
+.dropend,
+.dropstart,
+.dropup {
+  flex-direction: column;
+}
+
+.dropdown-menu2 {
+  position: relative !important;
+  margin-top: 45px !important;
+  margin-bottom: 50px !important;
+  transform: none !important;
+}
+
+#rangeValue {
+  display: inline-block;
+  width: 60px;
+  text-align: center;
+}
+#rangeInput {
+  --slider-color: red;
+}
+
+#rangeInput::-webkit-slider-thumb {
+  background-color: var(--slider-color);
+}
+
+#rangeInput::-moz-range-thumb {
+  background-color: var(--slider-color);
+}
+
+#rangeInput::-ms-thumb {
+  background-color: var(--slider-color);
+}
+@media (max-width: 400px) {
+  .navbar_down input {
+    padding-left: 14px;
+  }
+  .navbar_down_inp img {
+    width: 8%;
+    right: 15px;
+  }
+  .navbar_down {
+    width: 100%;
+    background-color: #000;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+  }
+  .navbar_phone {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #212529;
+  }
+}
+.shopandpay_content_flex_box {
+  position: absolute;
+  top: -140px;
+  left: 0px;
+}
+.shopandpay_content_flex_Black {
+  position: absolute;
+  right: 60px;
+}
+.shopandpay_content_flex_sel {
+  position: absolute;
+  bottom: 418px;
+  left: 296px;
+}
+.shopandpay_content_flex_closebox {
+  position: absolute;
+
+  top: 228px;
+  right: 227px;
+}
+.shopandpay_content_flex_Black1 {
+  bottom: -50px;
+  position: absolute;
+}
+.shopandpay_content_flex_box4 {
+  position: absolute;
+  top: 358px;
+  right: 277px;
+}
+.shopandpay_content_flex_moneybox {
+  position: absolute;
+  bottom: -40px;
+  left: 20px;
+}
+.shopandpay_content_flex_savdo {
+  position: absolute;
+  top: 200px;
+  right: 200px;
+}
+.shopandpay_content_flex_karta {
+  bottom: 0px;
+  left: -20px;
+  position: absolute;
+}
+
+/* swiper */
+
+.mySwiper2 {
+  display: none;
+}
+.mySwiper3 {
+  display: none;
+}
+.mySwiper4 {
+  display: none;
+}
+@media (max-width: 1200px) {
+  .mySwiper {
+    display: none;
+  }
+  .mySwiper2 {
+    display: flex;
+  }
+}
+@media (max-width: 920px) {
+  .mySwiper2 {
+    display: none;
+  }
+  swiper-slide h4 {
+    padding-right: 20px;
+    width: 100% !important;
+  }
+  .mySwiper3 {
+    display: flex;
+  }
+}
+@media (max-width: 600px) {
+  .mySwiper3 {
+    display: none;
+  }
+
+  .mySwiper4 {
+    display: flex;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .mySwiper4 h3 {
+    font-size: 25px;
+  }
+  swiper-slide h4 {
+    width: 100%;
+  }
+  swiper-slide {
+    width: 300px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    padding-top: 37px;
+    padding-left: 25px;
+    padding-right: 25px;
+    flex-direction: column;
+
+    max-height: 400px;
+    padding-bottom: 30px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    backdrop-filter: blur(9px);
+    background: #2125293f;
+    position: relative;
+    z-index: -1;
+  }
+}
+
+.btn-secondary::after {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto;
+  content: "";
+  background-image: url(../img/top.svg);
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  transition: transform 0.2s ease-in-out;
+}
+.btn-secondary:not(.collapsed)::after {
+  background-image: url(../img/top.svg);
+  transform: rotate(-180deg);
+}
+
+/* range inp */
+
+.range {
+  width: 100%;
+
+  border-radius: 10px;
+  height: 80px;
+  padding: 0 30px 0 30px;
+}
+.range .sliderValue {
+  position: relative;
+  width: 100%;
+}
+.range .sliderValue span {
+  position: absolute;
+  height: 45px;
+  width: 45px;
+
+  color: #fff;
+  font-weight: 500;
+  top: -40px;
+  transform: translateX(-50%) scale(0);
+  line-height: 55px;
+  z-index: 2;
+}
+.range .sliderValue span.show {
+  transform: translateX(-50%) scale(1);
+}
+.range .sliderValue span::after {
+  position: absolute;
+  left: 50%;
+  height: 45px;
+  width: 45px;
+  background-color: #f00;
+  content: "";
+  transform: translateX(-50%) rotate(45deg);
+  border: 3px solid #fff;
+  z-index: -1;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+.range .field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.range .field .value {
+  position: absolute;
+  font-style: 18px;
+  font-weight: 600;
+  color: aqua;
+}
+.range .field .value.left {
+  left: -22px;
+}
+.range .field .value.right {
+  right: -43px;
+}
+.range .field input {
+  -webkit-appearance: none;
+  height: 3px;
+  width: 100%;
+  background-color: #f00;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+.range .field input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.range .field input::-moz-range-progress {
+  background-color: #f00;
+}
+
+.filterkotalog_button_fiter {
+  display: none;
+}
+.filterkotalog_filter_btn {
+  display: none;
+}
+@media (max-width: 1150px) {
+  .filterkotalog_filter {
+    position: absolute;
+    top: -5000px;
+    transition: 0.4s;
+    width: 100%;
+    z-index: 9999;
+  }
+  .filterkotalog {
+    height: auto;
+    padding-bottom: 50px;
+  }
+  .filterkotalog_flex {
+    flex-direction: column;
+    position: relative;
+  }
+  .filterkotalog_cards {
+    padding-top: 50px;
+  }
+  .filterkotalog_button_fiter {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  .filterkotalog_button_fiter button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border-radius: 10px;
+    background: #2e2f8c;
+  }
+  .filterkotalog_filter_btn {
+    width: 100%;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .filterkotalog_filter_btn button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border-radius: 10px;
+    background: #2e2f8c;
+  }
+  .contact_page {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 70px;
+    flex-direction: column;
+    padding-bottom: 70px;
+    gap: 167px;
+    background-color: #000;
+  }
+  .contact_page_about {
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+  .contact_page_about_phone {
+    justify-content: center;
+  }
+  .contact_page_post {
+    width: 90%;
+    text-align: center;
+  }
+  .contact_page_post input {
+    width: 100%;
+  }
+  .text_inp {
+    width: 100%;
+  }
+}
+@media (max-width: 1020px) {
+  .header_main_flex {
+    padding-left: 50px;
+  }
+  .header_main_flex h1 {
+    font-size: 8.125vw;
+  }
+  .product_page_description_menu {
+    flex-direction: column;
+    gap: 50px;
+    padding: 0 15px;
+  }
+  .product_page_description_menu_title {
+    width: 100%;
+    justify-content: left;
+  }
+  .product_page_description_menu_title2 {
+    justify-content: left;
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .filterkotalog_cards {
+    align-items: center;
+  }
+  .main_left a{
+    width: 200px !important;
+    height: 53px !important;
+    font-size: 13px !important;
+  }
+  .how_weare_working a{
+    width: 200px !important;
+    height: 53px !important;
+    font-size: 13px !important;
+  }
+  .about_company_card a{
+    width: 200px !important;
+    height: 53px !important;
+    font-size: 13px !important;
+  }
+  .produce_page_description_text a {
+    width: 200px !important;
+    height: 53px !important;
+    font-size: 13px !important;
+  }
+  .produce_page_description_text2 a {
+    width: 200px !important;
+    height: 53px !important;
+    font-size: 13px !important;
+  }
+  .product_page_description_menu_title img {
+    width: 30px;
+  }
+  .product_page_description_menu_title2 img {
+    width: 30px;
+  }
+  .product_page_description_menu {
+    gap: 15px;
+  }
+  .product_page_description_menu_title {
+    padding-bottom: 10px;
+    gap: 20px;
+  }
+  .product_page_description_menu_title2 {
+    gap: 20px;
+    padding-bottom: 10px;
+  }
+  .product_page_description_menu_title2 {
+    padding-bottom: 20px !important;
+  }
+  .filterkotalog_card {
+    width: 300px;
+  }
+}
+@media (max-width: 650px) {
+  .contact_page_about_phone {
+    flex-direction: column;
+  }
+  .contact_page_about_location_text a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (min-width: 320px) {
+  .navbar_down input {
+    padding-right: 65px !important;
+  }
+}
+@media (hover: hover) {
+  .navbar_menu a:hover {
+    transition: 0.7s;
+    color: #1434cb !important;
+    text-decoration-line: underline;
+  }
+  .allFooter_div_ahref:hover {
+    transition: 0.7s;
+    color: #1434cb !important;
+    text-decoration-line: underline;
+  }
+  .allFooter_address_div_p:hover {
+    transition: 0.7s;
+    color: #1434cb !important;
+    text-decoration-line: underline;
+  }
+  .main_left a:hover {
+    color: #fff;
+    background: #000136;
+    text-decoration-line: underline;
+    transition: 0.7s;
+  }
+  .contact_page_post button:hover {
+    color: #fff;
+    background: #000136;
+    text-decoration-line: underline;
+    transition: 0.7s;
+  }
+  .brendabout_btn a:hover {
+    color: #fff;
+    background: #000136;
+    text-decoration-line: underline;
+    transition: 0.7s;
+  }
+  .product_page_about_title a:hover {
+    color: #fff;
+    background: #000136;
+    text-decoration-line: underline;
+    transition: 0.7s;
+  }
+  .produce_page_description_text2 a:hover {
+    color: #fff;
+    background: #000136;
+    text-decoration-line: underline;
+    transition: 0.7s;
+  }
+  .produce_page_description_text a:hover {
+    color: #fff;
+    background: #000136;
+    text-decoration-line: underline;
+    transition: 0.7s;
+  }
+  .manufacturers_speak a:hover {
+    color: #fff;
+    background: #000136;
+    text-decoration-line: underline;
+    transition: 0.7s;
+  }
+  .kotalog_card a:hover {
+    color: #fff;
+    background: #000136;
+    text-decoration-line: underline;
+    transition: 0.7s;
+  }
+  .contact_form_flex button:hover {
+    color: #fff;
+    background: #000136;
+    text-decoration-line: underline;
+    transition: 0.7s;
+  }
+  .contact_page_about a h3:hover {
+    transition: 0.7s;
+    color: #1434cb !important;
+    text-decoration-line: underline;
+  }
+  .navbar_top_menu_li a:hover {
+    transition: 0.7s;
+    color: #1434cb !important;
+    text-decoration-line: underline;
+  }
+  .red_border:hover {
+    text-decoration-line: underline;
+    transition: 0.7s;
+    background: #a60000;
+  }
+  .navbar_logo a:hover {
+    transition: 0.7s;
+    opacity: 0.5;
+  }
+  .navbar_icon a:hover {
+    transition: 0.7s;
+    opacity: 0.5;
+  }
+}
+@media (max-width: 1320px) {
+  .allFooter_div_block_four {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+@media (max-width: 550px) {
+  .manufacturers_speak {
+    align-items: center;
+    padding-left: 0px;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .shopandpay_content_flex p {
+    font-size: 18px;
+  }
+  .manufacturers_speak a{
+    width: 200px !important;
+    height: 53px !important;
+    font-size: 13px !important;
+  }
+  .brendabout_btn a{
+    width: 200px !important;
+    height: 53px !important;
+    font-size: 13px !important;
+  }
+  .shopandpay_content_flex_box {
+    position: absolute;
+    top: -140px;
+    left: 0px;
+    width: 271px;
+  }
+  .brendabout h1 {
+    font-size: 10vw !important;
+  }
+  .shopandpay_content_flex_box4 {
+    position: absolute;
+    top: 94px;
+    right: 28px;
+  }
+  .shopandpay_content_flex_closebox {
+    position: absolute;
+    top: 228px;
+    right: 21px;
+  }
+  .shopandpay_content_flex_savdo {
+    display: none;
+  }
+  .main_left h2 {
+    font-size: 25px;
+  }
+  .shopandpay_content_flex ul li {
+    font-size: 18px;
+  }
+  .shopandpay h2 {
+    font-size: 35px;
+  }
+  .brendabout_title p {
+    font-size: 18px;
+  }
+  .produce_page_description_text2 ul li {
+    font-size: 18px;
+  }
+  .produce_page_description_text p {
+    font-size: 18px;
+  }
+  .contact_page_post h6 {
+    color: #fff;
+
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .shopandpay h2 {
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .brendabout h1 {
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .product_page_about_title h1 {
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  h3 {
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .accordion-body {
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .produce_page_description_text2 ul li span {
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .dropdown-menu2 li label {
+    color: #fff;
+    text-align: center;
+    font-family: "Scada", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .navbar_menu a {
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    text-decoration: none;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .allFooter_div_ahref {
+    text-decoration: none;
+    border-bottom: 0;
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .allFooter_div_block_four_p {
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .filterkotalog_card_title h2 {
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 22px !important;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .filterkotalog_cards_nav_flex p {
+    color: #fff;
+    font-family: "Scada", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    cursor: pointer;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
+@media (max-width: 395px) {
+  .accordion-button img {
+    width: 40px;
+  }
+  .accordion-button {
+    font-size: 19px !important;
+    gap: 10px !important;
+  }
+  .about_company_card {
+    height: 395px;
+  }
+  swiper-slide h4 {
+    font-size: 19px;
+    margin-top: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .shopandpay_content_flex_sel {
+    left: 0px;
+    bottom: 40px;
+  }
+}
+
+.table_max {
+  width: 85%;
+  margin: auto;
+  /* background: #fff; */
+  margin-top: 20px;
+}
+
+.texts {
+  width: 20%;
+}
+.texts_max {
+  width: 80%;
+}
+
+.texts p {
+  color: white;
+  font-size: 20px;
+  padding-bottom: 40px;
+  border: 1px solid white;
+  font-family: "Scada", sans-serif;
+  font-size: 17px;
+  padding-top: 5px;
+  padding-left: 5px;
+  /* padding: 2px; */
+}
+
+.table_max2 {
+  width: 100%;
+  display: flex;
+}
+
+.texts_max p {
+  font-family: "Scada", sans-serif;
+
+  font-size: 17px;
+  border: 1px solid white;
+  padding-bottom: 40px;
+  color: white;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
+@media (max-width: 1155px) {
+  .texts {
+    width: 30%;
+  }
+  .texts_max {
+    width: 85%;
+  }
+}
+
+@media (max-width: 740px) {
+  .table_max2 {
+    width: 1000px;
+  }
+  .produce_page_description_text2 {
+    align-items: start;
+  }
+  .table_max {
+    overflow: hidden;
+    overflow-x: scroll !important;
+  }
+}
+
+.brendabout_bgimg img {
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  width: 100%;
+}
+@media (max-width: 740px) {
+  .brendabout_bgimg img {
+    position: absolute;
+    top: 80%;
+    left: 0px;
+    width: 100%;
+  }
+}
+
+.contact_page_about_phone_text{
+  width: 100% !important;
+}
