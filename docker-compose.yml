@@ -1,0 +1,4 @@
+services:
+  web:
+    build: .
+    image: chamber6821/kosox-web
