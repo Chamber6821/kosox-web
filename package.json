@@ -13,6 +13,7 @@
   },
   "scripts": {
     "localDeploy": "yarn build && docker compose build",
+    "deploy": "yarn localDeploy && docker compose push",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
