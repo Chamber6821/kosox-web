@@ -1,3 +1,5 @@
+import Card from './Card'
+
 export default function ({ params: { name } }) {
   return (
     <main>
@@ -156,96 +158,12 @@ export default function ({ params: { name } }) {
             <button onclick='filterop()'>Фильтр</button>
           </div>
           <div className='filterkotalog_cards'>
-            <a href=''>
-              <div className='filterkotalog_card'>
-                <div className='filterkotalog_card_img'>
-                  <div className='filterkotalog_card_img_bg' />
-                  <img
-                    src='./img/Электромагнитные_муфты_(изображени_для_товарной_категории)1.png'
-                    alt=''
-                  />
-                </div>
-                <div className='filterkotalog_card_title'>
-                  <h2>Ареометр для антифриза FFH</h2>
-                  <img src='./img/logo-150x67-12.png' alt='' />
-                </div>
-              </div>
-            </a>
-            <a href=''>
-              <div className='filterkotalog_card'>
-                <div className='filterkotalog_card_img'>
-                  <div className='filterkotalog_card_img_bg' />
-                  <img
-                    src='./img/Электромагнитные_муфты_(изображени_для_товарной_категории)1.png'
-                    alt=''
-                  />
-                </div>
-                <div className='filterkotalog_card_title'>
-                  <h2>Ареометр для антифриза FFH</h2>
-                  <img src='./img/logo-150x67-12.png' alt='' />
-                </div>
-              </div>
-            </a>
-            <a href=''>
-              <div className='filterkotalog_card'>
-                <div className='filterkotalog_card_img'>
-                  <div className='filterkotalog_card_img_bg' />
-                  <img
-                    src='./img/Электромагнитные_муфты_(изображени_для_товарной_категории)1.png'
-                    alt=''
-                  />
-                </div>
-                <div className='filterkotalog_card_title'>
-                  <h2>Ареометр для антифриза FFH</h2>
-                  <img src='./img/logo-150x67-12.png' alt='' />
-                </div>
-              </div>
-            </a>
-            <a href=''>
-              <div className='filterkotalog_card'>
-                <div className='filterkotalog_card_img'>
-                  <div className='filterkotalog_card_img_bg' />
-                  <img
-                    src='./img/Электромагнитные_муфты_(изображени_для_товарной_категории)1.png'
-                    alt=''
-                  />
-                </div>
-                <div className='filterkotalog_card_title'>
-                  <h2>Ареометр для антифриза FFH</h2>
-                  <img src='./img/logo-150x67-12.png' alt='' />
-                </div>
-              </div>
-            </a>
-            <a href=''>
-              <div className='filterkotalog_card'>
-                <div className='filterkotalog_card_img'>
-                  <div className='filterkotalog_card_img_bg' />
-                  <img
-                    src='./img/Электромагнитные_муфты_(изображени_для_товарной_категории)1.png'
-                    alt=''
-                  />
-                </div>
-                <div className='filterkotalog_card_title'>
-                  <h2>Ареометр для антифриза FFH</h2>
-                  <img src='./img/logo-150x67-12.png' alt='' />
-                </div>
-              </div>
-            </a>
-            <a href=''>
-              <div className='filterkotalog_card'>
-                <div className='filterkotalog_card_img'>
-                  <div className='filterkotalog_card_img_bg' />
-                  <img
-                    src='./img/Электромагнитные_муфты_(изображени_для_товарной_категории)1.png'
-                    alt=''
-                  />
-                </div>
-                <div className='filterkotalog_card_title'>
-                  <h2>Ареометр для антифриза FFH</h2>
-                  <img src='./img/logo-150x67-12.png' alt='' />
-                </div>
-              </div>
-            </a>
+            <Card title='Ареометр для антифриза FFH' page='' />
+            <Card title='Ареометр для антифриза FFH' page='' />
+            <Card title='Ареометр для антифриза FFH' page='' />
+            <Card title='Ареометр для антифриза FFH' page='' />
+            <Card title='Ареометр для антифриза FFH' page='' />
+            <Card title='Ареометр для антифриза FFH' page='' />
             <div className='filterkotalog_cards_nav'>
               <div className='filterkotalog_cards_nav_flex'>
                 <p>1</p>

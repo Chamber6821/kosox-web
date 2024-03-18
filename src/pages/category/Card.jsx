@@ -1,0 +1,23 @@
+import { Link } from 'wouter'
+
+export default function ({
+  image = '/img/Электромагнитные_муфты_(изображени_для_товарной_категории)1.png',
+  brandImage = '/img/logo-150x67-12.png',
+  title,
+  page
+}) {
+  return (
+    <Link to={page}>
+      <div className='filterkotalog_card'>
+        <div className='filterkotalog_card_img'>
+          <div className='filterkotalog_card_img_bg' />
+          <img src={image} />
+        </div>
+        <div className='filterkotalog_card_title'>
+          <h2>{title}</h2>
+          <img src={brandImage} />
+        </div>
+      </div>
+    </Link>
+  )
+}
