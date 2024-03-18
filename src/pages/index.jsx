@@ -1,6 +1,6 @@
 import About from './About'
 import AboutManufacturer from './AboutManufacturer'
-import Catalog from './Catalog'
+import Catalog from './catalog'
 import Category from './Category'
 import Contacts from './Contacts'
 import DeliveryAndPayment from './DeliveryAndPayment'
