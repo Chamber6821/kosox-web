@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Route, Switch } from 'wouter'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import {
@@ -16,21 +16,21 @@ import {
 
 export default function () {
   return (
-    <BrowserRouter>
+    <>
       <Header />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/about-manufacturer' element={<AboutManufacturer />} />
-        <Route path='/catalog' element={<Catalog />} />
-        <Route path='/category' element={<Category />} />
-        <Route path='/contacts' element={<Contacts />} />
-        <Route path='/delivery-and-payment' element={<DeliveryAndPayment />} />
-        <Route path='/faq' element={<Faq />} />
-        <Route path='/manufacturers' element={<Manufacturers />} />
-        <Route path='/product' element={<Product />} />
-      </Routes>
+      <Switch>
+        <Route path='/' component={Home} />
+        <Route path='/about' component={About} />
+        <Route path='/about-manufacturer' component={AboutManufacturer} />
+        <Route path='/catalog' component={Catalog} />
+        <Route path='/category' component={Category} />
+        <Route path='/contacts' component={Contacts} />
+        <Route path='/delivery-and-payment' component={DeliveryAndPayment} />
+        <Route path='/faq' component={Faq} />
+        <Route path='/manufacturers' component={Manufacturers} />
+        <Route path='/product' component={Product} />
+      </Switch>
       <Footer />
-    </BrowserRouter>
+    </>
   )
 }
