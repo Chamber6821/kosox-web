@@ -1,3 +1,5 @@
+import Card from './Card'
+
 export default function () {
   return (
     <main>
@@ -15,46 +17,10 @@ export default function () {
       </div>
       <div className='kotalog'>
         <div className='kotalog_flex'>
-          <div
-            style={{
-              backgroundImage: 'url("./img/car-repair-garage 1.png")'
-            }}
-            className='kotalog_card'
-          >
-            <div className='kotalog_card_bg' />
-            <h3>Промышленное снабжение</h3>
-            <a href=''>ТОВАРЫ</a>
-          </div>
-          <div
-            style={{
-              backgroundImage: 'url("./img/car-repair-garage 1.png")'
-            }}
-            className='kotalog_card'
-          >
-            <div className='kotalog_card_bg' />
-            <h3>Промышленное снабжение</h3>
-            <a href=''>ТОВАРЫ</a>
-          </div>
-          <div
-            style={{
-              backgroundImage: 'url("./img/car-repair-garage 1.png")'
-            }}
-            className='kotalog_card'
-          >
-            <div className='kotalog_card_bg' />
-            <h3>Промышленное снабжение</h3>
-            <a href=''>ТОВАРЫ</a>
-          </div>
-          <div
-            style={{
-              backgroundImage: 'url("./img/car-repair-garage 1.png")'
-            }}
-            className='kotalog_card'
-          >
-            <div className='kotalog_card_bg' />
-            <h3>Промышленное снабжение</h3>
-            <a href=''>ТОВАРЫ</a>
-          </div>
+          <Card title='Промышленное снабжение' page='' />
+          <Card title='Промышленное снабжение' page='' />
+          <Card title='Промышленное снабжение' page='' />
+          <Card title='Промышленное снабжение' page='' />
         </div>
       </div>
       <div
