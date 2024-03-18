@@ -23,7 +23,7 @@ export default function () {
         <Route path='/about' component={About} />
         <Route path='/about-manufacturer' component={AboutManufacturer} />
         <Route path='/catalog' component={Catalog} />
-        <Route path='/category' component={Category} />
+        <Route path='/category/:name' component={Category} />
         <Route path='/contacts' component={Contacts} />
         <Route path='/delivery-and-payment' component={DeliveryAndPayment} />
         <Route path='/faq' component={Faq} />

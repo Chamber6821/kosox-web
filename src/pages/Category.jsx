@@ -1,4 +1,4 @@
-export default function () {
+export default function ({ params: { name } }) {
   return (
     <main>
       <div
@@ -12,7 +12,7 @@ export default function () {
         <div className='header_main_flex'>
           <h1>Каталог</h1>
           <h1>/</h1>
-          <h1>Ареометры</h1>
+          <h1>{name}</h1>
         </div>
       </div>
       <div className='filterkotalog'>
