@@ -1,67 +1,69 @@
+import { Link } from 'react-router-dom'
+
 export default function () {
   return (
     <header className='header'>
       <nav className='navbar'>
         <div className='navbar_logo'>
-          <a href='/'>
+          <Link to='/'>
             <div className='logo'>
               <strong>KOSOX</strong>
             </div>
-          </a>
+          </Link>
         </div>
         <div className='navbar_menu'>
           <a href='mailto:'>zakaz@mgb-bearings.ru</a>
         </div>
         <div className='navbar_icon'>
-          <a href='#'>
+          <Link to='/'>
             <img
               src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/whatsapp.svg'
               alt=''
             />
-          </a>
-          <a href='#'>
+          </Link>
+          <Link to='/'>
             <img
               src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/viber.svg'
               alt=''
             />
-          </a>
-          <a href='#'>
+          </Link>
+          <Link to='/'>
             <img
               src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/telegram.svg'
               alt=''
             />
-          </a>
+          </Link>
         </div>
       </nav>
       <nav className='navbar_top'>
         <ul className='navbar_top_menu'>
           <li className='navbar_top_menu_li'>
-            <a href='/'>Главная</a>
+            <Link to='/'>Главная</Link>
           </li>
           <li className='navbar_top_menu_li'>
-            <a href=''>О компании</a>
+            <Link to='/about'>О компании</Link>
           </li>
           <li className='navbar_top_menu_li'>
-            <a href='./shippingandpayment.html'>Доставка и Оплата</a>
+            <Link to='/delivery-and-payment'>Доставка и Оплата</Link>
           </li>
           <li className='navbar_top_menu_li'>
-            <a href='./manufacturers.html'>Производители</a>
+            <Link to='/manufacturers'>Производители</Link>
           </li>
           <li className='navbar_top_menu_li'>
-            <a href='./faq.html'>FAQ</a>
+            <Link to='/faq'>FAQ</Link>
           </li>
           <li className='navbar_top_menu_li'>
-            <a href='./contact.html'>Контакты</a>
+            <Link to='/contacts'>Контакты</Link>
           </li>
         </ul>
       </nav>
       <div className='navbar_phone'>
         <div className='navbar_phone_logo'>
-          <a href='/'>
+          <Link to='/'>
             <div className='logo'>
               <strong>KOSOX</strong>
             </div>
-          </a>
+          </Link>
         </div>
         <div className='navbar_phone_menu'>
           <i onclick='menuop()' className='bx bx-menu-alt-right' />
@@ -70,22 +72,22 @@ export default function () {
           <i onclick='menucl()' className='bx bxs-right-arrow-alt' />
           <ul className='navbar_top_menu'>
             <li className='navbar_top_menu_li'>
-              <a href=''>Доставка и оплата</a>
+              <Link to='/delivery-and-payment'>Доставка и оплата</Link>
             </li>
             <li className='navbar_top_menu_li'>
-              <a href=''>О компании</a>
+              <Link to='/about'>О компании</Link>
             </li>
             <li className='navbar_top_menu_li'>
-              <a href=''>Контакты</a>
+              <Link to='/contacts'>Контакты</Link>
             </li>
             <li className='navbar_top_menu_li'>
-              <a href=''>FAQ</a>
+              <Link to='/faq'>FAQ</Link>
             </li>
             <li className='navbar_top_menu_li'>
-              <a href=''>Главная</a>
+              <Link to='/'>Главная</Link>
             </li>
             <li className='navbar_top_menu_li'>
-              <a href=''>Партнерам</a>
+              <Link to='/'>Партнерам</Link>
             </li>
           </ul>
           <div className='navbar_phone_right_menu_mail'>
@@ -114,12 +116,12 @@ export default function () {
         </div>
       </div>
       <nav className='navbar_down'>
-        <a href='' className='red_border'>
+        <Link to='/catalog' className='red_border'>
           КАТАЛОГ ТОВАРОВ
-        </a>
+        </Link>
         <div className='navbar_down_inp'>
           <input placeholder='Введите наименование' type='text' />
-          <img src='./img/find.svg' alt='' />
+          <img src='/img/find.svg' alt='' />
         </div>
       </nav>
     </header>
