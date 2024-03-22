@@ -1,6 +1,84 @@
+import { useEffect, useState } from 'react'
 import Card from './Card'
+import { Link, useSearch } from 'wouter'
 
 export default function ({ params: { name } }) {
+  const [engines, setEngines] = useState([])
+  const [pages, setPages] = useState([1])
+  const page = +new URLSearchParams(useSearch()).get('page') || 1
+
+  const fetchEngines = async () => {
+    const response = await fetch(
+      'http://localhost/api/engines?' +
+        new URLSearchParams({
+          size: 6,
+          page: page - 1
+        }),
+      {}
+    )
+    const data = await response.json()
+    setEngines(data._embedded.engines)
+    setPages([...Array(data.page.totalPages).keys()].map(x => x + 1))
+  }
+
+  useEffect(() => {
+    fetchEngines()
+  }, [page])
+
+  const PageLink = ({ innerClass, href, title }) => (
+    <Link to={href}>
+      <p className={innerClass}>{title}</p>
+    </Link>
+  )
+
+  const PageArrow = ({ page, title }) => (
+    <PageLink href={`?page=${page}`} title={title} />
+  )
+
+  const PageButton = ({ page: p }) => (
+    <PageLink
+      innerClass={p == page ? 'activa_nav red_border' : ''}
+      href={`?page=${p}`}
+      title={p}
+    />
+  )
+
+  const PageStub = ({ title }) => <p>{title}</p>
+
+  const buttons = pages => pages.map(x => <PageButton key={x} page={x} />)
+
+  const siblings = 2
+  const boundary = 1
+  const lastPage = Math.max(...pages)
+  const center = Math.min(
+    Math.max(1 + (siblings + boundary), page),
+    lastPage - (siblings + boundary)
+  )
+  const leftStub =
+    page - 1 - (siblings + boundary) <= 1 ? (
+      <PageButton key={boundary + 1} page={boundary + 1} />
+    ) : (
+      <PageStub key={boundary + 1} title='...' />
+    )
+  const rightStub =
+    lastPage - page - (siblings + boundary) <= 0 ? (
+      <PageButton key={lastPage - boundary} page={lastPage - boundary} />
+    ) : (
+      <PageStub key={lastPage - boundary} title='...' />
+    )
+  const pageButtons =
+    lastPage < 2 * (siblings + boundary + 1)
+      ? buttons(pages)
+      : [
+          ...buttons(pages.slice(0, boundary)),
+          leftStub,
+          ...buttons(pages.slice(center - siblings, center + siblings - 1)),
+          rightStub,
+          ...buttons(pages.slice(lastPage - boundary, lastPage))
+        ]
+
+  console.log({ center, edge: 2 * (siblings + boundary + 1) })
+
   return (
     <main>
       <div
@@ -158,18 +236,24 @@ export default function ({ params: { name } }) {
             <button onclick='filterop()'>Фильтр</button>
           </div>
           <div className='filterkotalog_cards'>
-            <Card title='Ареометр для антифриза FFH' page='' />
-            <Card title='Ареометр для антифриза FFH' page='' />
-            <Card title='Ареометр для антифриза FFH' page='' />
-            <Card title='Ареометр для антифриза FFH' page='' />
-            <Card title='Ареометр для антифриза FFH' page='' />
-            <Card title='Ареометр для антифриза FFH' page='' />
+            {engines.map(x => (
+              <Card
+                key={x._links.self.href}
+                title={x.title}
+                image={x.image}
+                brandImage={x.brand}
+                page=''
+              />
+            ))}
             <div className='filterkotalog_cards_nav'>
               <div className='filterkotalog_cards_nav_flex'>
-                <p>1</p>
+                <PageArrow page={Math.max(1, page - 1)} title='<' />
+                {pageButtons}
+                <PageArrow page={Math.min(lastPage, page + 1)} title='>' />
+                {/* <p>1</p>
                 <p>2</p>
-                <p className='activa_nav red_border'>3</p>
-                <img src='./img/top.svg' alt='' />
+                <p className='activa_nav red_border'>3</p> */}
+                <img src='/img/top.svg' alt='' />
               </div>
               <div className='filterkotalog_cards_nav_btn'>
                 <a href=''>Назад</a>
