@@ -17,10 +17,7 @@ export default function () {
       </div>
       <div className='kotalog'>
         <div className='kotalog_flex'>
-          <Card title='Промышленное снабжение' page='' />
-          <Card title='Промышленное снабжение' page='' />
-          <Card title='Промышленное снабжение' page='' />
-          <Card title='Промышленное снабжение' page='' />
+          <Card title='Двигатели' page='/category/Двигатели' />
         </div>
       </div>
       <div
