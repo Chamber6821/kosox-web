@@ -11,11 +11,21 @@ export default function ({
       <div className='filterkotalog_card'>
         <div className='filterkotalog_card_img'>
           <div className='filterkotalog_card_img_bg' />
-          <img src={image} />
+          <img
+            style={{ objectFit: 'cover', width: 'inherit', height: 'inherit' }}
+            src={image}
+          />
         </div>
         <div className='filterkotalog_card_title'>
           <h2>{title}</h2>
-          <img src={brandImage} />
+          <img
+            style={{
+              objectFit: 'cover',
+              maxWidth: '100px',
+              maxHeight: '100px'
+            }}
+            src={brandImage}
+          />
         </div>
       </div>
     </Link>
