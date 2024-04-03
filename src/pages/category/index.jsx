@@ -1,29 +1,18 @@
-import { useEffect, useState } from 'react'
 import Card from './Card'
 import { Link, useSearch } from 'wouter'
 
-export default function ({ params: { name } }) {
-  const [engines, setEngines] = useState([])
-  const [pages, setPages] = useState([1])
+export default function ({ api, params: { category } }) {
   const page = +new URLSearchParams(useSearch()).get('page') || 1
-
-  const fetchEngines = async () => {
-    const response = await fetch(
-      'http://localhost/api/engines?' +
-        new URLSearchParams({
-          size: 6,
-          page: page - 1
-        }),
-      {}
-    )
-    const data = await response.json()
-    setEngines(data._embedded.engines)
-    setPages([...Array(data.page.totalPages).keys()].map(x => x + 1))
-  }
-
-  useEffect(() => {
-    fetchEngines()
-  }, [page])
+  const categoryEntity = api.categories().withId(category)
+  const name = categoryEntity.name()
+  const products = categoryEntity.products(6)
+  const productsPage = products.page(page - 1)
+  const lastPage = products.totalPages()
+  const pages = [
+    ...Array(lastPage)
+      .keys()
+      .map(x => x + 1)
+  ]
 
   const PageLink = ({ innerClass, href, title }) => (
     <Link to={href}>
@@ -49,7 +38,6 @@ export default function ({ params: { name } }) {
 
   const siblings = 2
   const boundary = 1
-  const lastPage = Math.max(...pages)
   const center = Math.min(
     Math.max(1 + (siblings + boundary), page),
     lastPage - (siblings + boundary)
@@ -236,13 +224,13 @@ export default function ({ params: { name } }) {
             <button onclick='filterop()'>Фильтр</button>
           </div>
           <div className='filterkotalog_cards'>
-            {engines.map(x => (
+            {productsPage.array().map(x => (
               <Card
-                key={x._links.self.href}
-                title={x.title}
-                image={x.image}
-                brandImage={x.brand}
-                page=''
+                key={x.id()}
+                title={x.name()}
+                image={x.icon()}
+                brandImage={x.brand().icon()}
+                page={`/product/${x.id()}`}
               />
             ))}
             <div className='filterkotalog_cards_nav'>
@@ -250,10 +238,6 @@ export default function ({ params: { name } }) {
                 <PageArrow page={Math.max(1, page - 1)} title='<' />
                 {pageButtons}
                 <PageArrow page={Math.min(lastPage, page + 1)} title='>' />
-                {/* <p>1</p>
-                <p>2</p>
-                <p className='activa_nav red_border'>3</p> */}
-                <img src='/img/top.svg' alt='' />
               </div>
               <div className='filterkotalog_cards_nav_btn'>
                 <a href=''>Назад</a>

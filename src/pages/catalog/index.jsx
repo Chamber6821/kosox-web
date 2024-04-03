@@ -27,9 +27,7 @@ export default function Catalog ({ api, params: { superCategory } }) {
               title={x.name()}
               backgroundImage={x.icon()}
               page={
-                superCategory
-                  ? `/catalog/${superCategory}/${x.id()}`
-                  : `/catalog/${x.id()}`
+                superCategory ? `/category/${x.id()}` : `/catalog/${x.id()}`
               }
             />
           ))}

@@ -30,7 +30,9 @@ export default function () {
         <Route path='/catalog/:superCategory'>
           {params => <Catalog params={params} api={api} />}
         </Route>
-        <Route path='/catalog/:superCategory/:category' component={Category} />
+        <Route path='/category/:category'>
+          {params => <Category params={params} api={api} />}
+        </Route>
         <Route path='/contacts' component={Contacts} />
         <Route path='/delivery-and-payment' component={DeliveryAndPayment} />
         <Route path='/faq' component={Faq} />

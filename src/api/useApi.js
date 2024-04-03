@@ -2,8 +2,9 @@ import { useState } from 'react'
 
 export default function useApi(base) {
   const [state, setState] = useState({})
+  const idOf = (entry) => entry._links.self.href.match(/(\d+)$/)[1]
   const categoryFromJson = (json) => ({
-    id: () => json._links.self.href.match(/(\d+)$/)[1],
+    id: () => idOf(json),
     name: () => json.name,
     icon: () => json.iconUrl
   })
@@ -20,6 +21,32 @@ export default function useApi(base) {
     cachedSyncFetchApi(path)?._embedded?.[type] || []
 
   return {
+    categories: () => ({
+      withId: (id) => ({
+        name: () => cachedSyncFetchApi(`categories/${id}`)?.name || '',
+        products: (pageSize) => ({
+          page: (page) => ({
+            array: () =>
+              syncFetchList(
+                'products',
+                `products/search/findByCategoryId?category=${id}&page=${page}&size=${pageSize}`
+              ).map((x) => ({
+                id: () => idOf(x),
+                name: () => x.name,
+                icon: () => x.iconUrl,
+                brand: () => ({
+                  icon: () =>
+                    cachedSyncFetchApi(`products/${idOf(x)}/brand`)?.iconUrl
+                })
+              }))
+          }),
+          totalPages: () =>
+            cachedSyncFetchApi(
+              `products/search/findByCategoryId?category=${id}&size=${pageSize}`
+            )?.page?.totalPages || 0
+        })
+      })
+    }),
     superCategories: () => ({
       withId: (id) => ({
         categories: () => ({
