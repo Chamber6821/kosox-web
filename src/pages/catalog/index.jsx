@@ -1,6 +1,10 @@
 import Card from './Card'
 
-export default function () {
+export default function Catalog ({ api, params: { superCategory } }) {
+  const superCategories = api.superCategories()
+  const categories = superCategory
+    ? superCategories.withId(superCategory).categories()
+    : superCategories
   return (
     <main>
       <div
@@ -17,7 +21,18 @@ export default function () {
       </div>
       <div className='kotalog'>
         <div className='kotalog_flex'>
-          <Card title='Двигатели' page='/category/Двигатели' />
+          {categories.array().map(x => (
+            <Card
+              id={x.id()}
+              title={x.name()}
+              backgroundImage={x.icon()}
+              page={
+                superCategory
+                  ? `/catalog/${superCategory}/${x.id()}`
+                  : `/catalog/${x.id()}`
+              }
+            />
+          ))}
         </div>
       </div>
       <div

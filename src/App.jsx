@@ -13,8 +13,10 @@ import {
   Manufacturers,
   Product
 } from './pages'
+import useApi from './api/useApi'
 
 export default function () {
+  const api = useApi('http://localhost/api/')
   return (
     <>
       <Header />
@@ -22,8 +24,13 @@ export default function () {
         <Route path='/' component={Home} />
         <Route path='/about' component={About} />
         <Route path='/about-manufacturer' component={AboutManufacturer} />
-        <Route path='/catalog' component={Catalog} />
-        <Route path='/category/:name' component={Category} />
+        <Route path='/catalog'>
+          {params => <Catalog params={params} api={api} />}
+        </Route>
+        <Route path='/catalog/:superCategory'>
+          {params => <Catalog params={params} api={api} />}
+        </Route>
+        <Route path='/catalog/:superCategory/:category' component={Category} />
         <Route path='/contacts' component={Contacts} />
         <Route path='/delivery-and-payment' component={DeliveryAndPayment} />
         <Route path='/faq' component={Faq} />
