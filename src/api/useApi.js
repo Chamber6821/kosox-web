@@ -9,39 +9,30 @@ export default function useApi(base) {
   })
   const fetchJson = async (...a) => await (await fetch(...a)).json()
   const fetchApi = async (path) => await fetchJson(new URL(path, base))
-  const embedded = (json) => json._embedded
+  const cachedSyncFetchApi = (path) => {
+    if (!state[path])
+      (async () => {
+        setState({ ...state, [path]: await fetchApi(path) })
+      })()
+    return state[path]
+  }
+  const syncFetchList = (type, path) =>
+    cachedSyncFetchApi(path)?._embedded?.[type] || []
+
   return {
     superCategories: () => ({
       withId: (id) => ({
         categories: () => ({
-          array: () => {
-            if (!state?.superCategoryWithId?.[id])
-              (async () => {
-                setState({
-                  ...state,
-                  superCategoryWithId: {
-                    [id]: embedded(
-                      await fetchApi(`superCategories/${id}/categories`)
-                    ).categories.map(categoryFromJson)
-                  }
-                })
-              })()
-            return state?.superCategoryWithId?.[id] || []
-          }
+          array: () =>
+            syncFetchList('categories', `superCategories/${id}/categories`).map(
+              categoryFromJson
+            )
         })
       }),
-      array: () => {
-        if (!state?.superCategories)
-          (async () => {
-            setState({
-              ...state,
-              superCategories: embedded(
-                await fetchApi('superCategories')
-              ).superCategories.map(categoryFromJson)
-            })
-          })()
-        return state?.superCategories || []
-      }
+      array: () =>
+        syncFetchList('superCategories', 'superCategories').map(
+          categoryFromJson
+        )
     })
   }
 }
