@@ -1,16 +1,26 @@
-export default function () {
+export default function ({ api, params: { id } }) {
+  console.log('Start render')
+  const product = api.products().withId(id)
+  const brand = product.brand()
   return (
     <main>
       <div className='product_page content'>
         <div className='product_page_about '>
-          <div className='product_page_about_img'>
+          <div
+            className='product_page_about_img'
+            style={{ backgroundImage: `url(${product.icon()})` }}
+          >
             <div className='product_page_about_img_bg' />
           </div>
           <div className='product_page_about_title'>
-            <h1>Ареометр для антифриза FFH</h1>
+            <h1>{product.name()}</h1>
             <div className='product_page_about_title_fenom'>
-              <h3>Производитель :</h3>
-              <img src='./img/logo-150x67-11.png' alt='' />
+              <h3>Производитель:</h3>
+              {brand.icon() ? (
+                <img src={brand.icon()} />
+              ) : (
+                <h3>{brand.name()}</h3>
+              )}
             </div>
             <a href=''>Заказать</a>
           </div>
@@ -34,22 +44,7 @@ export default function () {
           </div>
         </div>
         <div className='produce_page_description_text content'>
-          <p>
-            В нашей компании Вы можете купить MGB — Бесшпоночная зажимная муфта
-            (втулка) BK71 150×200 оптом и в розницу, а так же другие
-            комплектующим, представленные в нашем каталоге. Тип KLDB, RCK71,
-            KTR200 относится к быстрозажимным типам. Их производят для установки
-            на вал электродвигателя особой плотности. Соединение при этом
-            безлюфтовое. Не требует применения особых инструментов. Монтаж
-            проводится за несколько минут. Простота использования заключается в
-            том, что втулки не образуют зазоров из-за отсутствия шлиц. Основным
-            элементом служат разрезные конусы. При стягивании крепежных
-            элементов они плотно стягиваются. Во время данного действия,
-            происходит радиальная деформация и внутреннее кольцо уменьшается.
-            Изделие создается из углеродистой стали, что обеспечивает ему
-            высокую прочность и долговечность. Втулки упрощают техническое
-            обслуживание всего механизма.
-          </p>
+          <p>{product.description()}</p>
           <a href=''>Заказать данный товар</a>
         </div>
         <div className='produce_page_description_text2'>

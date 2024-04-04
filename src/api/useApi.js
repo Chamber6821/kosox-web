@@ -35,6 +35,8 @@ export default function useApi(base) {
                 name: () => x.name,
                 icon: () => x.iconUrl,
                 brand: () => ({
+                  name: () =>
+                    cachedSyncFetchApi(`products/${idOf(x)}/brand`)?.name,
                   icon: () =>
                     cachedSyncFetchApi(`products/${idOf(x)}/brand`)?.iconUrl
                 })
@@ -60,6 +62,17 @@ export default function useApi(base) {
         syncFetchList('superCategories', 'superCategories').map(
           categoryFromJson
         )
+    }),
+    products: () => ({
+      withId: (id) => ({
+        name: () => cachedSyncFetchApi(`products/${id}`)?.name,
+        description: () => cachedSyncFetchApi(`products/${id}`)?.description,
+        icon: () => cachedSyncFetchApi(`products/${id}`)?.iconUrl,
+        brand: () => ({
+          name: () => cachedSyncFetchApi(`products/${id}/brand`)?.name,
+          icon: () => cachedSyncFetchApi(`products/${id}/brand`)?.iconUrl
+        })
+      })
     })
   }
 }

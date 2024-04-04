@@ -37,7 +37,9 @@ export default function () {
         <Route path='/delivery-and-payment' component={DeliveryAndPayment} />
         <Route path='/faq' component={Faq} />
         <Route path='/manufacturers' component={Manufacturers} />
-        <Route path='/product' component={Product} />
+        <Route path='/product/:id'>
+          {params => <Product params={params} api={api} />}
+        </Route>
       </Switch>
       <Footer />
     </>
