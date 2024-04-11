@@ -13,10 +13,11 @@ import {
   Manufacturers,
   Product
 } from './pages'
-import useApi from './api/useApi'
+import Api from './api/Api'
+import { useState } from 'react'
 
 export default function () {
-  const api = useApi('http://localhost/api/')
+  const [api] = useState(() => Api('http://localhost/api/'))
   return (
     <>
       <Header />

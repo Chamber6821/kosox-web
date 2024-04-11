@@ -1,55 +1,42 @@
+import { useEffect, useState } from 'react'
 import Card from './Card'
 import { Link, useSearch } from 'wouter'
 
-export default function ({ api, params: { category } }) {
-  const page = +new URLSearchParams(useSearch()).get('page') || 1
-  const categoryEntity = api.categories().withId(category)
-  const name = categoryEntity.name()
-  const products = categoryEntity.products(6)
-  const productsPage = products.page(page - 1)
-  const lastPage = products.totalPages()
+const PageButtons = ({ currentPage, lastPage, PageLink, PageStub }) => {
   const pages = [
     ...Array(lastPage)
       .keys()
       .map(x => x + 1)
   ]
 
-  const PageLink = ({ innerClass, href, title }) => (
-    <Link to={href}>
-      <p className={innerClass}>{title}</p>
-    </Link>
-  )
-
   const PageArrow = ({ page, title }) => (
     <PageLink href={`?page=${page}`} title={title} />
   )
 
-  const PageButton = ({ page: p }) => (
+  const PageButton = ({ page }) => (
     <PageLink
-      innerClass={p == page ? 'activa_nav red_border' : ''}
-      href={`?page=${p}`}
-      title={p}
+      innerClass={page == currentPage ? 'activa_nav red_border' : ''}
+      href={`?page=${page}`}
+      title={page}
     />
   )
-
-  const PageStub = ({ title }) => <p>{title}</p>
 
   const buttons = pages => pages.map(x => <PageButton key={x} page={x} />)
 
   const siblings = 2
   const boundary = 1
   const center = Math.min(
-    Math.max(1 + (siblings + boundary), page),
+    Math.max(1 + (siblings + boundary), currentPage),
     lastPage - (siblings + boundary)
   )
   const leftStub =
-    page - 1 - (siblings + boundary) <= 1 ? (
+    currentPage - 1 - (siblings + boundary) <= 1 ? (
       <PageButton key={boundary + 1} page={boundary + 1} />
     ) : (
       <PageStub key={boundary + 1} title='...' />
     )
   const rightStub =
-    lastPage - page - (siblings + boundary) <= 0 ? (
+    lastPage - currentPage - (siblings + boundary) <= 0 ? (
       <PageButton key={lastPage - boundary} page={lastPage - boundary} />
     ) : (
       <PageStub key={lastPage - boundary} title='...' />
@@ -65,7 +52,59 @@ export default function ({ api, params: { category } }) {
           ...buttons(pages.slice(lastPage - boundary, lastPage))
         ]
 
-  console.log({ center, edge: 2 * (siblings + boundary + 1) })
+  return (
+    <>
+      <PageArrow page={Math.max(1, currentPage - 1)} title='<' />
+      {pageButtons}
+      <PageArrow page={Math.min(lastPage, currentPage + 1)} title='>' />
+    </>
+  )
+}
+
+/**
+ * @typedef {Object} props
+ * @property {ReturnType<typeof import('../../api/Api').default>} api
+ */
+
+/**
+ *
+ * @param {props} props
+ * @returns
+ */
+export default function ({ api, params: { category } }) {
+  const page = +new URLSearchParams(useSearch()).get('page') || 1
+  const [{ categoryName = '', products = [], lastPage = 1 }, setContent] =
+    useState({})
+  console.log(categoryName)
+
+  useEffect(() => {
+    ;(async () => {
+      const entity = await (await api.categories()).withId(category)
+      const pages = await entity.products(6)
+      setContent({
+        categoryName: await entity.name(),
+        products: await Promise.all(
+          (
+            await (await pages.page(page)).array()
+          ).map(async x => ({
+            id: await x.id(),
+            name: await x.name(),
+            icon: await x.icon(),
+            brand_icon: await (await x.brand()).icon()
+          }))
+        ),
+        lastPage: await pages.totalPages()
+      })
+    })()
+  }, [page])
+
+  const PageLink = ({ innerClass, href, title }) => (
+    <Link to={href}>
+      <p className={innerClass}>{title}</p>
+    </Link>
+  )
+
+  const PageStub = ({ title }) => <p>{title}</p>
 
   return (
     <main>
@@ -80,7 +119,7 @@ export default function ({ api, params: { category } }) {
         <div className='header_main_flex'>
           <h1>Каталог</h1>
           <h1>/</h1>
-          <h1>{name}</h1>
+          <h1>{categoryName}</h1>
         </div>
       </div>
       <div className='filterkotalog'>
@@ -224,20 +263,23 @@ export default function ({ api, params: { category } }) {
             <button onclick='filterop()'>Фильтр</button>
           </div>
           <div className='filterkotalog_cards'>
-            {productsPage.array().map(x => (
+            {products.map(x => (
               <Card
-                key={x.id()}
-                title={x.name()}
-                image={x.icon()}
-                brandImage={x.brand().icon()}
-                page={`/product/${x.id()}`}
+                key={x.id}
+                title={x.name}
+                image={x.icon}
+                brandImage={x.brand_icon}
+                page={`/product/${x.id}`}
               />
             ))}
             <div className='filterkotalog_cards_nav'>
               <div className='filterkotalog_cards_nav_flex'>
-                <PageArrow page={Math.max(1, page - 1)} title='<' />
-                {pageButtons}
-                <PageArrow page={Math.min(lastPage, page + 1)} title='>' />
+                <PageButtons
+                  currentPage={page}
+                  lastPage={lastPage}
+                  PageLink={PageLink}
+                  PageStub={PageStub}
+                />
               </div>
               <div className='filterkotalog_cards_nav_btn'>
                 <a href=''>Назад</a>
