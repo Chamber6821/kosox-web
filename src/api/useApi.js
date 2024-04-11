@@ -1,13 +1,34 @@
 import { useState } from 'react'
 
+const idOf = (entry) => entry?._links?.self?.href?.match(/(\d+)$/)?.[1]
+
+const CachedBrand = (json) => ({
+  name: () => json?.name,
+  icon: () => json?.iconUrl
+})
+
+const CachedProduct = (json, brand) => ({
+  id: () => idOf(json),
+  name: () => json?.name,
+  description: () => json?.description,
+  icon: () => json?.iconUrl,
+  brand
+})
+
+const ProductWithId = (id, api) =>
+  CachedProduct(api(`products/${id}`), () =>
+    CachedBrand(api(`products/${id}/brand`))
+  )
+
+const CachedCategory = (json) => ({
+  id: () => idOf(json),
+  name: () => json?.name,
+  icon: () => json?.iconUrl
+})
+
 export default function useApi(base) {
   const [state, setState] = useState({})
   const idOf = (entry) => entry._links.self.href.match(/(\d+)$/)[1]
-  const categoryFromJson = (json) => ({
-    id: () => idOf(json),
-    name: () => json.name,
-    icon: () => json.iconUrl
-  })
   const fetchJson = async (...a) => await (await fetch(...a)).json()
   const fetchApi = async (path) => await fetchJson(new URL(path, base))
   const cachedSyncFetchApi = (path) => {
@@ -30,17 +51,9 @@ export default function useApi(base) {
               syncFetchList(
                 'products',
                 `products/search/findByCategoryId?category=${id}&page=${page}&size=${pageSize}`
-              ).map((x) => ({
-                id: () => idOf(x),
-                name: () => x.name,
-                icon: () => x.iconUrl,
-                brand: () => ({
-                  name: () =>
-                    cachedSyncFetchApi(`products/${idOf(x)}/brand`)?.name,
-                  icon: () =>
-                    cachedSyncFetchApi(`products/${idOf(x)}/brand`)?.iconUrl
-                })
-              }))
+              )
+                .map(idOf)
+                .map((id) => ProductWithId(id, cachedSyncFetchApi))
           }),
           totalPages: () =>
             cachedSyncFetchApi(
@@ -54,25 +67,15 @@ export default function useApi(base) {
         categories: () => ({
           array: () =>
             syncFetchList('categories', `superCategories/${id}/categories`).map(
-              categoryFromJson
+              CachedCategory
             )
         })
       }),
       array: () =>
-        syncFetchList('superCategories', 'superCategories').map(
-          categoryFromJson
-        )
+        syncFetchList('superCategories', 'superCategories').map(CachedCategory)
     }),
     products: () => ({
-      withId: (id) => ({
-        name: () => cachedSyncFetchApi(`products/${id}`)?.name,
-        description: () => cachedSyncFetchApi(`products/${id}`)?.description,
-        icon: () => cachedSyncFetchApi(`products/${id}`)?.iconUrl,
-        brand: () => ({
-          name: () => cachedSyncFetchApi(`products/${id}/brand`)?.name,
-          icon: () => cachedSyncFetchApi(`products/${id}/brand`)?.iconUrl
-        })
-      })
+      withId: (id) => ProductWithId(id, cachedSyncFetchApi)
     })
   }
 }
