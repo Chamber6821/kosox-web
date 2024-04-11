@@ -22,7 +22,12 @@ export default function ({ api, params: { id } }) {
         product: {
           icon: await product.icon(),
           name: await product.name(),
-          description: await product.description()
+          description: await product.description(),
+          parameters: await Promise.all(
+            (
+              await product.parameters()
+            ).map(async x => [await x.key(), await x.value()])
+          )
         },
         brand: {
           icon: await brand.icon(),
@@ -91,18 +96,12 @@ export default function ({ api, params: { id } }) {
         >
           <table>
             <tbody>
-              <tr>
-                <td>Длина L, мм.</td>
-                <td>405</td>
-              </tr>
-              <tr>
-                <td>Цена деления шкалы, кг/м3</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>Производитель</td>
-                <td>MGB</td>
-              </tr>
+              {product.parameters?.map(([key, val]) => (
+                <tr>
+                  <td>{key}</td>
+                  <td>{val}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
           <a href=''>Заказать данный товар</a>

@@ -1,4 +1,5 @@
-const idOf = (entry) => entry?._links?.self?.href?.match(/(\d+)$/)?.[1]
+const idOfUrl = (url) => `${url}`.match(/(\d+)$/)?.[1]
+const idOf = (entry) => idOfUrl(entry?._links?.self?.href)
 
 const CachedBrand = async (json) => ({
   name: async () => json.name,
@@ -11,6 +12,22 @@ const CachedProduct = async (json, brand) => ({
   description: async () => json?.description,
   icon: async () => json?.iconUrl,
   brand
+})
+
+const ProductWithParameters = async (product, api) => ({
+  ...product,
+  parameters: async () =>
+    await Promise.all(
+      (
+        await api(`products/${await product.id()}`)
+      ).parameters.map(async (x) => ({
+        key: async () =>
+          (
+            await api(`parameters/${idOfUrl(x._links.parameter.href)}`)
+          ).name,
+        value: async () => x.variant.value
+      }))
+    )
 })
 
 const ProductWithId = async (id, api) =>
@@ -47,7 +64,13 @@ export default function Api(base) {
                   )
                 )
                   .map(idOf)
-                  .map((id) => ProductWithId(id, get))
+                  .map(
+                    async (id) =>
+                      await ProductWithParameters(
+                        await ProductWithId(id, get),
+                        get
+                      )
+                  )
               )
           }),
           totalPages: async () =>
@@ -78,7 +101,8 @@ export default function Api(base) {
         )
     }),
     products: async () => ({
-      withId: async (id) => await ProductWithId(id, get)
+      withId: async (id) =>
+        await ProductWithParameters(await ProductWithId(id, get), get)
     })
   }
 }
