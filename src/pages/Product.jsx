@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react'
  * @returns
  */
 export default function ({ api, params: { id } }) {
+  const [tab, setTab] = useState('description')
   const [{ product = {}, brand = {} }, setContent] = useState({})
 
   useEffect(() => {
@@ -53,25 +54,41 @@ export default function ({ api, params: { id } }) {
       <div className='product_page_description'>
         <div className='product_page_description_menu'>
           <div
-            onclick='productdesc()'
-            className='product_page_description_menu_title'
+            onClick={() => setTab('description')}
+            className={
+              { description: 'product_page_description_menu_title' }[tab] ||
+              'product_page_description_menu_title2'
+            }
           >
             <img className='img_texteditor' src='./img/texteditor.svg' alt='' />
             <h2 className='h2_texteditor'>Описание</h2>
           </div>
           <div
-            onclick='productharakt()'
-            className='product_page_description_menu_title2'
+            onClick={() => setTab('parameters')}
+            className={
+              { parameters: 'product_page_description_menu_title' }[tab] ||
+              'product_page_description_menu_title2'
+            }
           >
             <img className='img_searchbox' src='./img/searchbox.svg' alt='' />
             <h2 className='h2_searchbox'>Характеристики</h2>
           </div>
         </div>
-        <div className='produce_page_description_text content'>
+        <div
+          className={`content ${
+            { description: 'produce_page_description_text' }[tab] ||
+            'produce_page_description_text2'
+          }`}
+        >
           <p>{product.description}</p>
           <a href=''>Заказать данный товар</a>
         </div>
-        <div className='produce_page_description_text2'>
+        <div
+          className={
+            { parameters: 'produce_page_description_text' }[tab] ||
+            'produce_page_description_text2'
+          }
+        >
           <table>
             <tbody>
               <tr>
