@@ -75,7 +75,6 @@ export default function ({ api, params: { category } }) {
   const page = +new URLSearchParams(useSearch()).get('page') || 1
   const [{ categoryName = '', products = [], lastPage = 1 }, setContent] =
     useState({})
-  console.log(categoryName)
 
   useEffect(() => {
     ;(async () => {

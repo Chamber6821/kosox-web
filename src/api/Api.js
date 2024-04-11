@@ -35,10 +35,12 @@ const ProductWithId = async (id, api) =>
     CachedBrand(await api(`products/${id}/brand`))
   )
 
-const CachedCategory = async (json) => ({
+const CachedCategory = async (json, products, parameters) => ({
   id: async () => idOf(json),
-  name: async () => json?.name,
-  icon: async () => json?.iconUrl
+  name: async () => json.name,
+  icon: async () => json.iconUrl,
+  products,
+  parameters
 })
 
 export default function Api(base) {
@@ -51,36 +53,41 @@ export default function Api(base) {
   const getList = async (type, path) => (await get(path))._embedded[type]
   return {
     categories: async () => ({
-      withId: async (id) => ({
-        name: async () => (await get(`categories/${id}`)).name,
-        products: async (pageSize) => ({
-          page: async (page) => ({
-            array: async () =>
-              await Promise.all(
-                (
-                  await getList(
-                    'products',
-                    `products/search/findByCategoryId?category=${id}&page=${page}&size=${pageSize}`
+      withId: async (id) =>
+        await CachedCategory(
+          await get(`categories/${id}`),
+          async (pageSize) => ({
+            page: async (page) => ({
+              array: async () =>
+                await Promise.all(
+                  (
+                    await getList(
+                      'products',
+                      `products/search/findByCategoryId?category=${id}&page=${page}&size=${pageSize}`
+                    )
                   )
+                    .map(idOf)
+                    .map(
+                      async (id) =>
+                        await ProductWithParameters(
+                          await ProductWithId(id, get),
+                          get
+                        )
+                    )
                 )
-                  .map(idOf)
-                  .map(
-                    async (id) =>
-                      await ProductWithParameters(
-                        await ProductWithId(id, get),
-                        get
-                      )
-                  )
-              )
+            }),
+            totalPages: async () =>
+              (
+                await get(
+                  `products/search/findByCategoryId?category=${id}&size=${pageSize}`
+                )
+              ).page.totalPages
           }),
-          totalPages: async () =>
-            (
-              await get(
-                `products/search/findByCategoryId?category=${id}&size=${pageSize}`
-              )
-            ).page.totalPages
-        })
-      })
+          async () =>
+            (await get(`categories/${id}/parameters`))._embedded.parameters
+              .map((x) => [x.name, x.variants.map((x) => x.value).sort()])
+              .sort()
+        )
     }),
     superCategories: async () => ({
       withId: async (id) => ({
