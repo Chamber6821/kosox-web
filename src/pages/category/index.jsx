@@ -61,6 +61,46 @@ const PageButtons = ({ currentPage, lastPage, PageLink, PageStub }) => {
   )
 }
 
+const Filter = ({ name, variants }) => {
+  console.log(name, variants)
+  const key = Math.round(Math.random() * 1e10)
+  const header = `panelsStayOpen-heading-${key}`
+  const body = `panelsStayOpen-collapse-${key}`
+  return (
+    <div style={{ flexDirection: 'column' }} className='accordion-item '>
+      <h2 className='accordion-header' id={header}>
+        <button
+          className='btn btn-secondary dropdown-toggle collapsed'
+          type='button'
+          data-bs-toggle='collapse'
+          data-bs-target={`#${body}`}
+          aria-expanded='true'
+          aria-controls={body}
+        >
+          {name}
+        </button>
+      </h2>
+      <div
+        style={{ backgroundColor: '#00000000' }}
+        id={body}
+        className='accordion-collapse collapse'
+        aria-labelledby={header}
+      >
+        <ul className='dropdown-menu2'>
+          {variants.map((x, i) => (
+            <li>
+              <label htmlFor={`checkbox_${key}_${i}`}>{x}</label>
+              <div className='checkbox-wrapper'>
+                <input type='checkbox' id={`checkbox_${key}_${i}`} />
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  )
+}
+
 /**
  * @typedef {Object} props
  * @property {ReturnType<typeof import('../../api/Api').default>} api
@@ -73,8 +113,10 @@ const PageButtons = ({ currentPage, lastPage, PageLink, PageStub }) => {
  */
 export default function ({ api, params: { category } }) {
   const page = +new URLSearchParams(useSearch()).get('page') || 1
-  const [{ categoryName = '', products = [], lastPage = 1 }, setContent] =
-    useState({})
+  const [
+    { categoryName = '', products = [], parameters = [], lastPage = 1 },
+    setContent
+  ] = useState({})
 
   useEffect(() => {
     ;(async () => {
@@ -92,6 +134,7 @@ export default function ({ api, params: { category } }) {
             brand_icon: await (await x.brand()).icon()
           }))
         ),
+        parameters: await entity.parameters(),
         lastPage: await pages.totalPages()
       })
     })()
@@ -110,7 +153,7 @@ export default function ({ api, params: { category } }) {
       <div
         style={{
           backgroundImage:
-            'url("./img/6ba632040d142d29a5ebe2411f406f96 — копия.jpeg")'
+            'url("/img/6ba632040d142d29a5ebe2411f406f96 — копия.jpeg")'
         }}
         className='header_main'
       >
@@ -126,132 +169,15 @@ export default function ({ api, params: { category } }) {
           <div className='filterkotalog_filter'>
             <div className='filterkotalog_filter_title'>
               <h2>Фильтр</h2>
-              <img src='./img/filter.svg' alt='' />
+              <img src='/img/filter.svg' alt='' />
             </div>
             <div
               className='accordion filterkotalog_filter_title'
               id='accordionPanelsStayOpenExample'
             >
-              <div
-                style={{ flexDirection: 'column' }}
-                className='accordion-item '
-              >
-                <h2 className='accordion-header' id='panelsStayOpen-headingOne'>
-                  <button
-                    className='btn btn-secondary dropdown-toggle'
-                    type='button'
-                    data-bs-toggle='collapse'
-                    data-bs-target='#panelsStayOpen-collapseOne'
-                    aria-expanded='true'
-                    aria-controls='panelsStayOpen-collapseOne'
-                  >
-                    Категории
-                  </button>
-                </h2>
-                <div
-                  style={{ backgroundColor: '#00000000' }}
-                  id='panelsStayOpen-collapseOne'
-                  className='accordion-collapse collapse show'
-                  aria-labelledby='panelsStayOpen-headingOne'
-                >
-                  <ul className='dropdown-menu2'>
-                    <li>
-                      <label htmlFor='checkbox_id_first'>Ареометры</label>
-                      <div className='checkbox-wrapper'>
-                        <input type='checkbox' id='checkbox_id_first' />
-                      </div>
-                    </li>
-                    <li>
-                      <label htmlFor='checkbox_id_second'>Ареометры</label>
-                      <div className='checkbox-wrapper'>
-                        <input type='checkbox' id='checkbox_id_second' />
-                      </div>
-                    </li>
-                    <li>
-                      <label htmlFor='checkbox_id_third'>Ареометры</label>
-                      <div className='checkbox-wrapper'>
-                        <input type='checkbox' id='checkbox_id_third' />
-                      </div>
-                    </li>
-                    <li>
-                      <label htmlFor='checkbox_id_four'>Ареометры</label>
-                      <div className='checkbox-wrapper'>
-                        <input type='checkbox' id='checkbox_id_four' />
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div
-                style={{ flexDirection: 'column' }}
-                className='accordion-item '
-              >
-                <h2 className='accordion-header' id='panelsStayOpen-headingTwo'>
-                  <button
-                    className='btn btn-secondary dropdown-toggle'
-                    type='button'
-                    data-bs-toggle='collapse'
-                    data-bs-target='#panelsStayOpen-collapseTwo'
-                    aria-expanded='true'
-                    aria-controls='panelsStayOpen-collapseTwo'
-                  >
-                    Категории
-                  </button>
-                </h2>
-                <div
-                  style={{ backgroundColor: '#00000000' }}
-                  id='panelsStayOpen-collapseTwo'
-                  className='accordion-collapse collapse show'
-                  aria-labelledby='panelsStayOpen-headingTwo'
-                />
-              </div>
-              <div
-                style={{ flexDirection: 'column' }}
-                className='accordion-item '
-              >
-                <h2
-                  className='accordion-header'
-                  id='panelsStayOpen-headingThree'
-                >
-                  <button
-                    className='btn btn-secondary dropdown-toggle'
-                    type='button'
-                    data-bs-toggle='collapse'
-                    data-bs-target='#panelsStayOpen-collapseThree'
-                    aria-expanded='true'
-                    aria-controls='panelsStayOpen-collapseThree'
-                  >
-                    Категории
-                  </button>
-                </h2>
-                <div
-                  style={{
-                    backgroundColor: '#00000000',
-                    textAlign: 'center'
-                  }}
-                  id='panelsStayOpen-collapseThree'
-                  className='accordion-collapse collapse show'
-                  aria-labelledby='panelsStayOpen-headingThree'
-                >
-                  <div className='range'>
-                    <div className='sliderValue'>
-                      <span className='sliderValue_span'>100</span>
-                    </div>
-                    <div className='field'>
-                      <div className='value left'>0</div>
-                      <input
-                        className='field_inp'
-                        type='range'
-                        min={0}
-                        max={200}
-                        defaultValue={100}
-                        step={1}
-                      />
-                      <div className='value right '>200</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {parameters.map(([name, variants]) => (
+                <Filter name={name} variants={variants} />
+              ))}
             </div>
             <div className='filterkotalog_filter_btn'>
               <button onclick='filtercl()'>Закрыть</button>
