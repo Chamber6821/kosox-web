@@ -17,7 +17,9 @@ import Api from './api/Api'
 import { useState } from 'react'
 
 export default function () {
-  const [api] = useState(() => Api('http://localhost/api/'))
+  const [api] = useState(() =>
+    Api('https://55c4-46-53-253-50.ngrok-free.app/api/')
+  )
   return (
     <>
       <Header />
