@@ -61,8 +61,7 @@ const PageButtons = ({ currentPage, lastPage, PageLink, PageStub }) => {
   )
 }
 
-const Filter = ({ name, variants }) => {
-  console.log(name, variants)
+const Filter = ({ name, variants, onChange }) => {
   const key = Math.round(Math.random() * 1e10)
   const header = `panelsStayOpen-heading-${key}`
   const body = `panelsStayOpen-collapse-${key}`
@@ -88,10 +87,14 @@ const Filter = ({ name, variants }) => {
       >
         <ul className='dropdown-menu2'>
           {variants.map((x, i) => (
-            <li>
+            <li key={x}>
               <label htmlFor={`checkbox_${key}_${i}`}>{x}</label>
               <div className='checkbox-wrapper'>
-                <input type='checkbox' id={`checkbox_${key}_${i}`} />
+                <input
+                  onChange={e => onChange(x, e.target.checked)}
+                  type='checkbox'
+                  id={`checkbox_${key}_${i}`}
+                />
               </div>
             </li>
           ))}
@@ -117,11 +120,12 @@ export default function ({ api, params: { category } }) {
     { categoryName = '', products = [], parameters = [], lastPage = 1 },
     setContent
   ] = useState({})
+  const [filters, setFilters] = useState({})
 
   useEffect(() => {
     ;(async () => {
       const entity = await (await api.categories()).withId(category)
-      const pages = await entity.products(6)
+      const pages = await (await entity.products(6)).filtered(filters)
       setContent({
         categoryName: await entity.name(),
         products: await Promise.all(
@@ -138,7 +142,7 @@ export default function ({ api, params: { category } }) {
         lastPage: await pages.totalPages()
       })
     })()
-  }, [page])
+  }, [page, filters])
 
   const PageLink = ({ innerClass, href, title }) => (
     <Link to={href}>
@@ -176,7 +180,17 @@ export default function ({ api, params: { category } }) {
               id='accordionPanelsStayOpenExample'
             >
               {parameters.map(([name, variants]) => (
-                <Filter name={name} variants={variants} />
+                <Filter
+                  name={name}
+                  variants={variants}
+                  onChange={(variant, checked) => {
+                    const oldVariants = filters[name] || []
+                    const variants = checked
+                      ? [...oldVariants, variant]
+                      : oldVariants.filter(x => x !== variant)
+                    setFilters({ ...filters, [name]: variants })
+                  }}
+                />
               ))}
             </div>
             <div className='filterkotalog_filter_btn'>
