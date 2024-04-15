@@ -18,7 +18,7 @@ import { useState } from 'react'
 
 export default function () {
   const [api] = useState(() =>
-    Api('https://55c4-46-53-253-50.ngrok-free.app/api/')
+    Api('https://b8d5-46-53-253-50.ngrok-free.app/api/')
   )
   return (
     <>
