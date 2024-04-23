@@ -15,11 +15,13 @@ import {
 } from './pages'
 import Api from './api/Api'
 import { useState } from 'react'
+import ScrollTop from './components/ScrollTop'
 
 export default function () {
   const [api] = useState(() => Api('http://localhost/api/'))
   return (
     <>
+      <ScrollTop />
       <Header />
       <Switch>
         <Route path='/' component={Home} />
