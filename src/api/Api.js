@@ -2,6 +2,7 @@ const idOfUrl = (url) => `${url}`.match(/(\d+)$/)?.[1]
 const idOf = (entry) => idOfUrl(entry?._links?.self?.href)
 
 const CachedBrand = async (json) => ({
+  id: async () => idOf(json),
   name: async () => json.name,
   icon: async () => json.iconUrl
 })
@@ -151,6 +152,12 @@ export default function Api(base) {
     products: async () => ({
       withId: async (id) =>
         await ProductWithParameters(await ProductWithId(id, get), get)
+    }),
+    brands: async () => ({
+      array: async () =>
+        await Promise.all(
+          (await get('brands'))._embedded.brands.map(CachedBrand)
+        )
     })
   }
 }
