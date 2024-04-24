@@ -26,7 +26,9 @@ export default function () {
       <Switch>
         <Route path='/' component={Home} />
         <Route path='/about' component={About} />
-        <Route path='/about-manufacturer' component={AboutManufacturer} />
+        <Route path='/about-manufacturer/:brand'>
+          {params => <AboutManufacturer params={params} api={api} />}
+        </Route>
         <Route path='/catalog'>
           {params => <Catalog params={params} api={api} />}
         </Route>

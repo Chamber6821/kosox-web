@@ -4,7 +4,8 @@ const idOf = (entry) => idOfUrl(entry?._links?.self?.href)
 const CachedBrand = async (json) => ({
   id: async () => idOf(json),
   name: async () => json.name,
-  icon: async () => json.iconUrl
+  icon: async () => json.iconUrl,
+  description: async () => 'Нет описания'
 })
 
 const CachedProduct = async (json, brand) => ({
@@ -113,6 +114,18 @@ const CategoryWithParameters = async (category, api) => ({
       .sort()
 })
 
+const BrandWithCategories = async (brand, api) => ({
+  ...brand,
+  categories: async () =>
+    await Promise.all(
+      (
+        await api(
+          `categories/search/findAllByBrand?brandId=${await brand.id()}`
+        )
+      )._embedded.categories.map(CachedCategory)
+    )
+})
+
 export default function Api(base) {
   const cache = {}
   const get = async (path) => {
@@ -154,6 +167,11 @@ export default function Api(base) {
         await ProductWithParameters(await ProductWithId(id, get), get)
     }),
     brands: async () => ({
+      withId: async (id) =>
+        await BrandWithCategories(
+          await CachedBrand(await get(`brands/${id}`)),
+          get
+        ),
       array: async () =>
         await Promise.all(
           (await get('brands'))._embedded.brands.map(CachedBrand)
