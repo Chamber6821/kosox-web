@@ -1,4 +1,33 @@
-export default function () {
+import { useEffect, useState } from 'react'
+import { Link } from 'wouter'
+
+/**
+ * @typedef {Object} props
+ * @property {ReturnType<typeof import('../api/Api').default>} api
+ */
+
+/**
+ *
+ * @param {props} props
+ * @returns
+ */
+export default function ({ api }) {
+  const [brands, setBrands] = useState([])
+  useEffect(() => {
+    ;(async () => {
+      setBrands(
+        await Promise.all(
+          (
+            await (await api.brands()).array()
+          ).map(async x => ({
+            id: await x.id(),
+            name: await x.name(),
+            icon: await x.icon()
+          }))
+        )
+      )
+    })()
+  })
   return (
     <main>
       <div
@@ -23,62 +52,15 @@ export default function () {
         <div className='our_brends content'>
           <h2>Наши бренды</h2>
           <div className='our_brends_cards'>
-            <div className='our_brends_card'>
-              <img src='./img/logo-150x67-11.png' alt='' />
-              <div className='our_brends_card_hover'>
-                <h5>MGB</h5>
-                <a href=''>Подробнее...</a>
+            {brands.map(x => (
+              <div className='our_brends_card'>
+                <img src={x.icon} alt='' />
+                <div className='our_brends_card_hover'>
+                  <h5>{x.name}</h5>
+                  <Link to={`/about-manufacturer/${x.id}`}>Подробнее...</Link>
+                </div>
               </div>
-            </div>
-            <div className='our_brends_card'>
-              <img src='./img/logo-150x67-11.png' alt='' />
-              <div className='our_brends_card_hover'>
-                <h5>MGB</h5>
-                <a href=''>Подробнее...</a>
-              </div>
-            </div>
-            <div className='our_brends_card'>
-              <img src='./img/logo-150x67-11.png' alt='' />
-              <div className='our_brends_card_hover'>
-                <h5>MGB</h5>
-                <a href=''>Подробнее...</a>
-              </div>
-            </div>
-            <div className='our_brends_card'>
-              <img src='./img/logo-150x67-11.png' alt='' />
-              <div className='our_brends_card_hover'>
-                <h5>MGB</h5>
-                <a href=''>Подробнее...</a>
-              </div>
-            </div>
-            <div className='our_brends_card'>
-              <img src='./img/logo-150x67-11.png' alt='' />
-              <div className='our_brends_card_hover'>
-                <h5>MGB</h5>
-                <a href=''>Подробнее...</a>
-              </div>
-            </div>
-            <div className='our_brends_card'>
-              <img src='./img/logo-150x67-11.png' alt='' />
-              <div className='our_brends_card_hover'>
-                <h5>MGB</h5>
-                <a href=''>Подробнее...</a>
-              </div>
-            </div>
-            <div className='our_brends_card'>
-              <img src='./img/logo-150x67-11.png' alt='' />
-              <div className='our_brends_card_hover'>
-                <h5>MGB</h5>
-                <a href=''>Подробнее...</a>
-              </div>
-            </div>
-            <div className='our_brends_card'>
-              <img src='./img/logo-150x67-11.png' alt='' />
-              <div className='our_brends_card_hover'>
-                <h5>MGB</h5>
-                <a href=''>Подробнее...</a>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

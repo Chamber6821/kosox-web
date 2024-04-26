@@ -15,6 +15,7 @@ import {
 } from './pages'
 import Api from './api/Api'
 import { useState } from 'react'
+import ScrollTop from './components/ScrollTop'
 
 export default function () {
   const [api] = useState(() =>
@@ -22,11 +23,14 @@ export default function () {
   )
   return (
     <>
+      <ScrollTop />
       <Header />
       <Switch>
         <Route path='/' component={Home} />
         <Route path='/about' component={About} />
-        <Route path='/about-manufacturer' component={AboutManufacturer} />
+        <Route path='/about-manufacturer/:brand'>
+          {params => <AboutManufacturer params={params} api={api} />}
+        </Route>
         <Route path='/catalog'>
           {params => <Catalog params={params} api={api} />}
         </Route>
@@ -39,7 +43,9 @@ export default function () {
         <Route path='/contacts' component={Contacts} />
         <Route path='/delivery-and-payment' component={DeliveryAndPayment} />
         <Route path='/faq' component={Faq} />
-        <Route path='/manufacturers' component={Manufacturers} />
+        <Route path='/manufacturers'>
+          {params => <Manufacturers params={params} api={api} />}
+        </Route>
         <Route path='/product/:id'>
           {params => <Product params={params} api={api} />}
         </Route>
