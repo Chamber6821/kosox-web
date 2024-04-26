@@ -3,7 +3,6 @@ import Card from "./Card";
 import { Link, useSearch } from "wouter";
 
 const PageButtons = ({ currentPage, lastPage, PageLink, PageStub }) => {
-	console.log(currentPage, lastPage);
 	const pages = [...Array(lastPage).keys()].map((x) => x + 1);
 
 	const PageArrow = ({ page, title }) => (
@@ -49,6 +48,7 @@ const PageButtons = ({ currentPage, lastPage, PageLink, PageStub }) => {
 					...buttons(pages.slice(lastPage - boundary, lastPage)),
 				];
 
+	console.log(currentPage, lastPage, pageButtons);
 	return (
 		<>
 			<PageArrow page={Math.max(1, currentPage - 1)} title="<" />
@@ -142,7 +142,7 @@ export default function ({ api, params: { category } }) {
 					})),
 				),
 				parameters: await entity.parameters(),
-				lastPage: await pages.totalPages(),
+				lastPage: (await pages.totalPages()) - 1,
 			});
 		})();
 	}, [page, filters]);
