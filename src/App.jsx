@@ -18,14 +18,7 @@ import { useState } from "react";
 import ScrollTop from "./components/ScrollTop";
 
 export default function () {
-	const [api] = useState(() =>
-		Api(
-			`${window.location.protocol}//${window.location.host.replace(
-				"3000",
-				"80",
-			)}/api/`,
-		),
-	);
+	const [api] = useState(() => Api("http://currates.ru/api/"));
 	return (
 		<>
 			<ScrollTop />
