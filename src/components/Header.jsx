@@ -120,7 +120,18 @@ export default function Header() {
 					КАТАЛОГ ТОВАРОВ
 				</Link>
 				<div className="navbar_down_inp">
-					<input placeholder="Введите наименование" type="text" />
+					<input
+						placeholder="Введите наименование"
+						onKeyDown={(e) =>
+							"Enter" === e.key &&
+							(window.location = `https://google.com/search?${new URLSearchParams(
+								{
+									q: `site:currates.ru ${e.target.value}`,
+								},
+							)}`)
+						}
+						type="text"
+					/>
 					<img src="/img/find.svg" alt="" />
 				</div>
 			</nav>
