@@ -146,6 +146,7 @@ export default function Api(base) {
 		}),
 		superCategories: async () => ({
 			withId: async (id) => ({
+				name: async () => (await get(`superCategories/${id}`)).name,
 				categories: async () => ({
 					array: async () =>
 						await Promise.all(
