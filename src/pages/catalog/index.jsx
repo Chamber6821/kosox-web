@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Card from "./Card";
+import Cards from "./Cards";
 
 /**
  * @typedef {Object} props
@@ -12,24 +12,13 @@ import Card from "./Card";
  * @returns
  */
 export default function Catalog({ api, params: { superCategory } }) {
-	const [{ categories = [], categoryName = "" }, setContent] = useState({});
+	const [{ categoryName = "" }, setContent] = useState({});
 	useEffect(() => {
 		(async () => {
 			const superCategories = await api.superCategories();
 			const scEntity = await superCategories.withId(superCategory);
-			const categories = superCategory
-				? await scEntity.categories()
-				: superCategories;
-			console.log(scEntity);
 			setContent({
 				categoryName: superCategory && (await scEntity.name()),
-				categories: await Promise.all(
-					(await categories.array()).map(async (x) => ({
-						id: await x.id(),
-						name: await x.name(),
-						icon: await x.icon(),
-					})),
-				),
 			});
 		})();
 	}, [api, superCategory]);
@@ -53,19 +42,7 @@ export default function Catalog({ api, params: { superCategory } }) {
 					)}
 				</div>
 			</div>
-			<div className="kotalog">
-				<div className="kotalog_flex">
-					{categories.map((x) => (
-						<Card
-							key={x.id}
-							id={x.id}
-							title={x.name}
-							backgroundImage={x.icon}
-							page={superCategory ? `/category/${x.id}` : `/catalog/${x.id}`}
-						/>
-					))}
-				</div>
-			</div>
+			<Cards api={api} superCategory={superCategory} />
 			<div
 				style={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
 				className="contact_form"
