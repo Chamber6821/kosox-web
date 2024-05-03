@@ -320,12 +320,13 @@ export default function Home({ api }) {
 			</div>
 			<div className="map">
 				<iframe
-					src="https://yandex.uz/map-widget/v1/?ll=69.299702%2C41.293168&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxNzUwNzA5NDM4EhZPyrt6YmVraXN0b24sIFRvc2hrZW50IgoNO4-KQhWjPiVC&z=11.2"
-					style={{ border: 0 }}
-					allowFullScreen=""
-					loading="lazy"
-					referrerPolicy="no-referrer-when-downgrade"
-				/>
+					src="https://yandex.by/map-widget/v1/profile?ll=30.352017%2C60.058219&z=16.91"
+					width="560"
+					height="400"
+					frameborder="1"
+					allowfullscreen="true"
+					style={{ position: "relative" }}
+				></iframe>
 			</div>
 		</main>
 	);
