@@ -111,7 +111,7 @@ const Filter = ({ name, variants, onChange }) => {
  * @param {props} props
  * @returns
  */
-export default function ({ api, params: { category } }) {
+export default function Category({ api, params: { category } }) {
 	const page = +new URLSearchParams(useSearch()).get("page") || 1;
 	const [
 		{ categoryName = "", products = [], parameters = [], lastPage = 1 },
