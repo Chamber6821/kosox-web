@@ -24,7 +24,7 @@ export default function App() {
 			<ScrollTop />
 			<Header />
 			<Switch>
-				<Route path="/" component={Home} />
+				<Route path="/">{(params) => <Home params={params} api={api} />}</Route>
 				<Route path="/about" component={About} />
 				<Route path="/about-manufacturer/:brand">
 					{(params) => <AboutManufacturer params={params} api={api} />}
