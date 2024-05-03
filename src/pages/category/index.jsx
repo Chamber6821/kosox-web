@@ -119,14 +119,6 @@ export default function Category({ api, params: { category } }) {
 	] = useState({});
 	const [filters, setFilters] = useState({});
 
-	const [filterTopPosition, setFilterTopPosition] = useState(0);
-	const openFilters = () => {
-		setFilterTopPosition("0px");
-	};
-	const closeFilters = () => {
-		setFilterTopPosition("-675550px");
-	};
-
 	useEffect(() => {
 		(async () => {
 			const entity = await (await api.categories()).withId(category);
@@ -173,10 +165,7 @@ export default function Category({ api, params: { category } }) {
 			</div>
 			<div className="filterkotalog">
 				<div className="filterkotalog_flex">
-					<div
-						className="filterkotalog_filter"
-						style={{ top: filterTopPosition }}
-					>
+					<div className="filterkotalog_filter">
 						<div className="filterkotalog_filter_title">
 							<h2>Фильтр</h2>
 							<img src="/img/filter.svg" alt="" />
@@ -200,12 +189,12 @@ export default function Category({ api, params: { category } }) {
 							))}
 						</div>
 						<div className="filterkotalog_filter_btn">
-							<button onClick={closeFilters}>Закрыть</button>
-							<button onClick={closeFilters}>Применить</button>
+							<button onClick={() => window.filtercl()}>Закрыть</button>
+							<button onClick={() => window.filtercl()}>Применить</button>
 						</div>
 					</div>
 					<div className="filterkotalog_button_fiter">
-						<button onClick={openFilters}>Фильтр</button>
+						<button onClick={() => window.filterop()}>Фильтр</button>
 					</div>
 					<div className="filterkotalog_cards">
 						{products.map((x) => (
