@@ -17,7 +17,7 @@ import Api from "./api/Api";
 import { useState } from "react";
 import ScrollTop from "./components/ScrollTop";
 
-export default function () {
+export default function App() {
 	const [api] = useState(() => Api("http://currates.ru/api/"));
 	return (
 		<>
