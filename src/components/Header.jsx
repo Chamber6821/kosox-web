@@ -66,10 +66,13 @@ export default function Header() {
 					</Link>
 				</div>
 				<div className="navbar_phone_menu">
-					<i onclick="menuop()" className="bx bx-menu-alt-right" />
+					<i onClick={() => window.menuop()} className="bx bx-menu-alt-right" />
 				</div>
 				<div className="navbar_phone_right_menu">
-					<i onclick="menucl()" className="bx bxs-right-arrow-alt" />
+					<i
+						onClick={() => window.menucl()}
+						className="bx bxs-right-arrow-alt"
+					/>
 					<ul className="navbar_top_menu">
 						<li className="navbar_top_menu_li">
 							<Link to="/delivery-and-payment">Доставка и оплата</Link>
