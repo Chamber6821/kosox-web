@@ -14,21 +14,21 @@ export default function Home({ api }) {
 				<div className="main_left">
 					<h1>
 						Помощь в выборе <br />
-						подшипников
+						подшипников и промышленных товаров
 					</h1>
 					<h3>
-						Большой выбор товаров и <br />
-						всего остального
+					Более 60 тысяч образцов товаров <br />
+					с гарантией ГОСТ/ТУ/ISO качества
 					</h3>
-					<a href="">КАТАЛОГ ТОВАРОВ</a>
+					<a href="/catalog">ВЫБРАТЬ ТОВАР</a>
 				</div>
 			</div>
-			<div className="contact_form">
+			<div id="contact_form" className="contact_form">
 				<div className="contact_form_flex">
 					<h2>Оставьте вашу заявку</h2>
-					<input placeholder="Имя" type="text" name="name" />
-					<input placeholder="Имя" type="text" name="surname" />
-					<input placeholder="Имя" type="text" name="phone" />
+					<input placeholder="Ваше имя" type="text" name="name" />
+					<input placeholder="Ваш e-mail" type="text" name="surname" />
+					<input placeholder="Ваш телефон" type="text" name="phone" />
 					<button>Отправить</button>
 				</div>
 			</div>
@@ -49,8 +49,8 @@ export default function Home({ api }) {
 									aria-expanded="true"
 									aria-controls="collapseOne"
 								>
-									<img src="./img/blackic.svg" alt="" />
-									Машиностроение
+									<img src="./img/mebel.svg" alt="" />
+									Мебельная промышленность
 								</button>
 							</h2>
 							<div
@@ -60,15 +60,7 @@ export default function Home({ api }) {
 								data-bs-parent="#accordionExample"
 							>
 								<div className="accordion-body">
-									<strong>This is the first item's accordion body.</strong> It
-									is shown by default, until the collapse plugin adds the
-									appropriate classes that we use to style each element. These
-									classes control the overall appearance, as well as the showing
-									and hiding via CSS transitions. You can modify any of this
-									with custom CSS or overriding our default variables. It's also
-									worth noting that just about any HTML can go within the
-									<code>.accordion-body</code>, though the transition does limit
-									overflow.
+								Мебельная промышленность относится к наиболее быстро развивающимся отраслям перерабатывающей промышленности. Это сектор с очень высокой конкуренцией и разнообразием. Среди продуктов, которые входят в мебельную отрасль, различают: матрацы, стулья и кресла, мягкая мебель и спальни, элементы мебели и все виды мебели для офиса, магазинов, кухонь и пр. Мебельная промышленность является развитым рынком, но все же демонстрирующим очень большой потенциал развития, который генерируют, главным образом, компании, занимающиеся производством мягкой мебели, автомобильных и самолетных кресел, а также матрацев.
 								</div>
 							</div>
 						</div>
@@ -82,8 +74,8 @@ export default function Home({ api }) {
 									aria-expanded="false"
 									aria-controls="collapseTwo"
 								>
-									<img src="./img/blackic.svg" alt="" />
-									Машиностроение
+									<img src="./img/micro.svg" alt="icon" />
+									Микроэлектроника и нанотехнологии
 								</button>
 							</h2>
 							<div
@@ -93,9 +85,7 @@ export default function Home({ api }) {
 								data-bs-parent="#accordionExample"
 							>
 								<div className="accordion-body">
-									Самовывоз можно осуществить по адресу: 198099 г.
-									Санкт-Петербург, ул. Оборонная, д. 10, литера А, помещение
-									306. каб. 24-8. График работы офиса: ПН — ПТ с 9:00 до 18:00
+								Микроэлектроника и нанотехнологии - это области науки и техники, строго необходимые для устойчивого развития стран с развитой экономикой, включающие в себя все средства и методы человеческой деятельности, необходимые для проектирования, разработки и производства электронных и оптоэлектронных устройств, устройств и интегрированных систем, микроэлектроники.
 								</div>
 							</div>
 						</div>
@@ -109,8 +99,8 @@ export default function Home({ api }) {
 									aria-expanded="false"
 									aria-controls="collapseThree"
 								>
-									<img src="./img/blackic.svg" alt="" />
-									Машиностроение
+									<img src="./img/farma.svg" alt="icon" />
+									Фармацевтическая промышленность
 								</button>
 							</h2>
 							<div
@@ -120,15 +110,257 @@ export default function Home({ api }) {
 								data-bs-parent="#accordionExample"
 							>
 								<div className="accordion-body">
-									<strong>This is the third item's accordion body.</strong> It
-									is hidden by default, until the collapse plugin adds the
-									appropriate classes that we use to style each element. These
-									classes control the overall appearance, as well as the showing
-									and hiding via CSS transitions. You can modify any of this
-									with custom CSS or overriding our default variables. It's also
-									worth noting that just about any HTML can go within the
-									<code>.accordion-body</code>, though the transition does limit
-									overflow.
+								Всеми процессами, связанными с лекарственными средствами, занимается фармацевтическая промышленность. Это отрасль промышленности, которая непосредственно изучает, разрабатывает, производит и распределяет лекарственные препараты, необходимые для профилактики, диагностики и лечения различного рода заболеваний.
+								</div>
+							</div>
+						</div>
+						<div className="accordion-item">
+							<h2 className="accordion-header" id="headingFour">
+								<button
+									className="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapseFour"
+									aria-expanded="false"
+									aria-controls="collapseFour"
+								>
+									<img src="./img/stroy.svg" alt="icon" />
+									Промышленность строительных материалов
+								</button>
+							</h2>
+							<div
+								id="collapseFour"
+								className="accordion-collapse collapse"
+								aria-labelledby="headingFour"
+								data-bs-parent="#accordionExample"
+							>
+								<div className="accordion-body">
+								Представляет собой комплекс производственных направлений, предназначенных для изготовления материалов для жилищного, гражданского, промышленного, сельскохозяйственного и иных видов строительства. Именно эта отрасль обеспечивает строительную индустрию основным потоком материальных ресурсов, создавая базу для применения высокоэффективных материалов и технологий, формируя при этом непрерывный рост объёмов возводимых зданий и сооружений.
+								</div>
+							</div>
+						</div>
+						<div className="accordion-item">
+							<h2 className="accordion-header" id="headingFive">
+								<button
+									className="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapseFive"
+									aria-expanded="false"
+									aria-controls="collapseFive"
+								>
+									<img src="./img/electronica.svg" alt="icon" />
+									Электроэнергетика
+								</button>
+							</h2>
+							<div
+								id="collapseFive"
+								className="accordion-collapse collapse"
+								aria-labelledby="headingFive"
+								data-bs-parent="#accordionExample"
+							>
+								<div className="accordion-body">
+								Электроэнергетика включает в себя производство, передачу и потребление электроэнергии и является наиболее важной отраслью энергетики. Электроэнергетика используется в быту, промышленности и сельском хозяйстве и постоянно развивается. Представить без электроэнергии нашу жизнь невозможно.
+								</div>
+							</div>
+						</div>
+						<div className="accordion-item">
+							<h2 className="accordion-header" id="headingSix">
+								<button
+									className="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapseSix"
+									aria-expanded="false"
+									aria-controls="collapseSix"
+								>
+									<img src="./img/dobyuvayu.svg" alt="icon" />
+									Добывающая промышленность
+								</button>
+							</h2>
+							<div
+								id="collapseSix"
+								className="accordion-collapse collapse"
+								aria-labelledby="headingSix"
+								data-bs-parent="#accordionExample"
+							>
+								<div className="accordion-body">
+								Добывающая промышленность - отрасли промышленности, занимающиеся добычей различного сырья и энергии. Добывающая промышленность включает: получение электроэнергии; все отрасли горнодобывающей промышленности; лесозаготовку, лесные промыслы; охоту, рыболовство, добычу морского зверя. Иногда лесозаготовку и лесные промыслы рассматривают вместе с деревообработкой, выделяя лесную и деревообрабатывающую промышленность. Основные предприятия добывающей промышленности: в электроэнергетике, электростанции; в горнодобывающей промышленности, каръеры, рудники, разрезы, шахты, прииски; в лесозаготовках, леспромхозы; в охотничьем и рыболовецком промыслах, охотничьи, рыболовецкие, зверобойные хозяйства, артели.
+								</div>
+							</div>
+						</div>
+						<div className="accordion-item">
+							<h2 className="accordion-header" id="headingSeven">
+								<button
+									className="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapseSeven"
+									aria-expanded="false"
+									aria-controls="collapseSeven"
+								>
+									<img src="./img/metallurg.svg" alt="icon" />
+									Металлургия
+								</button>
+							</h2>
+							<div
+								id="collapseSeven"
+								className="accordion-collapse collapse"
+								aria-labelledby="headingSeven"
+								data-bs-parent="#accordionExample"
+							>
+								<div className="accordion-body">
+								Область науки и техники, охватывающая процессы получения металлов из руд или других видов сырья, а также процессы, связанные с изменением химического состава, структуры и свойств металлических сплавов и производством разнообразных металлических изделий из них. В первоначальном, узком значении — искусство извлечения металлов из руд. В настоящее время металлургия является также отраслью промышленности.
+								</div>
+							</div>
+						</div>
+						<div className="accordion-item">
+							<h2 className="accordion-header" id="headingEight">
+								<button
+									className="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapseEight"
+									aria-expanded="false"
+									aria-controls="collapseEight"
+								>
+									<img src="./img/mashinostroeniye.svg" alt="icon" />
+									Машиностроение
+								</button>
+							</h2>
+							<div
+								id="collapseEight"
+								className="accordion-collapse collapse"
+								aria-labelledby="headingEight"
+								data-bs-parent="#accordionExample"
+							>
+								<div className="accordion-body">
+								Машиностроение — это отрасль тяжелой промышленности, производящая всевозможные машины, орудия, приборы, а также предметы потребления и продукцию оборонного назначения.  Традиционно машиностроение делят на следующие группы отраслей: тяжелое машиностроение, общее машиностроение, среднее машиностроение, точное машиностроение, производство металлических изделий и заготовок, ремонт машин и оборудования.
+								</div>
+							</div>
+						</div>
+						<div className="accordion-item">
+							<h2 className="accordion-header" id="headingNine">
+								<button
+									className="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapseNine"
+									aria-expanded="false"
+									aria-controls="collapseNine"
+								>
+									<img src="./img/neft.svg" alt="icon" />
+									Нефтеперерабатывающая промышленность
+								</button>
+							</h2>
+							<div
+								id="collapseNine"
+								className="accordion-collapse collapse"
+								aria-labelledby="headingNine"
+								data-bs-parent="#accordionExample"
+							>
+								<div className="accordion-body">
+								Отрасль экономики, занимающаяся добычей, переработкой, транспортировкой, складированием и продажей полезного природного ископаемого — нефти и сопутствующих нефтепродуктов.  К смежным отраслям промышленности относят: геофизику, бурение, производство нефтегазового оборудования. Основу нефтяной промышленности составляют вертикально-интегрированные нефтяные компании.
+								</div>
+							</div>
+						</div>
+						<div className="accordion-item">
+							<h2 className="accordion-header" id="headingTen">
+								<button
+									className="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapseTen"
+									aria-expanded="false"
+									aria-controls="collapseTen"
+								>
+									<img src="./img/himicheskaya.svg" alt="icon" />
+									Химическая промышленность
+								</button>
+							</h2>
+							<div
+								id="collapseTen"
+								className="accordion-collapse collapse"
+								aria-labelledby="headingTen"
+								data-bs-parent="#accordionExample"
+							>
+								<div className="accordion-body">
+								Химическая промышленность обеспечивает множество отраслей новыми исходными продуктами и материалами.  Особенно влияет химическая индустрия на развитие строительства, автомобилестроения и сельского хозяйства. Данная отрасль является одной из самых активно продвигающихся на мировом рынке, во многом находится на уровне с машиностроением. Химический комплекс обладает высокой наукоемкостью.
+								</div>
+							</div>
+						</div>
+						<div className="accordion-item">
+							<h2 className="accordion-header" id="headingEleven">
+								<button
+									className="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapseEleven"
+									aria-expanded="false"
+									aria-controls="collapseEleven"
+								>
+									<img src="./img/bumazhnaya.svg" alt="icon" />
+									Целлюлозно-бумажная промышленность
+								</button>
+							</h2>
+							<div
+								id="collapseEleven"
+								className="accordion-collapse collapse"
+								aria-labelledby="headingEleven"
+								data-bs-parent="#accordionExample"
+							>
+								<div className="accordion-body">
+								Целлюлозно-бумажная промышленность состоит из предприятий, которые в качестве сырья для производства готовой продукции используют древесину, растения, отходы бумаги и картона, производя из них целлюлозу, бумагу, картон и другие продукты на основе растительных полимеров.
+								</div>
+							</div>
+						</div>
+						<div className="accordion-item">
+							<h2 className="accordion-header" id="headingTwelve">
+								<button
+									className="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapseTwelve"
+									aria-expanded="false"
+									aria-controls="collapseTwelve"
+								>
+									<img src="./img/legkaya.svg" alt="icon" />
+									Легкая промышленность
+								</button>
+							</h2>
+							<div
+								id="collapseTwelve"
+								className="accordion-collapse collapse"
+								aria-labelledby="headingTwelve"
+								data-bs-parent="#accordionExample"
+							>
+								<div className="accordion-body">
+								Одной из основных отраслей промышленного комплекса, которая производит товары народного потребления, является лёгкая промышленность. Именно она выпускает продукцию для населения, в том числе сырьё и вспомогательные материалы для других отраслей промышленности, к примеру, пищевой или машиностроения.
+								</div>
+							</div>
+						</div>
+						<div className="accordion-item">
+							<h2 className="accordion-header" id="headingThirteen">
+								<button
+									className="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapseThirteen"
+									aria-expanded="false"
+									aria-controls="collapseThirteen"
+								>
+									<img src="./img/pishevaya.svg" alt="icon" />
+									Пищевая промышленность
+								</button>
+							</h2>
+							<div
+								id="collapseThirteen"
+								className="accordion-collapse collapse"
+								aria-labelledby="headingThirteen"
+								data-bs-parent="#accordionExample"
+							>
+								<div className="accordion-body">
+								Пищевая промышленность — группа промышленных отраслей, производящих пищевые продукты в готовом виде или в виде полуфабрикатов, а также напитки, табачные изделия .В системе агропромышленного комплекса пищевая промышленность тесно связана с сельским хозяйством как поставщиком сырья и с торговлей. Часть отраслей пищевой промышленности тяготеет к сырьевым районам, другая часть — к районам потребления. В Международной стандартной отраслевой классификации пищевые производства отнесены к разделу обрабатывающей промышленности, самостоятельными подразделами в которой выделены производство пищевых продуктов, производство напитков  и производство табачных изделий.
 								</div>
 							</div>
 						</div>
@@ -142,11 +374,9 @@ export default function Home({ api }) {
 				>
 					<h6>О компании</h6>
 					<h3>
-						Наша компания — это не просто поставщик подшипников и комплектующих
-						для промышленности, всегда готовый удовлетворить потребности оптовых
-						и розничных покупателей.
+					Наша фирма "KOSOX" на рынке уже более 10 лет и мы знаем, что нужно нашим покупателям лучше всех других. Предоставляя различные комплектующие для промышленности и другие товары, мы также даем лучший сервис и наилучшие условия сотрудничества.
 					</h3>
-					<a href="" className="red_border">
+					<a href="/about" className="red_border">
 						Читать подробнее
 					</a>
 				</div>
@@ -158,56 +388,56 @@ export default function Home({ api }) {
 				<div className="primushestva_company_cards">
 					<div className="primushestva_company_cards_card">
 						<div className="primushestva_company_cards_card_img">
-							<img src="./img/primushestva.svg" alt="" />
+							<img src="./img/prices.svg" alt="icon" />
 						</div>
 						<div className="primushestva_company_cards_card_title">
-							<h3>Выгодные цены</h3>
-							<h4>Мы всегда стараемся держать цены на минимальном уровне</h4>
+							<h3>Отличные цены </h3>
+							<h4>У нас одни из самых минимальных цен на рынке</h4>
 						</div>
 					</div>
 					<div className="primushestva_company_cards_card">
 						<div className="primushestva_company_cards_card_img">
-							<img src="./img/primushestva.svg" alt="" />
+							<img src="./img/delivery.svg" alt="icon" />
 						</div>
 						<div className="primushestva_company_cards_card_title">
-							<h3>Выгодные цены</h3>
-							<h4>Мы всегда стараемся держать цены на минимальном уровне</h4>
+							<h3>Доступность</h3>
+							<h4>Доставляем товары по всей Российской Федерации</h4>
 						</div>
 					</div>
 					<div className="primushestva_company_cards_card">
 						<div className="primushestva_company_cards_card_img">
-							<img src="./img/primushestva.svg" alt="" />
+							<img src="./img/speed.svg" alt="icon" />
 						</div>
 						<div className="primushestva_company_cards_card_title">
-							<h3>Выгодные цены</h3>
-							<h4>Мы всегда стараемся держать цены на минимальном уровне</h4>
+							<h3>Скорость доставки</h3>
+							<h4>На нашем складе лежит большое количество товаров уже готовых к отправке</h4>
 						</div>
 					</div>
 					<div className="primushestva_company_cards_card">
 						<div className="primushestva_company_cards_card_img">
-							<img src="./img/primushestva.svg" alt="" />
+							<img src="./img/quality.svg" alt="" />
 						</div>
 						<div className="primushestva_company_cards_card_title">
-							<h3>Выгодные цены</h3>
-							<h4>Мы всегда стараемся держать цены на минимальном уровне</h4>
+							<h3>Гарантия качества</h3>
+							<h4>Все наши изделия с гарантией ГОСТ/ТУ/ISO качества</h4>
 						</div>
 					</div>
 					<div className="primushestva_company_cards_card">
 						<div className="primushestva_company_cards_card_img">
-							<img src="./img/primushestva.svg" alt="" />
+							<img src="./img/postavshik.svg" alt="" />
 						</div>
 						<div className="primushestva_company_cards_card_title">
-							<h3>Выгодные цены</h3>
-							<h4>Мы всегда стараемся держать цены на минимальном уровне</h4>
+							<h3>Поставщики</h3>
+							<h4>Наши партнеры - это ведущие производители Японии, Франции, Германии, Италии, Англии, Китая</h4>
 						</div>
 					</div>
 					<div className="primushestva_company_cards_card">
 						<div className="primushestva_company_cards_card_img">
-							<img src="./img/primushestva.svg" alt="" />
+							<img src="./img/clients.svg" alt="" />
 						</div>
 						<div className="primushestva_company_cards_card_title">
-							<h3>Выгодные цены</h3>
-							<h4>Мы всегда стараемся держать цены на минимальном уровне</h4>
+							<h3>Удобство клиентов</h3>
+							<h4>Мы работаем без посредников, а значит вам не придется лишний раз переплачивать</h4>
 						</div>
 					</div>
 				</div>
@@ -222,35 +452,35 @@ export default function Home({ api }) {
 							<span>01</span>
 						</div>
 						<div className="how_weare_working_cards_card_text">
-							<h3>Вы заполняете или оставляете заявку</h3>
+							<h3>Вы звоните или оставляете заявку</h3>
 						</div>
 					</div>
 					<div className="how_weare_working_cards_card">
 						<div className="how_weare_working_cards_card_num">
-							<span>01</span>
+							<span>02</span>
 						</div>
 						<div className="how_weare_working_cards_card_text">
-							<h3>Вы заполняете или оставляете заявку</h3>
+							<h3>Мы формируем ваш заказ</h3>
 						</div>
 					</div>
 					<div className="how_weare_working_cards_card">
 						<div className="how_weare_working_cards_card_num">
-							<span>01</span>
+							<span>03</span>
 						</div>
 						<div className="how_weare_working_cards_card_text">
-							<h3>Вы заполняете или оставляете заявку</h3>
+							<h3>Вы оплачиваете выставленный вам счёт</h3>
 						</div>
 					</div>
 					<div className="how_weare_working_cards_card">
 						<div className="how_weare_working_cards_card_num">
-							<span>01</span>
+							<span>04</span>
 						</div>
 						<div className="how_weare_working_cards_card_text">
-							<h3>Вы заполняете или оставляете заявку</h3>
+							<h3>В оговоренные сроки осуществляется отгрузка</h3>
 						</div>
 					</div>
 				</div>
-				<a href="" className="red_border">
+				<a href="#contact_form" className="red_border">
 					Оставить заявку
 				</a>
 			</div>
@@ -274,45 +504,49 @@ export default function Home({ api }) {
 							<img src="/img/sky.svg" alt="" />
 							<h3>Александр Борисов</h3>
 							<h4>
-								Заказывали конические однорядные подшипники, все понравилось.
-								Нужна была крупная оптовая партия и в сжатые сроки - все
-								доставили вовремя! Сервис понравился, будем обращаться еще.
+							Заказывали конические однорядные подшипники, все понравилось. Нужна была крупная оптовая партия и в сжатые сроки - все доставили вовремя! Сервис понравился, будем обращаться еще.
 							</h4>
 						</swiper-slide>
 						<swiper-slide>
 							<img src="/img/sky.svg" alt="" />
-							<h3>Александр Борисов</h3>
+							<h3>Дмитрий Бородин</h3>
 							<h4>
-								Заказывали конические однорядные подшипники, все понравилось.
-								Нужна была крупная оптовая партия и в сжатые сроки - все
-								доставили вовремя! Сервис понравился, будем обращаться еще.
+							Делал большой оптовый заказ, еще и сборный - ребята все собрали, доставили как надо и со сроками полный порядок. Очень круто, буду работать и дальше.
 							</h4>
 						</swiper-slide>
 						<swiper-slide>
 							<img src="/img/sky.svg" alt="" />
-							<h3>Александр Борисов</h3>
+							<h3>Тимур Киселев</h3>
 							<h4>
-								Заказывали конические однорядные подшипники, все понравилось.
-								Нужна была крупная оптовая партия и в сжатые сроки - все
-								доставили вовремя! Сервис понравился, будем обращаться еще.
+							С компанией KOSOX работаем уже давно - качество всегда на уровне и цены приемлемые, рекомендую.
 							</h4>
 						</swiper-slide>
 						<swiper-slide>
 							<img src="/img/sky.svg" alt="" />
-							<h3>Александр Борисов</h3>
+							<h3>Евгений Островерхий</h3>
 							<h4>
-								Заказывали конические однорядные подшипники, все понравилось.
-								Нужна была крупная оптовая партия и в сжатые сроки - все
-								доставили вовремя! Сервис понравился, будем обращаться еще.
+							Срочно нужны были шарикоподшипники оптом. Заказывали первый раз, договорились про консультацию. По телефону все очень доходчиво рассказали - видно что в компании работают люди со знанием дела! Все объяснили, подобрали и доставили в срок - теперь будем брать у компании KOSOX и советовать коллегам.
 							</h4>
 						</swiper-slide>
 						<swiper-slide>
 							<img src="/img/sky.svg" alt="" />
-							<h3>Александр Борисов</h3>
+							<h3>Алексей Верущенко</h3>
 							<h4>
-								Заказывали конические однорядные подшипники, все понравилось.
-								Нужна была крупная оптовая партия и в сжатые сроки - все
-								доставили вовремя! Сервис понравился, будем обращаться еще.
+							Отличный сервис, приятные условия, доставка вовремя - все просто замечательно, благодарю KOSOX за сотрудничество.
+							</h4>
+						</swiper-slide>
+						<swiper-slide>
+							<img src="/img/sky.svg" alt="" />
+							<h3>Михаил Каштанов</h3>
+							<h4>
+							На производстве понадобились Станки ЧПУ. Долго думали какого производителя выбрать и в итоге пришли к решению заказать у KOSOX. Поставили все в лучшем виде, очень довольны!
+							</h4>
+						</swiper-slide>
+						<swiper-slide>
+							<img src="/img/sky.svg" alt="" />
+							<h3>Владимир Козловский</h3>
+							<h4>
+							По соотношению цены и качества думаю лучше компанию не найти. Работать буду продолжать, все устраивает.
 							</h4>
 						</swiper-slide>
 					</swiper-container>

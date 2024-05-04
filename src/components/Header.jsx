@@ -12,7 +12,7 @@ export default function Header() {
 					</Link>
 				</div>
 				<div className="navbar_menu">
-					<a href="mailto:">zakaz@mgb-bearings.ru</a>
+					<a href="mailto:zakaz@kosox.ru">zakaz@kosox.ru</a>
 				</div>
 				<div className="navbar_icon">
 					<Link to="/">

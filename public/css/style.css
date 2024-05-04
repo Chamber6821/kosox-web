@@ -865,6 +865,9 @@ h4 {
   align-items: start;
   justify-content: center;
 }
+.primushestva_company_cards_card_img img{
+  width: 45px;
+}
 @media (max-width: 450px) {
   .primushestva_company_cards {
     max-width: auto;
@@ -983,7 +986,7 @@ swiper-slide h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 900px;
+  height: 600px;
 }
 .map iframe {
   width: 100%;
@@ -993,6 +996,9 @@ swiper-slide h4 {
 /* Footer */
 .allFooter {
   background: #212529;
+}
+.allFooter_address_img_div_img{
+  width: 50px;
 }
 .allFooter_div {
   display: flex;
@@ -1426,7 +1432,7 @@ textarea:focus {
   z-index: 60;
   width: 100%;
   height: 300px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 @media (max-width: 550px) {
   .kotalog_card {
