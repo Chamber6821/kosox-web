@@ -491,11 +491,11 @@ export default function Home({ api }) {
 				<div className="reviews_swiper">
 					<div className="reviews_swiper_back" />
 					<swiper-container
-						initial-slide={2}
+						initial-slide={1}
 						className="mySwiper"
 						pagination="true"
 						pagination-clickable="true"
-						slides-per-view={4}
+						slides-per-view="auto"
 						centered-slides="true"
 						space-between={30}
 						grab-cursor="true"

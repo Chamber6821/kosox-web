@@ -2493,7 +2493,7 @@ textarea.form-control.is-invalid {
   }
 }
 .btn:hover {
-  color: #212529;
+  color: #6c7884;
 }
 
 .btn.disabled,
@@ -4058,6 +4058,16 @@ fieldset:disabled .btn {
 .accordion-button img{
   width: 50px;
   height: 50px;
+}
+
+@media(max-width: 495px){
+  .accordion-button{
+    font-size: 16px;
+  }
+  .accordion-header img {
+    width: 35px !important;
+    height: 35px !important;
+}
 }
 @media (prefers-reduced-motion: reduce) {
   .accordion-button {

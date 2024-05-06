@@ -856,6 +856,7 @@ h4 {
   align-items: start;
   justify-content: center;
   gap: 15px;
+  padding: 0 10px;
 }
 .primushestva_company_cards_card h4 {
   text-align: left;
@@ -932,6 +933,7 @@ h4 {
   line-height: normal;
 }
 .reviews {
+  position: relative;
   width: 100%;
   display: flex;
   align-items: center;
@@ -948,6 +950,9 @@ h4 {
   margin-top: 70px;
   position: relative;
 }
+swiper-container .swiper{
+  height: auto !important;
+}
 swiper-container {
   max-width: 1440px;
   width: 100%;
@@ -955,14 +960,14 @@ swiper-container {
 }
 
 swiper-slide {
-  width: 300px;
+  max-width: 300px !important;
+  width: auto !important;
   display: flex;
   align-items: start;
   justify-content: start;
   padding-top: 37px;
-  padding-left: 25px;
   flex-direction: column;
-  height: 386px;
+  height: fit-content;
   flex-shrink: 0;
   border-radius: 15px;
   backdrop-filter: blur(9px);
@@ -972,11 +977,14 @@ swiper-slide {
 }
 swiper-slide h3 {
   margin-top: 15px;
+  padding-left: 20px;
+}
+swiper-slide img{
+  padding-left: 20px;
 }
 swiper-slide h4 {
-  width: 250px;
   text-align: left;
-  margin-top: 40px;
+  padding: 40px 20px 30px 20px;
 }
 .swiper-slide-active {
   background-color: #212529;
@@ -1436,7 +1444,7 @@ textarea:focus {
 }
 @media (max-width: 550px) {
   .kotalog_card {
-    width: 95%;
+    width: 95vw;
     padding: 0px;
     display: flex;
     align-items: center;
@@ -1515,6 +1523,10 @@ textarea:focus {
   overflow: hidden;
   justify-content: center;
   align-items: center;
+}
+.our_brends_card img{
+  max-width: 100%;
+  max-height: 100%;
 }
 .our_brends_card_hover {
   transition: 0.5s;
@@ -1679,10 +1691,10 @@ textarea:focus {
   width: 100%;
   flex-wrap: wrap;
   display: flex;
-  gap: 85px 80px;
-  align-items: start;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 40px;
   padding-top: 100px;
-  justify-content: center;
 }
 .filterkotalog_filter_title {
   width: 100%;
@@ -1700,32 +1712,42 @@ textarea:focus {
   line-height: normal;
 }
 .filterkotalog_card {
-  width: 350px;
-  height: 400px;
+  width: 800px;
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  padding: 0 30px;  
+  background: #000617;
+  transition: 0.3s; 
 }
 .filterkotalog_card_img {
-  border-radius: 35px 35px 0px 0px;
-  background: rgba(0, 0, 0, 0.2);
-  width: 100%;
-  height: 250px;
+  background: #fff;
+  height: 175px;
   position: relative;
   display: flex;
-  background-color: #fff;
   align-items: center;
   justify-content: center;
+  float: left;
+  border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
 .filterkotalog_card_title {
   width: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  gap: 69px;
-  border-radius: 0px 0px 35px 35px;
-  background: #212529;
+  background: #000617;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  transition: 0.3s; 
+}
+
+.filterkotalog_card_title img {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  margin-left: 15px;
+  margin-bottom: 10px;
+  object-fit: contain !important;
+  background-color: #fff;
 }
 .filterkotalog_card_title h2 {
   color: #fff;
@@ -1735,6 +1757,50 @@ textarea:focus {
   font-weight: 700;
   line-height: normal;
 }
+
+@media(max-width: 900px){
+  .filterkotalog_card{
+    width: 90vw;
+    padding: 0 5px;
+  }
+  .filterkotalog_card_img img{
+    width: 100px !important;
+  }
+  .filterkotalog_card_img {
+    height: auto;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+  .filterkotalog_card_title h2{
+    font-size: 16px !important;
+  }
+  .filterkotalog_card_title img {
+    width: 25px;
+    height: 25px;
+  }
+  .product_page{
+    padding-top: 25px !important;
+    padding-bottom: 0px !important;
+  }
+  .product_page_about_title{
+    min-height: 250px !important;
+    gap: 25px !important;
+  }
+  .product_page_description {
+    padding-top: 45px !important;
+    padding-bottom: 70px !important;
+  }
+  .product_page_description_menu_title{
+    text-align: center !important;
+  }
+  .product_page_description_menu_title{
+    display: block !important;
+  }
+  .product_page_description_menu_title2{
+    display: block !important;
+    text-align: center !important;
+  }
+}
 .filterkotalog_card_img_bg {
   position: absolute;
   top: 0px;
@@ -1743,7 +1809,11 @@ textarea:focus {
   background-image: url("../img/Rectangle\ 93.png");
 }
 .filterkotalog_card_img img {
-  border-radius: 35px 35px 0px 0px;
+  width: 175px;
+  height: 175px;
+  float: left;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 .filterkotalog_cards_nav {
   width: 100%;
@@ -1798,9 +1868,6 @@ textarea:focus {
   font-weight: 700;
   line-height: normal;
 }
-@media (max-width: 1200px) {
-}
-
 /* brendabout */
 
 .brendabout {
@@ -1956,7 +2023,8 @@ textarea:focus {
 }
 .product_page_about_img {
   position: relative;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   border-radius: 35px 0px 0px 35px;
   background-color: #fff;
@@ -2003,7 +2071,8 @@ textarea:focus {
   gap: 25px;
 }
 .product_page_about_title_fenom img {
-  width: 111px;
+  width: 55px;
+  background-color: #fff;
 }
 .product_page_about_title_fenom h3 {
   color: #fff;
@@ -2071,6 +2140,9 @@ textarea:focus {
   .product_page_about_title {
     padding-top: 30px;
     padding-bottom: 30px;
+  }
+  .product_page_about_img{
+    height: 290px;
   }
 }
 .product_page_description {
@@ -2444,11 +2516,7 @@ textarea:focus {
     align-items: start;
     justify-content: start;
     padding-top: 37px;
-    padding-left: 25px;
-    padding-right: 25px;
     flex-direction: column;
-
-    max-height: 400px;
     padding-bottom: 30px;
     flex-shrink: 0;
     border-radius: 15px;
@@ -2721,9 +2789,6 @@ textarea:focus {
   .product_page_description_menu_title2 {
     padding-bottom: 10px !important;
   }
-  .filterkotalog_card {
-    width: 300px;
-  }
 }
 @media (max-width: 650px) {
   .contact_page_about_phone {
@@ -2741,6 +2806,10 @@ textarea:focus {
   }
 }
 @media (hover: hover) {
+  .filterkotalog_card:hover .filterkotalog_card_title{
+    background: #212529;
+    transition: 0.3s; 
+  } 
   .navbar_menu a:hover {
     transition: 0.7s;
     color: #1434cb !important;
@@ -3001,15 +3070,6 @@ textarea:focus {
     font-weight: 400;
     line-height: normal;
   }
-
-  .filterkotalog_card_title h2 {
-    color: #fff;
-    font-family: "Scada", sans-serif;
-    font-size: 22px !important;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-  }
   .filterkotalog_cards_nav_flex p {
     color: #fff;
     font-family: "Scada", sans-serif;
@@ -3020,12 +3080,17 @@ textarea:focus {
     line-height: normal;
   }
 }
+@media(max-width: 495px){
+  .accordion{
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+}
 @media (max-width: 395px) {
   .accordion-button img {
     width: 40px;
   }
   .accordion-button {
-    font-size: 19px !important;
     gap: 10px !important;
   }
   .about_company_card {
