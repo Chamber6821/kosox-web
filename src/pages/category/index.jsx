@@ -48,7 +48,6 @@ const PageButtons = ({ currentPage, lastPage, PageLink, PageStub }) => {
 					...buttons(pages.slice(lastPage - boundary, lastPage)),
 				];
 
-	console.log(currentPage, lastPage, pageButtons);
 	return (
 		<>
 			<PageArrow page={Math.max(1, currentPage - 1)} title="<" />
@@ -134,7 +133,7 @@ export default function Category({ api, params: { category } }) {
 					})),
 				),
 				parameters: await entity.parameters(),
-				lastPage: (await pages.totalPages()) - 1,
+				lastPage: Math.max(1, (await pages.totalPages()) - 1),
 			});
 		})();
 	}, [page, filters]);
