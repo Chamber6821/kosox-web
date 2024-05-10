@@ -54,8 +54,8 @@ export default function () {
             </a>
           </div>
           <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/'>
-            +8(812)455-51-55
+            <a className='allFooter_div_ahref' href='+79818800222'>
+            +7(981)880-02-22
             </a>
           </div>
         </div>
@@ -87,23 +87,28 @@ export default function () {
         <div className='allFooter_address_img_div'>
           <img
             className='allFooter_address_img_div_img'
-            src='./img/visa10.svg'
+            src='/img/visa-mastercard-mir@2x.png'
             alt='icon'
           />
           <img
             className='allFooter_address_img_div_img'
-            src='./img/masterard.svg'
+            src='/img/sberbank@2x.png'
             alt='icon'
           />
           <img
             className='allFooter_address_img_div_img'
-            src='./img/mir=icon.svg'
+            src='/img/tinkoff@2x.png'
             alt='icon'
           />
           <img
             className='allFooter_address_img_div_img'
-            src='./img/visa10.svg'
-            alt=''
+            src='/img/yandexmoney@2x.png'
+            alt='icon'
+          />
+          <img
+            className='allFooter_address_img_div_img'
+            src='/img/paypal@2x.png'
+            alt='icon'
           />
         </div>
       </div>

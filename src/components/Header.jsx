@@ -18,19 +18,19 @@ export default function Header() {
 					<Link to="/">
 						<img
 							src="https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/whatsapp.svg"
-							alt=""
+							alt="icon"
 						/>
 					</Link>
 					<Link to="/">
 						<img
 							src="https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/viber.svg"
-							alt=""
+							alt="icon"
 						/>
 					</Link>
 					<Link to="/">
 						<img
 							src="https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/telegram.svg"
-							alt=""
+							alt="icon"
 						/>
 					</Link>
 				</div>

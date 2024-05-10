@@ -27,7 +27,7 @@ export default function Catalog({ api, params: { superCategory } }) {
 			<div
 				style={{
 					backgroundImage:
-						'url("./img/6ba632040d142d29a5ebe2411f406f96 — копия.jpeg")',
+						'url("/img/6ba632040d142d29a5ebe2411f406f96 — копия.jpeg")',
 				}}
 				className="header_main"
 			>

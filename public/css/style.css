@@ -765,6 +765,18 @@ h4 {
   padding-top: 70px;
   padding-bottom: 70px;
 }
+.link-about{
+  color: red;
+}
+.link-about2{
+  color: blue;
+}
+.link-about:hover{
+  text-decoration: underline;
+}
+.link-about2:hover{
+  text-decoration: underline;
+}
 .about_company_card {
   width: 600px;
   height: 600px;
@@ -1004,6 +1016,11 @@ swiper-slide h4 {
 /* Footer */
 .allFooter {
   background: #212529;
+}
+@media (max-width: 400px){
+  .allFooter_address_img_div{
+    gap: 10px !important;
+  }
 }
 .allFooter_address_img_div_img{
   width: 50px;
@@ -1713,8 +1730,7 @@ textarea:focus {
 }
 .filterkotalog_card {
   width: 800px;
-  display: flex;
-  padding: 0 30px;  
+  display: flex;  
   background: #000617;
   transition: 0.3s; 
 }
