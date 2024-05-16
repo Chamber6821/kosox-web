@@ -125,7 +125,7 @@ export default function Category({ api, params: { category } }) {
 			setContent({
 				categoryName: await entity.name(),
 				products: await Promise.all(
-					(await (await pages.page(page)).array()).map(async (x) => ({
+					(await (await pages.page(page - 1)).array()).map(async (x) => ({
 						id: await x.id(),
 						name: await x.name(),
 						icon: await x.icon(),
@@ -133,7 +133,7 @@ export default function Category({ api, params: { category } }) {
 					})),
 				),
 				parameters: await entity.parameters(),
-				lastPage: Math.max(1, (await pages.totalPages()) - 1),
+				lastPage: Math.max(1, await pages.totalPages()),
 			});
 		})();
 	}, [page, filters]);
