@@ -107,10 +107,8 @@ const CategoryWithProducts = async (category, api) => ({
 const CategoryWithParameters = async (category, api) => ({
 	...category,
 	parameters: async () =>
-		(
-			await api(`categories/${await category.id()}/parameters`)
-		)._embedded.parameters
-			.map((x) => [x.name, x.variants.map((x) => x.value).sort()])
+		Object.entries(await api(`categories/${await category.id()}/parameters`))
+			.map(([key, value]) => [key, value.sort()])
 			.sort(),
 });
 
