@@ -1,3 +1,4 @@
+import Form from "../components/Form";
 import Cards from "./catalog/Cards";
 
 export default function Home({ api }) {
@@ -23,15 +24,7 @@ export default function Home({ api }) {
           <a href="/catalog">ВЫБРАТЬ ТОВАР</a>
         </div>
       </div>
-      <div id="contact_form" className="contact_form">
-        <div className="contact_form_flex">
-          <h2>Оставьте вашу заявку</h2>
-          <input placeholder="Ваше имя" type="text" name="name" />
-          <input placeholder="Ваш e-mail" type="text" name="surname" />
-          <input placeholder="Ваш телефон" type="text" name="phone" />
-          <button>Отправить</button>
-        </div>
-      </div>
+      <Form api={api} />
       <Cards api={api} />
       <div className="promishlenost">
         <div className="promishlenost_title">
