@@ -5,7 +5,7 @@ const CachedBrand = async (json) => ({
 	id: async () => idOf(json),
 	name: async () => json.name,
 	icon: async () => json.iconUrl,
-	description: async () => "Нет описания",
+	description: async () => json.description,
 });
 
 const CachedProduct = async (json, brand) => ({
