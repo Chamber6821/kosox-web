@@ -126,12 +126,21 @@ const BrandWithCategories = async (brand, api) => ({
 
 export default function Api(base) {
   const cache = {};
+  const afetch = async (path, ...args) =>
+    await fetch(new URL(path, base), ...args);
   const get = async (path) => {
-    if (!cache[path])
-      cache[path] = await (await fetch(new URL(path, base))).json();
+    if (!cache[path]) cache[path] = await (await afetch(path)).json();
     return cache[path];
   };
   return {
+    addFormRequest: async (url, data) =>
+      await afetch("forms", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...data, page: url }),
+      }),
     categories: async () => ({
       withId: async (id) =>
         await CategoryWithParameters(
