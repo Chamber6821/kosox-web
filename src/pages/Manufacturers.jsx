@@ -25,7 +25,7 @@ export default function ({ api }) {
 				),
 			);
 		})();
-	});
+	}, []);
 	return (
 		<main>
 			<div
