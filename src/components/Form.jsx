@@ -1,7 +1,7 @@
 import { useLocation } from "wouter";
 
 export default function Form({ api }) {
-  const location = useLocation();
+  const [location, _] = useLocation();
   const handleSubmit = (e) => {
     e.preventDefault();
     const els = e.target.elements;
