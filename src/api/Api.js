@@ -19,15 +19,12 @@ const CachedProduct = async (json, brand) => ({
 const ProductWithParameters = async (product, api) => ({
   ...product,
   parameters: async () =>
-    await Promise.all(
-      (await api(`products/${await product.id()}`)).parameters.map(
-        async (x) => ({
-          key: async () =>
-            (await api(`parameters/${idOfUrl(x._links.parameter.href)}`)).name,
-          value: async () => x.variant.value,
-        }),
-      ),
-    ),
+    (
+      await api(`products/${await product.id()}/parameters`)
+    )._embedded.productParameters.map((x) => ({
+      key: async () => x.name,
+      value: async () => x.value,
+    })),
 });
 
 const ProductWithId = async (id, api) =>
