@@ -40,7 +40,7 @@ export default function App() {
         </Route>
         <Route path="/contacts" component={Contacts} />
         <Route path="/delivery-and-payment" component={DeliveryAndPayment} />
-        <Route path="/faq" component={Faq} />
+        <Route path="/faq">{() => <Faq api={api} />}</Route>
         <Route path="/manufacturers">
           {(params) => <Manufacturers params={params} api={api} />}
         </Route>
