@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Cards from "./Cards";
+import Form from "../../components/Form";
 
 /**
  * @typedef {Object} props
@@ -43,18 +44,7 @@ export default function Catalog({ api, params: { superCategory } }) {
         </div>
       </div>
       <Cards api={api} superCategory={superCategory} />
-      <div
-        style={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
-        className="contact_form"
-      >
-        <div className="contact_form_flex">
-          <h2>Оставьте вашу заявку</h2>
-          <input placeholder="Имя" type="text" name="name" />
-          <input placeholder="Имя" type="text" name="surname" />
-          <input placeholder="Имя" type="text" name="phone" />
-          <button>Отправить</button>
-        </div>
-      </div>
+      <Form api={api} />
     </main>
   );
 }
