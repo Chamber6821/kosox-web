@@ -1,6 +1,8 @@
-import { Link } from "wouter";
+import { Link, useLocation, useSearch } from "wouter";
 
 export default function Header() {
+  const params = new URLSearchParams(useSearch());
+  const [location, setLocation] = useLocation();
   return (
     <header className="header">
       <nav className="navbar">
@@ -125,13 +127,12 @@ export default function Header() {
         <div className="navbar_down_inp">
           <input
             placeholder="Введите наименование"
+            defaultValue={(location === "/search" && params.get("q")) || ""}
             onKeyDown={(e) =>
               "Enter" === e.key &&
-              (window.location = `https://google.com/search?${new URLSearchParams(
-                {
-                  q: `site:currates.ru ${e.target.value}`,
-                },
-              )}`)
+              setLocation(
+                `/search?${new URLSearchParams({ q: e.target.value })}`,
+              )
             }
             type="text"
           />
