@@ -16,6 +16,7 @@ import {
 import Api from "./api/Api";
 import { useState } from "react";
 import ScrollTop from "./components/ScrollTop";
+import Search from "./pages/Search";
 
 export default function App() {
   const [api] = useState(() => Api("http://currates.ru/api/"));
@@ -47,6 +48,7 @@ export default function App() {
         <Route path="/product/:id">
           {(params) => <Product params={params} api={api} />}
         </Route>
+        <Route path="/search">{() => <Search api={api} />}</Route>
       </Switch>
       <Footer />
     </>
