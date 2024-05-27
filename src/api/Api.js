@@ -167,9 +167,32 @@ export default function Api(base) {
           ),
         ),
     }),
-    products: async () => ({
+    products: async (pageSize) => ({
       withId: async (id) =>
         await ProductWithParameters(await ProductWithId(id, get), get),
+      search: async (q) => ({
+        page: async (page) => ({
+          array: async () =>
+            await Promise.all(
+              (
+                await get(
+                  `products/search/search?fragment=${q}&page=${page}&size=${pageSize}`,
+                )
+              )._embedded.products
+                .map(idOf)
+                .map(
+                  async (id) =>
+                    await ProductWithParameters(
+                      await ProductWithId(id, get),
+                      get,
+                    ),
+                ),
+            ),
+        }),
+        totalPages: async () =>
+          (await get(`products/search/search?fragment=${q}&size=${pageSize}`))
+            .page.totalPages,
+      }),
     }),
     brands: async () => ({
       withId: async (id) =>
