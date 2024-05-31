@@ -14,12 +14,26 @@ import {
   Product
 } from './pages'
 import Api from './api/Api'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ScrollTop from './components/ScrollTop'
 import Search from './pages/Search'
 
 export default function App () {
   const [api] = useState(() => Api('http://currates.ru/api/'))
+  const domainLevels = window.location.hostname.split('.').reverse()
+  const city = domainLevels[2]
+  console.log('city', city)
+  useEffect(() => {
+    (async () => {
+      if (city === undefined) {
+        const response = await fetch('http://ip-api.com/json/?fields=city')
+        const { city } = await response.json()
+        const l = window.location
+        window.location = `${l.protocol}//${city.toLowerCase().replaceAll(/[^a-z0-9]+/, '-')
+          }.${l.host}${l.pathname}${l.search} `
+      }
+    })()
+  }, [city])
   return (
     <>
       <ScrollTop />
