@@ -589,14 +589,7 @@ export default function Home ({ api }) {
         </div>
       </div>
       <div className='map'>
-        <iframe
-          src='https://yandex.by/map-widget/v1/profile?ll=30.352017%2C60.058219&z=16.91'
-          width='560'
-          height='400'
-          frameBorder='1'
-          allowFullscreen='true'
-          style={{ position: 'relative' }}
-        />
+        <iframe src='https://yandex.by/map-widget/v1/-/CDfOmN8j?scroll=false' />
       </div>
     </main>
   )
