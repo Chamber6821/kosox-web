@@ -1,4 +1,5 @@
 import Form from '../components/Form'
+import Reviews from '../components/Reviews'
 import Cards from './catalog/Cards'
 
 export default function Home ({ api }) {
@@ -584,77 +585,7 @@ export default function Home ({ api }) {
         </div>
         <div className='reviews_swiper'>
           <div className='reviews_swiper_back' />
-          <swiper-container
-            initial-slide={1}
-            className='mySwiper'
-            pagination='true'
-            pagination-clickable='true'
-            slides-per-view='auto'
-            centered-slides='true'
-            space-between={30}
-            grab-cursor='true'
-          >
-            <swiper-slide>
-              <img src='/img/sky.svg' alt='icon' />
-              <h3>Александр Борисов</h3>
-              <h4>
-                Заказывали конические однорядные подшипники, все понравилось.
-                Нужна была крупная оптовая партия и в сжатые сроки - все
-                доставили вовремя! Сервис понравился, будем обращаться еще.
-              </h4>
-            </swiper-slide>
-            <swiper-slide>
-              <img src='/img/sky.svg' alt='icon' />
-              <h3>Дмитрий Бородин</h3>
-              <h4>
-                Делал большой оптовый заказ, еще и сборный - ребята все собрали,
-                доставили как надо и со сроками полный порядок. Очень круто,
-                буду работать и дальше.
-              </h4>
-            </swiper-slide>
-            <swiper-slide>
-              <img src='/img/sky.svg' alt='icon' />
-              <h3>Тимур Киселев</h3>
-              <h4>
-                С компанией KOSOX работаем уже давно - качество всегда на уровне
-                и цены приемлемые, рекомендую.
-              </h4>
-            </swiper-slide>
-            <swiper-slide>
-              <img src='/img/sky.svg' alt='icon' />
-              <h3>Евгений Островерхий</h3>
-              <h4>
-                Заказывали первый раз, договорились про консультацию. По
-                телефону все очень доходчиво рассказали - видно что в компании
-                работают люди со знанием дела!
-              </h4>
-            </swiper-slide>
-            <swiper-slide>
-              <img src='/img/sky.svg' alt='icon' />
-              <h3>Алексей Верущенко</h3>
-              <h4>
-                Отличный сервис, приятные условия, доставка вовремя - все просто
-                замечательно, благодарю KOSOX за сотрудничество.
-              </h4>
-            </swiper-slide>
-            <swiper-slide>
-              <img src='/img/sky.svg' alt='icon' />
-              <h3>Михаил Каштанов</h3>
-              <h4>
-                На производстве понадобились Станки ЧПУ. Долго думали какого
-                производителя выбрать и в итоге пришли к решению заказать у
-                KOSOX. Поставили все в лучшем виде, очень довольны!
-              </h4>
-            </swiper-slide>
-            <swiper-slide>
-              <img src='/img/sky.svg' alt='icon' />
-              <h3>Владимир Козловский</h3>
-              <h4>
-                По соотношению цены и качества думаю лучше компанию не найти.
-                Работать буду продолжать, все устраивает.
-              </h4>
-            </swiper-slide>
-          </swiper-container>
+          <Reviews />
         </div>
       </div>
       <div className='map'>
@@ -662,8 +593,8 @@ export default function Home ({ api }) {
           src='https://yandex.by/map-widget/v1/profile?ll=30.352017%2C60.058219&z=16.91'
           width='560'
           height='400'
-          frameborder='1'
-          allowfullscreen='true'
+          frameBorder='1'
+          allowFullscreen='true'
           style={{ position: 'relative' }}
         />
       </div>
