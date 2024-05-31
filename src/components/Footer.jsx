@@ -35,7 +35,7 @@ export default function () {
             </a>
           </div>
         </div>
-        
+
         <div className='allFooter_div_block_three'>
           <h6 className='allFooter_div_title'>Контакты</h6>
           <div className='allFooter_div_ahref_div'>
@@ -55,7 +55,7 @@ export default function () {
           </div>
           <div className='allFooter_div_ahref_div'>
             <a className='allFooter_div_ahref' href='+79818800222'>
-            +7(981)880-02-22
+              +7(981)880-02-22
             </a>
           </div>
         </div>

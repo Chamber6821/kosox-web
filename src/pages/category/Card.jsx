@@ -21,7 +21,7 @@ export default function ({
               maxWidth: '100px',
               maxHeight: '100px',
               border: '0px solid transparent',
-              background: '#fff',
+              background: '#fff'
 
             }}
             src={brandImage}

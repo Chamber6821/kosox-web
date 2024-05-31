@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { Link } from "wouter";
-import Form from "../components/Form";
+import { useEffect, useState } from 'react'
+import { Link } from 'wouter'
+import Form from '../components/Form'
 
 /**
  * @typedef {Object} props
@@ -12,11 +12,11 @@ import Form from "../components/Form";
  * @param {props} props
  * @returns
  */
-export default function({ params: { brand }, api }) {
-  const [{ name, description, categories = [] }, setBrand] = useState({});
+export default function ({ params: { brand }, api }) {
+  const [{ name, description, categories = [] }, setBrand] = useState({})
   useEffect(() => {
     (async () => {
-      const brandEntity = await (await api.brands()).withId(brand);
+      const brandEntity = await (await api.brands()).withId(brand)
       setBrand({
         name: await brandEntity.name(),
         description: await brandEntity.description(),
@@ -24,44 +24,44 @@ export default function({ params: { brand }, api }) {
           (await brandEntity.categories()).map(async (x) => ({
             id: await x.id(),
             name: await x.name(),
-            icon: await x.icon(),
-          })),
-        ),
-      });
-    })();
-  }, [brand]);
+            icon: await x.icon()
+          }))
+        )
+      })
+    })()
+  }, [brand])
   return (
-    <main className="brendabout">
-      <div className="brendabout_bgimg">
-        <img src="./img/Rectangle 94.png" alt="" />
+    <main className='brendabout'>
+      <div className='brendabout_bgimg'>
+        <img src='./img/Rectangle 94.png' alt='' />
       </div>
-      <div className="brendabout_main_flex">
-        <div className="main_left">
+      <div className='brendabout_main_flex'>
+        <div className='main_left'>
           <h1>{name}</h1>
         </div>
-        <div className="brendabout_title">
+        <div className='brendabout_title'>
           <p>{description}</p>
         </div>
         {categories.length > 0 && (
           <>
-            <div className="main_left">
+            <div className='main_left'>
               <h6>Товары {name}</h6>
             </div>
-            <div className="brendabout_cards">
+            <div className='brendabout_cards'>
               {categories.map((x) => (
-                <Link to={`/category/${x.id}`}>
+                <Link key={x.name} to={`/category/${x.id}`}>
                   <div
                     style={{
-                      backgroundImage: `url("/img/6ba632040d142d29a5ebe2411f406f96 — копия.jpeg")`,
+                      backgroundImage: 'url("/img/6ba632040d142d29a5ebe2411f406f96 — копия.jpeg")'
                     }}
-                    className="brendabout_card"
+                    className='brendabout_card'
                   >
-                    <div className="brendabout_card_bg" />
+                    <div className='brendabout_card_bg' />
                     <h2>{x.name}</h2>
                     <img
                       style={{ maxWidth: 250, maxHeight: 200 }}
                       src={x.icon}
-                      alt=""
+                      alt=''
                     />
                   </div>
                 </Link>
@@ -70,10 +70,10 @@ export default function({ params: { brand }, api }) {
           </>
         )}
         <Form api={api} />
-        <div className="brendabout_btn">
-          <a href="">Заказать товар {name}</a>
+        <div className='brendabout_btn'>
+          <a href=''>Заказать товар {name}</a>
         </div>
       </div>
     </main>
-  );
+  )
 }

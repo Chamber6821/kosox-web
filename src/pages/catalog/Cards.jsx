@@ -1,29 +1,29 @@
-import { useState, useEffect } from "react";
-import Card from "./Card";
+import { useState, useEffect } from 'react'
+import Card from './Card'
 
-export default function Cards({ api, superCategory = undefined }) {
-  const [{ categories = [] }, setContent] = useState({});
+export default function Cards ({ api, superCategory = undefined }) {
+  const [{ categories = [] }, setContent] = useState({})
   useEffect(() => {
     (async () => {
-      const superCategories = await api.superCategories();
-      const scEntity = await superCategories.withId(superCategory);
+      const superCategories = await api.superCategories()
+      const scEntity = await superCategories.withId(superCategory)
       const categories = superCategory
         ? await scEntity.categories()
-        : superCategories;
+        : superCategories
       setContent({
         categories: await Promise.all(
           (await categories.array()).map(async (x) => ({
             id: await x.id(),
             name: await x.name(),
-            icon: await x.icon(),
-          })),
-        ),
-      });
-    })();
-  }, [api, superCategory]);
+            icon: await x.icon()
+          }))
+        )
+      })
+    })()
+  }, [api, superCategory])
   return (
-    <div className="kotalog">
-      <div className="kotalog_flex">
+    <div className='kotalog'>
+      <div className='kotalog_flex'>
         {categories.map((x) => (
           <Card
             key={x.id}
@@ -35,5 +35,5 @@ export default function Cards({ api, superCategory = undefined }) {
         ))}
       </div>
     </div>
-  );
+  )
 }

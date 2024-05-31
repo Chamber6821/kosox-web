@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Link } from "wouter";
+import { useEffect, useState } from 'react'
+import { Link } from 'wouter'
 
 /**
  * @typedef {Object} props
@@ -12,7 +12,7 @@ import { Link } from "wouter";
  * @returns
  */
 export default function ({ api }) {
-  const [brands, setBrands] = useState([]);
+  const [brands, setBrands] = useState([])
   useEffect(() => {
     (async () => {
       setBrands(
@@ -20,40 +20,40 @@ export default function ({ api }) {
           (await (await api.brands()).array()).map(async (x) => ({
             id: await x.id(),
             name: await x.name(),
-            icon: await x.icon(),
-          })),
-        ),
-      );
-    })();
-  }, []);
+            icon: await x.icon()
+          }))
+        )
+      )
+    })()
+  }, [])
   return (
     <main>
       <div
         style={{
           backgroundImage:
-            'url("./img/6ba632040d142d29a5ebe2411f406f96 — копия.jpeg")',
+            'url("./img/6ba632040d142d29a5ebe2411f406f96 — копия.jpeg")'
         }}
-        className="header_main"
+        className='header_main'
       >
-        <div className="header_main_bg" />
-        <div className="header_main_flex">
+        <div className='header_main_bg' />
+        <div className='header_main_flex'>
           <h1>Производители</h1>
         </div>
       </div>
-      <div className="manufacturers">
-        <div className="manufacturers_speak">
+      <div className='manufacturers'>
+        <div className='manufacturers_speak'>
           <h2>
             Мы торгуем с европейскими и мировыми <br /> брендами!
           </h2>
-          <a href="">Оставить заявку</a>
+          <a href=''>Оставить заявку</a>
         </div>
-        <div className="our_brends content">
+        <div className='our_brends content'>
           <h2>Наши бренды</h2>
-          <div className="our_brends_cards">
+          <div className='our_brends_cards'>
             {brands.map((x) => (
-              <div className="our_brends_card">
-                <img src={x.icon} alt="" />
-                <div className="our_brends_card_hover">
+              <div key={x.name} className='our_brends_card'>
+                <img src={x.icon} alt='' />
+                <div className='our_brends_card_hover'>
                   <h5>{x.name}</h5>
                   <Link to={`/about-manufacturer/${x.id}`}>Подробнее...</Link>
                 </div>
@@ -62,50 +62,50 @@ export default function ({ api }) {
           </div>
         </div>
       </div>
-      <div className="kotalog">
-        <div className="kotalog_flex">
+      <div className='kotalog'>
+        <div className='kotalog_flex'>
           <div
             style={{
-              backgroundImage: 'url("./img/car-repair-garage 1.png")',
+              backgroundImage: 'url("./img/car-repair-garage 1.png")'
             }}
-            className="kotalog_card"
+            className='kotalog_card'
           >
-            <div className="kotalog_card_bg" />
+            <div className='kotalog_card_bg' />
             <h3>Промышленное снабжение</h3>
-            <a href="">ТОВАРЫ</a>
+            <a href=''>ТОВАРЫ</a>
           </div>
           <div
             style={{
-              backgroundImage: 'url("./img/car-repair-garage 1.png")',
+              backgroundImage: 'url("./img/car-repair-garage 1.png")'
             }}
-            className="kotalog_card"
+            className='kotalog_card'
           >
-            <div className="kotalog_card_bg" />
+            <div className='kotalog_card_bg' />
             <h3>Промышленное снабжение</h3>
-            <a href="">ТОВАРЫ</a>
+            <a href=''>ТОВАРЫ</a>
           </div>
           <div
             style={{
-              backgroundImage: 'url("./img/car-repair-garage 1.png")',
+              backgroundImage: 'url("./img/car-repair-garage 1.png")'
             }}
-            className="kotalog_card"
+            className='kotalog_card'
           >
-            <div className="kotalog_card_bg" />
+            <div className='kotalog_card_bg' />
             <h3>Промышленное снабжение</h3>
-            <a href="">ТОВАРЫ</a>
+            <a href=''>ТОВАРЫ</a>
           </div>
           <div
             style={{
-              backgroundImage: 'url("./img/car-repair-garage 1.png")',
+              backgroundImage: 'url("./img/car-repair-garage 1.png")'
             }}
-            className="kotalog_card"
+            className='kotalog_card'
           >
-            <div className="kotalog_card_bg" />
+            <div className='kotalog_card_bg' />
             <h3>Промышленное снабжение</h3>
-            <a href="">ТОВАРЫ</a>
+            <a href=''>ТОВАРЫ</a>
           </div>
         </div>
       </div>
     </main>
-  );
+  )
 }

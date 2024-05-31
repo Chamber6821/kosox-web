@@ -1,18 +1,18 @@
-import Form from "../components/Form";
-import Cards from "./catalog/Cards";
+import Form from '../components/Form'
+import Cards from './catalog/Cards'
 
-export default function Home({ api }) {
+export default function Home ({ api }) {
   return (
     <main>
       <div
-        className="main"
+        className='main'
         style={{
           backgroundImage:
-            'url("./img/a-close-up-of-a-robot-s-gear_188544-21931 1.png")',
+            'url("./img/a-close-up-of-a-robot-s-gear_188544-21931 1.png")'
         }}
       >
-        <img src="./img/Rectangle1.png" alt="" />
-        <div className="main_left">
+        <img src='./img/Rectangle1.png' alt='' />
+        <div className='main_left'>
           <h1>
             Помощь в выборе <br />
             подшипников и промышленных товаров
@@ -21,38 +21,38 @@ export default function Home({ api }) {
             Более 60 тысяч образцов товаров <br />с гарантией ГОСТ/ТУ/ISO
             качества
           </h3>
-          <a href="/catalog">ВЫБРАТЬ ТОВАР</a>
+          <a href='/catalog'>ВЫБРАТЬ ТОВАР</a>
         </div>
       </div>
       <Form api={api} />
       <Cards api={api} />
-      <div className="promishlenost">
-        <div className="promishlenost_title">
+      <div className='promishlenost'>
+        <div className='promishlenost_title'>
           <h6>Промышленность</h6>
         </div>
-        <div className="promishlenost_acc">
-          <div className="accordion content" id="accordionExample">
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingOne">
+        <div className='promishlenost_acc'>
+          <div className='accordion content' id='accordionExample'>
+            <div className='accordion-item'>
+              <h2 className='accordion-header' id='headingOne'>
                 <button
-                  className="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
+                  className='accordion-button'
+                  type='button'
+                  data-bs-toggle='collapse'
+                  data-bs-target='#collapseOne'
+                  aria-expanded='true'
+                  aria-controls='collapseOne'
                 >
-                  <img src="./img/mebel.svg" alt="" />
+                  <img src='./img/mebel.svg' alt='' />
                   Мебельная промышленность
                 </button>
               </h2>
               <div
-                id="collapseOne"
-                className="accordion-collapse collapse show"
-                aria-labelledby="headingOne"
-                data-bs-parent="#accordionExample"
+                id='collapseOne'
+                className='accordion-collapse collapse show'
+                aria-labelledby='headingOne'
+                data-bs-parent='#accordionExample'
               >
-                <div className="accordion-body">
+                <div className='accordion-body'>
                   Мебельная промышленность относится к наиболее быстро
                   развивающимся отраслям перерабатывающей промышленности. Это
                   сектор с очень высокой конкуренцией и разнообразием. Среди
@@ -67,27 +67,27 @@ export default function Home({ api }) {
                 </div>
               </div>
             </div>
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingTwo">
+            <div className='accordion-item'>
+              <h2 className='accordion-header' id='headingTwo'>
                 <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo"
-                  aria-expanded="false"
-                  aria-controls="collapseTwo"
+                  className='accordion-button collapsed'
+                  type='button'
+                  data-bs-toggle='collapse'
+                  data-bs-target='#collapseTwo'
+                  aria-expanded='false'
+                  aria-controls='collapseTwo'
                 >
-                  <img src="./img/micro.svg" alt="icon" />
+                  <img src='./img/micro.svg' alt='icon' />
                   Микроэлектроника и нанотехнологии
                 </button>
               </h2>
               <div
-                id="collapseTwo"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingTwo"
-                data-bs-parent="#accordionExample"
+                id='collapseTwo'
+                className='accordion-collapse collapse'
+                aria-labelledby='headingTwo'
+                data-bs-parent='#accordionExample'
               >
-                <div className="accordion-body">
+                <div className='accordion-body'>
                   Микроэлектроника и нанотехнологии - это области науки и
                   техники, строго необходимые для устойчивого развития стран с
                   развитой экономикой, включающие в себя все средства и методы
@@ -98,27 +98,27 @@ export default function Home({ api }) {
                 </div>
               </div>
             </div>
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingThree">
+            <div className='accordion-item'>
+              <h2 className='accordion-header' id='headingThree'>
                 <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseThree"
-                  aria-expanded="false"
-                  aria-controls="collapseThree"
+                  className='accordion-button collapsed'
+                  type='button'
+                  data-bs-toggle='collapse'
+                  data-bs-target='#collapseThree'
+                  aria-expanded='false'
+                  aria-controls='collapseThree'
                 >
-                  <img src="./img/farma.svg" alt="icon" />
+                  <img src='./img/farma.svg' alt='icon' />
                   Фармацевтическая промышленность
                 </button>
               </h2>
               <div
-                id="collapseThree"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingThree"
-                data-bs-parent="#accordionExample"
+                id='collapseThree'
+                className='accordion-collapse collapse'
+                aria-labelledby='headingThree'
+                data-bs-parent='#accordionExample'
               >
-                <div className="accordion-body">
+                <div className='accordion-body'>
                   Всеми процессами, связанными с лекарственными средствами,
                   занимается фармацевтическая промышленность. Это отрасль
                   промышленности, которая непосредственно изучает,
@@ -128,27 +128,27 @@ export default function Home({ api }) {
                 </div>
               </div>
             </div>
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingFour">
+            <div className='accordion-item'>
+              <h2 className='accordion-header' id='headingFour'>
                 <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseFour"
-                  aria-expanded="false"
-                  aria-controls="collapseFour"
+                  className='accordion-button collapsed'
+                  type='button'
+                  data-bs-toggle='collapse'
+                  data-bs-target='#collapseFour'
+                  aria-expanded='false'
+                  aria-controls='collapseFour'
                 >
-                  <img src="./img/stroy.svg" alt="icon" />
+                  <img src='./img/stroy.svg' alt='icon' />
                   Промышленность строительных материалов
                 </button>
               </h2>
               <div
-                id="collapseFour"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingFour"
-                data-bs-parent="#accordionExample"
+                id='collapseFour'
+                className='accordion-collapse collapse'
+                aria-labelledby='headingFour'
+                data-bs-parent='#accordionExample'
               >
-                <div className="accordion-body">
+                <div className='accordion-body'>
                   Представляет собой комплекс производственных направлений,
                   предназначенных для изготовления материалов для жилищного,
                   гражданского, промышленного, сельскохозяйственного и иных
@@ -160,27 +160,27 @@ export default function Home({ api }) {
                 </div>
               </div>
             </div>
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingFive">
+            <div className='accordion-item'>
+              <h2 className='accordion-header' id='headingFive'>
                 <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseFive"
-                  aria-expanded="false"
-                  aria-controls="collapseFive"
+                  className='accordion-button collapsed'
+                  type='button'
+                  data-bs-toggle='collapse'
+                  data-bs-target='#collapseFive'
+                  aria-expanded='false'
+                  aria-controls='collapseFive'
                 >
-                  <img src="./img/electronica.svg" alt="icon" />
+                  <img src='./img/electronica.svg' alt='icon' />
                   Электроэнергетика
                 </button>
               </h2>
               <div
-                id="collapseFive"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingFive"
-                data-bs-parent="#accordionExample"
+                id='collapseFive'
+                className='accordion-collapse collapse'
+                aria-labelledby='headingFive'
+                data-bs-parent='#accordionExample'
               >
-                <div className="accordion-body">
+                <div className='accordion-body'>
                   Электроэнергетика включает в себя производство, передачу и
                   потребление электроэнергии и является наиболее важной отраслью
                   энергетики. Электроэнергетика используется в быту,
@@ -189,27 +189,27 @@ export default function Home({ api }) {
                 </div>
               </div>
             </div>
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingSix">
+            <div className='accordion-item'>
+              <h2 className='accordion-header' id='headingSix'>
                 <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseSix"
-                  aria-expanded="false"
-                  aria-controls="collapseSix"
+                  className='accordion-button collapsed'
+                  type='button'
+                  data-bs-toggle='collapse'
+                  data-bs-target='#collapseSix'
+                  aria-expanded='false'
+                  aria-controls='collapseSix'
                 >
-                  <img src="./img/dobyuvayu.svg" alt="icon" />
+                  <img src='./img/dobyuvayu.svg' alt='icon' />
                   Добывающая промышленность
                 </button>
               </h2>
               <div
-                id="collapseSix"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingSix"
-                data-bs-parent="#accordionExample"
+                id='collapseSix'
+                className='accordion-collapse collapse'
+                aria-labelledby='headingSix'
+                data-bs-parent='#accordionExample'
               >
-                <div className="accordion-body">
+                <div className='accordion-body'>
                   Добывающая промышленность - отрасли промышленности,
                   занимающиеся добычей различного сырья и энергии. Добывающая
                   промышленность включает: получение электроэнергии; все отрасли
@@ -226,27 +226,27 @@ export default function Home({ api }) {
                 </div>
               </div>
             </div>
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingSeven">
+            <div className='accordion-item'>
+              <h2 className='accordion-header' id='headingSeven'>
                 <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseSeven"
-                  aria-expanded="false"
-                  aria-controls="collapseSeven"
+                  className='accordion-button collapsed'
+                  type='button'
+                  data-bs-toggle='collapse'
+                  data-bs-target='#collapseSeven'
+                  aria-expanded='false'
+                  aria-controls='collapseSeven'
                 >
-                  <img src="./img/metallurg.svg" alt="icon" />
+                  <img src='./img/metallurg.svg' alt='icon' />
                   Металлургия
                 </button>
               </h2>
               <div
-                id="collapseSeven"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingSeven"
-                data-bs-parent="#accordionExample"
+                id='collapseSeven'
+                className='accordion-collapse collapse'
+                aria-labelledby='headingSeven'
+                data-bs-parent='#accordionExample'
               >
-                <div className="accordion-body">
+                <div className='accordion-body'>
                   Область науки и техники, охватывающая процессы получения
                   металлов из руд или других видов сырья, а также процессы,
                   связанные с изменением химического состава, структуры и
@@ -257,27 +257,27 @@ export default function Home({ api }) {
                 </div>
               </div>
             </div>
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingEight">
+            <div className='accordion-item'>
+              <h2 className='accordion-header' id='headingEight'>
                 <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseEight"
-                  aria-expanded="false"
-                  aria-controls="collapseEight"
+                  className='accordion-button collapsed'
+                  type='button'
+                  data-bs-toggle='collapse'
+                  data-bs-target='#collapseEight'
+                  aria-expanded='false'
+                  aria-controls='collapseEight'
                 >
-                  <img src="./img/mashinostroeniye.svg" alt="icon" />
+                  <img src='./img/mashinostroeniye.svg' alt='icon' />
                   Машиностроение
                 </button>
               </h2>
               <div
-                id="collapseEight"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingEight"
-                data-bs-parent="#accordionExample"
+                id='collapseEight'
+                className='accordion-collapse collapse'
+                aria-labelledby='headingEight'
+                data-bs-parent='#accordionExample'
               >
-                <div className="accordion-body">
+                <div className='accordion-body'>
                   Машиностроение — это отрасль тяжелой промышленности,
                   производящая всевозможные машины, орудия, приборы, а также
                   предметы потребления и продукцию оборонного назначения.
@@ -289,27 +289,27 @@ export default function Home({ api }) {
                 </div>
               </div>
             </div>
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingNine">
+            <div className='accordion-item'>
+              <h2 className='accordion-header' id='headingNine'>
                 <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseNine"
-                  aria-expanded="false"
-                  aria-controls="collapseNine"
+                  className='accordion-button collapsed'
+                  type='button'
+                  data-bs-toggle='collapse'
+                  data-bs-target='#collapseNine'
+                  aria-expanded='false'
+                  aria-controls='collapseNine'
                 >
-                  <img src="./img/neft.svg" alt="icon" />
+                  <img src='./img/neft.svg' alt='icon' />
                   Нефтеперерабатывающая промышленность
                 </button>
               </h2>
               <div
-                id="collapseNine"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingNine"
-                data-bs-parent="#accordionExample"
+                id='collapseNine'
+                className='accordion-collapse collapse'
+                aria-labelledby='headingNine'
+                data-bs-parent='#accordionExample'
               >
-                <div className="accordion-body">
+                <div className='accordion-body'>
                   Отрасль экономики, занимающаяся добычей, переработкой,
                   транспортировкой, складированием и продажей полезного
                   природного ископаемого — нефти и сопутствующих нефтепродуктов.
@@ -320,27 +320,27 @@ export default function Home({ api }) {
                 </div>
               </div>
             </div>
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingTen">
+            <div className='accordion-item'>
+              <h2 className='accordion-header' id='headingTen'>
                 <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTen"
-                  aria-expanded="false"
-                  aria-controls="collapseTen"
+                  className='accordion-button collapsed'
+                  type='button'
+                  data-bs-toggle='collapse'
+                  data-bs-target='#collapseTen'
+                  aria-expanded='false'
+                  aria-controls='collapseTen'
                 >
-                  <img src="./img/himicheskaya.svg" alt="icon" />
+                  <img src='./img/himicheskaya.svg' alt='icon' />
                   Химическая промышленность
                 </button>
               </h2>
               <div
-                id="collapseTen"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingTen"
-                data-bs-parent="#accordionExample"
+                id='collapseTen'
+                className='accordion-collapse collapse'
+                aria-labelledby='headingTen'
+                data-bs-parent='#accordionExample'
               >
-                <div className="accordion-body">
+                <div className='accordion-body'>
                   Химическая промышленность обеспечивает множество отраслей
                   новыми исходными продуктами и материалами. Особенно влияет
                   химическая индустрия на развитие строительства,
@@ -351,27 +351,27 @@ export default function Home({ api }) {
                 </div>
               </div>
             </div>
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingEleven">
+            <div className='accordion-item'>
+              <h2 className='accordion-header' id='headingEleven'>
                 <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseEleven"
-                  aria-expanded="false"
-                  aria-controls="collapseEleven"
+                  className='accordion-button collapsed'
+                  type='button'
+                  data-bs-toggle='collapse'
+                  data-bs-target='#collapseEleven'
+                  aria-expanded='false'
+                  aria-controls='collapseEleven'
                 >
-                  <img src="./img/bumazhnaya.svg" alt="icon" />
+                  <img src='./img/bumazhnaya.svg' alt='icon' />
                   Целлюлозно-бумажная промышленность
                 </button>
               </h2>
               <div
-                id="collapseEleven"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingEleven"
-                data-bs-parent="#accordionExample"
+                id='collapseEleven'
+                className='accordion-collapse collapse'
+                aria-labelledby='headingEleven'
+                data-bs-parent='#accordionExample'
               >
-                <div className="accordion-body">
+                <div className='accordion-body'>
                   Целлюлозно-бумажная промышленность состоит из предприятий,
                   которые в качестве сырья для производства готовой продукции
                   используют древесину, растения, отходы бумаги и картона,
@@ -380,27 +380,27 @@ export default function Home({ api }) {
                 </div>
               </div>
             </div>
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingTwelve">
+            <div className='accordion-item'>
+              <h2 className='accordion-header' id='headingTwelve'>
                 <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwelve"
-                  aria-expanded="false"
-                  aria-controls="collapseTwelve"
+                  className='accordion-button collapsed'
+                  type='button'
+                  data-bs-toggle='collapse'
+                  data-bs-target='#collapseTwelve'
+                  aria-expanded='false'
+                  aria-controls='collapseTwelve'
                 >
-                  <img src="./img/legkaya.svg" alt="icon" />
+                  <img src='./img/legkaya.svg' alt='icon' />
                   Легкая промышленность
                 </button>
               </h2>
               <div
-                id="collapseTwelve"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingTwelve"
-                data-bs-parent="#accordionExample"
+                id='collapseTwelve'
+                className='accordion-collapse collapse'
+                aria-labelledby='headingTwelve'
+                data-bs-parent='#accordionExample'
               >
-                <div className="accordion-body">
+                <div className='accordion-body'>
                   Одной из основных отраслей промышленного комплекса, которая
                   производит товары народного потребления, является лёгкая
                   промышленность. Именно она выпускает продукцию для населения,
@@ -410,27 +410,27 @@ export default function Home({ api }) {
                 </div>
               </div>
             </div>
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingThirteen">
+            <div className='accordion-item'>
+              <h2 className='accordion-header' id='headingThirteen'>
                 <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseThirteen"
-                  aria-expanded="false"
-                  aria-controls="collapseThirteen"
+                  className='accordion-button collapsed'
+                  type='button'
+                  data-bs-toggle='collapse'
+                  data-bs-target='#collapseThirteen'
+                  aria-expanded='false'
+                  aria-controls='collapseThirteen'
                 >
-                  <img src="./img/pishevaya.svg" alt="icon" />
+                  <img src='./img/pishevaya.svg' alt='icon' />
                   Пищевая промышленность
                 </button>
               </h2>
               <div
-                id="collapseThirteen"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingThirteen"
-                data-bs-parent="#accordionExample"
+                id='collapseThirteen'
+                className='accordion-collapse collapse'
+                aria-labelledby='headingThirteen'
+                data-bs-parent='#accordionExample'
               >
-                <div className="accordion-body">
+                <div className='accordion-body'>
                   Пищевая промышленность — группа промышленных отраслей,
                   производящих пищевые продукты в готовом виде или в виде
                   полуфабрикатов, а также напитки, табачные изделия .В системе
@@ -449,9 +449,9 @@ export default function Home({ api }) {
           </div>
         </div>
       </div>
-      <div className="about_company">
+      <div className='about_company'>
         <div
-          className="about_company_card"
+          className='about_company_card'
           style={{ backgroundImage: 'url("./img/Rectangle 2.png")' }}
         >
           <h6>О компании</h6>
@@ -461,39 +461,39 @@ export default function Home({ api }) {
             комплектующие для промышленности и другие товары, мы также даем
             лучший сервис и наилучшие условия сотрудничества.
           </h3>
-          <a href="/about" className="red_border">
+          <a href='/about' className='red_border'>
             Читать подробнее
           </a>
         </div>
       </div>
-      <div className="primushestva_company">
-        <div className="main_left">
+      <div className='primushestva_company'>
+        <div className='main_left'>
           <h6>Преимущества компании</h6>
         </div>
-        <div className="primushestva_company_cards">
-          <div className="primushestva_company_cards_card">
-            <div className="primushestva_company_cards_card_img">
-              <img src="./img/prices.svg" alt="icon" />
+        <div className='primushestva_company_cards'>
+          <div className='primushestva_company_cards_card'>
+            <div className='primushestva_company_cards_card_img'>
+              <img src='./img/prices.svg' alt='icon' />
             </div>
-            <div className="primushestva_company_cards_card_title">
+            <div className='primushestva_company_cards_card_title'>
               <h3>Отличные цены </h3>
               <h4>У нас одни из самых минимальных цен на рынке</h4>
             </div>
           </div>
-          <div className="primushestva_company_cards_card">
-            <div className="primushestva_company_cards_card_img">
-              <img src="./img/delivery.svg" alt="icon" />
+          <div className='primushestva_company_cards_card'>
+            <div className='primushestva_company_cards_card_img'>
+              <img src='./img/delivery.svg' alt='icon' />
             </div>
-            <div className="primushestva_company_cards_card_title">
+            <div className='primushestva_company_cards_card_title'>
               <h3>Доступность</h3>
               <h4>Доставляем товары по всей Российской Федерации</h4>
             </div>
           </div>
-          <div className="primushestva_company_cards_card">
-            <div className="primushestva_company_cards_card_img">
-              <img src="./img/speed.svg" alt="icon" />
+          <div className='primushestva_company_cards_card'>
+            <div className='primushestva_company_cards_card_img'>
+              <img src='./img/speed.svg' alt='icon' />
             </div>
-            <div className="primushestva_company_cards_card_title">
+            <div className='primushestva_company_cards_card_title'>
               <h3>Скорость доставки</h3>
               <h4>
                 На нашем складе лежит большое количество товаров уже готовых к
@@ -501,20 +501,20 @@ export default function Home({ api }) {
               </h4>
             </div>
           </div>
-          <div className="primushestva_company_cards_card">
-            <div className="primushestva_company_cards_card_img">
-              <img src="./img/quality.svg" alt="" />
+          <div className='primushestva_company_cards_card'>
+            <div className='primushestva_company_cards_card_img'>
+              <img src='./img/quality.svg' alt='' />
             </div>
-            <div className="primushestva_company_cards_card_title">
+            <div className='primushestva_company_cards_card_title'>
               <h3>Гарантия качества</h3>
               <h4>Все наши изделия с гарантией ГОСТ/ТУ/ISO качества</h4>
             </div>
           </div>
-          <div className="primushestva_company_cards_card">
-            <div className="primushestva_company_cards_card_img">
-              <img src="./img/postavshik.svg" alt="" />
+          <div className='primushestva_company_cards_card'>
+            <div className='primushestva_company_cards_card_img'>
+              <img src='./img/postavshik.svg' alt='' />
             </div>
-            <div className="primushestva_company_cards_card_title">
+            <div className='primushestva_company_cards_card_title'>
               <h3>Поставщики</h3>
               <h4>
                 Наши партнеры - это ведущие производители Японии, Франции,
@@ -522,11 +522,11 @@ export default function Home({ api }) {
               </h4>
             </div>
           </div>
-          <div className="primushestva_company_cards_card">
-            <div className="primushestva_company_cards_card_img">
-              <img src="./img/clients.svg" alt="" />
+          <div className='primushestva_company_cards_card'>
+            <div className='primushestva_company_cards_card_img'>
+              <img src='./img/clients.svg' alt='' />
             </div>
-            <div className="primushestva_company_cards_card_title">
+            <div className='primushestva_company_cards_card_title'>
               <h3>Удобство клиентов</h3>
               <h4>
                 Мы работаем без посредников, а значит вам не придется лишний раз
@@ -536,66 +536,66 @@ export default function Home({ api }) {
           </div>
         </div>
       </div>
-      <div className="how_weare_working">
-        <div className="main_left">
+      <div className='how_weare_working'>
+        <div className='main_left'>
           <h6>Как мы работаем?</h6>
         </div>
-        <div className="how_weare_working_cards">
-          <div className="how_weare_working_cards_card">
-            <div className="how_weare_working_cards_card_num">
+        <div className='how_weare_working_cards'>
+          <div className='how_weare_working_cards_card'>
+            <div className='how_weare_working_cards_card_num'>
               <span>01</span>
             </div>
-            <div className="how_weare_working_cards_card_text">
+            <div className='how_weare_working_cards_card_text'>
               <h3>Вы звоните или оставляете заявку</h3>
             </div>
           </div>
-          <div className="how_weare_working_cards_card">
-            <div className="how_weare_working_cards_card_num">
+          <div className='how_weare_working_cards_card'>
+            <div className='how_weare_working_cards_card_num'>
               <span>02</span>
             </div>
-            <div className="how_weare_working_cards_card_text">
+            <div className='how_weare_working_cards_card_text'>
               <h3>Мы формируем ваш заказ</h3>
             </div>
           </div>
-          <div className="how_weare_working_cards_card">
-            <div className="how_weare_working_cards_card_num">
+          <div className='how_weare_working_cards_card'>
+            <div className='how_weare_working_cards_card_num'>
               <span>03</span>
             </div>
-            <div className="how_weare_working_cards_card_text">
+            <div className='how_weare_working_cards_card_text'>
               <h3>Вы оплачиваете выставленный вам счёт</h3>
             </div>
           </div>
-          <div className="how_weare_working_cards_card">
-            <div className="how_weare_working_cards_card_num">
+          <div className='how_weare_working_cards_card'>
+            <div className='how_weare_working_cards_card_num'>
               <span>04</span>
             </div>
-            <div className="how_weare_working_cards_card_text">
+            <div className='how_weare_working_cards_card_text'>
               <h3>В оговоренные сроки осуществляется отгрузка</h3>
             </div>
           </div>
         </div>
-        <a href="#contact_form" className="red_border">
+        <a href='#contact_form' className='red_border'>
           Оставить заявку
         </a>
       </div>
-      <div className="reviews">
-        <div className="reviews_title">
+      <div className='reviews'>
+        <div className='reviews_title'>
           <h6>Отзывы</h6>
         </div>
-        <div className="reviews_swiper">
-          <div className="reviews_swiper_back" />
+        <div className='reviews_swiper'>
+          <div className='reviews_swiper_back' />
           <swiper-container
             initial-slide={1}
-            className="mySwiper"
-            pagination="true"
-            pagination-clickable="true"
-            slides-per-view="auto"
-            centered-slides="true"
+            className='mySwiper'
+            pagination='true'
+            pagination-clickable='true'
+            slides-per-view='auto'
+            centered-slides='true'
             space-between={30}
-            grab-cursor="true"
+            grab-cursor='true'
           >
             <swiper-slide>
-              <img src="/img/sky.svg" alt="icon" />
+              <img src='/img/sky.svg' alt='icon' />
               <h3>Александр Борисов</h3>
               <h4>
                 Заказывали конические однорядные подшипники, все понравилось.
@@ -604,7 +604,7 @@ export default function Home({ api }) {
               </h4>
             </swiper-slide>
             <swiper-slide>
-              <img src="/img/sky.svg" alt="icon" />
+              <img src='/img/sky.svg' alt='icon' />
               <h3>Дмитрий Бородин</h3>
               <h4>
                 Делал большой оптовый заказ, еще и сборный - ребята все собрали,
@@ -613,7 +613,7 @@ export default function Home({ api }) {
               </h4>
             </swiper-slide>
             <swiper-slide>
-              <img src="/img/sky.svg" alt="icon" />
+              <img src='/img/sky.svg' alt='icon' />
               <h3>Тимур Киселев</h3>
               <h4>
                 С компанией KOSOX работаем уже давно - качество всегда на уровне
@@ -621,7 +621,7 @@ export default function Home({ api }) {
               </h4>
             </swiper-slide>
             <swiper-slide>
-              <img src="/img/sky.svg" alt="icon" />
+              <img src='/img/sky.svg' alt='icon' />
               <h3>Евгений Островерхий</h3>
               <h4>
                 Заказывали первый раз, договорились про консультацию. По
@@ -630,7 +630,7 @@ export default function Home({ api }) {
               </h4>
             </swiper-slide>
             <swiper-slide>
-              <img src="/img/sky.svg" alt="icon" />
+              <img src='/img/sky.svg' alt='icon' />
               <h3>Алексей Верущенко</h3>
               <h4>
                 Отличный сервис, приятные условия, доставка вовремя - все просто
@@ -638,7 +638,7 @@ export default function Home({ api }) {
               </h4>
             </swiper-slide>
             <swiper-slide>
-              <img src="/img/sky.svg" alt="icon" />
+              <img src='/img/sky.svg' alt='icon' />
               <h3>Михаил Каштанов</h3>
               <h4>
                 На производстве понадобились Станки ЧПУ. Долго думали какого
@@ -647,7 +647,7 @@ export default function Home({ api }) {
               </h4>
             </swiper-slide>
             <swiper-slide>
-              <img src="/img/sky.svg" alt="icon" />
+              <img src='/img/sky.svg' alt='icon' />
               <h3>Владимир Козловский</h3>
               <h4>
                 По соотношению цены и качества думаю лучше компанию не найти.
@@ -657,16 +657,16 @@ export default function Home({ api }) {
           </swiper-container>
         </div>
       </div>
-      <div className="map">
+      <div className='map'>
         <iframe
-          src="https://yandex.by/map-widget/v1/profile?ll=30.352017%2C60.058219&z=16.91"
-          width="560"
-          height="400"
-          frameborder="1"
-          allowfullscreen="true"
-          style={{ position: "relative" }}
-        ></iframe>
+          src='https://yandex.by/map-widget/v1/profile?ll=30.352017%2C60.058219&z=16.91'
+          width='560'
+          height='400'
+          frameborder='1'
+          allowfullscreen='true'
+          style={{ position: 'relative' }}
+        />
       </div>
     </main>
-  );
+  )
 }
