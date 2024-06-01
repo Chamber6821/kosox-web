@@ -4,6 +4,7 @@
  */
 
 import { useEffect, useState } from 'react'
+import Form from '../components/Form'
 
 /**
  *
@@ -15,7 +16,7 @@ export default function ({ api, params: { id } }) {
   const [{ product = {}, brand = {} }, setContent] = useState({})
 
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       const product = await (await api.products()).withId(id)
       const brand = await product.brand()
       setContent({
@@ -24,9 +25,10 @@ export default function ({ api, params: { id } }) {
           name: await product.name(),
           description: await product.description(),
           parameters: await Promise.all(
-            (
-              await product.parameters()
-            ).map(async x => [await x.key(), await x.value()])
+            (await product.parameters()).map(async (x) => [
+              await x.key(),
+              await x.value()
+            ])
           )
         },
         brand: {
@@ -80,10 +82,9 @@ export default function ({ api, params: { id } }) {
           </div>
         </div>
         <div
-          className={`content ${
-            { description: 'produce_page_description_text' }[tab] ||
+          className={`content ${{ description: 'produce_page_description_text' }[tab] ||
             'produce_page_description_text2'
-          }`}
+            }`}
         >
           <p>{product.description}</p>
           <a href=''>Заказать данный товар</a>
@@ -97,7 +98,7 @@ export default function ({ api, params: { id } }) {
           <table>
             <tbody>
               {product.parameters?.map(([key, val]) => (
-                <tr>
+                <tr key={key}>
                   <td>{key}</td>
                   <td>{val}</td>
                 </tr>
@@ -107,6 +108,7 @@ export default function ({ api, params: { id } }) {
           <a href=''>Заказать данный товар</a>
         </div>
       </div>
+      <Form api={api} />
     </main>
   )
 }

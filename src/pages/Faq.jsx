@@ -1,4 +1,6 @@
-export default function () {
+import Form from '../components/Form'
+
+export default function ({ api }) {
   return (
     <main>
       <div
@@ -119,18 +121,7 @@ export default function () {
           </div>
         </div>
       </section>
-      <div
-        style={{ backgroundColor: 'rgba(0, 0, 0, 0)' }}
-        className='contact_form'
-      >
-        <div className='contact_form_flex'>
-          <h2>Оставьте вашу заявку</h2>
-          <input placeholder='Имя' type='text' name='name' />
-          <input placeholder='Имя' type='text' name='surname' />
-          <input placeholder='Имя' type='text' name='phone' />
-          <button>Отправить</button>
-        </div>
-      </div>
+      <Form api={api} />
     </main>
   )
 }

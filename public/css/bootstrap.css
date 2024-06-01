@@ -2493,7 +2493,7 @@ textarea.form-control.is-invalid {
   }
 }
 .btn:hover {
-  color: #212529;
+  color: #6c7884;
 }
 
 .btn.disabled,
@@ -4055,6 +4055,20 @@ fieldset:disabled .btn {
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
     border-radius 0.15s ease;
 }
+.accordion-button img{
+  width: 50px;
+  height: 50px;
+}
+
+@media(max-width: 495px){
+  .accordion-button{
+    font-size: 16px;
+  }
+  .accordion-header img {
+    width: 35px !important;
+    height: 35px !important;
+}
+}
 @media (prefers-reduced-motion: reduce) {
   .accordion-button {
     transition: none;
@@ -4095,7 +4109,10 @@ border: none;
 .accordion-header {
   margin-bottom: 0;
 }
-
+.accordion-header img {
+  width: 50px;
+  height: 50px;
+}
 .accordion-item:first-of-type {
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;

@@ -10,94 +10,52 @@ export default function () {
             </a>
           </div>
           <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/'>
+            <a className='allFooter_div_ahref' href='/about'>
               О компании
             </a>
           </div>
           <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/'>
+            <a className='allFooter_div_ahref' href='/delivery-and-payment'>
               Доставка и оплата
             </a>
           </div>
           <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/'>
+            <a className='allFooter_div_ahref' href='/manufacturers'>
               Партнерам
             </a>
           </div>
           <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/'>
+            <a className='allFooter_div_ahref' href='/contacts'>
               Контакты
             </a>
           </div>
           <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/'>
+            <a className='allFooter_div_ahref' href='/faq'>
               FAQ
             </a>
           </div>
         </div>
-        <div className='allFooter_div_block_two'>
-          <h6 className='allFooter_div_title'>Адрес</h6>
-          <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/'>
-              Главная
-            </a>
-          </div>
-          <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/'>
-              О компании
-            </a>
-          </div>
-          <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/'>
-              Доставка и оплата
-            </a>
-          </div>
-          <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/'>
-              Партнерам
-            </a>
-          </div>
-          <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/'>
-              Контакты
-            </a>
-          </div>
-          <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/'>
-              FAQ
-            </a>
-          </div>
-        </div>
+
         <div className='allFooter_div_block_three'>
           <h6 className='allFooter_div_title'>Контакты</h6>
           <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/'>
-              Главная
+            <a className='allFooter_div_ahref' href='https:/telegram.im/@kosox78'>
+              Telegram (@kosox78)
             </a>
           </div>
           <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/'>
-              О компании
+            <a className='allFooter_div_ahref' href='https://api.whatsapp.com/send?phone=79818800222'>
+              Whatsapp (+79818800222)
             </a>
           </div>
           <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/'>
-              Доставка и оплата
+            <a className='allFooter_div_ahref' href='mailto:zakaz@kosox.ru'>
+              zakaz@kosox.ru
             </a>
           </div>
           <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/'>
-              Партнерам
-            </a>
-          </div>
-          <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/'>
-              Контакты
-            </a>
-          </div>
-          <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/'>
-              FAQ
+            <a className='allFooter_div_ahref' href='+79818800222'>
+              +7(981)880-02-22
             </a>
           </div>
         </div>
@@ -109,43 +67,48 @@ export default function () {
             положениями Статьи 437 Гражданского кодекса Российской Федерации.
             Для получения подробной информации, стоимости продукции и условий
             обращайтесь к менеджерам. Вся информация на сайте – собственность
-            интернет-магазина mgb-bearings.ru. Публикация информации с сайта
-            mgb-bearings.ru без разрешения запрещена. Все права защищены. Вы
+            интернет-магазина kosox.ru. Публикация информации с сайта
+            kosox.ru без разрешения запрещена. Все права защищены. Вы
             принимаете условия политики конфиденциальности и пользовательского
             соглашения каждый раз, когда оставляете свои данные в любой форме
-            обратной связи на сайте mgb-bearings.ru.
+            обратной связи на сайте kosox.ru.
           </p>
         </div>
       </div>
       <div className='allFooter_address'>
         <h1 className='allFooter_address_h1'>
-          © 2023 Подшипники оптом и в розницу.
+          ©2023 Подшипники оптом и в розницу.
         </h1>
         <div className='allFooter_address_div'>
-          <a href=''>
-            <p className='allFooter_address_div_p'>Разработано WOW</p>
+          <a href='https://wowtika.com'>
+            <p className='allFooter_address_div_p'>Разработано Wowtika</p>
           </a>
         </div>
         <div className='allFooter_address_img_div'>
           <img
             className='allFooter_address_img_div_img'
-            src='./img/visa10.svg'
-            alt=''
+            src='/img/visa-mastercard-mir@2x.png'
+            alt='icon'
           />
           <img
             className='allFooter_address_img_div_img'
-            src='./img/visa10.svg'
-            alt=''
+            src='/img/sberbank@2x.png'
+            alt='icon'
           />
           <img
             className='allFooter_address_img_div_img'
-            src='./img/visa10.svg'
-            alt=''
+            src='/img/tinkoff@2x.png'
+            alt='icon'
           />
           <img
             className='allFooter_address_img_div_img'
-            src='./img/visa10.svg'
-            alt=''
+            src='/img/yandexmoney@2x.png'
+            alt='icon'
+          />
+          <img
+            className='allFooter_address_img_div_img'
+            src='/img/paypal@2x.png'
+            alt='icon'
           />
         </div>
       </div>

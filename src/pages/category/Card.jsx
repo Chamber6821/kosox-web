@@ -19,7 +19,10 @@ export default function ({
             style={{
               objectFit: 'cover',
               maxWidth: '100px',
-              maxHeight: '100px'
+              maxHeight: '100px',
+              border: '0px solid transparent',
+              background: '#fff'
+
             }}
             src={brandImage}
           />

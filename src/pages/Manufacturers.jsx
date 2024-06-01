@@ -14,12 +14,10 @@ import { Link } from 'wouter'
 export default function ({ api }) {
   const [brands, setBrands] = useState([])
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       setBrands(
         await Promise.all(
-          (
-            await (await api.brands()).array()
-          ).map(async x => ({
+          (await (await api.brands()).array()).map(async (x) => ({
             id: await x.id(),
             name: await x.name(),
             icon: await x.icon()
@@ -27,7 +25,7 @@ export default function ({ api }) {
         )
       )
     })()
-  })
+  }, [])
   return (
     <main>
       <div
@@ -52,8 +50,8 @@ export default function ({ api }) {
         <div className='our_brends content'>
           <h2>Наши бренды</h2>
           <div className='our_brends_cards'>
-            {brands.map(x => (
-              <div className='our_brends_card'>
+            {brands.map((x) => (
+              <div key={x.name} className='our_brends_card'>
                 <img src={x.icon} alt='' />
                 <div className='our_brends_card_hover'>
                   <h5>{x.name}</h5>
