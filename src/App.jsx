@@ -19,10 +19,9 @@ import ScrollTop from './components/ScrollTop'
 import Search from './pages/Search'
 
 export default function App () {
-  const [api] = useState(() => Api('http://currates.ru/api/'))
+  const [api] = useState(() => Api(process.env.REACT_APP_API_BASE))
   const domainLevels = window.location.hostname.split('.').reverse()
   const city = domainLevels[2]
-  console.log('city', city)
   useEffect(() => {
     (async () => {
       if (city === undefined) {
