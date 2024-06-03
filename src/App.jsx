@@ -28,7 +28,7 @@ export default function App () {
         const response = await fetch('http://ip-api.com/json/?fields=city')
         const { city } = await response.json()
         const l = window.location
-        window.location = `${l.protocol}//${city.toLowerCase().replaceAll(/[^a-z0-9]+/, '-')
+        window.location = `${l.protocol}//${city.toLowerCase().replaceAll(/[^a-z0-9]+/g, '-')
           }.${l.host}${l.pathname}${l.search} `
       }
     })()
