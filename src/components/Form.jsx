@@ -1,5 +1,7 @@
 import { useLocation } from 'wouter'
 
+import './Form.css'
+
 export default function Form ({ api }) {
   const [location] = useLocation()
   const handleSubmit = (e) => {
