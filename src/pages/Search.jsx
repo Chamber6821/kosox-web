@@ -36,7 +36,7 @@ export default function Search ({ api }) {
 
   const PageStub = ({ title }) => <p>{title}</p>
 
-  const cards = (
+  const Cards = () => (
     <div className='filterkotalog_cards'>
       {products.map((x) => (
         <Card
@@ -81,7 +81,7 @@ export default function Search ({ api }) {
         <div className='filterkotalog_flex'>
           {products === undefined
             ? <div style={{ margin: '100px auto' }}><ClimbingBoxLoader color='#FFF' /></div>
-            : cards}
+            : <Cards />}
         </div>
       </div>
     </main>
