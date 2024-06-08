@@ -2,15 +2,17 @@ import { useEffect, useState } from 'react'
 import PageButtons from '../components/PageButtons'
 import Card from './category/Card'
 import { Link, useSearch } from 'wouter'
+import { ClimbingBoxLoader } from 'react-spinners'
 
 export default function Search ({ api }) {
   const search = new URLSearchParams(useSearch())
   const page = +search.get('page') || 1
   const q = search.get('q') || ''
-  const [{ products = [], lastPage = 1 }, setContent] = useState({})
+  const [{ products, lastPage = 1 }, setContent] = useState({})
 
   useEffect(() => {
     (async () => {
+      setContent({})
       const pages = await (await api.products(6)).search(q)
       setContent({
         products: await Promise.all(
@@ -34,6 +36,33 @@ export default function Search ({ api }) {
 
   const PageStub = ({ title }) => <p>{title}</p>
 
+  const cards = (
+    <div className='filterkotalog_cards'>
+      {products.map((x) => (
+        <Card
+          key={x.id}
+          title={x.name}
+          image={x.icon}
+          brandImage={x.brand_icon}
+          page={`/product/${x.id}`}
+        />
+      ))}
+      <div className='filterkotalog_cards_nav'>
+        <div className='filterkotalog_cards_nav_flex'>
+          <PageButtons
+            currentPage={page}
+            lastPage={lastPage}
+            PageLink={PageLink}
+            PageStub={PageStub}
+          />
+        </div>
+        <div className='filterkotalog_cards_nav_btn'>
+          <Link to='' />
+        </div>
+      </div>
+    </div>
+  )
+
   return (
     <main>
       <div
@@ -50,30 +79,9 @@ export default function Search ({ api }) {
       </div>
       <div className='filterkotalog'>
         <div className='filterkotalog_flex'>
-          <div className='filterkotalog_cards'>
-            {products.map((x) => (
-              <Card
-                key={x.id}
-                title={x.name}
-                image={x.icon}
-                brandImage={x.brand_icon}
-                page={`/product/${x.id}`}
-              />
-            ))}
-            <div className='filterkotalog_cards_nav'>
-              <div className='filterkotalog_cards_nav_flex'>
-                <PageButtons
-                  currentPage={page}
-                  lastPage={lastPage}
-                  PageLink={PageLink}
-                  PageStub={PageStub}
-                />
-              </div>
-              <div className='filterkotalog_cards_nav_btn'>
-                <Link to='' />
-              </div>
-            </div>
-          </div>
+          {products === undefined
+            ? <div style={{ margin: '100px auto' }}><ClimbingBoxLoader color='#FFF' /></div>
+            : cards}
         </div>
       </div>
     </main>
