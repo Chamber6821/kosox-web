@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'wouter'
+import Cards from './catalog/Cards'
 
 /**
  * @typedef {Object} props
@@ -62,50 +63,7 @@ export default function ({ api }) {
           </div>
         </div>
       </div>
-      <div className='kotalog'>
-        <div className='kotalog_flex'>
-          <div
-            style={{
-              backgroundImage: 'url("./img/car-repair-garage 1.png")'
-            }}
-            className='kotalog_card'
-          >
-            <div className='kotalog_card_bg' />
-            <h3>Промышленное снабжение</h3>
-            <a href=''>ТОВАРЫ</a>
-          </div>
-          <div
-            style={{
-              backgroundImage: 'url("./img/car-repair-garage 1.png")'
-            }}
-            className='kotalog_card'
-          >
-            <div className='kotalog_card_bg' />
-            <h3>Промышленное снабжение</h3>
-            <a href=''>ТОВАРЫ</a>
-          </div>
-          <div
-            style={{
-              backgroundImage: 'url("./img/car-repair-garage 1.png")'
-            }}
-            className='kotalog_card'
-          >
-            <div className='kotalog_card_bg' />
-            <h3>Промышленное снабжение</h3>
-            <a href=''>ТОВАРЫ</a>
-          </div>
-          <div
-            style={{
-              backgroundImage: 'url("./img/car-repair-garage 1.png")'
-            }}
-            className='kotalog_card'
-          >
-            <div className='kotalog_card_bg' />
-            <h3>Промышленное снабжение</h3>
-            <a href=''>ТОВАРЫ</a>
-          </div>
-        </div>
-      </div>
+      <Cards api={api} />
     </main>
   )
 }
