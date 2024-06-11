@@ -17,12 +17,12 @@ export default function Header () {
           <a href='mailto:zakaz@kosox.ru'>zakaz@kosox.ru</a>
         </div>
         <div className='navbar_icon'>
-          <Link to='/'>
+          <a href='https://wa.me/79117111112' target='_blank' rel='noreferrer'>
             <img
               src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/whatsapp.svg'
               alt='icon'
             />
-          </Link>
+          </a>
           <Link to='/'>
             <img
               src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/viber.svg'

@@ -47,10 +47,10 @@ export default function ({ api }) {
           <h2>
             Мы торгуем с европейскими и мировыми <br /> брендами!
           </h2>
-          <a href=''>Оставить заявку</a>
+          <a href='/contacts'>Оставить заявку</a>
         </div>
         <div className='our_brends content'>
-          <h2>Наши бренды</h2>
+          <h2>Бренды с которыми мы сотрудничаем</h2>
           <div className='our_brends_cards'>
             {manufacturers.map((x) => (
               <div key={x.name} className='our_brends_card'>
