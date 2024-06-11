@@ -14,6 +14,7 @@ import Form from '../components/Form'
 export default function ({ api, params: { id } }) {
   const [tab, setTab] = useState('description')
   const [{ product = {}, brand = {} }, setContent] = useState({})
+  document.title = `${product.name}`
 
   useEffect(() => {
     (async () => {

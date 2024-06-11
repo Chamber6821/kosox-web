@@ -9,6 +9,7 @@ export default function Search ({ api }) {
   const page = +search.get('page') || 1
   const q = search.get('q') || ''
   const [{ products, lastPage = 1 }, setContent] = useState({})
+  document.title = 'Поиск'
 
   useEffect(() => {
     (async () => {

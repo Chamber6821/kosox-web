@@ -1,4 +1,5 @@
 export default function () {
+  document.title = 'Доставка и оплата'
   return (
     <main>
       <div

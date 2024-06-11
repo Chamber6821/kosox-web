@@ -14,6 +14,7 @@ import Form from '../components/Form'
  */
 export default function ({ params: { brand }, api }) {
   const [{ name, description, categories = [] }, setBrand] = useState({})
+  document.title = `Производитель ${name}`
   useEffect(() => {
     (async () => {
       const brandEntity = await (await api.brands()).withId(brand)

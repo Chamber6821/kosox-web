@@ -14,6 +14,7 @@ import Cards from './catalog/Cards'
  */
 export default function ({ api }) {
   const [brands, setBrands] = useState([])
+  document.title = 'Производители'
   useEffect(() => {
     (async () => {
       setBrands(

@@ -1,6 +1,7 @@
 import Form from '../components/Form'
 
 export default function ({ api }) {
+  document.title = 'FAQ'
   return (
     <main>
       <div

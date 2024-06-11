@@ -3,6 +3,7 @@ import Reviews from '../components/Reviews'
 import Cards from './catalog/Cards'
 
 export default function Home ({ api }) {
+  document.title = 'KOSOX'
   return (
     <main>
       <div

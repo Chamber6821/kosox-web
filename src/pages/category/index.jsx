@@ -63,6 +63,7 @@ export default function Category ({ api, params: { category } }) {
     setContent
   ] = useState({})
   const [filters, setFilters] = useState({})
+  document.title = `Категория: ${categoryName}`
 
   useEffect(() => {
     (async () => {

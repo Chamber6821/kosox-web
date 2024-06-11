@@ -14,6 +14,7 @@ import Form from '../../components/Form'
  */
 export default function Catalog ({ api, params: { superCategory } }) {
   const [{ categoryName = '' }, setContent] = useState({})
+  document.title = categoryName === '' ? 'Каталог' : `Каталог: ${categoryName}`
   useEffect(() => {
     (async () => {
       const superCategories = await api.superCategories()

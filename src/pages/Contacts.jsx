@@ -1,4 +1,5 @@
 export default function () {
+  document.title = 'Контакты'
   return (
     <main>
       <div

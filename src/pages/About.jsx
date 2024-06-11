@@ -1,4 +1,5 @@
 export default function () {
+  document.title = 'О компании'
   return (
     <main>
       <div
