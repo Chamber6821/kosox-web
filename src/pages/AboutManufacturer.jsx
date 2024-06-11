@@ -40,7 +40,10 @@ export default function ({ params: { brand }, api }) {
           <h1>{name}</h1>
         </div>
         <div className='brendabout_title'>
-          <p>{description}</p>
+          {(description || '')
+            .split('\n')
+            .map(x => x.trim())
+            .map(x => <p style={x === '' ? { marginBottom: '32px' } : {}} key={x}>{x}</p>)}
         </div>
         {categories.length > 0 && (
           <>
