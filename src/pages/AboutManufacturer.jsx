@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'wouter'
 import Form from '../components/Form'
 
 /**
@@ -53,22 +52,21 @@ export default function ({ params: { brand }, api }) {
             </div>
             <div className='brendabout_cards'>
               {categories.map((x) => (
-                <Link key={x.name} to={`/category/${x.id}`}>
-                  <div
-                    style={{
-                      backgroundImage: 'url("/img/6ba632040d142d29a5ebe2411f406f96 — копия.jpeg")'
-                    }}
-                    className='brendabout_card'
-                  >
-                    <div className='brendabout_card_bg' />
-                    <h2>{x.name}</h2>
-                    <img
-                      style={{ maxWidth: 250, maxHeight: 200 }}
-                      src={x.icon}
-                      alt=''
-                    />
-                  </div>
-                </Link>
+                <div
+                  key={x.name}
+                  style={{
+                    backgroundImage: 'url("/img/6ba632040d142d29a5ebe2411f406f96 — копия.jpeg")'
+                  }}
+                  className='brendabout_card'
+                >
+                  <div className='brendabout_card_bg' />
+                  <h2>{x.name}</h2>
+                  <img
+                    style={{ maxWidth: 250, maxHeight: 200 }}
+                    src={x.icon}
+                    alt=''
+                  />
+                </div>
               ))}
             </div>
           </>
