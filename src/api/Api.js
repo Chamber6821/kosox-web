@@ -202,7 +202,7 @@ export default function Api (base) {
         ),
       array: async () =>
         await Promise.all(
-          (await get('brands'))._embedded.brands.map(CachedBrand)
+          (await get('brands?size=9999'))._embedded.brands.map(CachedBrand)
         )
     })
   }
