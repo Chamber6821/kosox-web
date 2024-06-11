@@ -40,7 +40,7 @@ export default function ({ params: { brand }, api }) {
         <div className='main_left'>
           <h1>{name}</h1>
         </div>
-        <div className='brendabout_title'>
+        <div className='brendabout_title' style={{ display: 'block' }}>
           {(description || '')
             .split('\n')
             .map(x => x.trim())
