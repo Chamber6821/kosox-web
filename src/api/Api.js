@@ -29,7 +29,7 @@ const ProductWithParameters = async (product, api) => ({
 
 const ProductWithId = async (id, api) =>
   CachedProduct(await api(`products/${id}`), async () =>
-    CachedBrand(await api(`products/${id}/brand`))
+    CachedBrand(await api(`products/${id}/manufacturer`))
   )
 
 const CachedCategory = async (json) => ({
@@ -53,7 +53,7 @@ const CategoryWithProducts = async (category, api) => ({
         array: async () =>
           (
             await api(
-              `categories/${await category.id()}/products/filtered?page=${page}&size=${pageSize}&${Filters(
+              `subcategories/${await category.id()}/products/filtered?page=${page}&size=${pageSize}&${Filters(
                 filters
               )}`
             )
@@ -71,7 +71,7 @@ const CategoryWithProducts = async (category, api) => ({
       totalPages: async () =>
         (
           await api(
-            `categories/${await category.id()}/products/filtered?size=${pageSize}&${Filters(
+            `subcategories/${await category.id()}/products/filtered?size=${pageSize}&${Filters(
               filters
             )}`
           )
@@ -82,7 +82,7 @@ const CategoryWithProducts = async (category, api) => ({
         await Promise.all(
           (
             await api(
-              `products/search/findByCategoryId?category=${await category.id()}&page=${page}&size=${pageSize}`
+              `products/search/findBySubcategoryId?subcategory=${await category.id()}&page=${page}&size=${pageSize}`
             )
           )._embedded.products
             .map(idOf)
@@ -95,7 +95,7 @@ const CategoryWithProducts = async (category, api) => ({
     totalPages: async () =>
       (
         await api(
-          `products/search/findByCategoryId?category=${await category.id()}&size=${pageSize}`
+          `products/search/findBySubcategoryId?subcategory=${await category.id()}&size=${pageSize}`
         )
       ).page.totalPages
   })
@@ -104,7 +104,7 @@ const CategoryWithProducts = async (category, api) => ({
 const CategoryWithParameters = async (category, api) => ({
   ...category,
   parameters: async () =>
-    Object.entries(await api(`categories/${await category.id()}/parameters`))
+    Object.entries(await api(`subcategories/${await category.id()}/parameters`))
       .map(([key, value]) => [key, value.sort()])
       .sort()
 })
@@ -115,9 +115,9 @@ const BrandWithCategories = async (brand, api) => ({
     await Promise.all(
       (
         await api(
-          `categories/search/findAllByBrand?brandId=${await brand.id()}`
+          `subcategories/search/findAllByManufacturer?manufacturerId=${await brand.id()}`
         )
-      )._embedded.categories.map(CachedCategory)
+      )._embedded.subcategories.map(CachedCategory)
     )
 })
 
@@ -131,7 +131,7 @@ export default function Api (base) {
   }
   return {
     addFormRequest: async (url, data) =>
-      await afetch('forms', {
+      await afetch('reports', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -142,7 +142,7 @@ export default function Api (base) {
       withId: async (id) =>
         await CategoryWithParameters(
           await CategoryWithProducts(
-            await CachedCategory(await get(`categories/${id}`)),
+            await CachedCategory(await get(`subcategories/${id}`)),
             get
           ),
           get
@@ -150,19 +150,19 @@ export default function Api (base) {
     }),
     superCategories: async () => ({
       withId: async (id) => ({
-        name: async () => (await get(`superCategories/${id}`)).name,
+        name: async () => (await get(`categories/${id}`)).name,
         categories: async () => ({
           array: async () =>
             await Promise.all(
               (
-                await get(`superCategories/${id}/categories`)
-              )._embedded.categories.map(CachedCategory)
+                await get(`categories/${id}/subcategories`)
+              )._embedded.subcategories.map(CachedCategory)
             )
         })
       }),
       array: async () =>
         await Promise.all(
-          (await get('superCategories'))._embedded.superCategories.map(
+          (await get('categories'))._embedded.categories.map(
             CachedCategory
           )
         )
@@ -197,12 +197,12 @@ export default function Api (base) {
     brands: async () => ({
       withId: async (id) =>
         await BrandWithCategories(
-          await CachedBrand(await get(`brands/${id}`)),
+          await CachedBrand(await get(`manufacturers/${id}`)),
           get
         ),
       array: async () =>
         await Promise.all(
-          (await get('brands?size=9999'))._embedded.brands.map(CachedBrand)
+          (await get('manufacturers?size=9999'))._embedded.manufacturers.map(CachedBrand)
         )
     })
   }
