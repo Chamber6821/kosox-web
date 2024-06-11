@@ -19,7 +19,7 @@ export default function ({ api, params: { id } }) {
   useEffect(() => {
     (async () => {
       const product = await (await api.products()).withId(id)
-      const brand = await product.brand()
+      const brand = await product.manufacturer() // TODO: replace with KOSOX
       setContent({
         product: {
           icon: await product.icon(),

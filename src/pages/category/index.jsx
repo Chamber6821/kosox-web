@@ -56,7 +56,7 @@ const Filter = ({ name, variants, onChange }) => {
  * @param {props} props
  * @returns
  */
-export default function Category ({ api, params: { category } }) {
+export default function Category ({ api, params: { id } }) {
   const page = +new URLSearchParams(useSearch()).get('page') || 1
   const [
     { categoryName = '', products = [], parameters = [], lastPage = 1 },
@@ -67,7 +67,7 @@ export default function Category ({ api, params: { category } }) {
 
   useEffect(() => {
     (async () => {
-      const entity = await (await api.categories()).withId(category)
+      const entity = await (await api.subcategories()).withId(id)
       const pages = await (await entity.products(6)).filtered(filters)
       setContent({
         categoryName: await entity.name(),
@@ -76,14 +76,14 @@ export default function Category ({ api, params: { category } }) {
             id: await x.id(),
             name: await x.name(),
             icon: await x.icon(),
-            brand_icon: await (await x.brand()).icon()
+            brand_icon: await (await x.manufacturer()).icon() // TODO: replace with KOSOX
           }))
         ),
         parameters: await entity.parameters(),
         lastPage: Math.max(1, await pages.totalPages())
       })
     })()
-  }, [page, filters, api, category])
+  }, [page, filters, api, id])
 
   const PageLink = ({ innerClass, href, title }) => (
     <Link to={href}>

@@ -12,18 +12,18 @@ import Form from '../../components/Form'
  * @param {props} props
  * @returns
  */
-export default function Catalog ({ api, params: { superCategory } }) {
+export default function Catalog ({ api, params: { id } }) {
   const [{ categoryName = '' }, setContent] = useState({})
   document.title = categoryName === '' ? 'Каталог' : `Каталог: ${categoryName}`
   useEffect(() => {
     (async () => {
-      const superCategories = await api.superCategories()
-      const scEntity = await superCategories.withId(superCategory)
+      const categories = await api.categories()
+      const scEntity = await categories.withId(id)
       setContent({
-        categoryName: superCategory && (await scEntity.name())
+        categoryName: id && (await scEntity.name())
       })
     })()
-  }, [api, superCategory])
+  }, [api, id])
   return (
     <main>
       <div
@@ -36,7 +36,7 @@ export default function Catalog ({ api, params: { superCategory } }) {
         <div className='header_main_bg' />
         <div className='header_main_flex'>
           <h1>Каталог</h1>
-          {superCategory && (
+          {id && (
             <>
               <h1>/</h1>
               <h1>{categoryName}</h1>
@@ -44,7 +44,7 @@ export default function Catalog ({ api, params: { superCategory } }) {
           )}
         </div>
       </div>
-      <Cards api={api} superCategory={superCategory} />
+      <Cards api={api} category={id} />
       <Form api={api} />
     </main>
   )

@@ -1,19 +1,19 @@
 const idOfUrl = (url) => `${url}`.match(/(\d+)$/)?.[1]
 const idOf = (entry) => idOfUrl(entry?._links?.self?.href)
 
-const CachedBrand = async (json) => ({
+const CachedManufacturer = async (json) => ({
   id: async () => idOf(json),
   name: async () => json.name,
   icon: async () => json.iconUrl,
   description: async () => json.description
 })
 
-const CachedProduct = async (json, brand) => ({
+const CachedProduct = async (json, manufacturer) => ({
   id: async () => idOf(json),
   name: async () => json?.name,
   description: async () => json?.description,
   icon: async () => json?.iconUrl,
-  brand
+  manufacturer
 })
 
 const ProductWithParameters = async (product, api) => ({
@@ -29,7 +29,7 @@ const ProductWithParameters = async (product, api) => ({
 
 const ProductWithId = async (id, api) =>
   CachedProduct(await api(`products/${id}`), async () =>
-    CachedBrand(await api(`products/${id}/manufacturer`))
+    CachedManufacturer(await api(`products/${id}/manufacturer`))
   )
 
 const CachedCategory = async (json) => ({
@@ -62,7 +62,7 @@ const CategoryWithProducts = async (category, api) => ({
             name: async () => x.name,
             description: async () => x.description,
             icon: async () => x.icon,
-            brand: async () => ({
+            manufacturer: async () => ({
               name: async () => x.brandName,
               icon: async () => x.brandIcon
             })
@@ -109,13 +109,13 @@ const CategoryWithParameters = async (category, api) => ({
       .sort()
 })
 
-const BrandWithCategories = async (brand, api) => ({
-  ...brand,
+const ManufacturerWithCategories = async (manufacturer, api) => ({
+  ...manufacturer,
   categories: async () =>
     await Promise.all(
       (
         await api(
-          `subcategories/search/findAllByManufacturer?manufacturerId=${await brand.id()}`
+          `subcategories/search/findAllByManufacturer?manufacturerId=${await manufacturer.id()}`
         )
       )._embedded.subcategories.map(CachedCategory)
     )
@@ -130,7 +130,7 @@ export default function Api (base) {
     return cache[path]
   }
   return {
-    addFormRequest: async (url, data) =>
+    report: async (url, data) =>
       await afetch('reports', {
         method: 'POST',
         headers: {
@@ -138,7 +138,7 @@ export default function Api (base) {
         },
         body: JSON.stringify({ ...data, page: url })
       }),
-    categories: async () => ({
+    subcategories: async () => ({
       withId: async (id) =>
         await CategoryWithParameters(
           await CategoryWithProducts(
@@ -148,10 +148,10 @@ export default function Api (base) {
           get
         )
     }),
-    superCategories: async () => ({
+    categories: async () => ({
       withId: async (id) => ({
         name: async () => (await get(`categories/${id}`)).name,
-        categories: async () => ({
+        subcategories: async () => ({
           array: async () =>
             await Promise.all(
               (
@@ -194,15 +194,15 @@ export default function Api (base) {
             .page.totalPages
       })
     }),
-    brands: async () => ({
+    manufacturers: async () => ({
       withId: async (id) =>
-        await BrandWithCategories(
-          await CachedBrand(await get(`manufacturers/${id}`)),
+        await ManufacturerWithCategories(
+          await CachedManufacturer(await get(`manufacturers/${id}`)),
           get
         ),
       array: async () =>
         await Promise.all(
-          (await get('manufacturers?size=9999'))._embedded.manufacturers.map(CachedBrand)
+          (await get('manufacturers?size=9999'))._embedded.manufacturers.map(CachedManufacturer)
         )
     })
   }

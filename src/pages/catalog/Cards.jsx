@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react'
 import Card from './Card'
 
-export default function Cards ({ api, superCategory = undefined }) {
+export default function Cards ({ api, category = undefined }) {
   const [{ categories = [] }, setContent] = useState({})
   useEffect(() => {
     (async () => {
-      const superCategories = await api.superCategories()
-      const scEntity = await superCategories.withId(superCategory)
-      const categories = superCategory
-        ? await scEntity.categories()
-        : superCategories
+      const categories = await api.categories()
+      const scEntity = await categories.withId(category)
+      const categoriesToRender = category
+        ? await scEntity.subcategories()
+        : categories
       setContent({
         categories: await Promise.all(
-          (await categories.array()).map(async (x) => ({
+          (await categoriesToRender.array()).map(async (x) => ({
             id: await x.id(),
             name: await x.name(),
             icon: await x.icon()
@@ -20,7 +20,7 @@ export default function Cards ({ api, superCategory = undefined }) {
         )
       })
     })()
-  }, [api, superCategory])
+  }, [api, category])
   return (
     <div className='kotalog'>
       <div className='kotalog_flex'>
@@ -30,7 +30,7 @@ export default function Cards ({ api, superCategory = undefined }) {
             id={x.id}
             title={x.name}
             backgroundImage={x.icon}
-            page={superCategory ? `/category/${x.id}` : `/catalog/${x.id}`}
+            page={category ? `/category/${x.id}` : `/catalog/${x.id}`}
           />
         ))}
       </div>

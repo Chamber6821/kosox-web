@@ -13,13 +13,13 @@ import Cards from './catalog/Cards'
  * @returns
  */
 export default function ({ api }) {
-  const [brands, setBrands] = useState([])
+  const [manufacturers, setManufacturers] = useState([])
   document.title = 'Производители'
   useEffect(() => {
     (async () => {
-      setBrands(
+      setManufacturers(
         await Promise.all(
-          (await (await api.brands()).array()).map(async (x) => ({
+          (await (await api.manufacturers()).array()).map(async (x) => ({
             id: await x.id(),
             name: await x.name(),
             icon: await x.icon()
@@ -52,7 +52,7 @@ export default function ({ api }) {
         <div className='our_brends content'>
           <h2>Наши бренды</h2>
           <div className='our_brends_cards'>
-            {brands.map((x) => (
+            {manufacturers.map((x) => (
               <div key={x.name} className='our_brends_card'>
                 <img src={x.icon} alt='' />
                 <div className='our_brends_card_hover'>

@@ -40,16 +40,16 @@ export default function App () {
       <Switch>
         <Route path='/'>{(params) => <Home params={params} api={api} />}</Route>
         <Route path='/about' component={About} />
-        <Route path='/about-manufacturer/:brand'>
+        <Route path='/about-manufacturer/:id'>
           {(params) => <AboutManufacturer params={params} api={api} />}
         </Route>
         <Route path='/catalog'>
           {(params) => <Catalog params={params} api={api} />}
         </Route>
-        <Route path='/catalog/:superCategory'>
+        <Route path='/catalog/:id'>
           {(params) => <Catalog params={params} api={api} />}
         </Route>
-        <Route path='/category/:category'>
+        <Route path='/category/:id'>
           {(params) => <Category params={params} api={api} />}
         </Route>
         <Route path='/contacts' component={Contacts} />

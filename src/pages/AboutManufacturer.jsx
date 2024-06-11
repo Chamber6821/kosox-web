@@ -11,17 +11,17 @@ import Form from '../components/Form'
  * @param {props} props
  * @returns
  */
-export default function ({ params: { brand }, api }) {
+export default function ({ params: { id }, api }) {
   const [{ name, description, categories = [] }, setBrand] = useState({})
   document.title = `Производитель ${name}`
   useEffect(() => {
     (async () => {
-      const brandEntity = await (await api.brands()).withId(brand)
+      const manufacturerEntity = await (await api.manufacturers()).withId(id)
       setBrand({
-        name: await brandEntity.name(),
-        description: await brandEntity.description(),
+        name: await manufacturerEntity.name(),
+        description: await manufacturerEntity.description(),
         categories: await Promise.all(
-          (await brandEntity.categories()).map(async (x) => ({
+          (await manufacturerEntity.categories()).map(async (x) => ({
             id: await x.id(),
             name: await x.name(),
             icon: await x.icon()
@@ -29,7 +29,7 @@ export default function ({ params: { brand }, api }) {
         )
       })
     })()
-  }, [brand])
+  }, [id])
   return (
     <main className='brendabout'>
       <div className='brendabout_bgimg'>
