@@ -23,28 +23,43 @@ export default function Reviews () {
       'По соотношению цены и качества думаю лучше компанию не найти. Работать буду продолжать, все устраивает.')
   ]
   return (
-    <Swiper
+    <div
       style={{
         '--swiper-theme-color': '#2E2F8C',
         '--swiper-pagination-bullet-size': '20px',
         '--swiper-pagination-bullet-inactive-color': 'rgb(72, 72, 72)'
       }}
-      modules={[Pagination]}
-      initialSlide={3}
-      pagination={{ clickable: true }}
-      slidesPerView='auto'
-      centeredSlides
-      spaceBetween={30}
-      grabCursor
-      loop
     >
-      {reviews.map(x =>
-        <SwiperSlide key={x.author} style={{ maxWidth: '300px', padding: '40px 20px', borderRadius: '15px' }}>
-          <img src='/img/sky.svg' alt='icon' />
-          <h3 style={{ marginTop: '15px' }}>{x.author}</h3>
-          <h4 style={{ textAlign: 'left', marginTop: '40px' }}>{x.opinion}</h4>
-        </SwiperSlide>
-      )}
-    </Swiper>
+      <Swiper
+        style={{
+          position: 'relative',
+          maxWidth: '100dvw'
+        }}
+        modules={[Pagination]}
+        initialSlide={3}
+        pagination={{ clickable: true, el: '.reviews-pagination' }}
+        slidesPerView='auto'
+        centeredSlides
+        spaceBetween={30}
+        grabCursor
+        loop
+      >
+        {reviews.map(x =>
+          <SwiperSlide
+            key={x.author}
+            style={{
+              maxWidth: '300px',
+              padding: '40px 20px',
+              borderRadius: '15px'
+            }}
+          >
+            <img src='/img/sky.svg' alt='icon' />
+            <h3 style={{ marginTop: '15px' }}>{x.author}</h3>
+            <h4 style={{ textAlign: 'left', marginTop: '40px' }}>{x.opinion}</h4>
+          </SwiperSlide>
+        )}
+      </Swiper>
+      <div style={{ width: 'fit-content', margin: 'auto', marginTop: '16px' }} className='reviews-pagination' />
+    </div>
   )
 }
