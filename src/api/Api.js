@@ -123,9 +123,9 @@ const ManufacturerWithCategories = async (manufacturer, api) => ({
     await Promise.all(
       (
         await api(
-          `subcategories/search/findAllByManufacturer?manufacturerId=${await manufacturer.id()}`
+          `categories/search/findAllByManufacturer?manufacturerId=${await manufacturer.id()}`
         )
-      )._embedded.subcategories.map(CachedCategory)
+      )._embedded.categories.map(CachedCategory)
     )
 })
 
