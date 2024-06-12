@@ -17,6 +17,7 @@ import Api from './api/Api'
 import { useEffect, useState } from 'react'
 import ScrollTop from './components/ScrollTop'
 import Search from './pages/Search'
+import { CityProvider } from './api/City'
 
 export default function App () {
   const [api] = useState(() => Api(process.env.REACT_APP_API_BASE))
@@ -34,7 +35,7 @@ export default function App () {
     })()
   }, [city])
   return (
-    <>
+    <CityProvider>
       <ScrollTop />
       <Header />
       <Switch>
@@ -64,6 +65,6 @@ export default function App () {
         <Route path='/search'>{() => <Search api={api} />}</Route>
       </Switch>
       <Footer />
-    </>
+    </CityProvider>
   )
 }
