@@ -38,7 +38,7 @@ export default function Product ({ api, params: { id } }) {
         }
       })
     })()
-  }, [id])
+  }, [id, api])
   return (
     <main>
       <div className='product_page content'>
@@ -53,9 +53,9 @@ export default function Product ({ api, params: { id } }) {
             <h1>{product.name}</h1>
             <div className='product_page_about_title_fenom'>
               <h3>Бренд:</h3>
-              {brand.icon ? <img src={brand.icon} /> : <h3>{brand.name}</h3>}
+              {brand.icon ? <img alt='brand icon' src={brand.icon} /> : <h3>{brand.name}</h3>}
             </div>
-            <a href=''>Заказать</a>
+            <a href='#0'>Заказать</a>
           </div>
         </div>
       </div>
@@ -88,7 +88,7 @@ export default function Product ({ api, params: { id } }) {
             }`}
         >
           <p>{product.description}</p>
-          <a href=''>Заказать данный товар</a>
+          <a href='#0'>Заказать данный товар</a>
         </div>
         <div
           className={
@@ -106,7 +106,7 @@ export default function Product ({ api, params: { id } }) {
               ))}
             </tbody>
           </table>
-          <a href=''>Заказать данный товар</a>
+          <a href='#0'>Заказать данный товар</a>
         </div>
       </div>
       <Form api={api} />

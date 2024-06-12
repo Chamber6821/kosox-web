@@ -27,7 +27,7 @@ export default function Manufacturers ({ api }) {
         )
       )
     })()
-  }, [])
+  }, [api])
   return (
     <main>
       <div

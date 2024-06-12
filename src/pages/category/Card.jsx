@@ -1,6 +1,6 @@
 import { Link } from 'wouter'
 
-export default function ({
+export default function Card ({
   image = '/img/Электромагнитные_муфты_(изображени_для_товарной_категории)1.png',
   brandImage = '/img/logo-150x67-12.png',
   title,
@@ -11,11 +11,12 @@ export default function ({
       <div className='filterkotalog_card'>
         <div className='filterkotalog_card_img'>
           <div className='filterkotalog_card_img_bg' />
-          <img style={{ objectFit: 'cover', height: 'inherit' }} src={image} />
+          <img alt='product' style={{ objectFit: 'cover', height: 'inherit' }} src={image} />
         </div>
         <div className='filterkotalog_card_title'>
           <h2>{title}</h2>
           <img
+            alt='product brand'
             style={{
               objectFit: 'cover',
               maxWidth: '100px',

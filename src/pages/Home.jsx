@@ -592,7 +592,7 @@ export default function Home ({ api }) {
         </div>
       </div>
       <div className='map'>
-        <iframe src='https://yandex.by/map-widget/v1/-/CDfOmN8j?scroll=false' />
+        <iframe title='We are here' src='https://yandex.by/map-widget/v1/-/CDfOmN8j?scroll=false' />
       </div>
     </main>
   )

@@ -1,6 +1,6 @@
 import { Link } from 'wouter'
 
-export default function ({
+export default function Card ({
   backgroundImage = '/img/car-repair-garage 1.png',
   title,
   page
