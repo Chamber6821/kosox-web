@@ -76,7 +76,7 @@ export default function Category ({ api, params: { id } }) {
             id: await x.id(),
             name: await x.name(),
             icon: await x.icon(),
-            brand_icon: await (await x.manufacturer()).icon() // TODO: replace with KOSOX
+            brand_icon: await (await x.brand()).icon()
           }))
         ),
         parameters: await entity.parameters(),

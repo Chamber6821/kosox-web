@@ -19,7 +19,7 @@ export default function ({ api, params: { id } }) {
   useEffect(() => {
     (async () => {
       const product = await (await api.products()).withId(id)
-      const brand = await product.manufacturer() // TODO: replace with KOSOX
+      const brand = await product.brand()
       setContent({
         product: {
           icon: await product.icon(),
@@ -52,7 +52,7 @@ export default function ({ api, params: { id } }) {
           <div className='product_page_about_title'>
             <h1>{product.name}</h1>
             <div className='product_page_about_title_fenom'>
-              <h3>Производитель:</h3>
+              <h3>Бренд:</h3>
               {brand.icon ? <img src={brand.icon} /> : <h3>{brand.name}</h3>}
             </div>
             <a href=''>Заказать</a>

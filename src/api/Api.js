@@ -13,6 +13,10 @@ const CachedProduct = async (json, manufacturer) => ({
   name: async () => json?.name,
   description: async () => json?.description,
   icon: async () => json?.iconUrl,
+  brand: async () => ({
+    name: async () => 'KOSOX',
+    icon: async () => '/img/Black.svg'
+  }),
   manufacturer
 })
 
@@ -62,6 +66,10 @@ const CategoryWithProducts = async (category, api) => ({
             name: async () => x.name,
             description: async () => x.description,
             icon: async () => x.icon,
+            brand: async () => ({
+              name: async () => 'KOSOX',
+              icon: async () => '/img/Black.svg'
+            }),
             manufacturer: async () => ({
               name: async () => x.brandName,
               icon: async () => x.brandIcon
