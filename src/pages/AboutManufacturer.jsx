@@ -45,6 +45,9 @@ export default function AboutManufacturer ({ params: { id }, api }) {
             .map(x => x.trim())
             .map(x => <p style={x === '' ? { marginBottom: '32px' } : {}} key={x}>{x}</p>)}
         </div>
+        <div className='brendabout_btn' style={{ marginTop: '0', marginBottom: '100px' }}>
+          <a href='#form'>Заказать товар {name}</a>
+        </div>
         {categories.length > 0 && (
           <>
             <div className='main_left'>
@@ -71,9 +74,8 @@ export default function AboutManufacturer ({ params: { id }, api }) {
             </div>
           </>
         )}
-        <Form api={api} />
-        <div className='brendabout_btn'>
-          <a href='#0'>Заказать товар {name}</a>
+        <div id='form'>
+          <Form api={api} />
         </div>
       </div>
     </main>
