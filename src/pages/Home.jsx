@@ -1,9 +1,11 @@
+import { useCity } from '../api/City'
 import Form from '../components/Form'
 import Reviews from '../components/Reviews'
 import Cards from './catalog/Cards'
 
 export default function Home ({ api }) {
   document.title = 'KOSOX'
+  const city = useCity()
   return (
     <main>
       <div
@@ -17,7 +19,7 @@ export default function Home ({ api }) {
         <div className='main_left'>
           <h1>
             Купить подшипники<br />
-            и промышленные товары в Москве
+            и промышленные товары в {city.Предложный}
           </h1>
           <h3>
             Более 60 тысяч образцов товаров <br />с гарантией ГОСТ/ТУ/ISO
@@ -458,7 +460,7 @@ export default function Home ({ api }) {
         >
           <h6>О компании KOSOX</h6>
           <h3>
-            Наша фирма на рынке Москвы и других городов России уже более 10 лет и мы знаем, что нужно
+            Наша фирма на рынке {city.Родительный} и других городов России уже более 10 лет и мы знаем, что нужно
             нашим покупателям лучше всех других. Предоставляя различные
             комплектующие для промышленности и другие товары, мы также даем
             лучший сервис и наилучшие условия сотрудничества.
@@ -488,7 +490,7 @@ export default function Home ({ api }) {
             </div>
             <div className='primushestva_company_cards_card_title'>
               <h3>Доступность</h3>
-              <h4>Доставляем товары по всей Российской Федерации и Москве в частности</h4>
+              <h4>Доставляем товары по всей Российской Федерации и {city.Предложный} в частности</h4>
             </div>
           </div>
           <div className='primushestva_company_cards_card'>
