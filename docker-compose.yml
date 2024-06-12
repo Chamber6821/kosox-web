@@ -1,4 +1,4 @@
 services:
   web:
     build: .
-    image: chamber6821/kosox-web
+    image: ${DOCKER_HUB_USER}/kosox-web
