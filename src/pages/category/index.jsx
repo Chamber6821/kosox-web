@@ -164,9 +164,6 @@ export default function Category ({ api, params: { id } }) {
                   PageStub={PageStub}
                 />
               </div>
-              <div className='filterkotalog_cards_nav_btn'>
-                <Link to='' />
-              </div>
             </div>
           </div>
         </div>
