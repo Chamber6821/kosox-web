@@ -11,7 +11,7 @@ import Form from '../components/Form'
  * @param {props} props
  * @returns
  */
-export default function ({ params: { id }, api }) {
+export default function AboutManufacturer ({ params: { id }, api }) {
   const [{ name, description, categories = [] }, setBrand] = useState({})
   document.title = `Производитель ${name}`
   useEffect(() => {

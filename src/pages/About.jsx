@@ -1,6 +1,6 @@
 import { useCity } from '../api/City'
 
-export default function () {
+export default function About () {
   document.title = 'О компании'
   const city = useCity()
   return (

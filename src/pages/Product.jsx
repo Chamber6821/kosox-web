@@ -11,7 +11,7 @@ import Form from '../components/Form'
  * @param {props} props
  * @returns
  */
-export default function ({ api, params: { id } }) {
+export default function Product ({ api, params: { id } }) {
   const [tab, setTab] = useState('description')
   const [{ product = {}, brand = {} }, setContent] = useState({})
   document.title = `${product.name}`

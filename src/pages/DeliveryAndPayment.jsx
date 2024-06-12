@@ -1,6 +1,6 @@
 import { useCity } from '../api/City'
 
-export default function () {
+export default function DeliveryAndPayment () {
   document.title = 'Доставка и оплата'
   const city = useCity()
   return (

@@ -12,7 +12,7 @@ import Cards from './catalog/Cards'
  * @param {props} props
  * @returns
  */
-export default function ({ api }) {
+export default function Manufacturers ({ api }) {
   const [manufacturers, setManufacturers] = useState([])
   document.title = 'Производители'
   useEffect(() => {
