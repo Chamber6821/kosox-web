@@ -22,7 +22,7 @@ export default function Form ({ api }) {
         <input placeholder='Ваш e-mail' type='text' name='email' />
         <input placeholder='Ваш телефон' type='text' name='phone' />
         <input placeholder='Пожелание' type='textarea' name='description' />
-        <button role='submit'>Отправить</button>
+        <button type='submit'>Отправить</button>
       </form>
     </div>
   )
