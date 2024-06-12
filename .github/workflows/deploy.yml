@@ -13,11 +13,11 @@ jobs:
         with:
           path: ./node_modules
           key: node_modules-${{ hashFiles('yarn.lock') }}
-          restore_key: node_modules-
+          restore-keys: node_modules-
       - name: Login to Docker Hub
         run: echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login -u ${{ secrets.DOCKER_HUB_USER }} --password-stdin
       - run: yarn
-      # - run: yarn build
-      #   env:
-      #     REACT_APP_API_BASE: ${{ secrets.API_BASE }}
-      #     DOCKER_HUB_USER: ${{ secrets.DOCKER_HUB_USER }}
+      - run: yarn build
+        env:
+          REACT_APP_API_BASE: ${{ secrets.API_BASE }}
+          DOCKER_HUB_USER: ${{ secrets.DOCKER_HUB_USER }}
