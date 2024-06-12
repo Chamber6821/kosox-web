@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Form from '../components/Form'
+import Card from './catalog/Card'
 
 /**
  * @typedef {Object} props
@@ -55,21 +56,7 @@ export default function AboutManufacturer ({ params: { id }, api }) {
             </div>
             <div className='brendabout_cards'>
               {categories.map((x) => (
-                <div
-                  key={x.name}
-                  style={{
-                    backgroundImage: 'url("/img/6ba632040d142d29a5ebe2411f406f96 — копия.jpeg")'
-                  }}
-                  className='brendabout_card'
-                >
-                  <div className='brendabout_card_bg' />
-                  <h2>{x.name}</h2>
-                  <img
-                    style={{ maxWidth: 250, maxHeight: 200 }}
-                    src={x.icon}
-                    alt=''
-                  />
-                </div>
+                <Card key={x.name} title={x.name} backgroundImage={x.icon} />
               ))}
             </div>
           </>

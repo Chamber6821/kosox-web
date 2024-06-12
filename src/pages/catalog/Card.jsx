@@ -14,7 +14,7 @@ export default function Card ({
     >
       <div className='kotalog_card_bg' />
       <h3>{title}</h3>
-      <Link to={page}>ТОВАРЫ</Link>
+      {page !== undefined && <Link to={page}>ТОВАРЫ</Link>}
     </div>
   )
 }
