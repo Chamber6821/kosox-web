@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Card from './Card'
 import { Link, useSearch } from 'wouter'
 import PageButtons from '../../components/PageButtons'
+import { navigate } from 'wouter/use-browser-location'
 
 const Filter = ({ name, variants, onChange }) => {
   const key = Math.round(Math.random() * 1e10)
@@ -131,6 +132,7 @@ export default function Category ({ api, params: { id } }) {
                       ? [...oldVariants, variant]
                       : oldVariants.filter((x) => x !== variant)
                     setFilters({ ...filters, [name]: variants })
+                    navigate('?page=1')
                   }}
                 />
               ))}
