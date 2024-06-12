@@ -16,6 +16,7 @@ jobs:
           restore_key: node_modules-
       - name: Login to Docker Hub
         run: echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login -u ${{ secrets.DOCKER_HUB_USER }} --password-stdin
+      - run: yarn
       - run: yarn deploy
         env:
           REACT_APP_API_BASE: ${{ secrets.API_BASE }}
