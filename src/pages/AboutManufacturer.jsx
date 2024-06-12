@@ -29,7 +29,7 @@ export default function AboutManufacturer ({ params: { id }, api }) {
         )
       })
     })()
-  }, [id])
+  }, [id, api])
   return (
     <main className='brendabout'>
       <div className='brendabout_bgimg'>
@@ -73,7 +73,7 @@ export default function AboutManufacturer ({ params: { id }, api }) {
         )}
         <Form api={api} />
         <div className='brendabout_btn'>
-          <a href=''>Заказать товар {name}</a>
+          <a href='#0'>Заказать товар {name}</a>
         </div>
       </div>
     </main>
