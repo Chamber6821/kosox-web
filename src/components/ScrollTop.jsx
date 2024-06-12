@@ -2,8 +2,9 @@ import { useEffect } from 'react'
 import { useLocation } from 'wouter'
 
 export default function ScrollTop () {
+  const location = useLocation()
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [useLocation()])
+  }, [location])
   return <></>
 }
