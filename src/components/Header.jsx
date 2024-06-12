@@ -99,19 +99,19 @@ export default function Header () {
             <a href='mailto:'>zakaz@mgb-bearings.ru</a>
           </div>
           <div className='navbar_icon'>
-            <a href='#'>
+            <a href='#0'>
               <img
                 src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/whatsapp.svg'
                 alt=''
               />
             </a>
-            <a href='#'>
+            <a href='#0'>
               <img
                 src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/viber.svg'
                 alt=''
               />
             </a>
-            <a href='#'>
+            <a href='#0'>
               <img
                 src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/telegram.svg'
                 alt=''
