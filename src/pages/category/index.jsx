@@ -94,6 +94,29 @@ export default function Category ({ api, params: { id } }) {
 
   const PageStub = ({ title }) => <p>{title}</p>
 
+  const Content = () =>
+    <>
+      {products.map((x) => (
+        <Card
+          key={x.id}
+          title={x.name}
+          image={x.icon}
+          brandImage={x.brand_icon}
+          page={`/product/${x.id}`}
+        />
+      ))}
+      <div className='filterkotalog_cards_nav'>
+        <div className='filterkotalog_cards_nav_flex'>
+          <PageButtons
+            currentPage={page}
+            lastPage={lastPage}
+            PageLink={PageLink}
+            PageStub={PageStub}
+          />
+        </div>
+      </div>
+    </>
+
   return (
     <main>
       <div
@@ -146,25 +169,7 @@ export default function Category ({ api, params: { id } }) {
             <button onClick={() => window.filterop()}>Фильтр</button>
           </div>
           <div className='filterkotalog_cards'>
-            {products.map((x) => (
-              <Card
-                key={x.id}
-                title={x.name}
-                image={x.icon}
-                brandImage={x.brand_icon}
-                page={`/product/${x.id}`}
-              />
-            ))}
-            <div className='filterkotalog_cards_nav'>
-              <div className='filterkotalog_cards_nav_flex'>
-                <PageButtons
-                  currentPage={page}
-                  lastPage={lastPage}
-                  PageLink={PageLink}
-                  PageStub={PageStub}
-                />
-              </div>
-            </div>
+            {{ 0: <h2>Ничего не найдено</h2> }[products.length] || <Content />}
           </div>
         </div>
       </div>
