@@ -3,6 +3,7 @@ const idOf = (entry) => idOfUrl(entry?._links?.self?.href)
 
 const CachedManufacturer = async (json) => ({
   id: async () => idOf(json),
+  visible: async () => json.visible,
   name: async () => json.name,
   icon: async () => json.iconUrl,
   description: async () => json.description

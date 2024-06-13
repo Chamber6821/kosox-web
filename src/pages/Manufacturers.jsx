@@ -18,13 +18,14 @@ export default function Manufacturers ({ api }) {
   useEffect(() => {
     (async () => {
       setManufacturers(
-        await Promise.all(
+        (await Promise.all(
           (await (await api.manufacturers()).array()).map(async (x) => ({
             id: await x.id(),
+            visible: await x.visible(),
             name: await x.name(),
             icon: await x.icon()
           }))
-        )
+        )).filter(x => x.visible)
       )
     })()
   }, [api])
