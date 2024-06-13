@@ -1,4 +1,4 @@
-const idOfUrl = (url) => `${url}`.match(/(\d+)$/)?.[1]
+const idOfUrl = (url) => `${url}`.match(/\/([^/]+)$/)?.[1]
 const idOf = (entry) => idOfUrl(entry?._links?.self?.href)
 
 const CachedManufacturer = async (json) => ({
