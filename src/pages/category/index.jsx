@@ -64,6 +64,7 @@ export default function Category ({ api, params: { id } }) {
     setContent
   ] = useState({})
   const [filters, setFilters] = useState({})
+  const [showProducts, setShowProducts] = useState(true)
   document.title = `Категория: ${categoryName}`
 
   useEffect(() => {
@@ -135,42 +136,50 @@ export default function Category ({ api, params: { id } }) {
       </div>
       <div className='filterkotalog'>
         <div className='filterkotalog_flex'>
-          <div className='filterkotalog_filter'>
-            <div className='filterkotalog_filter_title'>
-              <h2>Фильтр</h2>
-              <img src='/img/filter.svg' alt='' />
-            </div>
-            <div
-              className='accordion filterkotalog_filter_title'
-              id='accordionPanelsStayOpenExample'
-            >
-              {parameters.map(([name, variants]) => (
-                <Filter
-                  key={name}
-                  name={name}
-                  variants={variants}
-                  onChange={(variant, checked) => {
-                    const oldVariants = filters[name] || []
-                    const variants = checked
-                      ? [...oldVariants, variant]
-                      : oldVariants.filter((x) => x !== variant)
-                    setFilters({ ...filters, [name]: variants })
-                    navigate('?page=1')
-                  }}
-                />
-              ))}
-            </div>
-            <div className='filterkotalog_filter_btn'>
-              <button onClick={() => window.filtercl()}>Закрыть</button>
-              <button onClick={() => window.filtercl()}>Применить</button>
-            </div>
-          </div>
-          <div className='filterkotalog_button_fiter'>
-            <button onClick={() => window.filterop()}>Фильтр</button>
-          </div>
-          <div className='filterkotalog_cards'>
-            {{ 0: <h2>Ничего не найдено</h2> }[products.length] || <Content />}
-          </div>
+          {
+            (!showProducts || window.innerWidth >= 1150) &&
+              <div style={{ position: 'relative', top: '0' }} className='filterkotalog_filter'>
+                <div className='filterkotalog_filter_title'>
+                  <h2>Фильтр</h2>
+                  <img src='/img/filter.svg' alt='' />
+                </div>
+                <div
+                  className='accordion filterkotalog_filter_title'
+                  id='accordionPanelsStayOpenExample'
+                >
+                  {parameters.map(([name, variants]) => (
+                    <Filter
+                      key={name}
+                      name={name}
+                      variants={variants}
+                      onChange={(variant, checked) => {
+                        const oldVariants = filters[name] || []
+                        const variants = checked
+                          ? [...oldVariants, variant]
+                          : oldVariants.filter((x) => x !== variant)
+                        setFilters({ ...filters, [name]: variants })
+                        navigate('?page=1')
+                      }}
+                    />
+                  ))}
+                </div>
+                <div className='filterkotalog_filter_btn'>
+                  <button onClick={() => setShowProducts(true)}>Закрыть</button>
+                  <button onClick={() => setShowProducts(true)}>Применить</button>
+                </div>
+              </div>
+          }
+          {
+            showProducts &&
+              <>
+                <div className='filterkotalog_button_fiter'>
+                  <button onClick={() => setShowProducts(false)}>Фильтр</button>
+                </div>
+                <div className='filterkotalog_cards'>
+                  {{ 0: <h2>Ничего не найдено</h2> }[products.length] || <Content />}
+                </div>
+              </>
+          }
         </div>
       </div>
     </main>
