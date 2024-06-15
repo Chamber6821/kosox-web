@@ -33,8 +33,8 @@ export default function Faq ({ api }) {
                     aria-expanded='true'
                     aria-controls='collapseOne'
                   >
-                    <img src='./img/blackic.svg' alt='' />
-                    Машиностроение
+                    <img src='./img/blackic.svg' alt='icon' />
+                    Возможен ли самовывоз заказанного товара?
                   </button>
                 </h2>
                 <div
@@ -44,16 +44,7 @@ export default function Faq ({ api }) {
                   data-bs-parent='#accordionExample'
                 >
                   <div className='accordion-body'>
-                    <strong>This is the first item's accordion body.</strong> It
-                    is shown by default, until the collapse plugin adds the
-                    appropriate classes that we use to style each element. These
-                    classes control the overall appearance, as well as the
-                    showing and hiding via CSS transitions. You can modify any
-                    of this with custom CSS or overriding our default variables.
-                    It's also worth noting that just about any HTML can go
-                    within the
-                    <code>.accordion-body</code>, though the transition does
-                    limit overflow.
+                    Вы можете забрать свой заказ самостоятельно по следующему адресу: в Санкт-Петербурге, на Придорожной аллее, дом 8, литера А, помещение 620.
                   </div>
                 </div>
               </div>
@@ -67,8 +58,8 @@ export default function Faq ({ api }) {
                     aria-expanded='false'
                     aria-controls='collapseTwo'
                   >
-                    <img src='./img/blackic.svg' alt='' />
-                    Машиностроение
+                    <img src='./img/blackic.svg' alt='icon' />
+                    Работаете ли вы с физическими лицами?
                   </button>
                 </h2>
                 <div
@@ -78,9 +69,7 @@ export default function Faq ({ api }) {
                   data-bs-parent='#accordionExample'
                 >
                   <div className='accordion-body'>
-                    Самовывоз можно осуществить по адресу: 198099 г.
-                    Санкт-Петербург, ул. Оборонная, д. 10, литера А, помещение
-                    306. каб. 24-8. График работы офиса: ПН — ПТ с 9:00 до 18:00
+                    Конечно, наше сотрудничество распространяется и на индивидуальных предпринимателей, обладающих особым юридическим статусом.
                   </div>
                 </div>
               </div>
@@ -94,8 +83,8 @@ export default function Faq ({ api }) {
                     aria-expanded='false'
                     aria-controls='collapseThree'
                   >
-                    <img src='./img/blackic.svg' alt='' />
-                    Машиностроение
+                    <img src='./img/blackic.svg' alt='icon' />
+                    Доставляете ли Вы подшипник в другие города?
                   </button>
                 </h2>
                 <div
@@ -105,16 +94,7 @@ export default function Faq ({ api }) {
                   data-bs-parent='#accordionExample'
                 >
                   <div className='accordion-body'>
-                    <strong>This is the third item's accordion body.</strong> It
-                    is hidden by default, until the collapse plugin adds the
-                    appropriate classes that we use to style each element. These
-                    classes control the overall appearance, as well as the
-                    showing and hiding via CSS transitions. You can modify any
-                    of this with custom CSS or overriding our default variables.
-                    It's also worth noting that just about any HTML can go
-                    within the
-                    <code>.accordion-body</code>, though the transition does
-                    limit overflow.
+                    В любые города России и СНГ!
                   </div>
                 </div>
               </div>

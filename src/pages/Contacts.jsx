@@ -24,14 +24,11 @@ export default function Contacts () {
           <div className='contact_page_about_phone'>
             <img src='./img/phone.svg' alt='' />
             <div className='contact_page_about_phone_text'>
-              <a href='tel:'>
-                <h3>+8 (800) 200-45-94</h3>
+              <a href='tel:+78124392039'>
+                <h3>+7 (812) 439-20-39</h3>
               </a>
-              <a href='tel:'>
-                <h3>+8 (800) 200-45-94</h3>
-              </a>
-              <a href='tel:'>
-                <h3>+8 (800) 200-45-94</h3>
+              <a href='tel:+79117111112'>
+                <h3>+7 (911) 711-11-12</h3>
               </a>
             </div>
           </div>
@@ -40,8 +37,7 @@ export default function Contacts () {
             <div className='contact_page_about_location_text'>
               <a href='#0'>
                 <h3>
-                  198099, Санкт-Петербург, Оборонная улица, дом 10 литер А, каб.
-                  24-8
+                  г. Санкт-Петербург, Придорожная аллея, д. 8, лит. А, ПОМЕЩ. 620
                 </h3>
               </a>
             </div>
@@ -49,8 +45,8 @@ export default function Contacts () {
           <div className='contact_page_about_phone'>
             <img src='./img/mail.svg' alt='' />
             <div className='contact_page_about_mail_text'>
-              <a href='mailto:'>
-                <h3>zakaz@mgb-berings.ru</h3>
+              <a href='mailto:zakaz@kosox.ru'>
+                <h3>zakaz@kosox.ru</h3>
               </a>
             </div>
           </div>

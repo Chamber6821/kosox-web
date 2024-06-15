@@ -1,3 +1,4 @@
+import { useCity } from '../api/City'
 import { useEffect, useState } from 'react'
 import { Link } from 'wouter'
 import Cards from './catalog/Cards'
@@ -15,6 +16,7 @@ import Cards from './catalog/Cards'
 export default function Manufacturers ({ api }) {
   const [manufacturers, setManufacturers] = useState([])
   document.title = 'Производители'
+  const city = useCity()
   useEffect(() => {
     (async () => {
       setManufacturers(
@@ -40,7 +42,7 @@ export default function Manufacturers ({ api }) {
       >
         <div className='header_main_bg' />
         <div className='header_main_flex'>
-          <h1>Производители</h1>
+          <h1>Купить в {city.Предложный} продукцию мировых брендов</h1>
         </div>
       </div>
       <div className='manufacturers'>

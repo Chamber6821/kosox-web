@@ -4,7 +4,7 @@ import Reviews from '../components/Reviews'
 import Cards from './catalog/Cards'
 
 export default function Home ({ api }) {
-  document.title = 'KOSOX'
+  document.title = 'Подшипники KOSOX | Купить подшипники оптом и в розницу'
   const city = useCity()
   return (
     <main>
@@ -15,7 +15,7 @@ export default function Home ({ api }) {
             'url("./img/a-close-up-of-a-robot-s-gear_188544-21931 1.png")'
         }}
       >
-        <img src='./img/Rectangle1.png' alt='' />
+        <img src='./img/Rectangle1.png' alt='alt' />
         <div className='main_left'>
           <h1>
             Купить подшипники<br />
