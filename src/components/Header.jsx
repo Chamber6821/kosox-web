@@ -5,59 +5,61 @@ export default function Header () {
   const [location, setLocation] = useLocation()
   return (
     <header className='header'>
-      <nav className='navbar'>
-        <div className='navbar_logo'>
-          <Link to='/'>
-            <div className='logo'>
-              <strong>KOSOX</strong>
-            </div>
-          </Link>
-        </div>
-        <div className='navbar_menu'>
-          <a href='mailto:zakaz@kosox.ru'>zakaz@kosox.ru</a>
-        </div>
-        <div className='navbar_icon'>
-          <a href='https://wa.me/79117111112' target='_blank' rel='noreferrer'>
-            <img
-              src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/whatsapp.svg'
-              alt='icon'
-            />
-          </a>
-          <Link to='/'>
-            <img
-              src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/viber.svg'
-              alt='icon'
-            />
-          </Link>
-          <Link to='/'>
-            <img
-              src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/telegram.svg'
-              alt='icon'
-            />
-          </Link>
-        </div>
-      </nav>
       <nav className='navbar_top'>
-        <ul className='navbar_top_menu'>
-          <li className='navbar_top_menu_li'>
-            <Link to='/'>Главная</Link>
-          </li>
-          <li className='navbar_top_menu_li'>
-            <Link to='/about'>О компании</Link>
-          </li>
-          <li className='navbar_top_menu_li'>
-            <Link to='/delivery-and-payment'>Доставка и Оплата</Link>
-          </li>
-          <li className='navbar_top_menu_li'>
-            <Link to='/manufacturers'>Производители</Link>
-          </li>
-          <li className='navbar_top_menu_li'>
-            <Link to='/faq'>FAQ</Link>
-          </li>
-          <li className='navbar_top_menu_li'>
-            <Link to='/contacts'>Контакты</Link>
-          </li>
-        </ul>
+        <div className='navbar_top__container'>
+          <div className='navbar_logo'>
+            <Link to='/'>
+              <div className='logo'>
+                <strong>KOSOX</strong>
+              </div>
+            </Link>
+          </div>
+          <ul className='navbar_top_menu'>
+            <li className='navbar_top_menu_li'>
+              <Link to='/'>Главная</Link>
+            </li>
+            <li className='navbar_top_menu_li'>
+              <Link to='/about'>О компании</Link>
+            </li>
+            <li className='navbar_top_menu_li'>
+              <Link to='/delivery-and-payment'>Доставка и Оплата</Link>
+            </li>
+            <li className='navbar_top_menu_li'>
+              <Link to='/manufacturers'>Производители</Link>
+            </li>
+            <li className='navbar_top_menu_li'>
+              <Link to='/faq'>FAQ</Link>
+            </li>
+            <li className='navbar_top_menu_li'>
+              <Link to='/contacts'>Контакты</Link>
+            </li>
+          </ul>
+          <div className='navbar_menu_container'>
+            <div className='navbar_menu'>
+              <a href='mailto:zakaz@kosox.ru'>zakaz@kosox.ru</a>
+            </div>
+            <div className='navbar_icon'>
+              <a href='https://wa.me/79117111112' target='_blank' rel='noreferrer'>
+                <img
+                  src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/whatsapp.svg'
+                  alt='icon'
+                />
+              </a>
+              <Link to='/'>
+                <img
+                  src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/viber.svg'
+                  alt='icon'
+                />
+              </Link>
+              <Link to='/'>
+                <img
+                  src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/telegram.svg'
+                  alt='icon'
+                />
+              </Link>
+            </div>
+          </div>
+        </div>
       </nav>
       <div className='navbar_phone'>
         <div className='navbar_phone_logo'>
