@@ -4,6 +4,7 @@ const idOf = (entry) => idOfUrl(entry?._links?.self?.href)
 const CachedManufacturer = async (json) => ({
   id: async () => idOf(json),
   visible: async () => json.visible,
+  brand: async () => json.brand,
   name: async () => json.name,
   icon: async () => json.iconUrl,
   description: async () => json.description
@@ -14,11 +15,11 @@ const CachedProduct = async (json, manufacturer) => ({
   name: async () => json?.name,
   description: async () => json?.description,
   icon: async () => json?.iconUrl,
+  manufacturer,
   brand: async () => ({
-    name: async () => 'KOSOX',
-    icon: async () => '/img/Black.svg'
-  }),
-  manufacturer
+    name: async () => await (await manufacturer()).brand() ? await (await manufacturer()).name() : 'KOSOX',
+    icon: async () => await (await manufacturer()).brand() ? await (await manufacturer()).icon() : '/img/Black.svg'
+  })
 })
 
 const ProductWithParameters = async (product, api) => ({
@@ -68,8 +69,8 @@ const CategoryWithProducts = async (category, api) => ({
             description: async () => x.description,
             icon: async () => x.icon,
             brand: async () => ({
-              name: async () => 'KOSOX',
-              icon: async () => '/img/Black.svg'
+              name: async () => x.brandName || 'KOSOX',
+              icon: async () => x.brandIcon || '/img/Black.svg'
             }),
             manufacturer: async () => ({
               name: async () => x.brandName,
