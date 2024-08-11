@@ -24,11 +24,8 @@ export default function Contacts () {
           <div className='contact_page_about_phone'>
             <img src='./img/phone.svg' alt='' />
             <div className='contact_page_about_phone_text'>
-              <a href='tel:+78124392039'>
-                <h3>+7 (812) 439-20-39</h3>
-              </a>
-              <a href='tel:+79117111112'>
-                <h3>+7 (911) 711-11-12</h3>
+              <a href='tel:+88124555155'>
+                <h3>+8 (812) 455-51-55</h3>
               </a>
             </div>
           </div>

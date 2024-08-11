@@ -116,7 +116,7 @@ export default function About () {
               </li>
             </ul>
             <p>
-              Вы заинтересованы и хотите обсудить сотрудничество или у вас просто остались вопросы по работе нашей компании? Звоните нам по телефону <a class='link-about' href='tel:79818800222'>+7(981)880-02-22</a> или пишите на почту <a class='link-about2' href='mailto:zakaz@kosox.ru'>zakaz@kosox.ru</a>. А также Вы можете заказать обратный звонок на сайте нажав <a class='link-about' href='\#contact_form'>СЮДА</a>.
+              Вы заинтересованы и хотите обсудить сотрудничество или у вас просто остались вопросы по работе нашей компании? Звоните нам по телефону <a class='link-about' href='tel:+88124555155'>+8 (812) 455-51-55</a> или пишите на почту <a class='link-about2' href='mailto:zakaz@kosox.ru'>zakaz@kosox.ru</a>. А также Вы можете заказать обратный звонок на сайте нажав <a class='link-about' href='\#contact_form'>СЮДА</a>.
             </p>
           </div>
         </div>
