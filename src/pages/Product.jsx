@@ -55,7 +55,7 @@ export default function Product ({ api, params: { id } }) {
               <h3>Бренд:</h3>
               {brand.icon ? <img alt='brand icon' src={brand.icon} /> : <h3>{brand.name}</h3>}
             </div>
-            <a href='#0'>Заказать</a>
+            <a href='#contact_form'>Заказать</a>
           </div>
         </div>
       </div>
