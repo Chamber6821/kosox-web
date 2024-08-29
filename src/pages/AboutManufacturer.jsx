@@ -56,7 +56,7 @@ export default function AboutManufacturer ({ params: { id }, api }) {
             </div>
             <div className='brendabout_cards'>
               {categories.map((x) => (
-                <Card key={x.name} title={x.name} backgroundImage={x.icon} />
+                <Card key={x.name} title={x.name} backgroundImage={x.icon} page={`/catalog/${x.id}`} />
               ))}
             </div>
           </>
