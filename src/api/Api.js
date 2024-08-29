@@ -131,6 +131,15 @@ const ManufacturerWithCategories = async (manufacturer, api) => ({
     )
 })
 
+const ManufacturerWithProducts = async (manufacturer, api) => ({
+  ...manufacturer,
+  products: async () =>
+    await Promise.all(
+      (await api(`manufacturers/${await manufacturer.id()}/products`))._embedded.products
+        .map(x => CachedProduct(x, async () => manufacturer))
+    )
+})
+
 export default function Api (base) {
   const cache = {}
   const afetch = async (path, ...args) =>
@@ -206,8 +215,11 @@ export default function Api (base) {
     }),
     manufacturers: async () => ({
       withId: async (id) =>
-        await ManufacturerWithCategories(
-          await CachedManufacturer(await get(`manufacturers/${id}`)),
+        await ManufacturerWithProducts(
+          await ManufacturerWithCategories(
+            await CachedManufacturer(await get(`manufacturers/${id}`)),
+            get
+          ),
           get
         ),
       array: async () =>

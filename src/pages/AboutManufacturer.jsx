@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react'
 import Form from '../components/Form'
-import Card from './catalog/Card'
+import CategoryCard from './catalog/Card'
+import ProductCard from './category/Card'
+
+const logIt = x => {
+  console.log(x)
+  return x
+}
 
 /**
  * @typedef {Object} props
@@ -13,7 +19,7 @@ import Card from './catalog/Card'
  * @returns
  */
 export default function AboutManufacturer ({ params: { id }, api }) {
-  const [{ name, description, categories = [] }, setBrand] = useState({})
+  const [{ name, description, categories = [], products }, setBrand] = useState({})
   document.title = `Производитель ${name}`
   useEffect(() => {
     (async () => {
@@ -27,7 +33,20 @@ export default function AboutManufacturer ({ params: { id }, api }) {
             name: await x.name(),
             icon: await x.icon()
           }))
-        )
+        ),
+        products:
+          await manufacturerEntity.brand()
+            ? await Promise.all(
+              (await manufacturerEntity.products())
+                .map(logIt)
+                .map(async x => ({
+                  id: await x.id(),
+                  name: await x.name(),
+                  icon: await x.icon(),
+                  brandIcon: await x.brandIcon
+                }))
+            )
+            : undefined
       })
     })()
   }, [id, api])
@@ -55,9 +74,15 @@ export default function AboutManufacturer ({ params: { id }, api }) {
               <h6>Товары {name}</h6>
             </div>
             <div className='brendabout_cards'>
-              {categories.map((x) => (
-                <Card key={x.name} title={x.name} backgroundImage={x.icon} page={`/catalog/${x.id}`} />
-              ))}
+              {
+                products
+                  ? products.map(x => (
+                    <ProductCard key={x.name} title={x.name} image={x.icon} brandImage={x.brandIcon} page={`/product/${x.id}`} />
+                  ))
+                  : categories.map((x) => (
+                    <CategoryCard key={x.name} title={x.name} backgroundImage={x.icon} page={`/catalog/${x.id}`} />
+                  ))
+              }
             </div>
           </>
         )}
