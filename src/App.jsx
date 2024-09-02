@@ -26,8 +26,9 @@ export default function App () {
   useEffect(() => {
     (async () => {
       if (city === undefined) {
-        const response = await fetch('http://ip-api.com/json/?fields=city')
-        const { city } = await response.json()
+        const response = await fetch('http://ip-api.com/json/?fields=city,country')
+        const { city: realCity, country } = await response.json()
+        const city = country === 'Russia' ? realCity : 'St Petersburg'
         const l = window.location
         window.location = `${l.protocol}//${city.toLowerCase().replaceAll(/[^a-z0-9]+/g, '-')
           }.${l.host}${l.pathname}${l.search} `
