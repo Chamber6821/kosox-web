@@ -15,6 +15,11 @@ export default function Footer () {
             </a>
           </div>
           <div className='allFooter_div_ahref_div'>
+            <a className='allFooter_div_ahref' href='/catalog'>
+              Каталог
+            </a>
+          </div>
+          <div className='allFooter_div_ahref_div'>
             <a className='allFooter_div_ahref' href='/delivery-and-payment'>
               Доставка и оплата
             </a>
