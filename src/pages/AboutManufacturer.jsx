@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Form from '../components/Form'
 import CategoryCard from './catalog/Card'
 import ProductCard from './category/Card'
+import Cards from './catalog/Cards'
 
 const logIt = x => {
   console.log(x)
@@ -50,6 +51,19 @@ export default function AboutManufacturer ({ params: { id }, api }) {
       })
     })()
   }, [id, api])
+  console.log('categories', categories)
+  const cards = products
+    ? products.map(x => (
+      <ProductCard key={x.name} title={x.name} image={x.icon} brandImage={x.brandIcon} page={`/product/${x.id}`} />
+    ))
+    : categories.map((x) => (
+      <CategoryCard
+        key={x.name}
+        title={x.name}
+        backgroundImage={x.icon}
+        page={`/catalog/${x.id}`}
+      />
+    ))
   return (
     <main className='brendabout'>
       <div className='brendabout_bgimg'>
@@ -68,24 +82,16 @@ export default function AboutManufacturer ({ params: { id }, api }) {
         <div className='brendabout_btn' style={{ marginTop: '0', marginBottom: '100px' }}>
           <a href='#form'>Заказать товар {name}</a>
         </div>
-        {categories.length > 0 && (
-          <>
-            <div className='main_left'>
-              <h6>Товары {name}</h6>
-            </div>
-            <div className='brendabout_cards'>
-              {
-                products
-                  ? products.map(x => (
-                    <ProductCard key={x.name} title={x.name} image={x.icon} brandImage={x.brandIcon} page={`/product/${x.id}`} />
-                  ))
-                  : categories.map((x) => (
-                    <CategoryCard key={x.name} title={x.name} backgroundImage={x.icon} page={`/catalog/${x.id}`} />
-                  ))
-              }
-            </div>
-          </>
-        )}
+        <div className='main_left'>
+          <h6>Товары {name}</h6>
+        </div>
+        <div className='brendabout_cards'>
+          {
+            cards.length === 0
+              ? <Cards api={api} />
+              : cards
+          }
+        </div>
         <div id='form'>
           <Form api={api} />
         </div>
