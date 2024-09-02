@@ -21,6 +21,10 @@ export default function Contacts () {
             Вы можете связаться с нами там, где вам угодно. Мы готовы
             подстраиваться под вас
           </h3>
+          <h3 style={{ color: '#f00' }}>
+            График работы: Понедельник — Пятница,
+            с 09:00 до 18:00 по МСК
+          </h3>
           <div className='contact_page_about_phone'>
             <img src='./img/phone.svg' alt='' />
             <div className='contact_page_about_phone_text'>
@@ -47,6 +51,9 @@ export default function Contacts () {
               </a>
             </div>
           </div>
+          <h3 style={{ color: '#f00' }}>
+            Принимаем заявки 24/7
+          </h3>
         </div>
         <div className='contact_page_post'>
           <h6>Отправьте нам сообщение</h6>
