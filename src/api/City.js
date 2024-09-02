@@ -4,7 +4,8 @@ import { xml2js } from 'xml-js'
 const cityContext = createContext()
 
 export const fetchCity = async () => {
-  const cityNominative = (await (await fetch('http://ip-api.com/json/?fields=city&lang=ru')).json()).city
+  const { city, country } = (await (await fetch('http://ip-api.com/json/?fields=city,country&lang=ru')).json())
+  const cityNominative = country === 'Россия' ? city : 'Санкт-Петербург'
   const rawXml = await (await fetch(`https://ws3.morpher.ru/russian/declension?${new URLSearchParams({ s: cityNominative })}`)).text()
   const xml = xml2js(rawXml, { compact: true }).xml
   return {
