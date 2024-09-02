@@ -44,7 +44,7 @@ export default function AboutManufacturer ({ params: { id }, api }) {
                   id: await x.id(),
                   name: await x.name(),
                   icon: await x.icon(),
-                  brandIcon: await x.brandIcon
+                  brandIcon: await (await x.brand()).icon()
                 }))
             )
             : undefined
@@ -54,7 +54,13 @@ export default function AboutManufacturer ({ params: { id }, api }) {
   console.log('categories', categories)
   const cards = products
     ? products.map(x => (
-      <ProductCard key={x.name} title={x.name} image={x.icon} brandImage={x.brandIcon} page={`/product/${x.id}`} />
+      <ProductCard
+        key={x.name}
+        title={x.name}
+        image={x.icon}
+        brandImage={x.brandIcon}
+        page={`/product/${x.id}`}
+      />
     ))
     : categories.map((x) => (
       <CategoryCard
