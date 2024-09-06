@@ -60,7 +60,7 @@ export default function Footer () {
           </div>
           <div className='allFooter_div_ahref_div'>
             <a className='allFooter_div_ahref' href='+88124555155'>
-              +8 (812) 455-51-55
+              +7 (812) 455-51-55
             </a>
           </div>
         </div>
