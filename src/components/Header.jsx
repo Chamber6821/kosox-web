@@ -1,8 +1,11 @@
+import { useCallback, useRef } from 'react'
 import { Link, useLocation, useSearch } from 'wouter'
 
 export default function Header () {
   const params = new URLSearchParams(useSearch())
   const [location, setLocation] = useLocation()
+  const searchInputRef = useRef()
+  const search = () => setLocation(`/search?${new URLSearchParams({ q: searchInputRef.current.value })}`)
   return (
     <header className='header'>
       <nav className='navbar_top'>
@@ -128,16 +131,17 @@ export default function Header () {
         </Link>
         <div className='navbar_down_inp'>
           <input
+            ref={searchInputRef}
             placeholder='Введите наименование'
             defaultValue={(location === '/search' && params.get('q')) || ''}
-            onKeyDown={(e) =>
-              e.key === 'Enter' &&
-              setLocation(
-                `/search?${new URLSearchParams({ q: e.target.value })}`
-              )}
+            onKeyDown={e => e.key === 'Enter' && search()}
             type='text'
           />
-          <img src='/img/find.svg' alt='' />
+          <img
+            onClick={search}
+            src='/img/find.svg'
+            alt=''
+          />
         </div>
       </nav>
     </header>
