@@ -12,9 +12,10 @@ export default function Card ({
       }}
       className='kotalog_card'
     >
-      <div className='kotalog_card_bg' />
-      <h3>{title}</h3>
-      {page !== undefined && <Link to={page}>ТОВАРЫ</Link>}
+      <Link to={page || ''}>
+        <div className='kotalog_card_bg' />
+        <h3>{title}</h3>
+      </Link>
     </div>
   )
 }
