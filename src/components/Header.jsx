@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'react'
+import { useRef } from 'react'
 import { Link, useLocation, useSearch } from 'wouter'
 
 export default function Header () {
