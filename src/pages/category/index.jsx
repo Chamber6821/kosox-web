@@ -141,7 +141,6 @@ export default function Category ({ api, params: { id } }) {
               <div style={{ position: 'relative', top: '0' }} className='filterkotalog_filter'>
                 <div className='filterkotalog_filter_title'>
                   <h2>Фильтр</h2>
-                  <img src='/img/filter.svg' alt='' />
                 </div>
                 <div
                   className='accordion filterkotalog_filter_title'
