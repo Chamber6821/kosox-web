@@ -88,7 +88,7 @@ export default function Product ({ api, params: { id } }) {
             }`}
         >
           <p>{product.description}</p>
-          <a href='#0'>Заказать данный товар</a>
+          <a href='#contact_form'>Заказать данный товар</a>
         </div>
         <div
           className={
@@ -106,7 +106,7 @@ export default function Product ({ api, params: { id } }) {
               ))}
             </tbody>
           </table>
-          <a href='#0'>Заказать данный товар</a>
+          <a href='#contact_form'>Заказать данный товар</a>
         </div>
       </div>
       <Form api={api} />
