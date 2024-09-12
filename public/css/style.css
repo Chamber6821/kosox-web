@@ -2582,10 +2582,11 @@ textarea:focus {
   background-repeat: no-repeat;
   background-size: 1.25rem;
   transition: transform 0.2s ease-in-out;
+  rotate: 180deg;
 }
 .btn-secondary:not(.collapsed)::after {
   background-image: url(../img/top.svg);
-  transform: rotate(-180deg);
+  transform: rotate(180deg);
 }
 
 /* range inp */
