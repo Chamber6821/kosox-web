@@ -24,7 +24,8 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"format": "standard src --fix"
+		"format": "standard src --fix",
+		"lint-standard": "standard src"
 	},
 	"eslintConfig": {
 		"extends": [
