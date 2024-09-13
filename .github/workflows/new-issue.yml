@@ -1,0 +1,11 @@
+on:
+  issues:
+    types: opened
+jobs:
+  add-research-label:
+    name: add research label
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions-ecosystem/action-add-labels@v1
+        with:
+          labels: research
