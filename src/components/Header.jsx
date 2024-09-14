@@ -9,7 +9,7 @@ export default function Header () {
   return (
     <header className='header'>
       <nav className='navbar_top'>
-        <div className='navbar_top__container'>
+        <div className='navbar_container'>
           <div className='navbar_logo'>
             <Link to='/'>
               <div className='logo'>
@@ -18,9 +18,6 @@ export default function Header () {
             </Link>
           </div>
           <ul className='navbar_top_menu'>
-            <li className='navbar_top_menu_li'>
-              <Link to='/'>Главная</Link>
-            </li>
             <li className='navbar_top_menu_li'>
               <Link to='/about'>О компании</Link>
             </li>
@@ -65,83 +62,84 @@ export default function Header () {
         </div>
       </nav>
       <div className='navbar_phone'>
-        <div className='navbar_phone_logo'>
-          <Link to='/'>
-            <div className='logo'>
-              <strong>KOSOX</strong>
-            </div>
-          </Link>
-        </div>
-        <div className='navbar_phone_menu'>
-          <i onClick={() => window.menuop()} className='bx bx-menu-alt-right' />
-        </div>
-        <div className='navbar_phone_right_menu'>
-          <i
-            onClick={() => window.menucl()}
-            className='bx bxs-right-arrow-alt'
-          />
-          <ul className='navbar_top_menu'>
-            <li className='navbar_top_menu_li'>
-              <Link to='/delivery-and-payment'>Доставка и оплата</Link>
-            </li>
-            <li className='navbar_top_menu_li'>
-              <Link to='/about'>О компании</Link>
-            </li>
-            <li className='navbar_top_menu_li'>
-              <Link to='/contacts'>Контакты</Link>
-            </li>
-            <li className='navbar_top_menu_li'>
-              <Link to='/faq'>FAQ</Link>
-            </li>
-            <li className='navbar_top_menu_li'>
-              <Link to='/'>Главная</Link>
-            </li>
-            <li className='navbar_top_menu_li'>
-              <Link to='/'>Партнерам</Link>
-            </li>
-          </ul>
-          <div className='navbar_phone_right_menu_mail'>
-            <a href='mailto:'>zakaz@mgb-bearings.ru</a>
+        <div className="navbar_container">
+          <div className='navbar_phone_logo'>
+            <Link to='/'>
+              <div className='logo'>
+                <strong>KOSOX</strong>
+              </div>
+            </Link>
           </div>
-          <div className='navbar_icon'>
-            <a href='#0'>
-              <img
-                src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/whatsapp.svg'
-                alt=''
-              />
-            </a>
-            <a href='#0'>
-              <img
-                src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/viber.svg'
-                alt=''
-              />
-            </a>
-            <a href='#0'>
-              <img
-                src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/telegram.svg'
-                alt=''
-              />
-            </a>
+          <div className='navbar_phone_menu'>
+            <i onClick={() => window.menuop()} className='bx bx-menu-alt-right' />
+          </div>
+          <div className='navbar_phone_right_menu'>
+            <i
+              onClick={() => window.menucl()}
+              className='bx bxs-right-arrow-alt'
+            />
+            <ul className='navbar_top_menu'>
+              <li className='navbar_top_menu_li'>
+                <Link to='/delivery-and-payment'>Доставка и оплата</Link>
+              </li>
+              <li className='navbar_top_menu_li'>
+                <Link to='/about'>О компании</Link>
+              </li>
+              <li className='navbar_top_menu_li'>
+                <Link to='/contacts'>Контакты</Link>
+              </li>
+              <li className='navbar_top_menu_li'>
+                <Link to='/faq'>FAQ</Link>
+              </li>
+              <li className='navbar_top_menu_li'>
+                <Link to='/'>Партнерам</Link>
+              </li>
+            </ul>
+            <div className='navbar_phone_right_menu_mail'>
+              <a href='mailto:'>zakaz@mgb-bearings.ru</a>
+            </div>
+            <div className='navbar_icon'>
+              <a href='#0'>
+                <img
+                  src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/whatsapp.svg'
+                  alt=''
+                />
+              </a>
+              <a href='#0'>
+                <img
+                  src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/viber.svg'
+                  alt=''
+                />
+              </a>
+              <a href='#0'>
+                <img
+                  src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/telegram.svg'
+                  alt=''
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
       <nav className='navbar_down'>
-        <Link to='/catalog' className='red_border'>
-          КАТАЛОГ ТОВАРОВ
-        </Link>
-        <div className='navbar_down_inp'>
-          <input
-            ref={searchInputRef}
-            placeholder='Введите наименование'
-            defaultValue={(location === '/search' && params.get('q')) || ''}
-            onKeyDown={e => e.key === 'Enter' && search()}
-            type='text'
-          />
-          <img
-            onClick={search}
-            src='/img/find.svg'
-            alt=''
-          />
+        <div className="navbar_container">
+          <Link to='/catalog' className='red_border'>
+            {window.innerWidth > 575 ? "КАТАЛОГ ТОВАРОВ" : "КАТАЛОГ"}
+          </Link>
+          <div className='navbar_down_inp'>
+            <input
+              ref={searchInputRef}
+              placeholder='Введите наименование'
+              defaultValue={(location === '/search' && params.get('q')) || ''}
+              onKeyDown={e => e.key === 'Enter' && search()}
+              type='text'
+            />
+            <img
+              onClick={search}
+              src='/img/find.svg'
+              alt=''
+            />
+          </div>
         </div>
       </nav>
     </header>
