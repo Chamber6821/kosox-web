@@ -22,7 +22,15 @@ export default function Faq ({ api }) {
         </div>
         <div className='section_page_elemnts'>
           <div className='promishlenost_acc'>
-            <div className='accordion content' id='accordionExample'>
+            <div
+              className='accordion content'
+              id='accordionExample'
+              style={{
+                maxWidth: '1090px',
+                width: '100%',
+                padding: '0'
+              }}
+            >
               <div className='accordion-item'>
                 <h2 className='accordion-header' id='headingOne'>
                   <button
