@@ -9,7 +9,7 @@ export default function Card ({
     <Link to={page || ''}>
       <div
         style={{
-          backgroundImage: `url('${backgroundImage}')`
+          backgroundImage: `url('${backgroundImage}'), url('/img/default-card.png')`
         }}
         className='kotalog_card'
       >
