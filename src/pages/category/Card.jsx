@@ -11,7 +11,12 @@ export default function Card ({
       <div className='filterkotalog_card'>
         <div className='filterkotalog_card_img'>
           <div className='filterkotalog_card_img_bg' />
-          <img alt='product' style={{ objectFit: 'cover', height: 'inherit' }} src={image} />
+          <img
+            alt='product'
+            style={{ objectFit: 'cover', height: 'inherit' }}
+            src={image}
+            onError={e => { e.target.src = '/img/default-card.png' }}
+          />
         </div>
         <div className='filterkotalog_card_title'>
           <h2>{title}</h2>
