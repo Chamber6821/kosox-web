@@ -6,7 +6,7 @@ export default function NotFound () {
         width: 'fit-content'
       }}
     >
-      404. Такой страницы не существует
+      К сожалению, такой страницы не существует
     </h1>
   )
 }
