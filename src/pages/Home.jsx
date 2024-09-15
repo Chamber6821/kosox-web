@@ -3,6 +3,15 @@ import Form from '../components/Form'
 import Reviews from '../components/Reviews'
 import Cards from './catalog/Cards'
 
+const Left = (props) =>
+  <div
+    {...props}
+    style={{
+      width: '100%',
+      maxWidth: '1440px'
+    }}
+  />
+
 export default function Home ({ api }) {
   document.title = 'Подшипники KOSOX | Купить подшипники оптом и в розницу'
   const city = useCity()
@@ -502,9 +511,9 @@ export default function Home ({ api }) {
         </div>
       </div>
       <div className='primushestva_company'>
-        <div className='main_left'>
+        <Left>
           <h6>Преимущества компании</h6>
-        </div>
+        </Left>
         <div className='primushestva_company_cards'>
           <div className='primushestva_company_cards_card'>
             <div className='primushestva_company_cards_card_img'>
@@ -572,9 +581,9 @@ export default function Home ({ api }) {
         </div>
       </div>
       <div className='how_weare_working'>
-        <div className='main_left'>
+        <Left>
           <h6>Как мы работаем?</h6>
-        </div>
+        </Left>
         <div className='how_weare_working_cards'>
           <div className='how_weare_working_cards_card'>
             <div className='how_weare_working_cards_card_num'>
