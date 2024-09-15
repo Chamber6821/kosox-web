@@ -892,6 +892,7 @@ h4 {
   gap: 38px;
 }
 .primushestva_company_cards_card {
+  flex-grow: 1;
   width: 400px;
   display: flex;
   align-items: start;
