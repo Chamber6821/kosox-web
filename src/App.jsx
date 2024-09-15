@@ -18,6 +18,7 @@ import { useEffect, useState } from 'react'
 import ScrollTop from './components/ScrollTop'
 import Search from './pages/Search'
 import { CityProvider } from './api/City'
+import NotFound from './pages/NotFound'
 
 export default function App () {
   const [api] = useState(() => Api(process.env.REACT_APP_API_BASE))
@@ -64,6 +65,7 @@ export default function App () {
           {(params) => <Product params={params} api={api} />}
         </Route>
         <Route path='/search'>{() => <Search api={api} />}</Route>
+        <Route>{() => <NotFound />}</Route>
       </Switch>
       <Footer />
     </CityProvider>
