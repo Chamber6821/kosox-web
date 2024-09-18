@@ -20,6 +20,7 @@ import Search from './pages/Search'
 import { CityProvider } from './api/City'
 
 export default function App () {
+  console.log(process.env.REACT_APP_API_BASE)
   const [api] = useState(() => Api(process.env.REACT_APP_API_BASE))
   const domainLevels = window.location.hostname.split('.').reverse()
   const city = domainLevels[2]
