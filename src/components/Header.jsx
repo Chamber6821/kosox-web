@@ -62,7 +62,7 @@ export default function Header () {
         </div>
       </nav>
       <div className='navbar_phone'>
-        <div className="navbar_container">
+        <div className='navbar_container'>
           <div className='navbar_phone_logo'>
             <Link to='/'>
               <div className='logo'>
@@ -122,9 +122,9 @@ export default function Header () {
         </div>
       </div>
       <nav className='navbar_down'>
-        <div className="navbar_container">
+        <div className='navbar_container'>
           <Link to='/catalog' className='red_border'>
-            {window.innerWidth > 575 ? "КАТАЛОГ ТОВАРОВ" : "КАТАЛОГ"}
+            {window.innerWidth > 575 ? 'КАТАЛОГ ТОВАРОВ' : 'КАТАЛОГ'}
           </Link>
           <div className='navbar_down_inp'>
             <input

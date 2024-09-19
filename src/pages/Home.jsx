@@ -37,19 +37,19 @@ export default function Home ({ api }) {
           <a href='/catalog'>ВЫБРАТЬ ТОВАР</a>
         </div>
       </div>
-      <div className="form">
-        <div className="container">
-          <h2 className="form_title">Остались <span className="active-color">вопросы?</span></h2>
+      <div className='form'>
+        <div className='container'>
+          <h2 className='form_title'>Остались <span className='active-color'>вопросы?</span></h2>
           <div className='form_inner'>
-            <div className="form_form">
+            <div className='form_form'>
               <Form api={api} />
             </div>
-            <div className="form_info">
-              <div className="form_info-headline">
+            <div className='form_info'>
+              <div className='form_info-headline'>
                 <h3>График работы:</h3>
                 <h3>Понедельник — Пятница, с 09:00 до 18:00 по МСК</h3>
               </div>
-              <div className="form_contacts"> 
+              <div className='form_contacts'>
                 <div className='contact_page_about_phone'>
                   <img src='./img/phone.svg' alt='' />
                   <div className='contact_page_about_phone_text'>
