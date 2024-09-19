@@ -20,7 +20,7 @@ export default function Reviews () {
     revie('ООО “Компания по продаже 5”',
       'На производстве понадобились Станки ЧПУ. Долго думали какого производителя выбрать и в итоге пришли к решению заказать у KOSOX. Поставили все в лучшем виде, очень довольны!', 4, '/img/reviewLogo.png'),
     revie('ООО “Компания по продаже 6”',
-      'По соотношению цены и качества думаю лучше компанию не найти. Работать буду продолжать, все устраивает.', 4, '/img/reviewLogo.png'),
+      'По соотношению цены и качества думаю лучше компанию не найти. Работать буду продолжать, все устраивает.', 4, '/img/reviewLogo.png')
   ]
   return (
     <div
@@ -35,7 +35,7 @@ export default function Reviews () {
           position: 'relative',
           maxWidth: '100dvw',
           backgroundColor: '#000',
-          height: "auto",
+          height: 'auto',
           paddingBottom: 24
         }}
         modules={[Pagination]}
@@ -46,7 +46,7 @@ export default function Reviews () {
         spaceBetween={30}
         grabCursor
         loop
-        autoHeight={true}
+        autoHeight
         speed={1000}
       >
         {reviews.map(x =>
@@ -61,10 +61,10 @@ export default function Reviews () {
               filter: 'blur(5px)'
             }}
           >
-            <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <img src={x.imgUrl} alt='icon' />
-              <div style={{display: "flex", gap: 8}}>
-                {[...Array(x.starAmount)].map((_, id) => <img key={id} src="/img/starReview.svg" style={{width: 25, height: 25}} alt="star"/>)}
+              <div style={{ display: 'flex', gap: 8 }}>
+                {[...Array(x.starAmount)].map((_, id) => <img key={id} src='/img/starReview.svg' style={{ width: 25, height: 25 }} alt='star' />)}
               </div>
             </div>
             <h3 style={{ marginTop: '15px' }}>{x.author}</h3>
