@@ -12,9 +12,7 @@ export default function Header () {
         <div className='navbar_container'>
           <div className='navbar_logo'>
             <Link to='/'>
-              <div className='logo'>
-                <strong>KOSOX</strong>
-              </div>
+              <img src="/img/main-logo.png" alt="logo" />
             </Link>
           </div>
           <ul className='navbar_top_menu'>
@@ -33,6 +31,7 @@ export default function Header () {
             <li className='navbar_top_menu_li'>
               <Link to='/contacts'>Контакты</Link>
             </li>
+            <a href="tel: +7 (800) 200-45-94">+7 (800) 200-45-94</a>
           </ul>
           <div className='navbar_menu_container'>
             <div className='navbar_menu'>
@@ -65,9 +64,7 @@ export default function Header () {
         <div className='navbar_container'>
           <div className='navbar_phone_logo'>
             <Link to='/'>
-              <div className='logo'>
-                <strong>KOSOX</strong>
-              </div>
+              <img src="/img/main-logo.png" alt="logo" />
             </Link>
           </div>
           <div className='navbar_phone_menu'>
@@ -134,12 +131,10 @@ export default function Header () {
               onKeyDown={e => e.key === 'Enter' && search()}
               type='text'
             />
-            <img
-              onClick={search}
-              src='/img/find.svg'
-              alt=''
-            />
           </div>
+          <button className="navbar_cart">
+            <img src="/img/cart.svg" alt="cart" />
+          </button>
         </div>
       </nav>
     </header>

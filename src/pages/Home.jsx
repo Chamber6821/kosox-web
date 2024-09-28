@@ -27,14 +27,13 @@ export default function Home ({ api }) {
         <img src='./img/Rectangle1.png' alt='alt' />
         <div className='main_left'>
           <h1>
-            Купить подшипники<br />
-            и промышленные товары в {city.Предложный}
+            Помощь в выборе<br />
+            <span>подшипников</span>
           </h1>
           <h3>
-            Более 60 тысяч образцов товаров <br />с гарантией ГОСТ/ТУ/ISO
-            качества
+            Большой выбор товаров и <br />всего остального
           </h3>
-          <a href='/catalog'>ВЫБРАТЬ ТОВАР</a>
+          <a href='/catalog'>Каталог товаров</a>
         </div>
       </div>
       <div className='form'>
