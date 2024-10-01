@@ -36,50 +36,6 @@ export default function Home ({ api }) {
           <a href='/catalog'>Каталог товаров</a>
         </div>
       </div>
-      <div className='form'>
-        <div className='container'>
-          <h2 className='form_title'>Остались <span className='active-color'>вопросы?</span></h2>
-          <div className='form_inner'>
-            <div className='form_form'>
-              <Form api={api} />
-            </div>
-            <div className='form_info'>
-              <div className='form_info-headline'>
-                <h3>График работы:</h3>
-                <h3>Понедельник — Пятница, с 09:00 до 18:00 по МСК</h3>
-              </div>
-              <div className='form_contacts'>
-                <div className='contact_page_about_phone'>
-                  <img src='./img/phone.svg' alt='' />
-                  <div className='contact_page_about_phone_text'>
-                    <a href='tel:+88124555155'>
-                      <h3>+8 (812) 455-51-55</h3>
-                    </a>
-                  </div>
-                </div>
-                <div className='contact_page_about_phone'>
-                  <img src='./img/location.svg' alt='' />
-                  <div className='contact_page_about_location_text'>
-                    <a href='#0'>
-                      <h3>
-                        г. Санкт-Петербург, Придорожная аллея, д. 8, лит. А, ПОМЕЩ. 620
-                      </h3>
-                    </a>
-                  </div>
-                </div>
-                <div className='contact_page_about_phone'>
-                  <img src='./img/mail.svg' alt='' />
-                  <div className='contact_page_about_mail_text'>
-                    <a href='mailto:zakaz@kosox.ru'>
-                      <h3>zakaz@kosox.ru</h3>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <Cards api={api} />
       <div className='promishlenost'>
         <div className='promishlenost_title'>
@@ -675,6 +631,50 @@ export default function Home ({ api }) {
       </div>
       <div className='map'>
         <iframe title='We are here' src='https://yandex.by/map-widget/v1/-/CDfOmN8j?scroll=false' />
+      </div>
+      <div className='form'>
+        <div className='container'>
+          <h2 className='form_title'>Остались <span className='active-color'>вопросы?</span></h2>
+          <div className='form_inner'>
+            <div className='form_form'>
+              <Form api={api} />
+            </div>
+            <div className='form_info'>
+              <div className='form_info-headline'>
+                <h3>График работы:</h3>
+                <h3>Понедельник — Пятница, с 09:00 до 18:00 по МСК</h3>
+              </div>
+              <div className='form_contacts'>
+                <div className='contact_page_about_phone'>
+                  <img src='./img/phone.svg' alt='' />
+                  <div className='contact_page_about_phone_text'>
+                    <a href='tel:+88124555155'>
+                      <h3>+8 (812) 455-51-55</h3>
+                    </a>
+                  </div>
+                </div>
+                <div className='contact_page_about_phone'>
+                  <img src='./img/location.svg' alt='' />
+                  <div className='contact_page_about_location_text'>
+                    <a href='#0'>
+                      <h3>
+                        г. Санкт-Петербург, Придорожная аллея, д. 8, лит. А, ПОМЕЩ. 620
+                      </h3>
+                    </a>
+                  </div>
+                </div>
+                <div className='contact_page_about_phone'>
+                  <img src='./img/mail.svg' alt='' />
+                  <div className='contact_page_about_mail_text'>
+                    <a href='mailto:zakaz@kosox.ru'>
+                      <h3>zakaz@kosox.ru</h3>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   )
