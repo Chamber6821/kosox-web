@@ -36,6 +36,9 @@ body {
 ::-webkit-scrollbar {
   width: 5px;
 }
+.active-color {
+  color: #FF5F31;
+}
 input {
   padding-right: 17px !important;
   font-weight: 300;
