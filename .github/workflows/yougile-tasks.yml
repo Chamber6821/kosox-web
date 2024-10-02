@@ -72,5 +72,5 @@ jobs:
             --header 'Authorization: Bearer ${{ secrets.YOUGILE_API_KEY }}' \
             --header 'Content-Type: application/json' \
             --data '{
-              "title": ${{ github.event.issue.title }}
+              "title": "${{ github.event.issue.title }}"
             }'
