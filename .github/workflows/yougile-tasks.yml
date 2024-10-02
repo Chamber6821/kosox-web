@@ -4,7 +4,7 @@ on:
     types: [opened, reopened, closed]
 jobs:
   create-yougile-task:
-    name: Create YouGile task
+    name: Create task
     if: github.event.action == 'opened'
     runs-on: ubuntu-22.04
     permissions:
@@ -31,7 +31,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
   update-complete-status:
-    name: Mark YouGile task is completed
+    name: Update complete status
     if: github.event.action == 'closed' || github.event.action == 'reopened'
     runs-on: ubuntu-22.04
     steps:
