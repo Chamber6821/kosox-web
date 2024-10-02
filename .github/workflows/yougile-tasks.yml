@@ -1,11 +1,11 @@
 name: YouGile Tasks
 on:
   issues:
-    types: [opened, closed]
+    types: [opened, reopened, closed]
 jobs:
   create-yougile-task:
     name: Create YouGile task
-    if: github.event.action == 'opened'
+    if: github.event.action == 'opened' || github.event.action == 'reopened'
     runs-on: ubuntu-22.04
     steps:
       - run: |
