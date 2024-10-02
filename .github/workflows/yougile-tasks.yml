@@ -26,7 +26,7 @@ jobs:
           echo "id=$ID" > $GITHUB_OUTPUT
       - run: |
           gh issue comment ${{ github.event.issue.number }} \
-            --body "YouGile task ID: `${{ steps.create-task.outputs.id }}`"
+            --body "YouGile task ID: \`${{ steps.create-task.outputs.id }}\`"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
