@@ -19,7 +19,7 @@ jobs:
               "description": "https://github.com/${{ github.repository }}/issues/${{ github.event.issue.number }}"
             }'
   mark-complete-yougile-task:
-    name: Create YouGile task
+    name: Mark YouGile task is completed
     if: github.event.action == 'closed'
     runs-on: ubuntu-22.04
     steps:
