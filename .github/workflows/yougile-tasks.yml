@@ -16,7 +16,7 @@ jobs:
             --data '{
               "title": "${{ github.event.issue.title }}",
               "columnId": "${{ secrets.YOUGILE_COLUMN_ID }}",
-              "description": "https://github.com/${{ github.repository }}/issues/${{ github.event.issue.number }}"
+              "description": "<a href=\"https://github.com/${{ github.repository }}/issues/${{ github.event.issue.number }}\">Показать в Github</a>"
             }'
   mark-complete-yougile-task:
     name: Mark YouGile task is completed
