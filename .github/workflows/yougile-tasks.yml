@@ -12,6 +12,7 @@ jobs:
     steps:
       - id: create-task
         run: |
+          ID="$(
           curl -sS --request POST \
             --url https://ru.yougile.com/api-v2/tasks \
             --header 'Authorization: Bearer ${{ secrets.YOUGILE_API_KEY }}' \
@@ -21,10 +22,11 @@ jobs:
               "columnId": "${{ secrets.YOUGILE_COLUMN_ID }}",
               "description": "<a href=\"https://github.com/${{ github.repository }}/issues/${{ github.event.issue.number }}\">Показать в Github</a>"
             }' | jq -r '.id'
-      - run: echo "${{ steps.create-task.outputs }}"
+          )"
+          echo "id=$ID" > $GITHUB_OUTPUT
       - run: |
           gh issue comment ${{ github.event.issue.number }} \
-            --body "YouGile task ID: `${{ steps.create-task.outputs.stdout }}`"
+            --body "YouGile task ID: `${{ steps.create-task.outputs.stdout.id }}`"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
