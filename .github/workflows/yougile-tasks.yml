@@ -5,7 +5,7 @@ on:
 jobs:
   create-yougile-task:
     name: Create YouGile task
-    if: github.event.action == 'opened' || github.event.action == 'reopened'
+    if: github.event.action == 'opened'
     runs-on: ubuntu-22.04
     permissions:
       issues: write
@@ -30,9 +30,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
-  mark-complete-yougile-task:
+  update-complete-status:
     name: Mark YouGile task is completed
-    if: github.event.action == 'closed'
+    if: github.event.action == 'closed' || github.event.action == 'reopened'
     runs-on: ubuntu-22.04
     steps:
       - id: task
@@ -50,5 +50,5 @@ jobs:
             --header 'Authorization: Bearer ${{ secrets.YOUGILE_API_KEY }}' \
             --header 'Content-Type: application/json' \
             --data '{
-              "completed": true
+              "completed": ${{ github.event.action == 'closed' }}
             }'
