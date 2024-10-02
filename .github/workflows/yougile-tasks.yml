@@ -7,9 +7,12 @@ jobs:
     name: Create YouGile task
     if: github.event.action == 'opened' || github.event.action == 'reopened'
     runs-on: ubuntu-22.04
+    permissions:
+      issues: write
     steps:
-      - run: |
-          curl --request POST \
+      - name: Create task
+        run: |
+          echo "id=${curl -sS --request POST \
             --url https://ru.yougile.com/api-v2/tasks \
             --header 'Authorization: Bearer ${{ secrets.YOUGILE_API_KEY }}' \
             --header 'Content-Type: application/json' \
@@ -17,7 +20,13 @@ jobs:
               "title": "${{ github.event.issue.title }}",
               "columnId": "${{ secrets.YOUGILE_COLUMN_ID }}",
               "description": "<a href=\"https://github.com/${{ github.repository }}/issues/${{ github.event.issue.number }}\">Показать в Github</a>"
-            }'
+            }' | jq -r '.id'}" > $GIHUB_OUTPUT
+      - run: |
+          gh issue comment ${{ github.event.issue.number }} \
+            --body "YouGile task ID: `${{ steps.create_task.outputs.id }}`"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
   mark-complete-yougile-task:
     name: Mark YouGile task is completed
     if: github.event.action == 'closed'
