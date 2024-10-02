@@ -21,6 +21,7 @@ jobs:
               "columnId": "${{ secrets.YOUGILE_COLUMN_ID }}",
               "description": "<a href=\"https://github.com/${{ github.repository }}/issues/${{ github.event.issue.number }}\">Показать в Github</a>"
             }' | jq -r '.id'
+      - run: echo "${{ steps.create-task.outputs }}"
       - run: |
           gh issue comment ${{ github.event.issue.number }} \
             --body "YouGile task ID: `${{ steps.create-task.outputs.stdout }}`"
