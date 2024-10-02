@@ -1,0 +1,33 @@
+name: YouGile Tasks
+on:
+  issues:
+    types: [opened, closed]
+jobs:
+  create-yougile-task:
+    name: Create YouGile task
+    if: github.event.action == 'opened'
+    runs-on: ubuntu-22.04
+    steps:
+      -run: |
+        curl --request POST \
+          --url https://ru.yougile.com/api-v2/tasks \
+          --header 'Authorization: Bearer ${{ secrets.YOUGILE_API_KEY }} \
+          --header 'Content-Type: application/json' \
+          --data '{
+            "title": "${{ github.event.issue.title }}",
+            "columnId": "${{ secrets.YOUGILE_COLUMN_ID }}",
+            "description": "https://github.com/${{ github.repository }}/issues/${{ github.event.issue.number }}"
+          }'
+  mark-complete-yougile-task:
+    name: Create YouGile task
+    if: github.event.action == 'closed'
+    runs-on: ubuntu-22.04
+    steps:
+      -run: |
+        curl --request PUT \
+          --url https://ru.yougile.com/api-v2/tasks/1 \
+          --header 'Authorization: Bearer ${{ secrets.YOUGILE_API_KEY }} \
+          --header 'Content-Type: application/json' \
+          --data '{
+            "completed": true
+          }'
