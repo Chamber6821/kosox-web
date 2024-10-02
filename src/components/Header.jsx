@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { Link, useLocation, useSearch } from 'wouter'
+import './Navbar.css'
 
 export default function Header () {
   const params = new URLSearchParams(useSearch())

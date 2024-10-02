@@ -36,9 +36,6 @@ body {
 ::-webkit-scrollbar {
   width: 5px;
 }
-.active-color {
-  color: #FF5F31;
-}
 input {
   padding-right: 17px !important;
   font-weight: 300;
@@ -110,69 +107,22 @@ a {
 }
 .navbar_top {
   width: 100%;
-  height: 67px;
-  background: #545454;
   display: flex;
   align-items: center;
 }
 .navbar_container{
-  max-width: none;
   width: 100%;
-  padding: 0 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
 }
 
-.navbar_cart {
-  border-radius: 5px;
-  padding: 10px;
-  background-color: #ff5f31;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  height: min-content !important;
-  width: min-content !important;
-  transition: linear .7s background-color;
-}
-
-.navbar_cart:hover {
-  background-color: #c3401b;
-}
-
-@media(max-width: 1920px) {
-  .navbar_container {
-    max-width: 1296px;
-  }
-}
-.navbar_down .navbar_container {
-  justify-content: flex-start;
-  gap: 32px;
-}
-@media(max-width: 768px) {
-  .navbar_down .navbar_container {
-    gap: 16px;
-  }
-}
 .navbar_top_menu {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
-}
-
-.navbar_top_menu > a {
-  color: #fff;
-  font-weight: 700;
-}
-
-@media(max-width: 1200px) {
-  .navbar_top_menu > a {
-    display: none;
-  }
 }
 
 .navbar_top_menu_li {
@@ -182,31 +132,15 @@ a {
   color: #fff;
   text-decoration: none;
   font-size: 18px;
-  font-style: normal;
-  font-weight: 300;
-  
+  font-style: normal;  
   line-height: normal;
 }
 .navbar_down {
   width: 100%;
-  height: 67px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-}
-.navbar_down_inp {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-basis: 80%;
 }
 
-@media(max-width: 992px) {
-  .navbar_down_inp {
-    flex-basis: none;
-  }
-}
 .navbar_down_inp img {
   position: absolute;
   right: 30px;
@@ -214,26 +148,17 @@ a {
 }
 .navbar_down a {
   display: flex;
-  padding: 10px 50px;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
   cursor: pointer;
-  background-color: #FF5F31;
   border: none;
   color: #fff;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  width: fit-content;
-  white-space: nowrap;
-}
-@media(max-width: 1200px) {
-  .navbar_down a {
-    padding: 10px 16px;
-  }
-}
+}  
 
 .navbar_down input {
   display: flex;
@@ -241,22 +166,10 @@ a {
   align-items: center;
   flex-basis: 100%;
 
-  font-family: "Sansation";
   border-radius: 10px;
-  background: #858585;
-  color: #fff;
-  border: none;
-  outline: none;
+  font-size: 20px;
+}
 
-  font-size: 20px;
-  
-}
-.navbar_down input::placeholder {
-  color: #fff;
-  font-weight: 300;
-  font-size: 20px;
-  
-}
 input:focus {
   outline: none;
 }
@@ -274,7 +187,6 @@ input:focus {
 
   .navbar_phone {
     width: 100%;
-    height: 95px;
     display: flex;
     background-color: #212529;
   }
@@ -427,7 +339,6 @@ input:focus {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 20px 80px;
 }
 
 .main_left {
@@ -439,7 +350,6 @@ input:focus {
   align-items: start;
   justify-content: left;
   flex-direction: column;
-  gap: 35px;
 }
 .main_right {
   width: 20%;
@@ -449,10 +359,7 @@ input:focus {
 }
 .main_left h1 {
   color: #fff;
-  
-  font-size: 50px;
   font-style: normal;
-  font-weight: 300;
 }
 .main_left h1 span {
   color: #FF5F31;
@@ -471,13 +378,10 @@ h6 {
   
   font-size: 20px;
   font-style: normal;
-  font-weight: 300;
   
   line-height: normal;
 }
 .main_left a {
-  padding: 15px 28px;
-  width: fit-content;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -492,30 +396,6 @@ h6 {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-}
-
-@media(max-width: 992px) {
-  .main {
-    padding: 20px 40px;
-  }
-  .main_left {
-    gap: 20px;
-  }
-
-  .main h1 {
-    font-size: 40px;
-  }
-  .main h3 {
-    font-size: 18px;
-  }
-}
-@media(max-width: 768px) {
-  .main {
-    padding: 20px;
-  }
-  .main h1 {
-    font-size: 30px;
-  }
 }
 
 
@@ -1127,10 +1007,6 @@ swiper-slide img{
 swiper-slide h4 {
   text-align: left;
   padding: 40px 20px 30px 20px;
-}
-.swiper-slide-active {
-  background-color: #212529 !important;
-  filter: blur(0) !important;
 }
 .map {
   width: 100%;
