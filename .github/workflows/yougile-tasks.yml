@@ -11,7 +11,7 @@ jobs:
       - run: |
           curl --request POST \
             --url https://ru.yougile.com/api-v2/tasks \
-            --header 'Authorization: Bearer ${{ secrets.YOUGILE_API_KEY }} \
+            --header 'Authorization: Bearer ${{ secrets.YOUGILE_API_KEY }}' \
             --header 'Content-Type: application/json' \
             --data '{
               "title": "${{ github.event.issue.title }}",
@@ -26,7 +26,7 @@ jobs:
       - run: |
           curl --request PUT \
             --url https://ru.yougile.com/api-v2/tasks/1 \
-            --header 'Authorization: Bearer ${{ secrets.YOUGILE_API_KEY }} \
+            --header 'Authorization: Bearer ${{ secrets.YOUGILE_API_KEY }}' \
             --header 'Content-Type: application/json' \
             --data '{
               "completed": true
