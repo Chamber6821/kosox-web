@@ -1,20 +1,44 @@
+@import url('https://fonts.cdnfonts.com/css/sansation');
+
+@font-face {
+  font-family: "Sansation";
+  src: url('../fonts/SansationLight.woff') format("woff");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Sansation";
+  src: url('../fonts/SansationRegular.woff') format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Sansation";
+  src: url('../fonts/SansationBold.ttf') format("woff");
+  font-weight: 700;
+}
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
 body {
-  background-color: #000617;
+  background-color: #2F2F2F;
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  font-family: "Sansation", sans-serif;
+  font-weight: 300;
 }
+
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
 }
 input {
   padding-right: 17px !important;
+  font-weight: 300;
 }
 /* Track */
 ::-webkit-scrollbar-track {
@@ -36,6 +60,7 @@ a {
 
 .container{
   max-width: 1200px;
+  padding: 0 40px;
   margin: 0 auto;
 }
 .header {
@@ -54,34 +79,13 @@ a {
   gap: 270px;
   padding-bottom: 36px;
 }
-.navbar_logo .logo {
-  width: 100px;
-  height: 65px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #fff;
-  border-radius: 10px;
-}
-.navbar_logo a {
-  cursor: pointer;
-}
-.navbar_logo .logo strong {
-  color: #fff;
-  font-family: "Scada", sans-serif;
-  text-decoration: none;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
+
 .navbar_menu a {
   color: #fff;
-  font-family: "Scada", sans-serif;
   text-decoration: none;
   font-size: 19px;
   font-style: normal;
-  font-weight: 400;
+  
   line-height: normal;
 }
 .navbar_menu_container{
@@ -103,54 +107,40 @@ a {
 }
 .navbar_top {
   width: 100%;
-  padding-top: 36px;
-  padding-bottom: 36px;
-  background: #212529;
   display: flex;
   align-items: center;
-  justify-content: space-around;
 }
-.navbar_top__container{
-  max-width: 1200px;
+.navbar_container{
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin: 0 auto;
 }
+
 .navbar_top_menu {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
 }
+
 .navbar_top_menu_li {
   list-style: none;
 }
 .navbar_top_menu_li a {
   color: #fff;
-  font-family: "Scada", sans-serif;
   text-decoration: none;
-  font-size: 19px;
-  font-style: normal;
-  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;  
   line-height: normal;
 }
 .navbar_down {
   width: 100%;
-  background-color: #000;
-  padding-top: 40px;
-  padding-bottom: 40px;
   display: flex;
   align-items: center;
-  gap: 50px;
-  justify-content: center;
 }
-.navbar_down_inp {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 .navbar_down_inp img {
   position: absolute;
   right: 30px;
@@ -158,41 +148,28 @@ a {
 }
 .navbar_down a {
   display: flex;
-  height: 55px;
-  width: 300px;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
   cursor: pointer;
-  background: #f00;
   border: none;
   color: #fff;
-  font-family: "Scada", sans-serif;
-  font-size: 19px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-}
+}  
+
 .navbar_down input {
   display: flex;
-  width: 700px;
-  height: 55px;
+  padding: 10px 30px;
   align-items: center;
+  flex-basis: 100%;
 
-  padding-left: 30px;
   border-radius: 10px;
-  background: #fff;
-  color: #575757;
-  font-family: "Scada", sans-serif;
   font-size: 20px;
-  font-weight: 400;
 }
-.navbar_down input::placeholder {
-  color: #575757;
-  font-family: "Scada", sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-}
+
 input:focus {
   outline: none;
 }
@@ -204,17 +181,13 @@ input:focus {
   padding-right: 15px;
 }
 @media (max-width: 991px) {
-  /*  */
+  .navbar_container {
+    padding: 0 16px;
+  }
 
   .navbar_phone {
     width: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 40px;
-    padding-right: 40px;
     background-color: #212529;
   }
   .navbar_down_inp {
@@ -228,11 +201,11 @@ input:focus {
   }
   .navbar_phone_logo .logo strong {
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     text-decoration: none;
     font-size: 27px;
     font-style: normal;
-    font-weight: 400;
+    
     line-height: normal;
   }
   .navbar_phone_logo .logo {
@@ -256,7 +229,6 @@ input:focus {
     right: -500px;
     transition: 0.8s;
     top: 0px;
-    background-color: #000;
     border-radius: 0px 0px 0px 30px;
   }
   .navbar_phone_right_menu i {
@@ -293,10 +265,10 @@ input:focus {
   }
   .navbar_phone_right_menu_mail a {
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     font-size: 19px;
     text-decoration: underline;
-    font-weight: 400;
+    
   }
   .navbar_phone_menu i {
     color: #fff;
@@ -314,10 +286,10 @@ input:focus {
     align-items: center;
     border-radius: 10px;
     cursor: pointer;
-    background: #f00;
+    background: #FF5F31;
     border: none;
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     font-size: 19px;
     font-style: normal;
     font-weight: 700;
@@ -326,28 +298,20 @@ input:focus {
   .navbar_down input {
     display: flex;
     width: 100%;
-    padding-right: 70px;
-    height: 65px;
     align-items: center;
-    padding-left: 30px;
     border-radius: 10px;
-    background: #fff;
-    color: #575757;
-    font-family: "Scada", sans-serif;
+    background: #858585;
+    color: #fff;
+    
     font-size: 20px;
-    font-weight: 400;
+    
   }
   .navbar_down {
     width: 100%;
-    background-color: #000;
-    padding: 40px;
     display: flex;
     align-items: center;
     gap: 20px;
     justify-content: center;
-  }
-  .navbar_down a {
-    width: 100%;
   }
 }
 @media (max-width: 450px) {
@@ -363,13 +327,7 @@ input:focus {
     right: -500px;
     transition: 0.8s;
     top: 0px;
-    background-color: #000;
     border-radius: 0px 0px 0px 30px;
-  }
-  .main_left a {
-    font-size: 15px !important;
-    width: 220px !important;
-    height: 45px !important;
   }
 }
 .main {
@@ -381,8 +339,8 @@ input:focus {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  justify-content: center;
 }
+
 .main_left {
   width: 70%;
   max-width: 1090px;
@@ -392,7 +350,6 @@ input:focus {
   align-items: start;
   justify-content: left;
   flex-direction: column;
-  gap: 63px;
 }
 .main_right {
   width: 20%;
@@ -400,46 +357,48 @@ input:focus {
   align-items: center;
   justify-content: space-around;
 }
-h1 {
+.main_left h1 {
   color: #fff;
-  font-family: "Scada", sans-serif;
-  font-size: 65px;
   font-style: normal;
+}
+.main_left h1 span {
+  color: #FF5F31;
   font-weight: 700;
 }
 h6 {
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 65px;
   font-style: normal;
   font-weight: 700;
   line-height: 75px; /* 115.385% */
 }
-h3 {
+.main_left h3 {
   color: #fff;
-  font-family: "Scada", sans-serif;
-  font-size: 25px;
+  
+  font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  
   line-height: normal;
 }
 .main_left a {
-  width: 280px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
   border-radius: 10px;
-  background: #2e2f8c;
+  background: #FF5F31;
   border: none;
   color: #fff;
-  font-family: "Scada", sans-serif;
-  font-size: 20px;
+  text-transform: uppercase;
+  
+  font-size: 18px;
   cursor: pointer;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
+
+
 .main img {
   width: 100%;
   height: 100%;
@@ -449,7 +408,7 @@ h3 {
 }
 @media (max-width: 991px) {
   .main_left {
-    width: 90%;
+    width: 100%;
     /* max-width: 1090px; */
     position: relative;
     z-index: 99;
@@ -457,20 +416,19 @@ h3 {
     align-items: start;
     justify-content: left;
     flex-direction: column;
-    gap: 63px;
   }
 }
 @media (max-width: 650px) {
   h1 {
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     font-size: 10vw;
     font-style: normal;
     font-weight: 700;
   }
   h6 {
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     font-size: 10vw;
     font-style: normal;
     font-weight: 700;
@@ -478,10 +436,10 @@ h3 {
   }
   h3 {
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     font-size: 4.615vw;
     font-style: normal;
-    font-weight: 400;
+    
     line-height: normal;
   }
   .main_left button {
@@ -491,7 +449,7 @@ h3 {
     background: #2e2f8c;
     border: none;
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     font-size: 3.077vw;
     cursor: pointer;
     font-style: normal;
@@ -507,7 +465,6 @@ h3 {
     align-items: start;
     justify-content: left;
     flex-direction: column;
-    gap: 40px;
   }
   .main {
     position: relative;
@@ -523,131 +480,159 @@ h3 {
     justify-content: center;
   }
 }
-.contact_form {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  min-height: 706px;
-  background: #000;
+
+/* FORM */
+.form {
+  padding: 70px 0;
 }
-.contact_form_flex {
-  padding: 50px 100px;
+
+.form_title {
+  margin-bottom: 48px;
+}
+
+.form_inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+
+.form_form {
+  flex-basis: 49%;
+}
+
+.form_checkbox {
+  padding-top: 16px;
+  border-top: 2px solid #00EB78;
+  
+  font-size: 13px;
+  color: #fff;
+
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 10px;
+}
+
+.form_info {
+  flex-basis: 40%;
+}
+
+.form_info-headline {
+  display: flex;
   flex-direction: column;
-  gap: 37px;
-  border-radius: 35px;
-  background: #212529;
+  gap: 8px;
+
+  margin-bottom: 40px;
 }
+
+.form_info-headline h3 {
+  font-size: 25px;
+  color: #858585;
+}
+
+.form_info-headline h3:first-child {
+  color: #FF5F31;
+}
+
+.form_contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact_form h2 {
+  color: #FF5F31;
+  font-size: 25px;
+  margin-bottom: 24px;
+}
+
+.contact_form_flex {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
 h2 {
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
-.contact_form_flex input {
-  width: 650px;
-  height: 60px;
-  padding-left: 30px;
+.contact_form_flex > input,
+.contact_form textarea {
+  width: 100%;
+  padding: 12px 16px;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 20px;
   font-style: normal;
-  font-weight: 400;
   line-height: normal;
-  background: #484848;
-}
-.contact_form_flex input::placeholder {
-  color: #fff;
-  font-family: "Scada", sans-serif;
   font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  background: #858585;
+
+  border: 1px solid #858585;
 }
+
+.contact_form textarea {
+  border-radius: 8px;
+  height: 120px;
+  resize: none;
+}
+
+.contact_form_flex input::placeholder,
+.contact_form textarea::placeholder {
+  font-weight: light;
+  color: rgba(255, 255, 255, .5);
+}
+
+.contact_form_flex input:focus,
+.contact_form textarea:focus {
+  border: 1px solid #fff;
+}
+
 .contact_form_flex button {
-  width: 300px;
-  height: 60px;
+  padding: 16px 60px;
+  width: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  background: #2e2f8c;
+  border-radius: 7px;
+  background: #FF5F31;
   border: none;
+  
   color: #fff;
-  font-family: "Scada", sans-serif;
-  font-size: 25px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
-@media (max-width: 991px) {
-  .contact_form_flex {
-    width: 90%;
+
+@media(max-width: 992px) {
+  .form_inner {
+    flex-wrap: wrap
   }
-  .contact_form_flex input {
-    width: 80%;
-    height: 60px;
-    padding-left: 30px;
-    border: none;
-    border-radius: 10px;
-    color: #fff;
-    font-family: "Scada", sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    background: #484848;
+
+  .form_form, .form_info {
+    flex-basis: 100%;
   }
 }
+
 @media (max-width: 550px) {
   h2 {
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     font-size: 7.273vw;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-  }
-  .contact_form_flex button {
-    width: 80%;
-    height: 60px;
-    border-radius: 10px;
-    background: #2e2f8c;
-    border: none;
-    color: #fff;
-    font-family: "Scada", sans-serif;
-    font-size: 18px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
   }
   .produce_page_description_text2 ul {
     gap: 70px !important;
-  }
-  .contact_form {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    min-height: 606px;
-    background: #000;
-  }
-  .contact_form_flex {
-    height: 470px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 25px;
-    border-radius: 35px;
-    background: #212529;
   }
 }
 .kotalog_podshipnikov {
@@ -686,10 +671,10 @@ h2 {
 h4 {
   color: #fff;
   text-align: center;
-  font-family: "Scada", sans-serif;
+  
   font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  
   line-height: normal;
 }
 .kotalog_podshipnikov button {
@@ -698,7 +683,7 @@ h4 {
   border-radius: 13px;
   background: #f00;
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 19px;
   border: none;
   font-style: normal;
@@ -716,7 +701,7 @@ h4 {
   border: none;
   color: #fff;
   text-align: center;
-  font-family: "Scada", sans-serif;
+  
   font-size: 15px;
   font-style: normal;
   font-weight: 700;
@@ -738,7 +723,7 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000;
+  
   padding-top: 70px;
   padding-bottom: 140px;
   flex-direction: column;
@@ -774,10 +759,10 @@ h4 {
 }
 .accordion-body {
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 25px;
   font-style: normal;
-  font-weight: 400;
+  
   line-height: normal;
 }
 .accordion-body p{
@@ -800,12 +785,7 @@ h4 {
 .link-about2{
   color: blue;
 }
-.link-about:hover{
-  text-decoration: underline;
-}
-.link-about2:hover{
-  text-decoration: underline;
-}
+
 .about_company_card {
   width: 600px;
   height: 600px;
@@ -833,7 +813,7 @@ h4 {
   border-radius: 9px;
   background: #f00;
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 19px;
   font-style: normal;
   border: none;
@@ -864,7 +844,7 @@ h4 {
     border-radius: 9px;
     background: #f00;
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     font-size: 3.385vw;
     font-style: normal;
     border: none;
@@ -874,7 +854,7 @@ h4 {
 }
 .primushestva_company {
   padding-top: 70px;
-  background: #000;
+  
   padding-bottom: 70px;
   width: 100%;
   display: flex;
@@ -931,7 +911,7 @@ h4 {
   flex-direction: column;
   padding-top: 70px;
   padding-bottom: 70px;
-  background-color: #000;
+  
 }
 .how_weare_working_cards {
   max-width: 1440px;
@@ -953,7 +933,7 @@ h4 {
 }
 .how_weare_working_cards_card span {
   color: #2e2f8c;
-  font-family: "Scada", sans-serif;
+  
   font-size: 55px;
   font-style: normal;
   font-weight: 700;
@@ -970,7 +950,7 @@ h4 {
   background: #f00;
   color: #fff;
   border: none;
-  font-family: "Scada", sans-serif;
+  
   font-size: 19px;
   font-style: normal;
   font-weight: 700;
@@ -1000,7 +980,6 @@ swiper-container .swiper{
 swiper-container {
   max-width: 1440px;
   width: 100%;
-  height: 100%;
 }
 
 swiper-slide {
@@ -1011,7 +990,6 @@ swiper-slide {
   justify-content: start;
   padding-top: 37px;
   flex-direction: column;
-  height: fit-content;
   flex-shrink: 0;
   border-radius: 15px;
   backdrop-filter: blur(9px);
@@ -1029,9 +1007,6 @@ swiper-slide img{
 swiper-slide h4 {
   text-align: left;
   padding: 40px 20px 30px 20px;
-}
-.swiper-slide-active {
-  background-color: #212529;
 }
 .map {
   width: 100%;
@@ -1071,7 +1046,7 @@ swiper-slide h4 {
 }
 .allFooter_div_title {
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
@@ -1082,18 +1057,18 @@ swiper-slide h4 {
   text-decoration: none;
   border-bottom: 0;
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 19px;
   font-style: normal;
-  font-weight: 400;
+  
   line-height: normal;
 }
 .allFooter_div_block_four_p {
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 19px;
   font-style: normal;
-  font-weight: 400;
+  
   line-height: normal;
 }
 .allFooter_div_block_four {
@@ -1128,7 +1103,7 @@ swiper-slide h4 {
 }
 .allFooter_address_h1 {
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 15px;
   font-style: normal;
   font-weight: 700;
@@ -1140,10 +1115,10 @@ swiper-slide h4 {
 }
 .allFooter_address_div_p {
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  
   line-height: normal;
   margin-bottom: 5px;
 }
@@ -1273,7 +1248,7 @@ swiper-slide h4 {
 }
 
 .section_page {
-  background-color: #000;
+  
   width: 100%;
   flex-direction: column;
   display: flex;
@@ -1299,7 +1274,7 @@ swiper-slide h4 {
   padding-top: 70px;
   padding-bottom: 70px;
   gap: 167px;
-  background-color: #000;
+  
 }
 .contact_page_about {
   width: 600px;
@@ -1319,19 +1294,17 @@ swiper-slide h4 {
   flex-direction: column;
 }
 .contact_page_about_phone {
-  width: 90%;
-  max-width: 500px;
-  margin-top: 40px;
   display: flex;
-  gap: 30px;
   align-items: center;
-  justify-content: left;
+  gap: 16px;
 }
 .contact_page_about h3 {
   margin-top: 35px;
 }
 .contact_page_about_phone h3 {
-  margin-top: 0px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 400;
 }
 
 .contact_page_post h6 {
@@ -1353,18 +1326,18 @@ swiper-slide h4 {
   border: none;
   margin-bottom: 15px;
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  
   line-height: normal;
 }
 .contact_page_post input::placeholder {
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  
   line-height: normal;
 }
 .contact_page_post button {
@@ -1373,7 +1346,7 @@ swiper-slide h4 {
   border-radius: 7px;
   background: #2e2f8c;
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 19px;
   border: none;
   font-style: normal;
@@ -1391,18 +1364,18 @@ swiper-slide h4 {
   border: none;
   margin-bottom: 15px;
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  
   line-height: normal;
 }
 .text_inp::placeholder {
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  
   line-height: normal;
 }
 textarea:focus {
@@ -1411,11 +1384,11 @@ textarea:focus {
 .contact_page_post h5 {
   color: #fff;
   text-align: center;
-  font-family: "Scada", sans-serif;
+  
   font-size: 13px;
   margin-top: 35px;
   font-style: normal;
-  font-weight: 400;
+  
   line-height: normal;
 }
 
@@ -1424,7 +1397,7 @@ textarea:focus {
 .kotalog {
   width: 100%;
   flex-wrap: wrap;
-  background-color: #000;
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1476,7 +1449,7 @@ textarea:focus {
   border: none;
   color: #fff;
   text-align: center;
-  font-family: "Scada", sans-serif;
+  
   font-size: 15px;
   font-style: normal;
   font-weight: 700;
@@ -1513,7 +1486,6 @@ textarea:focus {
   width: 100%;
   display: flex;
   align-items: center;
-  background: #000;
   flex-direction: column;
   justify-content: center;
   padding-top: 100px;
@@ -1538,7 +1510,7 @@ textarea:focus {
   background: #2e2f8c;
   border: none;
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 19px;
   font-style: normal;
   font-weight: 700;
@@ -1598,7 +1570,7 @@ textarea:focus {
 }
 .our_brends_card_hover h5 {
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -1612,7 +1584,7 @@ textarea:focus {
   color: #fff;
   text-align: center;
   padding: 10px 13px 9.333px 18px;
-  font-family: "Scada", sans-serif;
+  
   font-size: 12px;
   border: none;
   font-style: normal;
@@ -1636,7 +1608,7 @@ textarea:focus {
 }
 .shopandpay {
   width: 100%;
-  background-color: #000;
+  
   gap: 70px;
   display: flex;
   align-items: center;
@@ -1665,7 +1637,7 @@ textarea:focus {
 }
 .shopandpay h2 {
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 50px;
   font-style: normal;
   font-weight: 700;
@@ -1673,12 +1645,12 @@ textarea:focus {
 }
 .shopandpay_content_flex p {
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 28px;
   position: relative;
   z-index: 9889;
   font-style: normal;
-  font-weight: 400;
+  
   line-height: normal;
 }
 .shopandpay_content_flex ul {
@@ -1687,13 +1659,13 @@ textarea:focus {
 }
 .shopandpay_content_flex ul li {
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 28px;
   font-style: normal;
   list-style: none;
   position: relative;
   z-index: 9889;
-  font-weight: 400;
+  
   line-height: normal;
 }
 
@@ -1714,7 +1686,7 @@ textarea:focus {
   display: flex;
   align-items: start;
   justify-content: center;
-  background-color: #000;
+  
 }
 .filterkotalog_flex {
   max-width: 1540px;
@@ -1754,7 +1726,7 @@ textarea:focus {
 }
 .filterkotalog_filter_title h2 {
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
@@ -1799,7 +1771,7 @@ textarea:focus {
 }
 .filterkotalog_card_title h2 {
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 19px !important;
   font-style: normal;
   font-weight: 700;
@@ -1881,7 +1853,7 @@ textarea:focus {
 }
 .filterkotalog_cards_nav_flex p {
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 19px;
   font-style: normal;
   cursor: pointer;
@@ -1910,7 +1882,7 @@ textarea:focus {
   justify-content: center;
   border: none;
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -1923,7 +1895,7 @@ textarea:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000;
+  
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1944,7 +1916,7 @@ textarea:focus {
 }
 .brendabout h1 {
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 50px;
   font-style: normal;
   font-weight: 700;
@@ -1963,10 +1935,10 @@ textarea:focus {
 }
 .brendabout_title p {
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 28px;
   font-style: normal;
-  font-weight: 400;
+  
   line-height: normal;
 }
 .brendabout_cards {
@@ -2027,7 +1999,7 @@ textarea:focus {
   background: #2e2f8c;
   border: none;
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 19px;
   font-style: normal;
   font-weight: 700;
@@ -2050,7 +2022,7 @@ textarea:focus {
   justify-content: center;
   flex-direction: column;
   padding-top: 100px;
-  background-color: #000;
+  
   padding-bottom: 100px;
 }
 .product_page_about {
@@ -2105,7 +2077,7 @@ textarea:focus {
 }
 .product_page_about_title h1 {
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 36px;
   font-style: normal;
   font-weight: 700;
@@ -2124,7 +2096,7 @@ textarea:focus {
 }
 .product_page_about_title_fenom h3 {
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 35px;
   font-style: normal;
   font-weight: 700;
@@ -2141,7 +2113,7 @@ textarea:focus {
   border: none;
   color: #fff;
   text-align: center;
-  font-family: "Scada", sans-serif;
+  
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -2171,7 +2143,7 @@ textarea:focus {
   }
   .product_page_about_title_fenom h3 {
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
@@ -2179,7 +2151,7 @@ textarea:focus {
   }
   .product_page_about_title h2 {
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     font-size: 35px;
     font-style: normal;
     font-weight: 700;
@@ -2196,7 +2168,7 @@ textarea:focus {
 .product_page_description {
   width: 100%;
   display: flex;
-  background-color: #000;
+  
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -2244,9 +2216,9 @@ textarea:focus {
   color: #fff;
   font-size: 28px;
   font-style: normal;
-  font-weight: 400;
+  
   line-height: normal;
-  font-family: "Scada", sans-serif;
+  
 }
 .produce_page_description_text a {
   width: 300px;
@@ -2258,7 +2230,7 @@ textarea:focus {
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   border: none;
   font-size: 19px;
   font-style: normal;
@@ -2275,7 +2247,7 @@ textarea:focus {
   border-radius: 13px;
   background: #2e2f8c;
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   border: none;
   font-size: 19px;
   font-style: normal;
@@ -2303,7 +2275,7 @@ textarea:focus {
 
 .produce_page_description_text2 ul li {
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
@@ -2311,10 +2283,10 @@ textarea:focus {
 }
 .produce_page_description_text2 ul li span {
   color: #fff;
-  font-family: "Scada", sans-serif;
+  
   font-size: 25px;
   font-style: normal;
-  font-weight: 400;
+  
   line-height: normal;
 }
 .dropdown-menu2 {
@@ -2332,10 +2304,10 @@ textarea:focus {
 .dropdown-menu2 li label {
   color: #fff;
   text-align: center;
-  font-family: "Scada", sans-serif;
+  
   font-size: 17px;
   font-style: normal;
-  font-weight: 400;
+  
   line-height: normal;
 }
 
@@ -2440,6 +2412,7 @@ textarea:focus {
 @media (max-width: 400px) {
   .navbar_down input {
     padding-left: 14px;
+    padding-right: 14px;
   }
   .navbar_down_inp img {
     width: 8%;
@@ -2447,8 +2420,7 @@ textarea:focus {
   }
   .navbar_down {
     width: 100%;
-    background-color: #000;
-    padding: 20px;
+    
     display: flex;
     align-items: center;
     gap: 20px;
@@ -2456,13 +2428,9 @@ textarea:focus {
   }
   .navbar_phone {
     width: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 20px;
-    padding-right: 20px;
     background-color: #212529;
   }
 }
@@ -2715,7 +2683,7 @@ textarea:focus {
     height: 50px;
     border: none;
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
@@ -2735,7 +2703,7 @@ textarea:focus {
     height: 50px;
     border: none;
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
@@ -2752,15 +2720,11 @@ textarea:focus {
     flex-direction: column;
     padding-bottom: 70px;
     gap: 167px;
-    background-color: #000;
   }
   .contact_page_about {
     align-items: center;
     width: 100%;
     text-align: center;
-  }
-  .contact_page_about_phone {
-    justify-content: center;
   }
   .contact_page_post {
     width: 90%;
@@ -2794,11 +2758,6 @@ textarea:focus {
 @media (max-width: 500px) {
   .filterkotalog_cards {
     align-items: center;
-  }
-  .main_left a{
-    width: 200px !important;
-    height: 53px !important;
-    font-size: 13px !important;
   }
   .how_weare_working a{
     width: 200px !important;
@@ -2849,11 +2808,6 @@ textarea:focus {
     justify-content: center;
   }
 }
-@media (min-width: 320px) {
-  .navbar_down input {
-    padding-right: 65px !important;
-  }
-}
 @media (hover: hover) {
   .filterkotalog_card:hover .filterkotalog_card_title{
     background: #212529;
@@ -2861,47 +2815,39 @@ textarea:focus {
   } 
   .navbar_menu a:hover {
     transition: 0.7s;
-    color: #1434cb !important;
-    text-decoration-line: underline;
+    color: #FF5F31 !important;
   }
   .allFooter_div_ahref:hover {
     transition: 0.7s;
     color: #1434cb !important;
-    text-decoration-line: underline;
   }
   .allFooter_address_div_p:hover {
     transition: 0.7s;
     color: #1434cb !important;
-    text-decoration-line: underline;
   }
   .main_left a:hover {
     color: #fff;
-    background: #000136;
-    text-decoration-line: underline;
+    background: #c3401b;
     transition: 0.7s;
   }
   .contact_page_post button:hover {
     color: #fff;
     background: #000136;
-    text-decoration-line: underline;
     transition: 0.7s;
   }
   .brendabout_btn a:hover {
     color: #fff;
     background: #000136;
-    text-decoration-line: underline;
     transition: 0.7s;
   }
   .product_page_about_title a:hover {
     color: #fff;
     background: #000136;
-    text-decoration-line: underline;
     transition: 0.7s;
   }
   .produce_page_description_text2 a:hover {
     color: #fff;
     background: #000136;
-    text-decoration-line: underline;
     transition: 0.7s;
   }
   .produce_page_description_text a:hover {
@@ -2913,35 +2859,28 @@ textarea:focus {
   .manufacturers_speak a:hover {
     color: #fff;
     background: #000136;
-    text-decoration-line: underline;
     transition: 0.7s;
   }
   .kotalog_card a:hover {
     color: #fff;
     background: #000136;
-    text-decoration-line: underline;
     transition: 0.7s;
   }
   .contact_form_flex button:hover {
-    color: #fff;
-    background: #000136;
-    text-decoration-line: underline;
+    background: #c3401b;
     transition: 0.7s;
   }
   .contact_page_about a h3:hover {
     transition: 0.7s;
     color: #1434cb !important;
-    text-decoration-line: underline;
   }
   .navbar_top_menu_li a:hover {
     transition: 0.7s;
-    color: #1434cb !important;
-    text-decoration-line: underline;
+    color: #FF5F31 !important;
   }
   .red_border:hover {
-    text-decoration-line: underline;
     transition: 0.7s;
-    background: #a60000;
+    background-color: #c3401b;
   }
   .navbar_logo a:hover {
     transition: 0.7s;
@@ -3036,7 +2975,7 @@ textarea:focus {
   }
   .shopandpay h2 {
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
@@ -3044,7 +2983,7 @@ textarea:focus {
   }
   .brendabout h1 {
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
@@ -3052,7 +2991,7 @@ textarea:focus {
   }
   .product_page_about_title h1 {
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     font-size: 25px;
     font-style: normal;
     font-weight: 700;
@@ -3060,44 +2999,44 @@ textarea:focus {
   }
   h3 {
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     font-size: 18px;
     font-style: normal;
-    font-weight: 400;
+    
     line-height: normal;
   }
   .accordion-body {
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     font-size: 18px;
     font-style: normal;
-    font-weight: 400;
+    
     line-height: normal;
   }
   .produce_page_description_text2 ul li span {
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     font-size: 18px;
     font-style: normal;
-    font-weight: 400;
+    
     line-height: normal;
   }
   .dropdown-menu2 li label {
     color: #fff;
     text-align: center;
-    font-family: "Scada", sans-serif;
+    
     font-size: 18px;
     font-style: normal;
-    font-weight: 400;
+    
     line-height: normal;
   }
   .navbar_menu a {
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     text-decoration: none;
     font-size: 14px;
     font-style: normal;
-    font-weight: 400;
+    
     line-height: normal;
   }
 
@@ -3105,23 +3044,23 @@ textarea:focus {
     text-decoration: none;
     border-bottom: 0;
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     font-size: 19px;
     font-style: normal;
-    font-weight: 400;
+    
     line-height: normal;
   }
   .allFooter_div_block_four_p {
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     font-size: 14px;
     font-style: normal;
-    font-weight: 400;
+    
     line-height: normal;
   }
   .filterkotalog_cards_nav_flex p {
     color: #fff;
-    font-family: "Scada", sans-serif;
+    
     font-size: 14px;
     font-style: normal;
     cursor: pointer;
@@ -3176,7 +3115,7 @@ textarea:focus {
   font-size: 20px;
   padding-bottom: 40px;
   border: 1px solid white;
-  font-family: "Scada", sans-serif;
+  
   font-size: 17px;
   padding-top: 5px;
   padding-left: 5px;
@@ -3189,7 +3128,7 @@ textarea:focus {
 }
 
 .texts_max p {
-  font-family: "Scada", sans-serif;
+  
 
   font-size: 17px;
   border: 1px solid white;

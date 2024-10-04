@@ -1,6 +1,7 @@
 import { Route, Switch } from 'wouter'
 import Footer from './components/Footer'
 import Header from './components/Header'
+import './index.css'
 import {
   About,
   AboutManufacturer,

@@ -5,11 +5,6 @@ export default function Footer () {
         <div className='allFooter_div_block_one'>
           <h6 className='allFooter_div_title'>Меню</h6>
           <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/'>
-              Главная
-            </a>
-          </div>
-          <div className='allFooter_div_ahref_div'>
             <a className='allFooter_div_ahref' href='/about'>
               О компании
             </a>
