@@ -1,11 +1,15 @@
 .navbar_top {
   height: 67px;
   background: #545454;
+  padding-top: 0;
+  padding-bottom: 0;
+  justify-content: flex-start;
 }
 
 .navbar_container {
   max-width: none;
   padding: 0 48px;
+  justify-content: space-between;
 }
 
 @media(max-width: 1920px) {
@@ -25,6 +29,9 @@
 .navbar_down {
   height: 67px;
   justify-content: flex-start;
+  padding-top: 0;
+  padding-bottom: 0;
+  gap: 0;
 }
 
 @media(max-width: 992px) {
@@ -46,8 +53,8 @@
   align-items: center;
   justify-content: center;
 
-  height: min-content !important;
-  width: min-content !important;
+  height: min-content;
+  width: min-content;
   transition: linear .7s background-color;
 }
 
