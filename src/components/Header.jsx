@@ -39,22 +39,22 @@ export default function Header () {
               <a href='mailto:zakaz@kosox.ru'>zakaz@kosox.ru</a>
             </div>
             <div className='navbar_icon'>
-              <a href='https://wa.me/79117111112' target='_blank' rel='noreferrer'>
+              <Link to='https://wa.me/79117111112'>
                 <img
-                  src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/whatsapp.svg'
-                  alt='icon'
-                />
-              </a>
-              <Link to='/'>
-                <img
-                  src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/viber.svg'
-                  alt='icon'
+                  src='/img/social/wa.png'
+                  alt='whatsapp'
                 />
               </Link>
               <Link to='/'>
                 <img
-                  src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/telegram.svg'
-                  alt='icon'
+                  src='/img/social/tg.png'
+                  alt='telegram'
+                />
+              </Link>
+              <Link to='/'>
+                <img
+                  src='/img/social/viber.png'
+                  alt='viber'
                 />
               </Link>
             </div>

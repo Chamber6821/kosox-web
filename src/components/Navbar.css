@@ -8,43 +8,29 @@
 
 .navbar_container {
   max-width: none;
-  padding: 0 48px;
+  padding: 0 80px;
   justify-content: space-between;
 }
 
-@media(max-width: 1920px) {
-  .navbar_container {
-    max-width: 1296px;
-  }
-}
 .navbar_down .navbar_container {
   justify-content: flex-start;
   gap: 32px;
 }
-@media(max-width: 768px) {
-  .navbar_down .navbar_container {
-    gap: 16px;
-  }
-}
+
 .navbar_down {
   height: 67px;
-  justify-content: flex-start;
+  justify-content: center;
   padding-top: 0;
   padding-bottom: 0;
   gap: 0;
 }
 
-@media(max-width: 992px) {
-  .navbar_container {
-    padding: 0 16px;
-  }
-}
 
 .navbar_phone {
   height: 67px;
 }
 
-.navbar_cart {
+.navbar_down .navbar_cart {
   border-radius: 5px;
   padding: 10px;
   background-color: #ff5f31;
@@ -53,8 +39,8 @@
   align-items: center;
   justify-content: center;
 
-  height: min-content;
-  width: min-content;
+  height: fit-content;
+  width: fit-content;
   transition: linear .7s background-color;
 }
 
@@ -67,11 +53,6 @@
   font-weight: 700;
 }
 
-@media(max-width: 1200px) {
-  .navbar_top_menu > a {
-    display: none;
-  }
-}
 
 .navbar_top_menu_li a {
   font-weight: 300;
@@ -85,11 +66,7 @@
   flex-basis: 80%;
 }
 
-@media(max-width: 992px) {
-  .navbar_down_inp {
-    flex-basis: none;
-  }
-}
+
 
 .navbar_down a {
   width: fit-content;
@@ -97,11 +74,7 @@
   padding: 10px 50px;
   background-color: #FF5F31;
 }
-@media(max-width: 1200px) {
-  .navbar_down a {
-    padding: 10px 16px;
-  }
-}
+
 
 .navbar_down input {
   font-family: "Sansation";
@@ -116,11 +89,51 @@
   font-weight: 300;
 }
 
+.navbar_menu_container {
+  row-gap: 4px;
+} 
+
+.navbar_icon {
+  justify-content: center;
+  gap: 12px;
+}
+
+@media(max-width: 1920px) {
+  .navbar_container {
+    max-width: 1360px;
+  }
+}
+
+@media(max-width: 1280px) {
+  .navbar_container {
+    padding: 0 48px;
+  }
+}
+@media(max-width: 1200px) {
+  .navbar_top_menu > a {
+    display: none;
+  }
+  .navbar_down a {
+    padding: 10px 16px;
+  }
+}
+@media(max-width: 992px) {
+  .navbar_container {
+    padding: 0 16px;
+  }
+  .navbar_down_inp {
+    flex-basis: none;
+  }
+}
+
+@media(max-width: 768px) {
+  .navbar_down .navbar_container {
+    gap: 16px;
+  }
+}
 
 .swiper-slide-active {
   background-color: #212529 !important;
   filter: blur(0) !important;
 }
 
-
-  

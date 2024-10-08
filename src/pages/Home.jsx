@@ -2,7 +2,7 @@ import { useCity } from '../api/City'
 import Form from '../components/Form'
 import Reviews from '../components/Reviews'
 import Cards from './catalog/Cards'
-import '../components/Intro.css'
+import '../components/Home.css'
 
 const Left = (props) =>
   <div
@@ -22,7 +22,7 @@ export default function Home ({ api }) {
         className='main'
         style={{
           backgroundImage:
-            'url("./img/a-close-up-of-a-robot-s-gear_188544-21931 1.png")'
+            'url("./img/intro-bg.jpg")'
         }}
       >
         <img src='./img/Rectangle1.png' alt='alt' />
@@ -35,6 +35,16 @@ export default function Home ({ api }) {
             Большой выбор товаров и <br />всего остального
           </h3>
           <a href='/catalog'>Каталог товаров</a>
+        </div>
+      </div>
+      <div className='catalog_start'>
+        <h2 className='catalog_start_title'>Приобретайте товары <span>KOSOX</span></h2>
+        <div className='catalog_start_inner'>
+          <div className='catalog_start_text'>
+            <p>Наша фирма на рынке Санкт-Петербурга и других городов России уже более 10 лет и мы знаем, что нужно нашим покупателям лучше всех других.</p>
+            <p className='catalog_start_text-light'>Предоставляя различные комплектующие для промышленности и другие товары, мы также даем лучший сервис и наилучшие условия  сотрудничества.</p>
+          </div>
+          <img src='/img/catalog-intro-img.png' alt='img' className='catalog_start_img' />
         </div>
       </div>
       <Cards api={api} />

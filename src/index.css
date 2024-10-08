@@ -6,3 +6,26 @@ body {
 .active-color {
   color: #FF5F31;
 }
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  background-color: #FF5F31;
+
+  transition: background-color .2s linear;
+}
+
+.btn:hover {
+  color: #fff;
+  background-color: #c3401b;
+}

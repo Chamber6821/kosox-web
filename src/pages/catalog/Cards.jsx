@@ -21,19 +21,33 @@ export default function Cards ({ api, category = undefined }) {
       })
     })()
   }, [api, category])
+
+  const [isAllCategories, setIsAllCategories] = useState(false)
+
   return (
     <div className='kotalog'>
       <div className='kotalog_flex'>
-        {categories.map((x) => (
-          <Card
-            key={x.id}
-            id={x.id}
-            title={x.name}
-            backgroundImage={x.icon}
-            page={category ? `/category/${x.id}` : `/catalog/${x.id}`}
-          />
-        ))}
+        {!isAllCategories
+          ? categories.slice(0, 6).map((x) => (
+            <Card
+              key={x.id}
+              id={x.id}
+              title={x.name}
+              backgroundImage={x.icon}
+              page={category ? `/category/${x.id}` : `/catalog/${x.id}`}
+            />
+          ))
+          : categories.map((x) => (
+            <Card
+              key={x.id}
+              id={x.id}
+              title={x.name}
+              backgroundImage={x.icon}
+              page={category ? `/category/${x.id}` : `/catalog/${x.id}`}
+            />
+          ))}
       </div>
+      <button className='kotalog_all btn' onClick={() => setIsAllCategories(prev => !prev)}>{!isAllCategories ? 'Смотреть все' : 'Скрыть'}</button>
     </div>
   )
 }
