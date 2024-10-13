@@ -1,6 +1,33 @@
+@import url('https://fonts.cdnfonts.com/css/sansation');
+
+@font-face {
+  font-family: "Sansation";
+  src: url('../public/fonts/SansationLight.woff') format("woff");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Sansation";
+  src: url('../public/fonts/SansationRegular.woff') format("woff");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Sansation";
+  src: url('../public/fonts/SansationBold.ttf') format("woff");
+  font-weight: 700;
+}
+
 body {
   font-family: "Sansation", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
+  background-color: #2F2F2F;
+}
+
+input {
+  font-weight: 300;
+}
+
+.container {
+  padding: 0 40px;
 }
 
 .active-color {

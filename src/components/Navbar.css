@@ -7,9 +7,13 @@
 }
 
 .navbar_container {
-  max-width: none;
-  padding: 0 48px;
   justify-content: space-between;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 0 48px;
 }
 
 @media(max-width: 1920px) {
@@ -28,7 +32,6 @@
 }
 .navbar_down {
   height: 67px;
-  justify-content: flex-start;
   padding-top: 0;
   padding-bottom: 0;
   gap: 0;
@@ -44,7 +47,7 @@
   height: 67px;
 }
 
-.navbar_cart {
+.navbar_down button.navbar_cart {
   border-radius: 5px;
   padding: 10px;
   background-color: #ff5f31;
@@ -75,6 +78,8 @@
 
 .navbar_top_menu_li a {
   font-weight: 300;
+  font-size: 18px;
+  font-style: normal;
 }
 
 .navbar_down_inp {
@@ -89,13 +94,24 @@
   .navbar_down_inp {
     flex-basis: none;
   }
+
+  .navbar_phone_menu i {
+    background: #FF5F31;
+  }
+
+  .navbar_down input {
+    background: #858585;
+    color: #fff;
+    padding: 10px;
+  }
 }
 
 .navbar_down a {
   width: fit-content;
   white-space: nowrap;
   padding: 10px 50px;
-  background-color: #FF5F31;
+  font-size: 18px;
+  background: #FF5F31;
 }
 @media(max-width: 1200px) {
   .navbar_down a {
@@ -109,6 +125,8 @@
   color: #fff;
   border: none;
   outline: none;
+  padding: 10px 30px;
+  flex-basis: 100%;
 }
 
 .navbar_down input::placeholder {

@@ -2,7 +2,8 @@ import { useCity } from '../api/City'
 import Form from '../components/Form'
 import Reviews from '../components/Reviews'
 import Cards from './catalog/Cards'
-import '../components/Intro.css'
+import '../components/Home.css'
+import '../components/Form.css'
 
 const Left = (props) =>
   <div
