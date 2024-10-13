@@ -184,3 +184,242 @@
   }
 }
 
+/* Accordion */
+.promishlenost {
+  padding: 15px 80px;
+}
+
+.promishlenost_title {
+  display: block;
+}
+
+.promishlenost_title h2 {
+    font-size: 50px;
+  max-width: 1000px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.promishlenost_title span {
+  color: #FF5F31;
+}
+
+.promishlenost_acc {
+  margin-top: 0;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.promishlenost_names {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.promishlenost_names button {
+  width: 320px;
+  text-align: center;
+  font-family: "Sansation";
+  font-weight: 300;
+  font-size: 23px;
+  color: #fff;
+  background: transparent;
+  border: 1px solid #858585;
+  padding: 7px 18px;
+}
+
+.promishlenost_names button.active {
+  font-weight: 700;
+  background: #FF5F31;
+  border-color: #FF5F31;
+}
+
+.promishlenost_descs div {
+  display: none;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 20px;
+  font-weight: 300;
+  color: #fff;
+}
+
+.promishlenost_descs div.active {
+  display: flex;
+}
+
+.promishlenost_descs div span {
+  color: #FF5F31;
+}
+
+@media(max-width: 992px) {
+  .promishlenost {
+    padding: 15px 40px;
+  }
+
+  .promishlenost_title h2 {
+    font-size: 32px;
+  }
+}
+
+@media(max-width: 768px) {
+  .promishlenost {
+    padding: 15px 20px;
+  }
+
+}
+
+@media(max-width: 575px) {
+  .promishlenost_descs div {
+    font-size: 14px;
+  }
+}
+
+/* Advantages */
+.primushestva_company {
+  padding: 70px 80px;
+  align-items: flex-start;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../../public/img/advantages/background.jpg), center / cover;
+}
+
+.primushestva_company_title {
+  font-size: 50px;
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.primushestva_company_cards {
+  margin-top: 0;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.primushestva_company_cards_card {
+  flex-basis: 30%;
+  padding: 0;
+  justify-content: flex-start;
+}
+
+.primushestva_company_cards_card_title h3 {
+  font-size: 25px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.primushestva_company_cards_card_title h4 {
+  font-size: 17px;
+  font-weight: 300;
+}
+
+@media(max-width: 992px) {
+  .primushestva_company {
+    padding: 70px 40px;
+  }
+
+  .primushestva_company_title {
+    font-size: 32px;
+  }
+}
+
+@media(max-width: 768px) {
+  .primushestva_company {
+    padding: 70px 20px;
+  }
+
+  .primushestva_company_cards_card {
+    flex-basis: 100%;
+  }
+}
+
+/* How do we work */
+.how_weare_working {
+  padding: 35px 80px;
+}
+
+.how_weare_working_title {
+  font-size: 50px;
+  font-weight: 300;
+  margin-bottom: 50px;
+}
+
+.how_weare_working_title span {
+  font-weight: 700;
+  color: #858585;
+  text-transform: uppercase;
+}
+
+.how_weare_working_cards {
+  margin-top: 0;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+.how_weare_working_cards_card {
+  width: auto;
+  flex-basis: 21%;
+  gap: 10px;
+}
+
+.how_weare_working_cards_card_num span {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.how_weare_working_cards_card:nth-child(odd) .how_weare_working_cards_card_num span {
+  color: #858585;
+}
+
+.how_weare_working_cards_card:nth-child(even) .how_weare_working_cards_card_num span {
+  color: #FF5F31;
+}
+
+.how_weare_working_cards_card_text {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.how_weare_working a.btn {
+  background-color: #FF5F31;
+  border-radius: 7px;
+  padding: 16px 32px;
+  margin-top: 0;
+  width: auto;
+  height: auto;
+}
+
+
+@media(max-width: 992px) {
+  .how_weare_working {
+    padding: 35px 40px;
+  }
+
+  .how_weare_working_title {
+    font-size: 32px;
+  }
+
+  .how_weare_working_cards_card {
+    flex-basis: 47%;
+  }
+}
+
+@media(max-width: 768px) {
+  .how_weare_working {
+    padding: 35px 20px;
+  }
+
+  .how_weare_working_cards_card {
+    flex-basis: 100%;
+  }
+}
+
+
+
+
+
+
+
