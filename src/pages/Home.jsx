@@ -1,9 +1,9 @@
 import { useCity } from '../api/City'
 import Form from '../components/Form'
 import Reviews from '../components/Reviews'
+import Attention from '../components/UI/Attention/Attention'
 import Cards from './catalog/Cards'
-import '../components/Home.css'
-import '../components/Form.css'
+import './css/Home.css'
 
 const Left = (props) =>
   <div
@@ -636,7 +636,7 @@ export default function Home ({ api }) {
       </div>
       <div className='form'>
         <div className='container'>
-          <h2 className='form_title'>Остались <span className='active-color'>вопросы?</span></h2>
+          <h2 className='form_title'>Остались <Attention>вопросы?</Attention></h2>
           <div className='form_inner'>
             <div className='form_form'>
               <Form api={api} />

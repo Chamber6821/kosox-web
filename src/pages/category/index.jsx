@@ -37,6 +37,7 @@ const Filter = ({ name, variants, onChange }) => {
                   onChange={(e) => onChange(x, e.target.checked)}
                   type='checkbox'
                   id={`checkbox_${key}_${i}`}
+                  style={{width: '15px', height: '15px'}}
                 />
               </div>
             </li>

@@ -57,8 +57,6 @@ export default function Reviews () {
               padding: '40px 20px',
               borderRadius: '15px',
               height: 'initial',
-              backgroundColor: '#0D0F10',
-              filter: 'blur(5px)'
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
