@@ -45,7 +45,7 @@ export default function Catalog ({ api, params: { id } }) {
         </div>
       </div>
       <Cards api={api} category={id} />
-      <div style={{paddingBottom: '50px'}} className='centered'>
+      <div style={{ paddingBottom: '50px' }} className='centered'>
         <Form api={api} />
       </div>
     </main>
