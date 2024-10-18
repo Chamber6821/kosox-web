@@ -238,9 +238,7 @@ input:focus {
   }
   .navbar_phone_right_menu_mail a {
     color: #fff;
-    
     font-size: 19px;
-    
   }
   .navbar_phone_menu i {
     color: #fff;
@@ -261,7 +259,6 @@ input:focus {
     background: #f00;
     border: none;
     color: #fff;
-    
     font-size: 19px;
     font-style: normal;
     font-weight: 700;
