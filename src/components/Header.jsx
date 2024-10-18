@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { Link, useLocation, useSearch } from 'wouter'
 import './Navbar.css'
+import Button from './UI/Button/Button'
 
 export default function Header () {
   const params = new URLSearchParams(useSearch())
@@ -121,9 +122,11 @@ export default function Header () {
       </div>
       <nav className='navbar_down'>
         <div className='navbar_container'>
-          <Link to='/catalog' className='red_border'>
-            {window.innerWidth > 575 ? 'КАТАЛОГ ТОВАРОВ' : 'КАТАЛОГ'}
-          </Link>
+          <Button>
+            <Link to='/catalog' className='red_border'>
+              {window.innerWidth > 575 ? 'КАТАЛОГ ТОВАРОВ' : 'КАТАЛОГ'}
+            </Link>
+          </Button>
           <div className='navbar_down_inp'>
             <input
               ref={searchInputRef}
@@ -133,9 +136,9 @@ export default function Header () {
               type='text'
             />
           </div>
-          <button className='navbar_cart'>
+          <Button className='navbar_cart'>
             <img src='/img/cart.svg' alt='cart' />
-          </button>
+          </Button>
         </div>
       </nav>
     </header>

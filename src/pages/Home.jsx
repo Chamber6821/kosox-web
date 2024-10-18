@@ -1,8 +1,10 @@
 import { useCity } from '../api/City'
 import Form from '../components/Form'
 import Reviews from '../components/Reviews'
+import Attention from '../components/UI/Attention/Attention'
+import Button from '../components/UI/Button/Button'
 import Cards from './catalog/Cards'
-import '../components/Home.css'
+import './css/Home.css'
 
 const Left = (props) =>
   <div
@@ -29,12 +31,12 @@ export default function Home ({ api }) {
         <div className='main_left'>
           <h1>
             Помощь в выборе<br />
-            <span>подшипников</span>
+            <Attention>подшипников</Attention>
           </h1>
           <h3>
             Большой выбор товаров и <br />всего остального
           </h3>
-          <a href='/catalog'>Каталог товаров</a>
+          <Button><a href='/catalog'>Каталог товаров</a></Button>
         </div>
       </div>
       <div className='catalog_start'>
@@ -645,7 +647,7 @@ export default function Home ({ api }) {
       </div>
       <div className='form'>
         <div className='container'>
-          <h2 className='form_title'>Остались <span className='active-color'>вопросы?</span></h2>
+          <h2 className='form_title'>Остались <Attention>вопросы?</Attention></h2>
           <div className='form_inner'>
             <div className='form_form'>
               <Form api={api} />

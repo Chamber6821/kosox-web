@@ -56,9 +56,7 @@ export default function Reviews () {
               maxWidth: '300px',
               padding: '40px 20px',
               borderRadius: '15px',
-              height: 'initial',
-              backgroundColor: '#0D0F10',
-              filter: 'blur(5px)'
+              height: 'initial'
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

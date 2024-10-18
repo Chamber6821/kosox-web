@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Card from './Card'
+import Button from '../../components/UI/Button/Button'
 
 export default function Cards ({ api, category = undefined }) {
   const [{ categories = [] }, setContent] = useState({})
@@ -47,7 +48,9 @@ export default function Cards ({ api, category = undefined }) {
             />
           ))}
       </div>
-      <button className='kotalog_all btn' onClick={() => setIsAllCategories(prev => !prev)}>{!isAllCategories ? 'Смотреть все' : 'Скрыть'}</button>
+      {categories.length
+        ? <Button className='kotalog_all btn' onClick={() => setIsAllCategories(prev => !prev)}>{!isAllCategories ? 'Смотреть все' : 'Скрыть'}</Button>
+        : <></>}
     </div>
   )
 }
