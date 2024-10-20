@@ -37,6 +37,7 @@ export default function App () {
       }
     })()
   }, [city])
+
   return (
     <CityProvider>
       <ScrollTop />
@@ -68,7 +69,7 @@ export default function App () {
         <Route path='/search'>{() => <Search api={api} />}</Route>
         <Route>{() => <NotFound />}</Route>
       </Switch>
-      <Footer />
+      <Footer api={api} />
     </CityProvider>
   )
 }
