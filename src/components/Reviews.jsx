@@ -25,16 +25,16 @@ export default function Reviews () {
   return (
     <div
       style={{
-        '--swiper-theme-color': '#2E2F8C',
+        '--swiper-theme-color': '#FF5F31',
         '--swiper-pagination-bullet-size': '20px',
-        '--swiper-pagination-bullet-inactive-color': 'rgb(72, 72, 72)'
+        '--swiper-pagination-bullet-inactive-color': '#484848'
       }}
     >
       <Swiper
         style={{
           position: 'relative',
           maxWidth: '100dvw',
-          backgroundColor: '#000',
+          backgroundColor: '#2F2F2F',
           height: 'auto',
           paddingBottom: 24
         }}
@@ -43,7 +43,7 @@ export default function Reviews () {
         pagination={{ clickable: true, el: '.reviews-pagination' }}
         slidesPerView='auto'
         centeredSlides
-        spaceBetween={30}
+        spaceBetween={20}
         grabCursor
         loop
         autoHeight
@@ -54,9 +54,10 @@ export default function Reviews () {
             key={x.author}
             style={{
               maxWidth: '300px',
-              padding: '40px 20px',
+              padding: '25px 30px',
               borderRadius: '15px',
-              height: 'initial'
+              height: 'initial',
+              backgroundColor: '#858585'
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -65,8 +66,17 @@ export default function Reviews () {
                 {[...Array(x.starAmount)].map((_, id) => <img key={id} src='/img/starReview.svg' style={{ width: 25, height: 25 }} alt='star' />)}
               </div>
             </div>
-            <h3 style={{ marginTop: '15px' }}>{x.author}</h3>
-            <h4 style={{ textAlign: 'left', marginTop: '40px' }}>{x.opinion}</h4>
+            <h3 style={{ marginTop: '25px' }}>{x.author}</h3>
+            <h4
+              style={{
+                textAlign: 'left',
+                marginTop: '15px',
+                fontSize: 20,
+                fontWeight: 300
+              }}
+            >
+              {x.opinion}
+            </h4>
           </SwiperSlide>
         )}
       </Swiper>
