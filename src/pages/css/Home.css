@@ -1,5 +1,6 @@
 .main {
-  padding: 20px 80px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background-size: cover;
   background-position: left;  
 }
@@ -14,11 +15,13 @@
 }
 
 .main_left h1 span {
-  color: #FF5F31;
+  font-weight: 700;
 }
 
 .main_left h3 {
   font-weight: 300;
+  font-size: 20px;
+  color: #fff;
 }
 
 .main_left a {
@@ -27,11 +30,9 @@
 }
 
 @media(max-width: 992px) {
-  .main {
-    padding: 20px 40px;
-  }
   .main_left {
     gap: 20px;
+    width: 100%;
   }
 
   .main h1 {
@@ -42,16 +43,167 @@
   }
 }
 @media(max-width: 768px) {
-  .main {
-    padding: 20px;
-  }
   .main h1 {
     font-size: 30px;
   }
 }
 
+@media (max-width: 400px) {
+  .navbar_down input {
+    padding-right: 14px;
+  }
+}
+
+@media(hover: hover) {
+  .navbar_menu a:hover {
+    color: #FF5F31;
+  }
+
+  .contact_form_flex button:hover {
+    background: #c3401b;
+  }
+
+  .navbar_top_menu_li a:hover {
+    color: #FF5F31;
+  }
+
+  .red_border:hover {
+    background-color: #c3401b;
+  }
+}
+
+/* Form */
+.form {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.form_title {
+  margin-bottom: 50px;
+  font-size: 50px;
+  color: #fff;
+}
+.form_inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+.form_form {
+  flex-basis: 49%;
+}
+.form .form_checkbox {
+  padding-top: 16px;
+  border-top: 2px solid #00EB78;
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
+  color: #fff;
+}
+
+.contact_form {
+  gap: 10px;
+  justify-content: flex-start;
+  flex-direction: column;
+  background: transparent;
+  align-items: flex-start;
+  min-height: auto;
+}
+
+.form_info {
+  flex-basis: 40%;
+}
+.form_info-headline {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+.form_info-headline h3 {
+  font-size: 25px;
+  color: #858585;
+}
+.form_info-headline h3:first-child {
+  color: #FF5F31;
+}
+.form_contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.contact_form h2 {
+  color: #FF5F31;
+  font-size: 25px;
+  margin-bottom: 24px;
+}
+
+.contact_form_flex {
+  gap: 16px;
+  padding: 0;
+}
+
+.contact_form_flex > input,
+.contact_form textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background: #858585;
+  border: 1px solid #858585;
+}
+.contact_form textarea {
+  border-radius: 8px;
+  height: 120px;
+  resize: none;
+}
+.contact_form_flex input::placeholder,
+.contact_form textarea::placeholder {
+  font-weight: light;
+  color: rgba(255, 255, 255, .5);
+}
+
+.contact_form_flex input:focus,
+.contact_form textarea:focus {
+  border: 1px solid #fff;
+}
+
+.contact_form_flex button {
+  padding: 16px 60px;
+  border-radius: 7px;
+}
+
+@media(max-width: 992px) {
+  .form_inner {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+
+  .form_form, .form_info {
+    flex-basis: 100%;
+  }
+
+  .form_title {
+    font-size: 32px;
+  }
+}
+
+.contact_page_about_phone {
+  gap: 16px;
+}
+
+.contact_page_about_phone h3 {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 400;
+}
+
 .catalog_start {
-  padding: 70px 80px 50px;
+  padding-top: 70px;
+  padding-bottom: 50px;
 }
 
 .catalog_start_title {
@@ -94,10 +246,6 @@
 }
 
 @media(max-width: 992px) {
-  .catalog_start {
-    padding: 702x 40px 50px;
-  }
- 
   .catalog_start_inner {
     flex-direction: column-reverse;
     align-items: center;
@@ -117,14 +265,9 @@
   .catalog_start_img {
     max-width: 100%;
   }
-
-  .catalog_start {
-    padding: 70px 20px 50px;
-  }
 }
 
 .kotalog {
-  padding: 0 80px;
   gap: 35px;
 }
 
@@ -159,20 +302,12 @@
 }
 
 @media(max-width: 992px) {
-  .kotalog {
-    padding: 0 40px;
-  }
-
   .kotalog_card {
     flex-basis: 45%;
   }
 }
 
 @media(max-width: 768px) {
-  .kotalog {
-    padding: 0 20px;
-  }
-
   .kotalog_card {
     flex-basis: 75%;
   }
@@ -186,7 +321,8 @@
 
 /* Accordion */
 .promishlenost {
-  padding: 15px 80px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .promishlenost_title {
@@ -194,7 +330,7 @@
 }
 
 .promishlenost_title h2 {
-    font-size: 50px;
+  font-size: 50px;
   max-width: 1000px;
   font-weight: 700;
   margin-bottom: 50px;
@@ -253,22 +389,10 @@
 }
 
 @media(max-width: 992px) {
-  .promishlenost {
-    padding: 15px 40px;
-  }
-
   .promishlenost_title h2 {
     font-size: 32px;
   }
 }
-
-@media(max-width: 768px) {
-  .promishlenost {
-    padding: 15px 20px;
-  }
-
-}
-
 @media(max-width: 575px) {
   .promishlenost_descs div {
     font-size: 14px;
@@ -277,10 +401,11 @@
 
 /* Advantages */
 .primushestva_company {
-  padding: 70px 80px;
+  padding-top: 70px;
+  padding-bottom: 70px;
   align-items: flex-start;
 
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../../public/img/advantages/background.jpg), center / cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../../../public/img/advantages/background.jpg), center / cover;
 }
 
 .primushestva_company_title {
@@ -314,20 +439,12 @@
 }
 
 @media(max-width: 992px) {
-  .primushestva_company {
-    padding: 70px 40px;
-  }
-
   .primushestva_company_title {
     font-size: 32px;
   }
 }
 
 @media(max-width: 768px) {
-  .primushestva_company {
-    padding: 70px 20px;
-  }
-
   .primushestva_company_cards_card {
     flex-basis: 100%;
   }
@@ -335,7 +452,8 @@
 
 /* How do we work */
 .how_weare_working {
-  padding: 35px 80px;
+  padding-top: 35px;
+  padding-bottom: 35px;
 }
 
 .how_weare_working_title {
@@ -384,20 +502,13 @@
 }
 
 .how_weare_working a.btn {
-  background-color: #FF5F31;
   border-radius: 7px;
   padding: 16px 32px;
   margin-top: 0;
-  width: auto;
-  height: auto;
 }
 
 
 @media(max-width: 992px) {
-  .how_weare_working {
-    padding: 35px 40px;
-  }
-
   .how_weare_working_title {
     font-size: 32px;
   }
@@ -408,10 +519,6 @@
 }
 
 @media(max-width: 768px) {
-  .how_weare_working {
-    padding: 35px 20px;
-  }
-
   .how_weare_working_cards_card {
     flex-basis: 100%;
   }

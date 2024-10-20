@@ -1,10 +1,53 @@
-body {
-  font-family: "Sansation", sans-serif;
+@font-face {
+  font-family: "Sansation";
+  src: url('../public/fonts/SansationLight.woff') format("woff");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Sansation";
+  src: url('../public/fonts/SansationRegular.woff') format("woff");
   font-weight: 400;
 }
+@font-face {
+  font-family: "Sansation";
+  src: url('../public/fonts/SansationBold.ttf') format("woff");
+  font-weight: 700;
+}
 
-.active-color {
-  color: #FF5F31;
+body {
+  font-family: "Sansation", sans-serif;
+  font-weight: 300;
+  background-color: #2F2F2F;
+  color: #fff;
+}
+
+a {
+  color: #fff;
+}
+
+.cntr {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+@media(max-width: 992px) {
+  .cntr {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media(max-width: 768px) {
+  .cntr {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn {

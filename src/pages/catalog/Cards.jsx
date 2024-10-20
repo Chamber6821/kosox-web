@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Card from './Card'
+import Button from '../../components/UI/Button/Button'
 
 export default function Cards ({ api, category = undefined }) {
   const [{ categories = [] }, setContent] = useState({})
@@ -23,9 +24,10 @@ export default function Cards ({ api, category = undefined }) {
   }, [api, category])
 
   const [isAllCategories, setIsAllCategories] = useState(false)
+  console.log(categories)
 
   return (
-    <div className='kotalog'>
+    <div className='kotalog cntr'>
       <div className='kotalog_flex'>
         {!isAllCategories
           ? categories.slice(0, 6).map((x) => (
@@ -47,7 +49,9 @@ export default function Cards ({ api, category = undefined }) {
             />
           ))}
       </div>
-      <button className='kotalog_all btn' onClick={() => setIsAllCategories(prev => !prev)}>{!isAllCategories ? 'Смотреть все' : 'Скрыть'}</button>
+      {categories.length
+        ? <Button className='kotalog_all btn' onClick={() => setIsAllCategories(prev => !prev)}>{!isAllCategories ? 'Смотреть все' : 'Скрыть'}</Button>
+        : <></>}
     </div>
   )
 }
