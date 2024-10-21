@@ -77,11 +77,6 @@
   padding-top: 70px;
   padding-bottom: 70px;
 }
-.form_title {
-  margin-bottom: 50px;
-  font-size: 50px;
-  color: #fff;
-}
 .form_inner {
   display: flex;
   justify-content: space-between;
@@ -185,10 +180,6 @@
   .form_form, .form_info {
     flex-basis: 100%;
   }
-
-  .form_title {
-    font-size: 32px;
-  }
 }
 
 .contact_page_about_phone {
@@ -207,12 +198,9 @@
 }
 
 .catalog_start_title {
-  font-size: 50px;
   text-align: center;
   line-height: 1.5;
   font-weight: 300;
-
-  margin-bottom: 50px;
 }
 
 .catalog_start_title span {
@@ -254,10 +242,6 @@
 
   .catalog_start_img {
     max-width: 50%;
-  }
-
-  .catalog_start_title {
-    font-size: 32px;
   }
 }
 
@@ -330,10 +314,8 @@
 }
 
 .promishlenost_title h2 {
-  font-size: 50px;
   max-width: 1000px;
   font-weight: 700;
-  margin-bottom: 50px;
 }
 
 .promishlenost_title span {
@@ -388,11 +370,6 @@
   color: #FF5F31;
 }
 
-@media(max-width: 992px) {
-  .promishlenost_title h2 {
-    font-size: 32px;
-  }
-}
 @media(max-width: 575px) {
   .promishlenost_descs div {
     font-size: 14px;
@@ -409,8 +386,6 @@
 }
 
 .primushestva_company_title {
-  font-size: 50px;
-  margin-bottom: 50px;
   text-align: left;
 }
 
@@ -437,13 +412,6 @@
   font-size: 17px;
   font-weight: 300;
 }
-
-@media(max-width: 992px) {
-  .primushestva_company_title {
-    font-size: 32px;
-  }
-}
-
 @media(max-width: 768px) {
   .primushestva_company_cards_card {
     flex-basis: 100%;
@@ -457,9 +425,7 @@
 }
 
 .how_weare_working_title {
-  font-size: 50px;
   font-weight: 300;
-  margin-bottom: 50px;
 }
 
 .how_weare_working_title span {
@@ -509,10 +475,6 @@
 
 
 @media(max-width: 992px) {
-  .how_weare_working_title {
-    font-size: 32px;
-  }
-
   .how_weare_working_cards_card {
     flex-basis: 47%;
   }

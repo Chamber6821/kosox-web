@@ -3,6 +3,7 @@ import Form from '../components/Form'
 import Reviews from '../components/Reviews'
 import Attention from '../components/UI/Attention/Attention'
 import Button from '../components/UI/Button/Button'
+import SectionTitle from '../components/UI/SectionTitle/SectionTitle';
 import Cards from './catalog/Cards'
 import './css/Home.css'
 import { useState } from 'react'
@@ -38,7 +39,7 @@ export default function Home ({ api }) {
         </div>
       </div>
       <div className='catalog_start cntr'>
-        <h2 className='catalog_start_title'>Приобретайте товары <Attention>KOSOX</Attention></h2>
+        <SectionTitle className='catalog_start_title'>Приобретайте товары <Attention>KOSOX</Attention></SectionTitle>
         <div className='catalog_start_inner'>
           <div className='catalog_start_text'>
             <p>Наша фирма на рынке Санкт-Петербурга и других городов России уже более 10 лет и мы знаем, что нужно нашим покупателям лучше всех других.</p>
@@ -50,7 +51,7 @@ export default function Home ({ api }) {
       <Cards api={api} />
       <div className='promishlenost cntr'>
         <div className='promishlenost_title'>
-          <h2>Использование товаров <Attention>KOSOX</Attention> в промышленности</h2>
+          <SectionTitle>Использование товаров <Attention>KOSOX</Attention> в промышленности</SectionTitle>
         </div>
         <div className='promishlenost_acc'>
           <div className='promishlenost_names'>
@@ -234,7 +235,7 @@ export default function Home ({ api }) {
         </div>
       </div>
       <div className='primushestva_company cntr'>
-        <h2 className='primushestva_company_title'>Преимущества компании</h2>
+        <SectionTitle className='primushestva_company_title'>Преимущества компании</SectionTitle>
         <div className='primushestva_company_cards'>
           <div className='primushestva_company_cards_card'>
             <div className='primushestva_company_cards_card_img'>
@@ -302,7 +303,7 @@ export default function Home ({ api }) {
         </div>
       </div>
       <div className='how_weare_working cntr'>
-        <h2 className='how_weare_working_title'>Как работает компания <Attention>KOSOX?</Attention></h2>
+        <SectionTitle className='how_weare_working_title'>Как работает компания <Attention>KOSOX?</Attention></SectionTitle>
         <div className='how_weare_working_cards'>
           <div className='how_weare_working_cards_card'>
             <div className='how_weare_working_cards_card_num'>
@@ -355,9 +356,9 @@ export default function Home ({ api }) {
       <div className='map'>
         <iframe title='We are here' src='https://yandex.by/map-widget/v1/-/CDfOmN8j?scroll=false' />
       </div>
-      <div className='form'>
+      <div className='form' style={{borderBottom: '1px solid #ff5f31'}}>
         <div className='container'>
-          <h2 className='form_title'>Остались <Attention>вопросы?</Attention></h2>
+          <SectionTitle className='form_title'>Остались <Attention>вопросы?</Attention></SectionTitle>
           <div className='form_inner'>
             <div className='form_form'>
               <Form api={api} />
