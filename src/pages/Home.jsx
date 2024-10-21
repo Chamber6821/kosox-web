@@ -13,7 +13,6 @@ export default function Home ({ api }) {
   const city = useCity()
 
   const [activeTab, setActiveTab] = useState('1')
-  console.log(api)
 
   const toggleTab = (event) => setActiveTab(event.target.dataset.PromishlenostKey)
 
