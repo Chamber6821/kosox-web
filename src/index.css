@@ -30,6 +30,13 @@ a {
   padding-right: 80px;
 }
 
+@media(max-width: 1280px) {
+  .cntr {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
 @media(max-width: 992px) {
   .cntr {
     padding-left: 40px;
@@ -71,4 +78,12 @@ a {
 .btn:hover {
   color: #fff;
   background-color: #c3401b;
+}
+
+.small-title {
+  text-align: center;
+  margin-bottom: 50px;
+
+  font-size: 25px;
+  font-weight: 700;
 }

@@ -94,6 +94,11 @@
   color: #fff;
 }
 
+.form .form_checkbox a {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
 .contact_form {
   gap: 10px;
   justify-content: flex-start;
@@ -208,47 +213,9 @@
   color: #858585;
 }
 
-.catalog_start_inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.catalog_start_text {
+.catalog_start_text-bold {
   font-family: "Scada";
-  color: #fff;
   font-weight: 700;
-  font-size: 25px;
-  line-height: 1.2;
-
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-
-  max-width: 700px;
-}
-
-.catalog_start_text-light {
-  font-family: "Sansation";
-  font-weight: 300;
-}
-
-@media(max-width: 992px) {
-  .catalog_start_inner {
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .catalog_start_img {
-    max-width: 50%;
-  }
-}
-
-@media(max-width: 768px) {
-  .catalog_start_img {
-    max-width: 100%;
-  }
 }
 
 .kotalog {
@@ -281,7 +248,7 @@
   font-size: 17px;
 }
 
-.kotalog_all {
+.see_all {
   padding: 15px 50px;
 }
 
@@ -300,6 +267,10 @@
 @media(max-width: 575px) {
   .kotalog_card {
     flex-basis: 100%;
+  }
+
+  .form_contacts {
+    text-align: center;
   }
 }
 

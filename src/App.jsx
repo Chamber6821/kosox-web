@@ -2,6 +2,7 @@ import { Route, Switch } from 'wouter'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import './index.css'
+import './pages/css/Home.css'
 import {
   About,
   AboutManufacturer,
@@ -44,7 +45,9 @@ export default function App () {
       <Header />
       <Switch>
         <Route path='/'>{(params) => <Home params={params} api={api} />}</Route>
-        <Route path='/about' component={About} />
+        <Route path='/about'>
+          <About api={api} />
+        </Route>
         <Route path='/about-manufacturer/:id'>
           {(params) => <AboutManufacturer params={params} api={api} />}
         </Route>
