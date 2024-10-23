@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Card from './Card'
 import Button from '../../components/UI/Button/Button'
 
-export default function Cards ({ api, category = undefined, children }) {
+export default function Cards ({ api, category = undefined, children, ...props }) {
   const [{ categories = [] }, setContent] = useState({})
   useEffect(() => {
     (async () => {
@@ -26,7 +26,7 @@ export default function Cards ({ api, category = undefined, children }) {
   const [isAllCategories, setIsAllCategories] = useState(false)
 
   return (
-    <div className='kotalog cntr'>
+    <div className='kotalog cntr' {...props}>
       {children ? <h4 className='small-title'>{children}</h4> : <></>}
       <div className='kotalog_flex'>
         {!isAllCategories

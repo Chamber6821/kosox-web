@@ -219,7 +219,7 @@
 }
 
 .kotalog {
-  gap: 35px;
+  gap: 0;
 }
 
 .kotalog_flex {
@@ -250,6 +250,7 @@
 
 .see_all {
   padding: 15px 50px;
+  margin-top: 35px;
 }
 
 @media(max-width: 992px) {
