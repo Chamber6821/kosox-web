@@ -6,7 +6,9 @@ const Goods = ({ className, imgUrl, children, ...props }) => {
       <div className={styles.catalog_start_text}>
         {children}
       </div>
-      <img src={imgUrl} alt='img' className={styles.catalog_start_img} />
+      <figure className={styles.catalog_start_img}>
+        <img src={imgUrl} alt='img' />
+      </figure>
     </div>
   )
 }

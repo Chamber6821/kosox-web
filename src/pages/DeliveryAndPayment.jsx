@@ -1,22 +1,19 @@
 import { useCity } from '../api/City'
+import Banner from '../components/Sections/Banner/Banner'
+import Goods from '../components/Sections/Goods/Goods'
+import Attention from '../components/UI/Attention/Attention'
 
 export default function DeliveryAndPayment () {
   document.title = 'Доставка и оплата'
   const city = useCity()
   return (
     <main>
-      <div
-        style={{
-          backgroundImage:
-            'url("./img/6ba632040d142d29a5ebe2411f406f96 — копия.jpeg")'
-        }}
-        className='header_main'
-      >
-        <div className='header_main_bg' />
-        <div className='header_main_flex'>
-          <h1>Заказать доставку комлектующих по {city.Дательный} в компании KOSOX</h1>
-        </div>
-      </div>
+      <Banner breadcrumbs={[{title: 'Главная', url: '/'}, {title: 'Доставка и оплата'}]}>
+        Заказать доставку комлектующих по <Attention>{city.Дательный}</Attention> в компании <Attention>KOSOX</Attention>
+      </Banner>
+      <Goods imgUrl='/img/delivery-goods-img.png' className='cntr' style={{paddingTop: 70, paddingBottom: 100}}>
+        <p>Находится компания <Attention style={{fontWeight: 300}}>KOSOX</Attention> в Российсикой Федерации, городе Санкт-Петербург и мы гарантируем своеверменную доставку оборудования в <Attention style={{fontWeight: 300}}>{city.Именительный}</Attention>. Зная, что в нашем деле оперативность играет крайне важную роль, стараемся подобрать настолько сжатые сроки, насколько это возможно и даже быстрее. Фирма <Attention style={{fontWeight: 300}}>KOSOX</Attention> подбирает индивидкальный подход к каждому клиенту, поэтому предоставляем доставку по любым запросам, в том числе экспресс-доставку комплектующих из <Attention style={{fontWeight: 300}}>Европы</Attention>.</p>
+      </Goods>
       <div className='shopandpay'>
         <div className='shopandpay_content'>
           <div className='main_left'>
