@@ -8,33 +8,6 @@
   padding-bottom: 100px;
 }
 
-.about_form {
-  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(/public//img/intro-bg.jpg) center / cover;
-  position: relative;
-}
-
-.about_form div {
-  position: relative;
-  z-index: 2;
-}
-
-.about_form::after {
-  content: '';
-
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  filter: blur(20px);
-  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(/public//img/intro-bg.jpg) center / cover;;
-
-  z-index: 1;
-}
-
 @media(max-width: 992px) {
   .about_goods_second {
     flex-direction: column;

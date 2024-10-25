@@ -49,7 +49,7 @@ export default function Cards ({ api, category = undefined, children, ...props }
             />
           ))}
       </div>
-      {categories.length
+      {categories.length > 6
         ? <Button className='see_all btn' onClick={() => setIsAllCategories(prev => !prev)}>{!isAllCategories ? 'Смотреть все' : 'Скрыть'}</Button>
         : <></>}
     </div>

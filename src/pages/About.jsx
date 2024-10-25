@@ -84,7 +84,7 @@ export default function About ({ api }) {
         <h4 className='small-title'>Для комфорта наших <Attention>клиентов</Attention>, мы постарались создать наилучшие условия на рынке, позволяющие найти <Attention>индвидуальный</Attention> подход к каждому:</h4>
         <Benefits />
       </div>
-      <FormSection api={api} className='about_form' />
+      <FormSection api={api} className='bg-form' />
     </main>
   )
 }

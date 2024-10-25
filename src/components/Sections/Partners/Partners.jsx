@@ -33,7 +33,7 @@ const Partners = ({ className, partners, children, ...props }) => {
           ))}
       </div>
 
-      {partners.length
+      {partners.length > 6
         ? <Button className={`see_all btn ${styles.partnersBtn}`} onClick={() => setIsAllCategories(prev => !prev)}>{!isAllCategories ? 'Смотреть все' : 'Скрыть'}</Button>
         : <></>}
     </div>

@@ -26,6 +26,10 @@
     gap: 30px;
   }
 
+  .goods-reverse {
+    flex-direction: column;
+  }
+
   .catalog_start_img {
     max-width: 50%;
   }
