@@ -582,3 +582,16 @@
 
   z-index: 1;
 }
+
+.accordion-button {
+  background: #484848;
+  font-weight: 700;
+}
+
+.accordion-button:not(.collapsed) {
+  background: #484848;
+}
+
+.accordion-body {
+  background: #858585;
+}

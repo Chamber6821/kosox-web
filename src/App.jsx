@@ -60,7 +60,9 @@ export default function App () {
         <Route path='/category/:id'>
           {(params) => <Category params={params} api={api} />}
         </Route>
-        <Route path='/contacts' component={Contacts} />
+        <Route path='/contacts'>
+          <Contacts api={api} />
+        </Route>
         <Route path='/delivery-and-payment'>
           <DeliveryAndPayment api={api} />
         </Route>
