@@ -6,16 +6,9 @@ export default function Card ({
   page
 }) {
   return (
-    <Link to={page || ''}>
-      <div
-        style={{
-          backgroundImage: `url('${backgroundImage}'), url('/img/default-card.png')`
-        }}
-        className='kotalog_card'
-      >
-        <div className='kotalog_card_bg' />
-        <h3>{title}</h3>
-      </div>
+    <Link to={page || ''} className='kotalog_card'>
+      <img src={backgroundImage} alt='bg' />
+      <h3>{title}</h3>
     </Link>
   )
 }

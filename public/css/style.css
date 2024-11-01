@@ -120,25 +120,9 @@ a {
   right: 30px;
   cursor: pointer;
 }
-.navbar_down a {
-  display: flex;
-  width: 300px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  cursor: pointer;
-  background: #f00;
-  border: none;
-  color: #fff;
-  font-size: 19px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
 .navbar_down input {
   display: flex;
   align-items: center;
-
   padding-left: 30px;
   border-radius: 10px;
   background: #fff;
@@ -248,22 +232,6 @@ input:focus {
   .navbar_down {
     flex-direction: column;
   }
-  .navbar_down button {
-    display: flex;
-    height: 65px;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    cursor: pointer;
-    background: #f00;
-    border: none;
-    color: #fff;
-    font-size: 19px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-  }
   .navbar_down input {
     display: flex;
     width: 100%;
@@ -331,20 +299,6 @@ h6 {
   font-weight: 700;
   line-height: 75px; /* 115.385% */
 }
-.main_left a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  background: #2e2f8c;
-  border: none;
-  color: #fff;
-  font-size: 20px;
-  cursor: pointer;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
 .main img {
   width: 100%;
   height: 100%;
@@ -384,19 +338,6 @@ h6 {
     font-size: 4.615vw;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
-  }
-  .main_left button {
-    width: 43.077vw;
-    height: 9.231vw;
-    border-radius: 10px;
-    background: #2e2f8c;
-    border: none;
-    color: #fff;
-    font-size: 3.077vw;
-    cursor: pointer;
-    font-style: normal;
-    font-weight: 700;
     line-height: normal;
   }
   .main_left {
@@ -760,22 +701,6 @@ h4 {
 .how_weare_working_cards_card span {
   color: #2e2f8c;
   font-size: 55px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-.how_weare_working a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 300px;
-  margin-top: 70px;
-  height: 70px;
-  border-radius: 13px;
-  background: #f00;
-  color: #fff;
-  border: none;
-  font-size: 19px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;

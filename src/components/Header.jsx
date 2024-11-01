@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { Link, useLocation, useSearch } from 'wouter'
 import './Navbar.css'
+import Button from './UI/Button/Button'
 
 export default function Header () {
   const params = new URLSearchParams(useSearch())
@@ -39,22 +40,22 @@ export default function Header () {
               <a href='mailto:zakaz@kosox.ru'>zakaz@kosox.ru</a>
             </div>
             <div className='navbar_icon'>
-              <a href='https://wa.me/79117111112' target='_blank' rel='noreferrer'>
+              <Link to='https://wa.me/79117111112'>
                 <img
-                  src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/whatsapp.svg'
-                  alt='icon'
-                />
-              </a>
-              <Link to='/'>
-                <img
-                  src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/viber.svg'
-                  alt='icon'
+                  src='/img/social/wa.png'
+                  alt='whatsapp'
                 />
               </Link>
               <Link to='/'>
                 <img
-                  src='https://mgb-bearings.ru/wp-content/themes/astra-child/assets/image/telegram.svg'
-                  alt='icon'
+                  src='/img/social/tg.png'
+                  alt='telegram'
+                />
+              </Link>
+              <Link to='/'>
+                <img
+                  src='/img/social/viber.png'
+                  alt='viber'
                 />
               </Link>
             </div>
@@ -121,9 +122,11 @@ export default function Header () {
       </div>
       <nav className='navbar_down'>
         <div className='navbar_container'>
-          <Link to='/catalog' className='red_border'>
-            {window.innerWidth > 575 ? 'КАТАЛОГ ТОВАРОВ' : 'КАТАЛОГ'}
-          </Link>
+          <Button>
+            <Link to='/catalog' className='red_border'>
+              {window.innerWidth > 575 ? 'КАТАЛОГ ТОВАРОВ' : 'КАТАЛОГ'}
+            </Link>
+          </Button>
           <div className='navbar_down_inp'>
             <input
               ref={searchInputRef}
@@ -133,9 +136,9 @@ export default function Header () {
               type='text'
             />
           </div>
-          <button className='navbar_cart'>
+          <Button className='navbar_cart'>
             <img src='/img/cart.svg' alt='cart' />
-          </button>
+          </Button>
         </div>
       </nav>
     </header>

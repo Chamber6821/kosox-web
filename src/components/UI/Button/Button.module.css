@@ -1,0 +1,41 @@
+.button {
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  width: fit-content;
+  white-space: nowrap;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #ff5f31;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: linear .7s background-color;
+}
+
+.button * {
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  width: fit-content;
+  white-space: nowrap;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #ff5f31;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: linear .7s background-color;
+}
+
+.button:hover {
+  background-color: #c3401b;
+}
+
+.button *:hover {
+  background-color: #c3401b;
+}
