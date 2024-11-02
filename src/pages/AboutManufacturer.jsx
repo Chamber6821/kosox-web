@@ -1,11 +1,16 @@
 import { useEffect, useState } from 'react'
-import Form from '../components/Form'
 import CategoryCard from './catalog/Card'
 import ProductCard from './category/Card'
 import Cards from './catalog/Cards'
+import Banner from '../components/Sections/Banner/Banner'
+import FormSection from '../components/Sections/FormSection/FormSection'
+import Attention from '../components/UI/Attention/Attention'
+import Button from '../components/UI/Button/Button'
+import SectionTitle from '../components/UI/SectionTitle/SectionTitle'
+import { useCity } from '../api/City'
+import { Link } from 'wouter'
 
 const logIt = x => {
-  console.log(x)
   return x
 }
 
@@ -22,6 +27,7 @@ const logIt = x => {
 export default function AboutManufacturer ({ params: { id }, api }) {
   const [{ name, description, categories = [], products }, setBrand] = useState({})
   document.title = `Производитель ${name}`
+  const city = useCity()
   useEffect(() => {
     (async () => {
       const manufacturerEntity = await (await api.manufacturers()).withId(id)
@@ -51,7 +57,6 @@ export default function AboutManufacturer ({ params: { id }, api }) {
       })
     })()
   }, [id, api])
-  console.log('categories', categories)
   const cards = products
     ? products.map(x => (
       <ProductCard
@@ -70,38 +75,42 @@ export default function AboutManufacturer ({ params: { id }, api }) {
         page={`/catalog/${x.id}`}
       />
     ))
+
   return (
-    <main className='brendabout'>
-      <div className='brendabout_bgimg'>
-        <img src='./img/Rectangle 94.png' alt='' />
-      </div>
-      <div className='brendabout_main_flex'>
-        <div className='main_left'>
-          <h1>{name}</h1>
-        </div>
-        <div className='brendabout_title' style={{ display: 'block' }}>
+    <main>
+      <Banner
+        breadcrumbs={[
+          { title: 'Главная', url: '/' }, 
+          { title: 'Производители', url: '/manufactures' },
+          { title: name }
+        ]}
+      >
+        Купить в <Attention>{city.Предложный}</Attention> <br />
+        продукцию <Attention>{name}</Attention>
+      </Banner>
+      <div className='brendabout_main_flex cntr'>
+        <div className='brendabout_title'>
+          <SectionTitle style={{textAlign: 'center', fontWeight: 300}}>
+            <span style={{fontWeight: 700, color: '#858585'}}>KOSOX</span> предоставляет товары бренда <span style={{fontWeight: 700, color: '#858585'}}>{name}</span>
+          </SectionTitle>
           {(description || '')
             .split('\n')
             .map(x => x.trim())
             .map(x => <p style={x === '' ? { marginBottom: '32px' } : {}} key={x}>{x}</p>)}
+          <Button style={{padding: '16px 36px', borderRadius: 7, marginTop: 50}}><Link to='#form'>Заказать товар</Link></Button>
         </div>
-        <div className='brendabout_btn' style={{ marginTop: '0', marginBottom: '100px' }}>
-          <a href='#form'>Заказать товар {name}</a>
-        </div>
-        <div className='main_left'>
-          <h6>Товары {name}</h6>
-        </div>
+        <SectionTitle style={{textAlign: 'left'}}>
+          Товары бренда <Attention>{name}</Attention>
+        </SectionTitle>
         <div className='brendabout_cards'>
           {
             cards.length === 0
-              ? <Cards api={api} />
+              ? <Cards api={api} style={{padding: 0}} />
               : cards
           }
         </div>
-        <div id='form'>
-          <Form api={api} />
-        </div>
       </div>
+      <FormSection api={api} className='bg-form' />
     </main>
   )
 }
