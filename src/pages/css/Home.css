@@ -77,11 +77,6 @@
   padding-top: 70px;
   padding-bottom: 70px;
 }
-.form_title {
-  margin-bottom: 50px;
-  font-size: 50px;
-  color: #fff;
-}
 .form_inner {
   display: flex;
   justify-content: space-between;
@@ -97,6 +92,11 @@
   gap: 10px;
   font-size: 13px;
   color: #fff;
+}
+
+.form .form_checkbox a {
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 .contact_form {
@@ -185,10 +185,6 @@
   .form_form, .form_info {
     flex-basis: 100%;
   }
-
-  .form_title {
-    font-size: 32px;
-  }
 }
 
 .contact_page_about_phone {
@@ -207,12 +203,9 @@
 }
 
 .catalog_start_title {
-  font-size: 50px;
   text-align: center;
   line-height: 1.5;
   font-weight: 300;
-
-  margin-bottom: 50px;
 }
 
 .catalog_start_title span {
@@ -220,55 +213,13 @@
   color: #858585;
 }
 
-.catalog_start_inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.catalog_start_text {
+.catalog_start_text-bold {
   font-family: "Scada";
-  color: #fff;
   font-weight: 700;
-  font-size: 25px;
-  line-height: 1.2;
-
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-
-  max-width: 700px;
-}
-
-.catalog_start_text-light {
-  font-family: "Sansation";
-  font-weight: 300;
-}
-
-@media(max-width: 992px) {
-  .catalog_start_inner {
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .catalog_start_img {
-    max-width: 50%;
-  }
-
-  .catalog_start_title {
-    font-size: 32px;
-  }
-}
-
-@media(max-width: 768px) {
-  .catalog_start_img {
-    max-width: 100%;
-  }
 }
 
 .kotalog {
-  gap: 35px;
+  gap: 0;
 }
 
 .kotalog_flex {
@@ -297,8 +248,9 @@
   font-size: 17px;
 }
 
-.kotalog_all {
+.see_all {
   padding: 15px 50px;
+  margin-top: 35px;
 }
 
 @media(max-width: 992px) {
@@ -317,6 +269,10 @@
   .kotalog_card {
     flex-basis: 100%;
   }
+
+  .form_contacts {
+    text-align: center;
+  }
 }
 
 /* Accordion */
@@ -330,10 +286,8 @@
 }
 
 .promishlenost_title h2 {
-  font-size: 50px;
   max-width: 1000px;
   font-weight: 700;
-  margin-bottom: 50px;
 }
 
 .promishlenost_title span {
@@ -388,11 +342,6 @@
   color: #FF5F31;
 }
 
-@media(max-width: 992px) {
-  .promishlenost_title h2 {
-    font-size: 32px;
-  }
-}
 @media(max-width: 575px) {
   .promishlenost_descs div {
     font-size: 14px;
@@ -409,8 +358,6 @@
 }
 
 .primushestva_company_title {
-  font-size: 50px;
-  margin-bottom: 50px;
   text-align: left;
 }
 
@@ -437,13 +384,6 @@
   font-size: 17px;
   font-weight: 300;
 }
-
-@media(max-width: 992px) {
-  .primushestva_company_title {
-    font-size: 32px;
-  }
-}
-
 @media(max-width: 768px) {
   .primushestva_company_cards_card {
     flex-basis: 100%;
@@ -457,9 +397,7 @@
 }
 
 .how_weare_working_title {
-  font-size: 50px;
   font-weight: 300;
-  margin-bottom: 50px;
 }
 
 .how_weare_working_title span {
@@ -509,10 +447,6 @@
 
 
 @media(max-width: 992px) {
-  .how_weare_working_title {
-    font-size: 32px;
-  }
-
   .how_weare_working_cards_card {
     flex-basis: 47%;
   }
@@ -524,9 +458,165 @@
   }
 }
 
+.carriers {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 27px;
+  margin-bottom: 100px;
+}
+
+.carrier {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  background-color: #fff;
+  flex-basis: 23%;
+  padding: 25px;
+}
+
+@media(max-width: 1200px) {
+  .carrier {
+    flex-basis: 30%;
+  }
+}
+
+@media(max-width: 992px) {
+  .carrier {
+    flex-basis: 48%;
+  }
+}
+
+@media(max-width: 768px) {
+  .carrier {
+    flex-basis: 75%;
+  }
+}
+
+.goods-reverse {
+  flex-direction: row-reverse;
+}
+
+@media(max-width: 992px) {
+  .goods-reverse {
+    flex-direction: column;
+  }
+}
+
+.conditions {
+  padding-top: 70px;
+  padding-bottom: 100px;
+}
+
+.conditions_title {
+  text-align: left;
+  font-weight: 400;
+  margin-bottom: 35px;
+}
+
+.conditions_inner {
+  display: flex;
+  gap: 75px;
+}
+
+.conditions_condition {
+  flex-basis: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.conditions_condition h3 {
+  font-size: 40px;
+}
+
+.conditions_condition.below h3 {
+  color: #858585;
+}
+
+.conditions_condition.above h3 {
+  color: #FF5F31;
+}
+
+.conditions_condition p {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+@media(max-width: 768px) {
+  .conditions_inner {
+    flex-wrap: wrap;
+  }
+
+  .conditions_condition {
+    flex-basis: 80%;
+  }
+}
 
 
+.bg-form {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(/public//img/intro-bg.jpg) center / cover;
+  position: relative;
+}
 
+.bg-form div {
+  position: relative;
+  z-index: 2;
+}
 
+.bg-form::after {
+  content: '';
 
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
+  filter: blur(20px);
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(/public//img/intro-bg.jpg) center / cover;;
+
+  z-index: 1;
+}
+
+.accordion-button {
+  background: #484848;
+  font-weight: 700;
+}
+
+.accordion-button:not(.collapsed) {
+  background: #484848;
+}
+
+.accordion-body {
+  background: #858585;
+}
+
+.brendabout_main_flex {
+  padding-top: 70px;
+  align-items: flex-start;
+}
+
+.brendabout_title p {
+  font-weight: 300;
+  font-size: 25px;
+}
+
+.brendabout_title {
+  margin-top: 0;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.brendabout_cards {
+  margin-top: 0;
+  margin-bottom: 70px;
+  padding: 0;
+}

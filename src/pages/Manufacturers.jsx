@@ -1,7 +1,11 @@
 import { useCity } from '../api/City'
 import { useEffect, useState } from 'react'
-import { Link } from 'wouter'
 import Cards from './catalog/Cards'
+import Banner from '../components/Sections/Banner/Banner'
+import Partners from '../components/Sections/Partners/Partners'
+import Attention from '../components/UI/Attention/Attention'
+import SectionTitle from '../components/UI/SectionTitle/SectionTitle'
+import Goods from '../components/Sections/Goods/Goods'
 
 /**
  * @typedef {Object} props
@@ -33,41 +37,24 @@ export default function Manufacturers ({ api }) {
   }, [api])
   return (
     <main>
-      <div
-        style={{
-          backgroundImage:
-            'url("./img/6ba632040d142d29a5ebe2411f406f96 — копия.jpeg")'
-        }}
-        className='header_main'
+      <Banner
+        breadcrumbs={[{ title: 'Главная', url: '/' }, { title: 'Производители' }]}
       >
-        <div className='header_main_bg' />
-        <div className='header_main_flex'>
-          <h1>Купить в {city.Предложный} продукцию мировых брендов</h1>
-        </div>
-      </div>
-      <div className='manufacturers'>
-        <div className='manufacturers_speak'>
-          <h2>
-            Мы торгуем с европейскими и мировыми <br /> брендами!
-          </h2>
-          <a href='/contacts'>Оставить заявку</a>
-        </div>
-        <div className='our_brends content'>
-          <h2>Бренды с которыми мы сотрудничаем</h2>
-          <div className='our_brends_cards'>
-            {manufacturers.map((x) => (
-              <div key={x.name} className='our_brends_card'>
-                <img src={x.icon} alt='' />
-                <div className='our_brends_card_hover'>
-                  <h5>{x.name}</h5>
-                  <Link to={`/about-manufacturer/${x.id}`}>Подробнее...</Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <Cards api={api} />
+        Купить в <Attention>{city.Предложный}</Attention> продукцию мировых брендов
+      </Banner>
+      <SectionTitle className='cntr' style={{ fontWeight: 300, textAlign: 'center', marginTop: 70, marginBottom: 50, lineHeight: 1.5 }}><Attention style={{ color: '#858585', fontWeight: 700 }}>KOSOX</Attention> предоставляет товары мировых брендов</SectionTitle>
+      <Goods className='cntr' style={{ marginBottom: 100 }} imgUrl='/img/manufactures-goods-img.png'>
+        <p className='catalog_start_text-bold'>У нашей компании большое количество партнеров, приобретенных за годы работы. С нами сотрудничают европейские, китайские и другие мировые бренды промышленных товаров</p>
+        <p>Эти товары придут вам в наилучшем виде, несмотря на все ограничения. Мы знаем как сделать ваш бизнес эффективным с помощью нашего оборудования</p>
+      </Goods>
+      <Partners partners={manufacturers} style={{ marginBottom: 100 }}>
+        <SectionTitle style={{ textAlign: 'left' }}>
+          Бренды, с которыми мы <br /><Attention>сотрудничаем</Attention>
+        </SectionTitle>
+      </Partners>
+      <Cards api={api} style={{ paddingTop: 0, borderBottom: '1px solid #ff5f31' }}>
+        Сотрудничество с данными брендами позволяет нам предоставлять вам огромное количество товаров <Attention>всех</Attention> категорий:
+      </Cards>
     </main>
   )
 }

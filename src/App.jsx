@@ -2,6 +2,7 @@ import { Route, Switch } from 'wouter'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import './index.css'
+import './pages/css/Home.css'
 import {
   About,
   AboutManufacturer,
@@ -37,13 +38,16 @@ export default function App () {
       }
     })()
   }, [city])
+
   return (
     <CityProvider>
       <ScrollTop />
       <Header />
       <Switch>
         <Route path='/'>{(params) => <Home params={params} api={api} />}</Route>
-        <Route path='/about' component={About} />
+        <Route path='/about'>
+          <About api={api} />
+        </Route>
         <Route path='/about-manufacturer/:id'>
           {(params) => <AboutManufacturer params={params} api={api} />}
         </Route>
@@ -56,8 +60,12 @@ export default function App () {
         <Route path='/category/:id'>
           {(params) => <Category params={params} api={api} />}
         </Route>
-        <Route path='/contacts' component={Contacts} />
-        <Route path='/delivery-and-payment' component={DeliveryAndPayment} />
+        <Route path='/contacts'>
+          <Contacts api={api} />
+        </Route>
+        <Route path='/delivery-and-payment'>
+          <DeliveryAndPayment api={api} />
+        </Route>
         <Route path='/faq'>{() => <Faq api={api} />}</Route>
         <Route path='/manufacturers'>
           {(params) => <Manufacturers params={params} api={api} />}
@@ -68,7 +76,7 @@ export default function App () {
         <Route path='/search'>{() => <Search api={api} />}</Route>
         <Route>{() => <NotFound />}</Route>
       </Switch>
-      <Footer />
+      <Footer api={api} />
     </CityProvider>
   )
 }

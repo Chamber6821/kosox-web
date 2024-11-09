@@ -1,18 +1,17 @@
-import { useCity } from '../api/City'
-import Form from '../components/Form'
 import Reviews from '../components/Reviews'
+import Goods from '../components/Sections/Goods/Goods'
+import Benefits from '../components/Sections/Benefits/Benefits'
 import Attention from '../components/UI/Attention/Attention'
 import Button from '../components/UI/Button/Button'
+import SectionTitle from '../components/UI/SectionTitle/SectionTitle'
 import Cards from './catalog/Cards'
 import './css/Home.css'
 import { useState } from 'react'
+import FormSection from '../components/Sections/FormSection/FormSection'
 
 export default function Home ({ api }) {
   document.title = 'Подшипники KOSOX | Купить подшипники оптом и в розницу'
-  const city = useCity()
-
   const [activeTab, setActiveTab] = useState('1')
-  console.log(api)
 
   const toggleTab = (event) => setActiveTab(event.target.dataset.PromishlenostKey)
 
@@ -38,19 +37,16 @@ export default function Home ({ api }) {
         </div>
       </div>
       <div className='catalog_start cntr'>
-        <h2 className='catalog_start_title'>Приобретайте товары <Attention>KOSOX</Attention></h2>
-        <div className='catalog_start_inner'>
-          <div className='catalog_start_text'>
-            <p>Наша фирма на рынке Санкт-Петербурга и других городов России уже более 10 лет и мы знаем, что нужно нашим покупателям лучше всех других.</p>
-            <p className='catalog_start_text-light'>Предоставляя различные комплектующие для промышленности и другие товары, мы также даем лучший сервис и наилучшие условия  сотрудничества.</p>
-          </div>
-          <img src='/img/catalog-intro-img.png' alt='img' className='catalog_start_img' />
-        </div>
+        <SectionTitle className='catalog_start_title'>Приобретайте товары <Attention>KOSOX</Attention></SectionTitle>
+        <Goods imgUrl='/img/catalog-intro-img.png'>
+          <p className='catalog_start_text-bold'>Наша фирма на рынке Санкт-Петербурга и других городов России уже более 10 лет и мы знаем, что нужно нашим покупателям лучше всех других.</p>
+          <p>Предоставляя различные комплектующие для промышленности и другие товары, мы также даем лучший сервис и наилучшие условия  сотрудничества.</p>
+        </Goods>
       </div>
       <Cards api={api} />
       <div className='promishlenost cntr'>
         <div className='promishlenost_title'>
-          <h2>Использование товаров <Attention>KOSOX</Attention> в промышленности</h2>
+          <SectionTitle>Использование товаров <Attention>KOSOX</Attention> в промышленности</SectionTitle>
         </div>
         <div className='promishlenost_acc'>
           <div className='promishlenost_names'>
@@ -234,75 +230,11 @@ export default function Home ({ api }) {
         </div>
       </div>
       <div className='primushestva_company cntr'>
-        <h2 className='primushestva_company_title'>Преимущества компании</h2>
-        <div className='primushestva_company_cards'>
-          <div className='primushestva_company_cards_card'>
-            <div className='primushestva_company_cards_card_img'>
-              <img src='./img/advantages/2.svg' alt='icon' />
-            </div>
-            <div className='primushestva_company_cards_card_title'>
-              <h3>Отличные цены </h3>
-              <h4>У нас одни из самых минимальных цен на рынке</h4>
-            </div>
-          </div>
-          <div className='primushestva_company_cards_card'>
-            <div className='primushestva_company_cards_card_img'>
-              <img src='./img/advantages/5.svg' alt='icon' />
-            </div>
-            <div className='primushestva_company_cards_card_title'>
-              <h3>Доступность</h3>
-              <h4>Доставляем товары по всей Российской Федерации и {city.Предложный} в частности</h4>
-            </div>
-          </div>
-          <div className='primushestva_company_cards_card'>
-            <div className='primushestva_company_cards_card_img'>
-              <img src='./img/advantages/6.svg' alt='icon' />
-            </div>
-            <div className='primushestva_company_cards_card_title'>
-              <h3>Скорость доставки</h3>
-              <h4>
-                На нашем складе лежит большое количество товаров уже готовых к
-                отправке
-              </h4>
-            </div>
-          </div>
-          <div className='primushestva_company_cards_card'>
-            <div className='primushestva_company_cards_card_img'>
-              <img src='./img/advantages/3.svg' alt='' />
-            </div>
-            <div className='primushestva_company_cards_card_title'>
-              <h3>Гарантия качества</h3>
-              <h4>Все наши изделия с гарантией ГОСТ/ТУ/ISO качества</h4>
-            </div>
-          </div>
-          <div className='primushestva_company_cards_card'>
-            <div className='primushestva_company_cards_card_img'>
-              <img src='./img/advantages/4.svg' alt='' />
-            </div>
-            <div className='primushestva_company_cards_card_title'>
-              <h3>Поставщики</h3>
-              <h4>
-                Наши партнеры - это ведущие производители Японии, Франции,
-                Германии, Италии, Англии, Китая
-              </h4>
-            </div>
-          </div>
-          <div className='primushestva_company_cards_card'>
-            <div className='primushestva_company_cards_card_img'>
-              <img src='./img/advantages/1.svg' alt='' />
-            </div>
-            <div className='primushestva_company_cards_card_title'>
-              <h3>Удобство клиентов</h3>
-              <h4>
-                Мы работаем без посредников, а значит вам не придется лишний раз
-                переплачивать
-              </h4>
-            </div>
-          </div>
-        </div>
+        <SectionTitle className='primushestva_company_title'>Преимущества компании</SectionTitle>
+        <Benefits />
       </div>
       <div className='how_weare_working cntr'>
-        <h2 className='how_weare_working_title'>Как работает компания <Attention>KOSOX?</Attention></h2>
+        <SectionTitle className='how_weare_working_title'>Как работает компания <Attention>KOSOX?</Attention></SectionTitle>
         <div className='how_weare_working_cards'>
           <div className='how_weare_working_cards_card'>
             <div className='how_weare_working_cards_card_num'>
@@ -355,50 +287,7 @@ export default function Home ({ api }) {
       <div className='map'>
         <iframe title='We are here' src='https://yandex.by/map-widget/v1/-/CDfOmN8j?scroll=false' />
       </div>
-      <div className='form'>
-        <div className='container'>
-          <h2 className='form_title'>Остались <Attention>вопросы?</Attention></h2>
-          <div className='form_inner'>
-            <div className='form_form'>
-              <Form api={api} />
-            </div>
-            <div className='form_info'>
-              <div className='form_info-headline'>
-                <h3>График работы:</h3>
-                <h3>Понедельник — Пятница, с 09:00 до 18:00 по МСК</h3>
-              </div>
-              <div className='form_contacts'>
-                <div className='contact_page_about_phone'>
-                  <img src='./img/phone.svg' alt='' />
-                  <div className='contact_page_about_phone_text'>
-                    <a href='tel:+88124555155'>
-                      <h3>+8 (812) 455-51-55</h3>
-                    </a>
-                  </div>
-                </div>
-                <div className='contact_page_about_phone'>
-                  <img src='./img/location.svg' alt='' />
-                  <div className='contact_page_about_location_text'>
-                    <a href='#0'>
-                      <h3>
-                        г. Санкт-Петербург, Придорожная аллея, д. 8, лит. А, ПОМЕЩ. 620
-                      </h3>
-                    </a>
-                  </div>
-                </div>
-                <div className='contact_page_about_phone'>
-                  <img src='./img/mail.svg' alt='' />
-                  <div className='contact_page_about_mail_text'>
-                    <a href='mailto:zakaz@kosox.ru'>
-                      <h3>zakaz@kosox.ru</h3>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <FormSection api={api} style={{ borderBottom: '1px solid #ff5f31' }} />
     </main>
   )
 }

@@ -1,25 +1,18 @@
-import Form from '../components/Form'
-
+import FormSection from '../components/Sections/FormSection/FormSection'
+import Banner from '../components/Sections/Banner/Banner'
+import Attention from '../components/UI/Attention/Attention'
+import SectionTitle from '../components/UI/SectionTitle/SectionTitle'
 export default function Faq ({ api }) {
   document.title = 'FAQ'
   return (
     <main>
-      <div
-        style={{
-          backgroundImage:
-            'url("./img/6ba632040d142d29a5ebe2411f406f96 — копия.jpeg")'
-        }}
-        className='header_main'
-      >
-        <div className='header_main_bg' />
-        <div className='header_main_flex'>
-          <h1>FAQ</h1>
-        </div>
-      </div>
+      <Banner breadcrumbs={[{ title: 'Главная', url: '/' }, { title: 'FAQ' }]}>
+        Задать вопрос
+      </Banner>
       <section className='section_page'>
-        <div className='main_left'>
-          <h6>Вопрос - ответ</h6>
-        </div>
+        <SectionTitle style={{ textAlign: 'center' }}>
+          Вопрос-ответ
+        </SectionTitle>
         <div className='section_page_elemnts'>
           <div className='promishlenost_acc'>
             <div
@@ -41,8 +34,8 @@ export default function Faq ({ api }) {
                     aria-expanded='true'
                     aria-controls='collapseOne'
                   >
-                    <img src='./img/blackic.svg' alt='icon' />
-                    Возможен ли самовывоз заказанного товара?
+                    <img src='./img/accordeon/1.svg' alt='icon' />
+                    <p>Возможен ли <Attention>самовывоз</Attention> заказанного товара?</p>
                   </button>
                 </h2>
                 <div
@@ -66,8 +59,8 @@ export default function Faq ({ api }) {
                     aria-expanded='false'
                     aria-controls='collapseTwo'
                   >
-                    <img src='./img/blackic.svg' alt='icon' />
-                    Работаете ли вы с физическими лицами?
+                    <img src='./img/accordeon/3.svg' alt='icon' />
+                    <p>Работаете ли вы с физическими <Attention>лицами</Attention>?</p>
                   </button>
                 </h2>
                 <div
@@ -91,8 +84,8 @@ export default function Faq ({ api }) {
                     aria-expanded='false'
                     aria-controls='collapseThree'
                   >
-                    <img src='./img/blackic.svg' alt='icon' />
-                    Доставляете ли Вы подшипник в другие города?
+                    <img src='./img/accordeon/2.svg' alt='icon' />
+                    <p>Доставляете ли Вы <Attention>подшипники</Attention> в другие города?</p>
                   </button>
                 </h2>
                 <div
@@ -110,9 +103,7 @@ export default function Faq ({ api }) {
           </div>
         </div>
       </section>
-      <div style={{ paddingBottom: '50px' }} className='centered'>
-        <Form api={api} />
-      </div>
+      <FormSection api={api} className='bg-form' />
     </main>
   )
 }

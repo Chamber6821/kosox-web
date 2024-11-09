@@ -1,0 +1,113 @@
+.footerInner {
+  display: flex;
+  justify-content: space-between;
+  gap: 54px;
+  padding-top: 54px;
+  padding-bottom: 54px;
+}
+
+.footerBlock {
+  flex-basis: 23%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.footerCatalog {
+  flex-basis: 48%;
+}
+
+.footerName {
+  font-size: 35px;
+}
+
+.footerNav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footerCols {
+  display: flex;
+  gap: 54px;
+}
+
+.footerCols .footerNav {
+  flex-basis: 47%;
+}
+
+.footerLink {
+  font-weight: 300;
+  font-size: 20px;
+
+  transition: color .7s linear;
+}
+
+.footerLink:hover {
+  color: #FF5F31;
+}
+
+.footerUnderneath {
+  background-color: #858585;
+  padding: 10px;
+  padding-bottom: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footerUnderneath >span {
+  flex-basis: 33%;
+}
+
+.footerCopyright {
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.footerCreator {
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+}
+
+.footerDesc {
+  font-weight: 300;
+  font-size: 10px;
+}
+
+@media(max-width: 992px) {
+  .footerInner {
+    flex-wrap: wrap;
+  }
+
+  .footerBlock {
+    flex-basis: 45%;
+  }
+
+  .footerCatalog {
+    flex-basis: 100%;
+  }
+
+  .footerUnderneath {
+    flex-direction: column;
+  }
+
+  .footerUnderneath >span {
+    flex-basis: 100%;
+  }
+}
+
+@media(max-width: 600px) {
+  .footerBlock {
+    flex-basis: 100%;
+  }
+
+  .footerCols {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+

@@ -1,5 +1,6 @@
 import { useLocation } from 'wouter'
 import Button from './UI/Button/Button'
+import Attention from './UI/Attention/Attention'
 
 export default function Form ({ api }) {
   const [location] = useLocation()
@@ -25,9 +26,9 @@ export default function Form ({ api }) {
         <textarea tabIndex={5} placeholder='ВАШ ВОПРОС' type='textarea' name='description' />
         <div className='form_checkbox'>
           <input type='checkbox' name='agree' />
-          <label htmlFor='agree' tabIndex={6}>Отправляя форму я соглашаюсь с политикой конфиденциальности сайта kosox.info</label>
+          <label htmlFor='agree' tabIndex={6}>Отправляя форму я соглашаюсь с <a href='/'><Attention>политикой конфедициальности</Attention></a> сайта <Attention>kosox.info</Attention></label>
         </div>
-        <Button type='submit' tabindex={7}>ОТПРАВИТЬ</Button>
+        <Button type='submit' tabIndex={7}>ОТПРАВИТЬ</Button>
       </form>
     </div>
   )

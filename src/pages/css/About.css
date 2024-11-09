@@ -1,0 +1,15 @@
+.about_goods {
+  padding-top: 70px;
+  padding-bottom: 80px;
+}
+
+.about_goods_second {
+  flex-direction: row-reverse;
+  padding-bottom: 100px;
+}
+
+@media(max-width: 992px) {
+  .about_goods_second {
+    flex-direction: column;
+  }
+}

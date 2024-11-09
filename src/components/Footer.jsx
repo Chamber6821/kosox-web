@@ -1,116 +1,93 @@
-export default function Footer () {
-  return (
-    <footer className='allFooter'>
-      <div className='allFooter_div'>
-        <div className='allFooter_div_block_one'>
-          <h6 className='allFooter_div_title'>Меню</h6>
-          <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/about'>
-              О компании
-            </a>
-          </div>
-          <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/catalog'>
-              Каталог
-            </a>
-          </div>
-          <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/delivery-and-payment'>
-              Доставка и оплата
-            </a>
-          </div>
-          <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/manufacturers'>
-              Партнерам
-            </a>
-          </div>
-          <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/contacts'>
-              Контакты
-            </a>
-          </div>
-          <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='/faq'>
-              FAQ
-            </a>
-          </div>
-        </div>
+import { useState, useEffect } from 'react'
+import styles from './Footer.module.css'
+import { Link } from 'wouter'
 
-        <div className='allFooter_div_block_three'>
-          <h6 className='allFooter_div_title'>Контакты</h6>
-          <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='https:/telegram.im/@kosox78'>
-              Telegram (@kosox78)
-            </a>
-          </div>
-          <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='https://api.whatsapp.com/send?phone=79818800222'>
-              Whatsapp (+79818800222)
-            </a>
-          </div>
-          <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='mailto:zakaz@kosox.ru'>
-              zakaz@kosox.ru
-            </a>
-          </div>
-          <div className='allFooter_div_ahref_div'>
-            <a className='allFooter_div_ahref' href='+88124555155'>
-              +7 (812) 455-51-55
-            </a>
+export default function Footer ({ api, category = undefined }) {
+  const [{ categories = [] }, setContent] = useState({})
+  useEffect(() => {
+    (async () => {
+      const categories = await api.categories()
+      const scEntity = await categories.withId(category)
+      const categoriesToRender = category
+        ? await scEntity.subcategories()
+        : categories
+      setContent({
+        categories: await Promise.all(
+          (await categoriesToRender.array()).map(async (x) => ({
+            id: await x.id(),
+            name: await x.name(),
+            icon: await x.icon()
+          }))
+        )
+      })
+    })()
+  }, [api, category])
+
+  return (
+    <footer className={styles.footer}>
+      <div className={`cntr ${styles.footerInner}`}>
+        <div className={styles.footerBlock}>
+          <h6 className={styles.footerName}>Меню</h6>
+          <div className={styles.footerNav}>
+            <Link className={styles.footerLink} to='/about'>
+              О компании
+            </Link>
+            <Link className={styles.footerLink} to='/catalog'>
+              Каталог
+            </Link>
+            <Link className={styles.footerLink} to='/delivery-and-payment'>
+              Доставка и оплата
+            </Link>
+            <Link className={styles.footerLink} to='/manufacturers'>
+              Партнерам
+            </Link>
+            <Link className={styles.footerLink} to='/contacts'>
+              Контакты
+            </Link>
+            <Link className={styles.footerLink} to='/faq'>
+              FAQ
+            </Link>
           </div>
         </div>
-        <div className='allFooter_div_block_four'>
-          <p className='allFooter_div_block_four_p'>
-            Полный спектр промышленного снабжения. Обращаем ваше внимание на то,
-            что данный Интернет-сайт носит исключительно информационный характер
-            и ни при каких условиях не является публичной офертой, определяемой
-            положениями Статьи 437 Гражданского кодекса Российской Федерации.
-            Для получения подробной информации, стоимости продукции и условий
-            обращайтесь к менеджерам. Вся информация на сайте – собственность
-            интернет-магазина kosox.ru. Публикация информации с сайта
-            kosox.ru без разрешения запрещена. Все права защищены. Вы
-            принимаете условия политики конфиденциальности и пользовательского
-            соглашения каждый раз, когда оставляете свои данные в любой форме
-            обратной связи на сайте kosox.ru.
-          </p>
+        <div className={styles.footerBlock}>
+          <h6 className={styles.footerName}>Контакты</h6>
+          <div className={styles.footerNav}>
+            <Link className={styles.footerLink} to='https:/telegram.im/@kosox78'>
+              Telegram (@kosox78)
+            </Link>
+            <Link className={styles.footerLink} to='https://api.whatsapp.com/send?phone=79818800222'>
+              Whatsapp (+79818800222)
+            </Link>
+            <Link className={styles.footerLink} to='mailto:zakaz@kosox.ru'>
+              zakaz@kosox.ru
+            </Link>
+            <Link className={styles.footerLink} to='+88124555155'>
+              +7 (812) 455-51-55
+            </Link>
+          </div>
+        </div>
+        <div className={`${styles.footerBlock} ${styles.footerCatalog}`}>
+          <h6 className={styles.footerName}>Каталог</h6>
+          <div className={styles.footerCols}>
+            <div className={styles.footerNav}>
+              {categories.slice(0, Math.ceil(categories.length / 2)).map(category => (
+                <Link className={styles.footerLink} href='/' key={category.id}>{category.name}</Link>
+              ))}
+            </div>
+            <div className={styles.footerNav}>
+              {categories.slice(Math.ceil(categories.length / 1.6)).map(category => (
+                <Link className={styles.footerLink} href='/' key={category.id}>{category.name}</Link>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
-      <div className='allFooter_address'>
-        <h1 className='allFooter_address_h1'>
-          ©2023 Подшипники оптом и в розницу.
-        </h1>
-        <div className='allFooter_address_div'>
-          <a href='https://wowtika.com'>
-            <p className='allFooter_address_div_p'>Разработано Wowtika</p>
-          </a>
-        </div>
-        <div className='allFooter_address_img_div'>
-          <img
-            className='allFooter_address_img_div_img'
-            src='/img/visa-mastercard-mir@2x.png'
-            alt='icon'
-          />
-          <img
-            className='allFooter_address_img_div_img'
-            src='/img/sberbank@2x.png'
-            alt='icon'
-          />
-          <img
-            className='allFooter_address_img_div_img'
-            src='/img/tinkoff@2x.png'
-            alt='icon'
-          />
-          <img
-            className='allFooter_address_img_div_img'
-            src='/img/yandexmoney@2x.png'
-            alt='icon'
-          />
-          <img
-            className='allFooter_address_img_div_img'
-            src='/img/paypal@2x.png'
-            alt='icon'
-          />
-        </div>
+      <div className={`${styles.footerUnderneath} cntr`}>
+        <span className={styles.footerCopyright}>© 2023 Подшипники оптом и в розницу.</span>
+        <span className={styles.footerCreator}>Разработано WOW</span>
+        <span className={styles.footerDesc}>Полный спектр промышленного снабжения. Обращаем ваше внимание на то, что данный Интернет-сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса Российской Федерации. Для получения подробной информации, стоимости продукции и условий обращайтесь к менеджерам.
+          Вся информация на сайте – собственность интернет-магазина mgb-bearings.ru. Публикация информации с сайта mgb-bearings.ru без разрешения запрещена. Все права защищены. Вы принимаете условия политики конфиденциальности и пользовательского соглашения каждый раз, когда оставляете свои данные в любой форме обратной связи на сайте mgb-bearings.ru.
+        </span>
       </div>
     </footer>
   )
