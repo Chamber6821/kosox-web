@@ -64,9 +64,9 @@ a {
   align-items: center;
   row-gap: 10px;
 }
-.filterkotalog_card_title h2{
+/* .filterkotalog_card_title h2{
   padding: 15px;
-}
+} */
 .navbar_icon{
   display: flex;
   justify-content: space-between;
@@ -965,6 +965,7 @@ swiper-slide h4 {
 
 .header_main {
   width: 100%;
+  height: 288px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1419,7 +1420,7 @@ textarea:focus {
   justify-content: center;
 }
 .filterkotalog_flex {
-  max-width: 1540px;
+  /* max-width: 1540px; */
   height: 100%;
   width: 100%;
   display: flex;
@@ -1427,7 +1428,7 @@ textarea:focus {
   justify-content: space-between;
 }
 .filterkotalog_filter {
-  width: 450px;
+  width: 470px;
   height: 100%;
   padding-left: 35px;
   flex-direction: column;
@@ -1435,36 +1436,53 @@ textarea:focus {
   display: flex;
   align-items: center;
   padding-top: 100px;
-  background: #000617;
+  /* background: #000617; */
+  background: #858585;
   justify-content: start;
 }
 .filterkotalog_cards {
   width: 100%;
   flex-wrap: wrap;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
   row-gap: 40px;
-  padding-top: 100px;
+  /* padding-top: 100px; */
+  padding: 35px 100px 0px 100px;
+  /* padding-bottom: 0px; */
+  gap: 50px;
+  justify-content: center;
 }
 .filterkotalog_filter_title {
   width: 100%;
   display: flex;
   margin-bottom: 50px;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: center;
 }
 .filterkotalog_filter_title h2 {
   color: #fff;
-  font-size: 40px;
+  /* font-size: 40px; */
+  /* font-style: normal; */
+  font-weight: 700;
+  line-height: normal;
+
+  /* color: #FFF; */
+  font-family: Sansation;
+  font-size: 25px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
 .filterkotalog_card {
-  width: 800px;
+  /* width: 800px; */
   display: flex;  
   transition: 0.3s; 
+  /* flex-basis: 25%; */
+  width: 250px;
+  flex-direction: column;
+  border-radius: 10px;
 }
 .filterkotalog_card_img {
   background: #fff;
@@ -1474,37 +1492,61 @@ textarea:focus {
   align-items: center;
   justify-content: center;
   float: left;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .filterkotalog_card_title {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #000617;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+  background: rgba(0, 0, 0, 0.10);;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   transition: 0.3s; 
 }
 
 .filterkotalog_card_title img {
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   border-radius: 4px;
   margin-left: 15px;
   margin-bottom: 10px;
   object-fit: contain !important;
   background-color: #fff;
+  border-radius: 50%;
 }
 .filterkotalog_card_title h2 {
-  color: #fff;
-  font-size: 19px !important;
+  color: #FFF;
+  font-family: "Sansation Light";
+  font-size: 15px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 300;
   line-height: normal;
+  margin: 12px;
 }
 
+.filterkotalog_card_block_footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-right: 21px;
+}
+
+.filterkotalog_card_shopping_basket {
+  /* display: flex; */
+  background: none; /* Убирает фоновый цвет */
+  border: none; /* Убирает рамку */
+  padding: 0; /* Убирает внутренние отступы */
+  margin: 0; /* Убирает внешние отступы */
+  cursor: pointer; /* Указывает на интерактивный элемент */
+  display: flex; /* Позволяет правильно выравнивать содержимое */
+  align-items: center; /* Центрирует содержимое по вертикали */
+  justify-content: center; /* Центрирует содержимое по горизонтали */
+  outline: none; /* Убирает контур */
+  margin-bottom: 10px;
+}
 @media(max-width: 900px){
   .filterkotalog_card{
     width: 90vw;
@@ -2250,19 +2292,22 @@ textarea:focus {
 
 .btn-secondary::after {
   flex-shrink: 0;
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 0.9rem;
+  height: 0.9rem;
   margin-left: auto;
+  margin-bottom: 5px;
   content: "";
   background-image: url(../img/top.svg);
   background-repeat: no-repeat;
-  background-size: 1.25rem;
+  background-size: 0.9rem;
   transition: transform 0.2s ease-in-out;
   rotate: 180deg;
 }
 .btn-secondary:not(.collapsed)::after {
   background-image: url(../img/top.svg);
   transform: rotate(180deg);
+  margin-bottom: 0px;
+  margin-top: 5px;
 }
 
 /* range inp */
@@ -2351,8 +2396,28 @@ textarea:focus {
   display: none;
 }
 .filterkotalog_filter_btn {
-  display: none;
+  /* display: none; */
+  display: flex;
+  margin: 50px 0px 35px 0px;
 }
+
+.filterkotalog_filter_btn button {
+  display: inline-flex;
+  padding: 9px 54px 9px 55px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  background: #FF5F31;
+  color: #FFF;
+  font-family: Sansation;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: none;
+  outline: none;
+}
+
 @media (max-width: 1150px) {
   .filterkotalog_filter {
     position: absolute;

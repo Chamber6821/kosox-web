@@ -123,52 +123,45 @@ export default function Category ({ api, params: { id } }) {
     <main>
       <div
         style={{
-          backgroundImage:
-            'url("/img/6ba632040d142d29a5ebe2411f406f96 — копия.jpeg")'
+          backgroundImage: 'url("/img/6ba632040d142d29a5ebe2411f406f96 — копия.jpeg")',
         }}
-        className='header_main'
+        className="header_main"
       >
-        <div className='header_main_bg' />
-        <div className='header_main_flex'>
+        <div className="header_main_bg" />
+        <div className="header_main_flex">
           <h1>Каталог</h1>
           <h1>/</h1>
           <h1>{categoryName}</h1>
         </div>
       </div>
-      <div className='filterkotalog'>
-        <div className='filterkotalog_flex'>
-          {
-            (!showProducts || window.innerWidth >= 1150) &&
-              <div style={{ position: 'relative', top: '0' }} className='filterkotalog_filter'>
-                <div className='filterkotalog_filter_title'>
-                  <h2>Фильтр</h2>
-                </div>
-                <div
-                  className='accordion filterkotalog_filter_title'
-                  id='accordionPanelsStayOpenExample'
-                >
-                  {parameters.map(([name, variants]) => (
-                    <Filter
-                      key={name}
-                      name={name}
-                      variants={variants}
-                      onChange={(variant, checked) => {
-                        const oldVariants = filters[name] || []
-                        const variants = checked
-                          ? [...oldVariants, variant]
-                          : oldVariants.filter((x) => x !== variant)
-                        setFilters({ ...filters, [name]: variants })
-                        navigate('?page=1')
-                      }}
-                    />
-                  ))}
-                </div>
-                <div className='filterkotalog_filter_btn'>
-                  <button onClick={() => setShowProducts(true)}>Закрыть</button>
-                  <button onClick={() => setShowProducts(true)}>Применить</button>
-                </div>
+      <div className="filterkotalog">
+        <div className="filterkotalog_flex">
+          {(!showProducts || window.innerWidth >= 1150) && (
+            <div style={{ position: "relative", top: "0" }} className="filterkotalog_filter">
+              <div className="filterkotalog_filter_title">
+                <h2>Фильтр</h2>
               </div>
-          }
+              <div className="accordion filterkotalog_filter_title" id="accordionPanelsStayOpenExample">
+                {parameters.map(([name, variants]) => (
+                  <Filter
+                    key={name}
+                    name={name}
+                    variants={variants}
+                    onChange={(variant, checked) => {
+                      const oldVariants = filters[name] || [];
+                      const variants = checked ? [...oldVariants, variant] : oldVariants.filter((x) => x !== variant);
+                      setFilters({ ...filters, [name]: variants });
+                      navigate("?page=1");
+                    }}
+                  />
+                ))}
+              </div>
+              <div className="filterkotalog_filter_btn">
+                {/* <button onClick={() => setShowProducts(true)}>Закрыть</button> */}
+                <button onClick={() => setShowProducts(true)}>Применить</button>
+              </div>
+            </div>
+          )}
           {
             showProducts &&
               <>
@@ -183,5 +176,5 @@ export default function Category ({ api, params: { id } }) {
         </div>
       </div>
     </main>
-  )
+  );
 }
