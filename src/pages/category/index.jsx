@@ -59,65 +59,58 @@ const Filter = ({ name, variants, onChange }) => {
  * @returns
  */
 export default function Category ({ api, params: { id } }) {
-  const page = +new URLSearchParams(useSearch()).get('page') || 1
-  const [
-    { categoryName = '', products = [], parameters = [], lastPage = 1 },
-    setContent
-  ] = useState({})
-  const [filters, setFilters] = useState({})
-  const [showProducts, setShowProducts] = useState(true)
-  document.title = `Категория: ${categoryName}`
+  const page = +new URLSearchParams(useSearch()).get("page") || 1;
+  const [{ categoryName = "", products = [], parameters = [], lastPage = 1 }, setContent] = useState({});
+  const [filters, setFilters] = useState({});
+  const [showProducts, setShowProducts] = useState(true);
+  // document.title = `Категория: ${categoryName}`
+  const title = document.title;
+
+  const headCategory = title.split(": ")[1];
 
   useEffect(() => {
     (async () => {
-      const entity = await (await api.subcategories()).withId(id)
-      const pages = await (await entity.products(6)).filtered(filters)
+      const entity = await (await api.subcategories()).withId(id);
+      const pages = await (await entity.products(6)).filtered(filters);
+
       setContent({
         categoryName: await entity.name(),
         products: await Promise.all(
-          (await (await pages.page(page - 1)).array()).map(async (x) => ({
+          (
+            await (await pages.page(page - 1)).array()
+          ).map(async (x) => ({
             id: await x.id(),
             name: await x.name(),
             icon: await x.icon(),
-            brand_icon: await (await x.brand()).icon()
+            brand_icon: await (await x.brand()).icon(),
           }))
         ),
         parameters: await entity.parameters(),
-        lastPage: Math.max(1, await pages.totalPages())
-      })
-    })()
-  }, [page, filters, api, id])
+        lastPage: Math.max(1, await pages.totalPages()),
+      });
+    })();
+  }, [page, filters, api, id]);
 
   const PageLink = ({ innerClass, href, title }) => (
     <Link to={href}>
       <p className={innerClass}>{title}</p>
     </Link>
-  )
+  );
 
-  const PageStub = ({ title }) => <p>{title}</p>
+  const PageStub = ({ title }) => <p>{title}</p>;
 
-  const Content = () =>
+  const Content = () => (
     <>
       {products.map((x) => (
-        <Card
-          key={x.id}
-          title={x.name}
-          image={x.icon}
-          brandImage={x.brand_icon}
-          page={`/product/${x.id}`}
-        />
+        <Card key={x.id} title={x.name} image={x.icon} brandImage={x.brand_icon} page={`/product/${x.id}`} />
       ))}
-      <div className='filterkotalog_cards_nav'>
-        <div className='filterkotalog_cards_nav_flex'>
-          <PageButtons
-            currentPage={page}
-            lastPage={lastPage}
-            PageLink={PageLink}
-            PageStub={PageStub}
-          />
+      <div className="filterkotalog_cards_nav">
+        <div className="filterkotalog_cards_nav_flex">
+          <PageButtons currentPage={page} lastPage={lastPage} PageLink={PageLink} PageStub={PageStub} />
         </div>
       </div>
     </>
+  );
 
   return (
     <main>
@@ -129,9 +122,20 @@ export default function Category ({ api, params: { id } }) {
       >
         <div className="header_main_bg" />
         <div className="header_main_flex">
-          <h1>Каталог</h1>
-          <h1>/</h1>
-          <h1>{categoryName}</h1>
+          <h2 className="header_main_bread_crumbs">
+            {categoryName ? (
+              <>
+                Главная / Каталог / {headCategory} / <span>{` ${categoryName}`}</span>
+              </>
+            ) : (
+              <>
+                Главная / Каталог / <span> {headCategory}</span>
+              </>
+            )}
+          </h2>
+          <h1 className="header_main_title">
+            Каталог <span>товаров</span>
+          </h1>
         </div>
       </div>
       <div className="filterkotalog">
@@ -162,17 +166,16 @@ export default function Category ({ api, params: { id } }) {
               </div>
             </div>
           )}
-          {
-            showProducts &&
-              <>
-                <div className='filterkotalog_button_fiter'>
-                  <button onClick={() => setShowProducts(false)}>Фильтр</button>
-                </div>
-                <div className='filterkotalog_cards'>
-                  {{ 0: <h2>Ничего не найдено</h2> }[products.length] || <Content />}
-                </div>
-              </>
-          }
+          {showProducts && (
+            <>
+              <div className="filterkotalog_button_fiter">
+                <button onClick={() => setShowProducts(false)}>Фильтр</button>
+              </div>
+              <div className="filterkotalog_cards">
+                {{ 0: <h2>Ничего не найдено</h2> }[products.length] || <Content />}
+              </div>
+            </>
+          )}
         </div>
       </div>
     </main>

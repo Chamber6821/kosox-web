@@ -33,6 +33,7 @@ const ProductWithParameters = async (product, api) => ({
     }))
 })
 
+
 const ProductWithId = async (id, api) =>
   CachedProduct(await api(`products/${id}`), async () =>
     CachedManufacturer(await api(`products/${id}/manufacturer`))
@@ -116,8 +117,9 @@ const CategoryWithParameters = async (category, api) => ({
   parameters: async () =>
     Object.entries(await api(`subcategories/${await category.id()}/parameters`))
       .map(([key, value]) => [key, value.sort()])
-      .sort()
-})
+      .sort(),
+});
+
 
 const ManufacturerWithCategories = async (manufacturer, api) => ({
   ...manufacturer,

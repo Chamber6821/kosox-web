@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react'
-import Cards from './Cards'
-// import Form from '../../components/Form'
+import { useEffect, useState } from "react";
+import Cards from "./Cards";
 import FormSection from "../../components/Sections/FormSection/FormSection";
 
 /**
@@ -15,7 +14,9 @@ import FormSection from "../../components/Sections/FormSection/FormSection";
  */
 export default function Catalog({ api, params: { id } }) {
   const [{ categoryName = "" }, setContent] = useState({});
+  // const addedCategory = categoryName ? ` / ${categoryName}` : "";
   document.title = categoryName === "" ? "Каталог" : `Каталог: ${categoryName}`;
+
   useEffect(() => {
     (async () => {
       const categories = await api.categories();
@@ -25,6 +26,7 @@ export default function Catalog({ api, params: { id } }) {
       });
     })();
   }, [api, id]);
+
   return (
     <main>
       <div
@@ -35,18 +37,24 @@ export default function Catalog({ api, params: { id } }) {
       >
         <div className="header_main_bg" />
         <div className="header_main_flex">
-          <h1>Каталог</h1>
-          {id && (
-            <>
-              <h1>/</h1>
-              <h1>{categoryName}</h1>
-            </>
-          )}
+          <h2 className="header_main_bread_crumbs">
+            {categoryName ? (
+              <>
+                Главная / Каталог /<span>{` ${categoryName}`}</span>
+              </>
+            ) : (
+              <>
+                Главная /<span> Каталог</span>
+              </>
+            )}
+          </h2>
+          <h1 className="header_main_title">
+            Каталог <span>товаров</span>
+          </h1>
         </div>
       </div>
       <Cards api={api} category={id} />
-
-       <FormSection api={api} className='bg-form' />
+      <FormSection api={api} className="bg-form" />
     </main>
   );
 }

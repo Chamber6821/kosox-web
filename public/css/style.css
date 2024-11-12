@@ -963,12 +963,29 @@ swiper-slide h4 {
   }
 }
 
+.header_main_title {
+  color: #FFF;
+  font-family: "Sansation Light";
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.header_main_title span {
+  color: #FF5F31;
+  font-family: Sansation;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
 .header_main {
   width: 100%;
   height: 288px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 70px;
   background-position: center;
   background-repeat: no-repeat;
@@ -987,15 +1004,32 @@ swiper-slide h4 {
   left: 0px;
 }
 .header_main_flex {
-  padding-left: 180px;
-  width: 1440px;
+  padding-left: 80px;
+  /* width: 1440px; */
   position: relative;
   z-index: 9999;
-  display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: left;
+  flex-direction: column;
 }
 
+.header_main_bread_crumbs {
+  color: #FFF;
+  font-family: Sansation;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.header_main_bread_crumbs span {
+  color: #FF5F31;
+  font-family: Sansation;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
 .section_page {
   width: 100%;
   flex-direction: column;
@@ -1620,11 +1654,22 @@ textarea:focus {
   justify-content: center;
   gap: 20px;
 }
+.filterkotalog_cards_nav_flex a {
+display: flex;
+background-color: #000136;
+display: inline-flex;
+padding: 9px 42px;
+justify-content: center;
+align-items: center;
+border-radius: 7px;
+background: #FF5F31;
+cursor: pointer;
+}
 .filterkotalog_cards_nav_flex p {
   color: #fff;
-  font-size: 19px;
+  font-family: Sansation;
+  font-size: 15px;
   font-style: normal;
-  cursor: pointer;
   font-weight: 700;
   line-height: normal;
 }
@@ -2504,9 +2549,9 @@ textarea:focus {
   }
 }
 @media (max-width: 1020px) {
-  .header_main_flex h1 {
+  /* .header_main_flex h1 {
     font-size: 6.125vw;
-  }
+  } */
   .product_page_description_menu {
     flex-direction: column;
     gap: 50px;
