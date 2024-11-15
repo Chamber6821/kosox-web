@@ -59,19 +59,19 @@ const Filter = ({ name, variants, onChange }) => {
  * @returns
  */
 export default function Category ({ api, params: { id } }) {
-  const page = +new URLSearchParams(useSearch()).get("page") || 1;
-  const [{ categoryName = "", products = [], parameters = [], lastPage = 1 }, setContent] = useState({});
-  const [filters, setFilters] = useState({});
-  const [showProducts, setShowProducts] = useState(true);
+  const page = +new URLSearchParams(useSearch()).get('page') || 1
+  const [{ categoryName = '', products = [], parameters = [], lastPage = 1 }, setContent] = useState({})
+  const [filters, setFilters] = useState({})
+  const [showProducts, setShowProducts] = useState(true)
   // document.title = `Категория: ${categoryName}`
-  const title = document.title;
+  const title = document.title
 
-  const headCategory = title.split(": ")[1];
+  const headCategory = title.split(': ')[1]
 
   useEffect(() => {
     (async () => {
-      const entity = await (await api.subcategories()).withId(id);
-      const pages = await (await entity.products(6)).filtered(filters);
+      const entity = await (await api.subcategories()).withId(id)
+      const pages = await (await entity.products(6)).filtered(filters)
 
       setContent({
         categoryName: await entity.name(),
@@ -82,85 +82,87 @@ export default function Category ({ api, params: { id } }) {
             id: await x.id(),
             name: await x.name(),
             icon: await x.icon(),
-            brand_icon: await (await x.brand()).icon(),
+            brand_icon: await (await x.brand()).icon()
           }))
         ),
         parameters: await entity.parameters(),
-        lastPage: Math.max(1, await pages.totalPages()),
-      });
-    })();
-  }, [page, filters, api, id]);
+        lastPage: Math.max(1, await pages.totalPages())
+      })
+    })()
+  }, [page, filters, api, id])
 
   const PageLink = ({ innerClass, href, title }) => (
     <Link to={href}>
       <p className={innerClass}>{title}</p>
     </Link>
-  );
+  )
 
-  const PageStub = ({ title }) => <p>{title}</p>;
+  const PageStub = ({ title }) => <p>{title}</p>
 
   const Content = () => (
     <>
       {products.map((x) => (
         <Card key={x.id} title={x.name} image={x.icon} brandImage={x.brand_icon} page={`/product/${x.id}`} />
       ))}
-      <div className="filterkotalog_cards_nav">
-        <div className="filterkotalog_cards_nav_flex">
+      <div className='filterkotalog_cards_nav'>
+        <div className='filterkotalog_cards_nav_flex'>
           <PageButtons currentPage={page} lastPage={lastPage} PageLink={PageLink} PageStub={PageStub} />
         </div>
       </div>
     </>
-  );
+  )
 
   return (
     <main>
       <div
         style={{
-          backgroundImage: 'url("/img/6ba632040d142d29a5ebe2411f406f96 — копия.jpeg")',
+          backgroundImage: 'url("/img/6ba632040d142d29a5ebe2411f406f96 — копия.jpeg")'
         }}
-        className="header_main"
+        className='header_main'
       >
-        <div className="header_main_bg" />
-        <div className="header_main_flex">
-          <h2 className="header_main_bread_crumbs">
-            {categoryName ? (
-              <>
-                Главная / Каталог / {headCategory} / <span>{` ${categoryName}`}</span>
-              </>
-            ) : (
-              <>
-                Главная / Каталог / <span> {headCategory}</span>
-              </>
-            )}
+        <div className='header_main_bg' />
+        <div className='header_main_flex'>
+          <h2 className='header_main_bread_crumbs'>
+            {categoryName
+              ? (
+                <>
+                  Главная / Каталог / {headCategory} / <span>{` ${categoryName}`}</span>
+                </>
+                )
+              : (
+                <>
+                  Главная / Каталог / <span> {headCategory}</span>
+                </>
+                )}
           </h2>
-          <h1 className="header_main_title">
+          <h1 className='header_main_title'>
             Каталог <span>товаров</span>
           </h1>
         </div>
       </div>
-      <div className="filterkotalog">
-        <div className="filterkotalog_flex">
+      <div className='filterkotalog'>
+        <div className='filterkotalog_flex'>
           {(!showProducts || window.innerWidth >= 1150) && (
-            <div style={{ position: "relative", top: "0" }} className="filterkotalog_filter">
-              <div className="filterkotalog_filter_title">
+            <div style={{ position: 'relative', top: '0' }} className='filterkotalog_filter'>
+              <div className='filterkotalog_filter_title'>
                 <h2>Фильтр</h2>
               </div>
-              <div className="accordion filterkotalog_filter_title" id="accordionPanelsStayOpenExample">
+              <div className='accordion filterkotalog_filter_title' id='accordionPanelsStayOpenExample'>
                 {parameters.map(([name, variants]) => (
                   <Filter
                     key={name}
                     name={name}
                     variants={variants}
                     onChange={(variant, checked) => {
-                      const oldVariants = filters[name] || [];
-                      const variants = checked ? [...oldVariants, variant] : oldVariants.filter((x) => x !== variant);
-                      setFilters({ ...filters, [name]: variants });
-                      navigate("?page=1");
+                      const oldVariants = filters[name] || []
+                      const variants = checked ? [...oldVariants, variant] : oldVariants.filter((x) => x !== variant)
+                      setFilters({ ...filters, [name]: variants })
+                      navigate('?page=1')
                     }}
                   />
                 ))}
               </div>
-              <div className="filterkotalog_filter_btn">
+              <div className='filterkotalog_filter_btn'>
                 {/* <button onClick={() => setShowProducts(true)}>Закрыть</button> */}
                 <button onClick={() => setShowProducts(true)}>Применить</button>
               </div>
@@ -168,10 +170,10 @@ export default function Category ({ api, params: { id } }) {
           )}
           {showProducts && (
             <>
-              <div className="filterkotalog_button_fiter">
+              <div className='filterkotalog_button_fiter'>
                 <button onClick={() => setShowProducts(false)}>Фильтр</button>
               </div>
-              <div className="filterkotalog_cards">
+              <div className='filterkotalog_cards'>
                 {{ 0: <h2>Ничего не найдено</h2> }[products.length] || <Content />}
               </div>
             </>
@@ -179,5 +181,5 @@ export default function Category ({ api, params: { id } }) {
         </div>
       </div>
     </main>
-  );
+  )
 }
