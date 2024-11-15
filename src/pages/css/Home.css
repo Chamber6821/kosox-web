@@ -220,6 +220,7 @@
 
 .kotalog {
   gap: 0;
+  flex-direction: column;
 }
 
 .kotalog_flex {
@@ -246,6 +247,7 @@
   padding: 16px 24px;
   color: #fff;
   font-size: 17px;
+  min-height: 80px;
 }
 
 .see_all {

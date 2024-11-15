@@ -60,22 +60,25 @@ const Filter = ({ name, variants, onChange }) => {
  */
 export default function Category ({ api, params: { id } }) {
   const page = +new URLSearchParams(useSearch()).get('page') || 1
-  const [
-    { categoryName = '', products = [], parameters = [], lastPage = 1 },
-    setContent
-  ] = useState({})
+  const [{ categoryName = '', products = [], parameters = [], lastPage = 1 }, setContent] = useState({})
   const [filters, setFilters] = useState({})
   const [showProducts, setShowProducts] = useState(true)
-  document.title = `Категория: ${categoryName}`
+  // document.title = `Категория: ${categoryName}`
+  const title = document.title
+
+  const headCategory = title.split(': ')[1]
 
   useEffect(() => {
     (async () => {
       const entity = await (await api.subcategories()).withId(id)
       const pages = await (await entity.products(6)).filtered(filters)
+
       setContent({
         categoryName: await entity.name(),
         products: await Promise.all(
-          (await (await pages.page(page - 1)).array()).map(async (x) => ({
+          (
+            await (await pages.page(page - 1)).array()
+          ).map(async (x) => ({
             id: await x.id(),
             name: await x.name(),
             icon: await x.icon(),
@@ -96,90 +99,85 @@ export default function Category ({ api, params: { id } }) {
 
   const PageStub = ({ title }) => <p>{title}</p>
 
-  const Content = () =>
+  const Content = () => (
     <>
       {products.map((x) => (
-        <Card
-          key={x.id}
-          title={x.name}
-          image={x.icon}
-          brandImage={x.brand_icon}
-          page={`/product/${x.id}`}
-        />
+        <Card key={x.id} title={x.name} image={x.icon} brandImage={x.brand_icon} page={`/product/${x.id}`} />
       ))}
       <div className='filterkotalog_cards_nav'>
         <div className='filterkotalog_cards_nav_flex'>
-          <PageButtons
-            currentPage={page}
-            lastPage={lastPage}
-            PageLink={PageLink}
-            PageStub={PageStub}
-          />
+          <PageButtons currentPage={page} lastPage={lastPage} PageLink={PageLink} PageStub={PageStub} />
         </div>
       </div>
     </>
+  )
 
   return (
     <main>
       <div
         style={{
-          backgroundImage:
-            'url("/img/6ba632040d142d29a5ebe2411f406f96 — копия.jpeg")'
+          backgroundImage: 'url("/img/6ba632040d142d29a5ebe2411f406f96 — копия.jpeg")'
         }}
         className='header_main'
       >
         <div className='header_main_bg' />
         <div className='header_main_flex'>
-          <h1>Каталог</h1>
-          <h1>/</h1>
-          <h1>{categoryName}</h1>
+          <h2 className='header_main_bread_crumbs'>
+            {categoryName
+              ? (
+                <>
+                  Главная / Каталог / {headCategory} / <span>{` ${categoryName}`}</span>
+                </>
+                )
+              : (
+                <>
+                  Главная / Каталог / <span> {headCategory}</span>
+                </>
+                )}
+          </h2>
+          <h1 className='header_main_title'>
+            Каталог <span>товаров</span>
+          </h1>
         </div>
       </div>
       <div className='filterkotalog'>
         <div className='filterkotalog_flex'>
-          {
-            (!showProducts || window.innerWidth >= 1150) &&
-              <div style={{ position: 'relative', top: '0' }} className='filterkotalog_filter'>
-                <div className='filterkotalog_filter_title'>
-                  <h2>Фильтр</h2>
-                </div>
-                <div
-                  className='accordion filterkotalog_filter_title'
-                  id='accordionPanelsStayOpenExample'
-                >
-                  {parameters.map(([name, variants]) => (
-                    <Filter
-                      key={name}
-                      name={name}
-                      variants={variants}
-                      onChange={(variant, checked) => {
-                        const oldVariants = filters[name] || []
-                        const variants = checked
-                          ? [...oldVariants, variant]
-                          : oldVariants.filter((x) => x !== variant)
-                        setFilters({ ...filters, [name]: variants })
-                        navigate('?page=1')
-                      }}
-                    />
-                  ))}
-                </div>
-                <div className='filterkotalog_filter_btn'>
-                  <button onClick={() => setShowProducts(true)}>Закрыть</button>
-                  <button onClick={() => setShowProducts(true)}>Применить</button>
-                </div>
+          {(!showProducts || window.innerWidth >= 1150) && (
+            <div style={{ position: 'relative', top: '0' }} className='filterkotalog_filter'>
+              <div className='filterkotalog_filter_title'>
+                <h2>Фильтр</h2>
               </div>
-          }
-          {
-            showProducts &&
-              <>
-                <div className='filterkotalog_button_fiter'>
-                  <button onClick={() => setShowProducts(false)}>Фильтр</button>
-                </div>
-                <div className='filterkotalog_cards'>
-                  {{ 0: <h2>Ничего не найдено</h2> }[products.length] || <Content />}
-                </div>
-              </>
-          }
+              <div className='accordion filterkotalog_filter_title' id='accordionPanelsStayOpenExample'>
+                {parameters.map(([name, variants]) => (
+                  <Filter
+                    key={name}
+                    name={name}
+                    variants={variants}
+                    onChange={(variant, checked) => {
+                      const oldVariants = filters[name] || []
+                      const variants = checked ? [...oldVariants, variant] : oldVariants.filter((x) => x !== variant)
+                      setFilters({ ...filters, [name]: variants })
+                      navigate('?page=1')
+                    }}
+                  />
+                ))}
+              </div>
+              <div className='filterkotalog_filter_btn'>
+                {/* <button onClick={() => setShowProducts(true)}>Закрыть</button> */}
+                <button onClick={() => setShowProducts(true)}>Применить</button>
+              </div>
+            </div>
+          )}
+          {showProducts && (
+            <>
+              <div className='filterkotalog_button_fiter'>
+                <button onClick={() => setShowProducts(false)}>Фильтр</button>
+              </div>
+              <div className='filterkotalog_cards'>
+                {{ 0: <h2>Ничего не найдено</h2> }[products.length] || <Content />}
+              </div>
+            </>
+          )}
         </div>
       </div>
     </main>

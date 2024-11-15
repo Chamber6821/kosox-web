@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Sansation";
+  font-family: "Sansation Light";
   src: url('../public/fonts/SansationLight.woff') format("woff");
   font-weight: 300;
 }
@@ -19,6 +19,9 @@ body {
   font-weight: 300;
   background-color: #2F2F2F;
   color: #fff;
+  width: 100%;
+  max-width: 1640px;
+  margin: 0 auto;
 }
 
 a {
@@ -70,9 +73,16 @@ a {
   font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
-  background-color: #FF5F31;
+  /* background-color: #FF5F31; */
 
   transition: background-color .2s linear;
+
+  padding: 5px;
+  font-family: Sansation;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .btn:hover {
